@@ -5,6 +5,7 @@ import { __ } from '../../translation'
 import dayjs from '../../helpers/dayjs'
 import { ChevronDown, ChevronRight } from 'lucide-vue-next'
 import { computed, ref } from 'vue'
+import { formatLocaleDate, useDocumentLocale } from 'frappe-ui/localization'
 import { FilterOperator, FilterValue, QueryResultColumn } from '../../types/query.types'
 import DatePicker from './DatePicker.vue'
 
@@ -13,6 +14,8 @@ const filter = defineModel<{ operator: FilterOperator; value: FilterValue }>({
 	type: Object,
 	default: () => ({ operator: '=', value: [] }),
 })
+const locale = useDocumentLocale().locale
+const isPersian = computed(() => locale.value.toLowerCase().split(/[-_]/, 1)[0] === 'fa')
 
 const currentSection = ref<'presets' | 'relative' | 'specific' | ''>('presets')
 wheneverChanges(currentSection, () => {
@@ -27,11 +30,14 @@ wheneverChanges(currentSection, () => {
 	}
 })
 
-const getValue = (date: Date) =>
-	date.toLocaleDateString('en-US', {
+const getValue = (date: Date) => {
+	const isoDate = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`
+	return formatLocaleDate(isoDate, {
+		calendar: isPersian.value ? 'persian' : 'gregory',
 		month: 'short',
 		day: 'numeric',
 	})
+}
 type Day = ReturnType<typeof dayjs>
 const getRange = (start: Day, end: Day) => `${getValue(start.toDate())} - ${getValue(end.toDate())}`
 

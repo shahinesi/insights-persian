@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import { Calendar } from 'lucide-vue-next'
 import { computed } from 'vue'
+import {
+	formatLocaleDate,
+	getPersianDateFromISO,
+	useDocumentLocale,
+} from 'frappe-ui/localization'
 import DatePicker from './DatePicker.vue'
 
 const props = defineProps({
@@ -18,41 +23,54 @@ const dates = defineModel<string[]>({
 	required: true,
 })
 
+const locale = useDocumentLocale().locale
+const isPersian = computed(() => locale.value.toLowerCase().split(/[-_]/, 1)[0] === 'fa')
+
+function asISODate(value: string | Date): string | null {
+	if (typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value)) return value
+	const date = value instanceof Date ? value : new Date(value)
+	if (Number.isNaN(date.getTime())) return null
+	return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`
+}
+
+function formatDisplayDate(value: string | Date, includeYear: boolean) {
+	const isoDate = asISODate(value)
+	return isoDate
+		? formatLocaleDate(isoDate, {
+				calendar: isPersian.value ? 'persian' : 'gregory',
+				month: 'short',
+				day: 'numeric',
+				year: includeYear ? 'numeric' : undefined,
+			})
+		: ''
+}
+
 const formatDate = (dates: string | string[] | Date | Date[]) => {
-	const _dates: Date[] = []
+	const _dates: (string | Date)[] = []
 	if (typeof dates === 'string') {
-		_dates.push(new Date(dates))
+		_dates.push(dates)
 	} else if (Array.isArray(dates) && dates.every((date) => typeof date === 'string')) {
-		_dates.push(new Date(dates[0]))
-		_dates.push(new Date(dates[1]))
+		_dates.push(dates[0])
+		if (dates[1]) _dates.push(dates[1])
 	} else if (dates instanceof Date) {
 		_dates.push(dates)
 	} else if (Array.isArray(dates) && dates.every((date) => date instanceof Date)) {
 		_dates.push(dates[0] as Date)
-		_dates.push(dates[1] as Date)
+		if (dates[1]) _dates.push(dates[1] as Date)
 	}
 
-	// if year is same, show only month and day
 	const [start, end] = _dates
-	if (start && !end) {
-		return start.toLocaleDateString('en-US', {
-			month: 'short',
-			day: 'numeric',
-			year: start.getFullYear() === new Date().getFullYear() ? undefined : 'numeric',
-		})
+	if (!start) return ''
+	const getCalendarYear = (value: string | Date) => {
+		const isoDate = asISODate(value)
+		if (!isoDate) return undefined
+		return isPersian.value
+			? getPersianDateFromISO(isoDate).year
+			: Number(isoDate.slice(0, 4))
 	}
-	if (start && end) {
-		return `${start.toLocaleDateString('en-US', {
-			month: 'short',
-			day: 'numeric',
-			year: start.getFullYear() === new Date().getFullYear() ? undefined : 'numeric',
-		})} - ${end.toLocaleDateString('en-US', {
-			month: 'short',
-			day: 'numeric',
-			year: end.getFullYear() === new Date().getFullYear() ? undefined : 'numeric',
-		})}`
-	}
-	return ''
+	const currentYear = getCalendarYear(asISODate(new Date()) || new Date())
+	if (!end) return formatDisplayDate(start, getCalendarYear(start) !== currentYear)
+	return `${formatDisplayDate(start, getCalendarYear(start) !== currentYear)} - ${formatDisplayDate(end, getCalendarYear(end) !== currentYear)}`
 }
 
 const areAllDatesValid = computed(() => dates.value.length && dates.value.every((date) => date))

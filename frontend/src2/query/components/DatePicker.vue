@@ -2,7 +2,7 @@
 	<div class="flex w-[210px] select-none flex-col gap-2 bg-surface-base text-base">
 		<div class="flex items-center justify-between text-ink-gray-6">
 			<Button @click="prevMonth" icon="lucide-chevron-left" />
-			<Button @dblclick="clearDates"> {{ formatMonth() }} </Button>
+			<Button @dblclick="clearDates"> {{ calendarTitle }} </Button>
 			<Button @click="nextMonth" icon="lucide-chevron-right" />
 		</div>
 		<div class="flex gap-2">
@@ -25,28 +25,29 @@
 		<div class="tnum flex flex-col items-center justify-center text-base">
 			<div class="grid w-full grid-cols-7">
 				<div
-					v-for="(d, i) in ['S', 'M', 'T', 'W', 'T', 'F', 'S']"
+					v-for="(day, i) in calendar.weekdayLabels"
 					:key="i"
 					class="flex h-[30px] w-[30px] items-center justify-center text-sm text-ink-gray-5"
 				>
-					{{ d }}
+					{{ day }}
 				</div>
-				<template v-for="(week, i) in daysAsWeeks" :key="i">
+				<template v-for="(week, i) in calendar.weeks" :key="i">
 					<div
 						v-for="date in week"
-						:key="toValue(date)"
+						:key="date.isoDate"
 						class="flex h-[30px] w-[30px] cursor-pointer items-center justify-center text-sm"
 						:class="{
-							'font-bold': toValue(date) === toValue(today),
+							'font-bold': date.isoDate === todayISO,
+							'opacity-50': !date.isCurrentMonth,
 							' rounded-l-4 bg-surface-gray-5 !font-medium':
-								fromDateTxt && toValue(date) === toValue(fromDateTxt),
+								fromDateTxt && date.isoDate === fromDateTxt,
 							' rounded-r-4 bg-surface-gray-5 !font-medium':
-								toDateTxt && toValue(date) === toValue(toDateTxt),
+								toDateTxt && date.isoDate === toDateTxt,
 							'bg-surface-gray-2 font-medium text-ink-gray-7': isInRange(date),
 						}"
-						@click="() => handleDateClick(date)"
+						@click="() => handleDateClick(date.isoDate)"
 					>
-						{{ date.getDate() }}
+						{{ date.dayLabel }}
 					</div>
 				</template>
 			</div>
@@ -59,6 +60,13 @@
 
 <script setup lang="ts">
 import { computed, onBeforeMount, ref } from 'vue'
+import {
+	formatLocaleDate,
+	getPersianCalendarMonth,
+	getPersianDateFromISO,
+	getISODateFromPersianDate,
+	useDocumentLocale,
+} from 'frappe-ui/localization'
 
 const props = defineProps({
 	range: {
@@ -72,9 +80,9 @@ const selectedDates = defineModel<string[]>({
 })
 
 const today = new Date()
-
-const currentYear = ref<number>(today.getFullYear())
-const currentMonth = ref<number>(today.getMonth() + 1)
+const todayISO = toValue(today)
+const locale = useDocumentLocale().locale
+const viewDateISO = ref(todayISO)
 const fromDateTxt = ref<string>(selectedDates.value[0] || '')
 const toDateTxt = ref<string>(selectedDates.value[1] || '')
 
@@ -83,120 +91,87 @@ onBeforeMount(() => {
 })
 
 function selectCurrentMonthYear() {
-	const date = toDateTxt.value
-		? new Date(toDateTxt.value)
-		: fromDateTxt.value
-		  ? new Date(fromDateTxt.value)
-		  : today
-	currentYear.value = date.getFullYear()
-	currentMonth.value = date.getMonth() + 1
+	const selected = toDateTxt.value || fromDateTxt.value || todayISO
+	if (isValidISODate(selected)) viewDateISO.value = selected
 }
 
-const daysAsWeeks = computed(() => {
-	const datesAsWeeks = []
-	const _dates = dates.value.slice()
-	while (_dates.length) {
-		const week = _dates.splice(0, 7)
-		datesAsWeeks.push(week)
+function isValidISODate(value: string) {
+	const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value)
+	if (!match) return false
+	const [, year, month, day] = match.map(Number)
+	const date = new Date(Date.UTC(year, month - 1, day))
+	return date.getUTCFullYear() === year && date.getUTCMonth() === month - 1 && date.getUTCDate() === day
+}
+
+function toISODate(date: Date) {
+	return `${date.getUTCFullYear()}-${String(date.getUTCMonth() + 1).padStart(2, '0')}-${String(date.getUTCDate()).padStart(2, '0')}`
+}
+
+const isPersian = computed(() => locale.value.toLowerCase().split(/[-_]/, 1)[0] === 'fa')
+const calendar = computed(() => {
+	if (isPersian.value) {
+		const persian = getPersianDateFromISO(viewDateISO.value)
+		return getPersianCalendarMonth(persian.year, persian.month, locale.value)
 	}
-	return datesAsWeeks
-})
 
-const dates = computed(() => {
-	if (!(currentYear.value && currentMonth.value)) {
-		return []
-	}
-	const monthIndex = currentMonth.value - 1
-	const year = currentYear.value
-
-	const firstDayOfMonth = getDate(year, monthIndex, 1)
-	const lastDayOfMonth = getDate(year, monthIndex + 1, 0)
-	const leftPaddingCount = firstDayOfMonth.getDay()
-	const rightPaddingCount = 6 - lastDayOfMonth.getDay()
-
-	const leftPadding = getDatesAfter(firstDayOfMonth, -leftPaddingCount)
-	const rightPadding = getDatesAfter(lastDayOfMonth, rightPaddingCount)
-	const daysInMonth = getDaysInMonth(monthIndex, year)
-	const datesInMonth = getDatesAfter(firstDayOfMonth, daysInMonth - 1)
-
-	let _dates = [...leftPadding, firstDayOfMonth, ...datesInMonth, ...rightPadding]
-	if (_dates.length < 42) {
-		const lastDate = _dates.at(-1)
-		if (lastDate) {
-			const finalPadding = getDatesAfter(lastDate, 42 - _dates.length)
-			_dates = _dates.concat(...finalPadding)
+	const [year, month] = viewDateISO.value.split('-').map(Number)
+	const first = new Date(Date.UTC(year, month - 1, 1))
+	const gridStart = new Date(Date.UTC(year, month - 1, 1 - first.getUTCDay()))
+	const number = new Intl.NumberFormat(locale.value, { useGrouping: false })
+	const weekdays = Array.from({ length: 7 }, (_, index) =>
+		new Intl.DateTimeFormat(locale.value, { weekday: 'short', timeZone: 'UTC' }).format(
+			new Date(Date.UTC(2025, 0, 5 + index)),
+		),
+	)
+	const cells = Array.from({ length: 42 }, (_, index) => {
+		const date = new Date(gridStart.getTime() + index * 86400000)
+		const isoDate = toISODate(date)
+		return {
+			isoDate,
+			dayLabel: number.format(date.getUTCDate()),
+			weekday: date.getUTCDay(),
+			isCurrentMonth: date.getUTCMonth() === month - 1 && date.getUTCFullYear() === year,
 		}
+	})
+	const monthLabel = new Intl.DateTimeFormat(locale.value, {
+		month: 'long',
+		year: 'numeric',
+		timeZone: 'UTC',
+	}).format(first)
+	return {
+		monthName: monthLabel,
+		yearLabel: '',
+		weekdayLabels: weekdays,
+		weeks: Array.from({ length: 6 }, (_, index) => cells.slice(index * 7, index * 7 + 7)),
 	}
-	return _dates
 })
 
-function getDatesAfter(firstDayOfMonth: Date, count: number) {
-	let incrementer = 1
-	if (count < 0) {
-		incrementer = -1
-		count = Math.abs(count)
-	}
-	let dates = []
-	while (count) {
-		firstDayOfMonth = getDate(
-			firstDayOfMonth.getFullYear(),
-			firstDayOfMonth.getMonth(),
-			firstDayOfMonth.getDate() + incrementer,
-		)
-		dates.push(firstDayOfMonth)
-		count--
-	}
-	if (incrementer === -1) {
-		return dates.reverse()
-	}
-	return dates
-}
+const calendarTitle = computed(() =>
+	[calendar.value.monthName, calendar.value.yearLabel].filter(Boolean).join(' '),
+)
 
-function getDaysInMonth(monthIndex: number, year: number) {
-	let daysInMonthMap = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-	let daysInMonth = daysInMonthMap[monthIndex]
-	if (monthIndex === 1 && isLeapYear(year)) {
-		return 29
-	}
-	return daysInMonth
-}
-
-function isLeapYear(year: number) {
-	if (year % 400 === 0) return true
-	if (year % 100 === 0) return false
-	if (year % 4 === 0) return true
-	return false
-}
-
-function formatMonth() {
-	const date = getDate(currentYear.value, currentMonth.value - 1, 1)
-	return date.toLocaleString('en-US', {
-		month: 'short',
-		year: 'numeric',
-	})
-}
-
-function formatDate(date: Date, options: { year?: boolean } = {}) {
-	return date.toLocaleDateString('en-US', {
+function formatDate(isoDate: string, options: { year?: boolean } = {}) {
+	return formatLocaleDate(isoDate, {
+		calendar: isPersian.value ? 'persian' : 'gregory',
 		day: 'numeric',
 		month: 'short',
 		year: options.year ? 'numeric' : undefined,
 	})
 }
 
-function handleDateClick(date: Date) {
+function handleDateClick(isoDate: string) {
 	if (!props.range) {
-		fromDateTxt.value = toValue(date)
+		fromDateTxt.value = isoDate
 		selectDates()
 		return
 	}
 	if (fromDateTxt.value && toDateTxt.value) {
-		fromDateTxt.value = toValue(date)
+		fromDateTxt.value = isoDate
 		toDateTxt.value = ''
 	} else if (fromDateTxt.value && !toDateTxt.value) {
-		toDateTxt.value = toValue(date)
+		toDateTxt.value = isoDate
 	} else {
-		fromDateTxt.value = toValue(date)
+		fromDateTxt.value = isoDate
 	}
 	swapDatesIfNecessary()
 	selectDates()
@@ -206,15 +181,11 @@ function swapDatesIfNecessary() {
 	if (!fromDateTxt.value || !toDateTxt.value) {
 		return
 	}
-	let fromDate = getDate(fromDateTxt.value)
-	let toDate = getDate(toDateTxt.value)
-	if (fromDate > toDate) {
-		let temp = fromDate
-		fromDate = toDate
-		toDate = temp
+	if (fromDateTxt.value > toDateTxt.value) {
+		const temp = fromDateTxt.value
+		fromDateTxt.value = toDateTxt.value
+		toDateTxt.value = temp
 	}
-	fromDateTxt.value = toValue(fromDate)
-	toDateTxt.value = toValue(toDate)
 }
 
 function selectDates() {
@@ -238,22 +209,25 @@ function nextMonth() {
 }
 
 function changeMonth(adder: number) {
-	currentMonth.value = currentMonth.value + adder
-	if (currentMonth.value < 1) {
-		currentMonth.value = 12
-		currentYear.value = currentYear.value - 1
+	if (isPersian.value) {
+		const current = getPersianDateFromISO(viewDateISO.value)
+		let year = current.year
+		let month = current.month + adder
+		if (month < 1) { month = 12; year-- }
+		if (month > 12) { month = 1; year++ }
+		viewDateISO.value = getISODateFromPersianDate({ year, month, day: 1 })
+		return
 	}
-	if (currentMonth.value > 12) {
-		currentMonth.value = 1
-		currentYear.value = currentYear.value + 1
-	}
+	const [year, month] = viewDateISO.value.split('-').map(Number)
+	const date = new Date(Date.UTC(year, month - 1 + adder, 1))
+	viewDateISO.value = toISODate(date)
 }
 
-function isInRange(date: Date) {
+function isInRange(date: { isoDate: string }) {
 	if (!fromDateTxt.value || !toDateTxt.value) {
 		return false
 	}
-	return date >= getDate(fromDateTxt.value) && date <= getDate(toDateTxt.value)
+	return date.isoDate >= fromDateTxt.value && date.isoDate <= toDateTxt.value
 }
 
 function clearDates() {
@@ -263,7 +237,7 @@ function clearDates() {
 	selectDates()
 }
 
-// converts a Date object to YYYY-MM-DD string format using local timezone.
+// Converts today's local calendar date to the same ISO shape used by the API.
 function toValue(date: Date | string) {
 	if (!date) {
 		return ''
@@ -278,47 +252,30 @@ function toValue(date: Date | string) {
 	return `${year}-${month}-${day}`
 }
 
-// js Date constructor treats YYYY-MM-DD strings as UTC midnight,
-// which causes timezone issues. For example, "2025-11-01" becomes
-// 2025-10-31 in PST (UTC-8).This function parses such strings as local dates
-// ref: https://stackoverflow.com/a/16084846/3541205
-
-function getDate(...args: any[]): Date {
-	if (args.length === 1 && typeof args[0] === 'string') {
-		const dateString = args[0]
-		const isoDatePattern = /^\d{4}-\d{2}-\d{2}$/
-
-		if (isoDatePattern.test(dateString)) {
-			const [year, month, day] = dateString.split('-').map(Number)
-			return new Date(year, month - 1, day)
-		}
-	}
-
-	// @ts-ignore
-	return new Date(...args)
-}
-
 const description = computed(() => {
-	const fromDate = fromDateTxt.value ? getDate(fromDateTxt.value) : null
-	const toDate = toDateTxt.value ? getDate(toDateTxt.value) : null
-
-	const fromDateYear = fromDate?.getFullYear()
-	const toDateYear = toDate?.getFullYear()
-
-	const formatted = (date: Date) => formatDate(date, { year: fromDateYear !== toDateYear })
-
-	if (fromDate && toDate && fromDate.getTime() === toDate.getTime()) {
-		return `Equals: ${formatted(fromDate)}`
+	const fromDateYear = fromDateTxt.value
+		? isValidISODate(fromDateTxt.value)
+			? isPersian.value
+				? getPersianDateFromISO(fromDateTxt.value).year
+				: Number(fromDateTxt.value.slice(0, 4))
+			: undefined
+		: undefined
+	const toDateYear = toDateTxt.value
+		? isValidISODate(toDateTxt.value)
+			? isPersian.value
+				? getPersianDateFromISO(toDateTxt.value).year
+				: Number(toDateTxt.value.slice(0, 4))
+			: undefined
+		: undefined
+	const formatted = (date: string) => formatDate(date, { year: fromDateYear !== toDateYear })
+	if (fromDateTxt.value && toDateTxt.value && fromDateTxt.value === toDateTxt.value) {
+		return `Equals: ${formatted(fromDateTxt.value)}`
 	}
-	if (fromDate && toDate) {
-		return `Between: ${formatted(fromDate)} and ${formatted(toDate)}`
+	if (fromDateTxt.value && toDateTxt.value) {
+		return `Between: ${formatted(fromDateTxt.value)} and ${formatted(toDateTxt.value)}`
 	}
-	if (fromDate) {
-		return `Greater than: ${formatted(fromDate)}`
-	}
-	if (toDate) {
-		return `Less than: ${formatted(toDate)}`
-	}
+	if (fromDateTxt.value) return `Greater than: ${formatted(fromDateTxt.value)}`
+	if (toDateTxt.value) return `Less than: ${formatted(toDateTxt.value)}`
 	return ''
 })
 </script>

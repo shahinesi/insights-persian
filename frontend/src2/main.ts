@@ -10,6 +10,7 @@ import router from './router.ts'
 import { translationPlugin } from './translation.ts'
 import { telemetryPlugin } from '@framework/ui/telemetry/index.ts'
 import session from './session.ts'
+import { directionForLocale, displayLocale } from './localization.ts'
 
 setConfig('resourceFetcher', frappeRequest)
 
@@ -31,6 +32,12 @@ useColorScheme()
 
 const app = createApp(App)
 const pinia = createPinia()
+
+watchEffect(() => {
+	const locale = displayLocale(session.user.locale, session.site.country)
+	document.documentElement.lang = locale
+	document.documentElement.dir = directionForLocale(locale)
+})
 
 app.use(pinia)
 app.use(router)
