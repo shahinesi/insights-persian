@@ -77,8 +77,7 @@ jobs:
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+          # No restore-keys: Yarn Classic can reuse a different Git SHA's package cache.
 
       - name: Install system dependencies
         run: |
@@ -104,6 +103,18 @@ jobs:
           bench config set-common-config -c server_script_enabled 1
           bench new-site --db-root-password "$DB_ROOT_PASSWORD" --admin-password "$ADMIN_PASSWORD" "$SITE_NAME"
           bench --site "$SITE_NAME" install-app insights
+          node <<'NODE'
+          const fs = require('node:fs')
+          const path = require('node:path')
+          const packagePath = path.resolve('apps/insights/frontend/node_modules/frappe-ui/package.json')
+          const realPackagePath = fs.realpathSync(packagePath)
+          const pkg = JSON.parse(fs.readFileSync(realPackagePath, 'utf8'))
+          const target = pkg.exports?.['./localization']?.import
+          if (!target || !fs.existsSync(path.resolve(path.dirname(realPackagePath), target))) {
+            throw new Error(`Resolved frappe-ui package ${pkg.version} at ${realPackagePath} lacks ./localization`)
+          }
+          console.log(`Verified frappe-ui ${pkg.version} at ${realPackagePath} exports ./localization`)
+          NODE
           bench build
         env:
           CI: "Yes"

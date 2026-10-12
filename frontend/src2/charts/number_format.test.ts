@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import session from '../session'
 import {
 	axisChart,
@@ -149,11 +149,16 @@ describe('a negative number', () => {
 	// @feature charts.number-format
 	it('keeps its sign where the locale prints its own digits', () => {
 		const locale = session.user.locale
+		vi.stubGlobal('document', { documentElement: { lang: 'fa', dir: 'rtl' } })
 		session.user.locale = 'fa'
-		expect(printNumber(-1234, { scale: 1, decimals: 0 })).toBe('-۱٬۲۳۴')
-		expect(printNumber(-1234567, { scale: 1, shorten: true }).startsWith('-')).toBe(true)
-		expect(printNumber(-0.004, { scale: 1, decimals: 2 }).startsWith('-')).toBe(false)
-		session.user.locale = locale
+		try {
+			expect(printNumber(-1234, { scale: 1, decimals: 0 })).toBe('-۱٬۲۳۴')
+			expect(printNumber(-1234567, { scale: 1, shorten: true }).startsWith('-')).toBe(true)
+			expect(printNumber(-0.004, { scale: 1, decimals: 2 }).startsWith('-')).toBe(false)
+		} finally {
+			session.user.locale = locale
+			vi.unstubAllGlobals()
+		}
 	})
 })
 
