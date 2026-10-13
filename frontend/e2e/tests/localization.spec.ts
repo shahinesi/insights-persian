@@ -22,6 +22,9 @@ test.describe('localization', () => {
 
 		const picker = page.getByRole('button', { name: /Select Date/ })
 		await picker.click()
+		const fromDate = page.getByPlaceholder('From')
+		await expect(fromDate).toBeVisible()
+		await fromDate.click()
 		const calendar = page.getByRole('grid', { name: 'Calendar dates' })
 		await expect(calendar).toBeVisible()
 		await expect(
