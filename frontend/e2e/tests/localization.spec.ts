@@ -80,7 +80,7 @@ test.describe('localization', () => {
 			await page.getByRole('button', { name: 'Filter' }).click()
 			await page.getByText('Specific Dates', { exact: true }).click()
 
-			const fromDate = page.getByPlaceholder('From')
+			const fromDate = page.getByRole('combobox', { name: /^(From|از)$/ })
 			await fromDate.click()
 			const calendar = page.getByRole('grid', { name: 'Calendar dates' })
 			await expect(calendar).toBeVisible()
@@ -146,7 +146,7 @@ test.describe('localization', () => {
 			await dateColumn.locator('button').last().click()
 			await page.getByRole('button', { name: 'Filter' }).click()
 			await page.getByText('Specific Dates', { exact: true }).click()
-			await page.getByPlaceholder('From').click()
+			await page.getByRole('combobox', { name: /^(From|از)$/ }).click()
 			await expect(page.getByRole('grid', { name: 'Calendar dates' })).toBeVisible()
 			await expect(page.getByText(PERSIAN_MONTHS).first()).toHaveCount(0)
 		} finally {
