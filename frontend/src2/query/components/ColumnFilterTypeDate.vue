@@ -8,6 +8,7 @@ import { computed, ref } from 'vue'
 import { formatLocaleDate, useDocumentLocale } from 'frappe-ui/localization'
 import { FilterOperator, FilterValue, QueryResultColumn } from '../../types/query.types'
 import DatePicker from './DatePicker.vue'
+import { getSpecificDateFilter } from './date_filter'
 
 const props = defineProps<{ column: QueryResultColumn }>()
 const filter = defineModel<{ operator: FilterOperator; value: FilterValue }>({
@@ -105,22 +106,9 @@ function isRangeSelected(rangeValue: string) {
 }
 
 function onDatePickerInput(value: string[]) {
-	// if both dates are same, set operator to '='
-	// if only first date is present, set operator to '>'
-	// if only second date is present, set operator to '<'
-	// if both dates are present, set operator to 'between'
-	filter.value.value = value
-	if (value[0] === value[1]) {
-		filter.value.operator = '='
-	} else if (value[0] && !value[1]) {
-		filter.value.operator = '>='
-	} else if (!value[0] && value[1]) {
-		filter.value.operator = '<='
-	} else if (value[0] && value[1]) {
-		filter.value.operator = 'between'
-	} else {
-		filter.value.operator = '='
-	}
+	const specificDateFilter = getSpecificDateFilter(value)
+	filter.value.value = specificDateFilter.value
+	filter.value.operator = specificDateFilter.operator
 }
 </script>
 
