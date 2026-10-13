@@ -145,9 +145,7 @@ test.describe('localization', () => {
 			// The applied date has no demo rows, so use a fresh query in the same workbook
 			// to reopen the filter through the real UI after the persisted locale changes.
 			const englishQuery = await createQuery(adminApi, { workbook: workbook.name })
-			await page.goto(
-				`${INSIGHTS_PATH}/workbook/${workbook.name}/query/${englishQuery.name}`,
-			)
+			await page.goto(`${INSIGHTS_PATH}/workbook/${workbook.name}/query/${englishQuery.name}`)
 			await expect(page.getByRole('cell', { name: 'order_purchase_timestamp' })).toBeVisible()
 			const englishDateColumn = page.locator(
 				'td[data-column-name="order_purchase_timestamp"]',
