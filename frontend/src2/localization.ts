@@ -13,6 +13,13 @@ export function displayLocale(locale: string | undefined, country?: string): str
 }
 
 export function directionForLocale(locale: string): 'ltr' | 'rtl' {
-	const language = locale.trim().toLowerCase().split(/[-_]/, 1)[0]
-	return rightToLeftLanguages.has(language) ? 'rtl' : 'ltr'
+  const language = locale.trim().toLowerCase().split(/[-_]/, 1)[0]
+  return rightToLeftLanguages.has(language) ? 'rtl' : 'ltr'
+}
+
+export function applyDocumentLocale(locale: string): void {
+	const root = document.documentElement
+	root.lang = locale
+	root.dir = directionForLocale(locale)
+	root.classList.toggle('fui-vazirmatn', calendarForLocale(locale) === 'persian')
 }

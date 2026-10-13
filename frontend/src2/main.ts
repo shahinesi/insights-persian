@@ -6,11 +6,12 @@ import { registerControllers } from './controllers.ts'
 import { registerGlobalComponents } from './globals.ts'
 import { setRouter } from './helpers/navigation.ts'
 import './index.css'
+import 'frappe-ui/localization/style.css'
 import router from './router.ts'
 import { translationPlugin } from './translation.ts'
 import { telemetryPlugin } from '@framework/ui/telemetry/index.ts'
 import session from './session.ts'
-import { directionForLocale, displayLocale } from './localization.ts'
+import { applyDocumentLocale, displayLocale } from './localization.ts'
 
 setConfig('resourceFetcher', frappeRequest)
 
@@ -35,8 +36,7 @@ const pinia = createPinia()
 
 watchEffect(() => {
 	const locale = displayLocale(session.user.locale, session.site.country)
-	document.documentElement.lang = locale
-	document.documentElement.dir = directionForLocale(locale)
+	applyDocumentLocale(locale)
 })
 
 app.use(pinia)

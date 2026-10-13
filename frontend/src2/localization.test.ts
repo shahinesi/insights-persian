@@ -5,7 +5,12 @@ import {
 	getISODateFromPersianDate,
 	getPersianDateFromISO,
 } from 'frappe-ui/localization'
-import { calendarForLocale, directionForLocale, displayLocale } from './localization'
+import {
+	applyDocumentLocale,
+	calendarForLocale,
+	directionForLocale,
+	displayLocale,
+} from './localization'
 
 afterEach(() => vi.unstubAllGlobals())
 
@@ -38,6 +43,23 @@ describe('document direction for locale', () => {
 		for (const isoDate of ['2024-03-20', '2025-03-20', '2026-03-21']) {
 			expect(getISODateFromPersianDate(getPersianDateFromISO(isoDate))).toBe(isoDate)
 		}
+	})
+})
+
+describe('document presentation for locale', () => {
+	it('enables the shared Vazirmatn utility only for Persian', () => {
+		const toggle = vi.fn()
+		const root = { lang: '', dir: '', classList: { toggle } }
+		vi.stubGlobal('document', { documentElement: root })
+
+		applyDocumentLocale('fa-IR')
+		expect(root.lang).toBe('fa-IR')
+		expect(root.dir).toBe('rtl')
+		expect(toggle).toHaveBeenLastCalledWith('fui-vazirmatn', true)
+
+		applyDocumentLocale('en-US')
+		expect(root.dir).toBe('ltr')
+		expect(toggle).toHaveBeenLastCalledWith('fui-vazirmatn', false)
 	})
 })
 
