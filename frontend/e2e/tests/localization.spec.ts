@@ -1,7 +1,7 @@
 import { randomUUID } from 'node:crypto'
 import { expect, test } from '../fixtures'
 import { INSIGHTS_PATH, login, type Credentials } from '../helpers/auth'
-import { shareWorkbook } from '../helpers/insights'
+import { deleteTeam, shareWorkbook, uniqueTitle } from '../helpers/insights'
 
 const PERSIAN_MONTHS = /فروردین|اردیبهشت|خرداد|تیر|مرداد|شهریور|مهر|آبان|آذر|دی|بهمن|اسفند/
 
@@ -14,6 +14,7 @@ test.describe('localization', () => {
 		const { workbook, query } = workbookWithQuery
 		const email = `e2e-localization-${randomUUID()}@example.com`
 		const password = `E2e-${randomUUID()}!`
+		const teamName = uniqueTitle('Localization')
 		const user = await adminApi.createDoc<{ name: string }>('User', {
 			email,
 			first_name: 'E2E',
@@ -27,6 +28,36 @@ test.describe('localization', () => {
 		})
 
 		try {
+			const team = await adminApi.callMethod<{ name: string }>(
+				'insights.api.user.create_team',
+				{ team_name: teamName },
+			)
+			await adminApi.callMethod('insights.api.user.update_team', {
+				team: {
+					name: team.name,
+					team_name: teamName,
+					team_members: [{ user: email }],
+					team_permissions: [
+						{
+							resource_type: 'Insights Data Source v3',
+							resource_name: 'demo_data',
+							table_restrictions: '',
+						},
+					],
+				},
+			})
+			const savedTeam = await adminApi.getDoc<{
+				team_members: Array<{ user: string }>
+				team_permissions: Array<{ resource_type: string; resource_name: string }>
+			}>('Insights Team', team.name)
+			expect(savedTeam.team_members.map(({ user: member }) => member)).toContain(email)
+			expect(savedTeam.team_permissions).toContainEqual(
+				expect.objectContaining({
+					resource_type: 'Insights Data Source v3',
+					resource_name: 'demo_data',
+				}),
+			)
+
 			await shareWorkbook(adminApi, workbook.name, [{ user: email, access: 'edit' }])
 			const savedUser = await adminApi.getDoc<{ language: string }>('User', user.name)
 			expect(savedUser.language).toBe('fa')
@@ -119,6 +150,7 @@ test.describe('localization', () => {
 			await expect(page.getByRole('grid', { name: 'Calendar dates' })).toBeVisible()
 			await expect(page.getByText(PERSIAN_MONTHS).first()).toHaveCount(0)
 		} finally {
+			await deleteTeam(adminApi, teamName)
 			await adminApi.deleteDoc('User', user.name).catch(() => {})
 		}
 	})
