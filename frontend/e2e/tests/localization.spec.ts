@@ -1,7 +1,7 @@
 import { randomUUID } from 'node:crypto'
 import { expect, test } from '../fixtures'
 import { INSIGHTS_PATH, login, type Credentials } from '../helpers/auth'
-import { deleteTeam, shareWorkbook, uniqueTitle } from '../helpers/insights'
+import { createQuery, deleteTeam, shareWorkbook, uniqueTitle } from '../helpers/insights'
 
 const PERSIAN_MONTHS = /فروردین|اردیبهشت|خرداد|تیر|مرداد|شهریور|مهر|آبان|آذر|دی|بهمن|اسفند/
 
@@ -142,8 +142,17 @@ test.describe('localization', () => {
 			await expect(page.locator('html')).toHaveAttribute('dir', 'ltr')
 			await expect(page.locator('html')).not.toHaveClass(/fui-vazirmatn/)
 
-			// Reopen the real date filter after the saved locale changes and verify Gregorian labels.
-			await dateColumn.locator('button').last().click()
+			// The applied date has no demo rows, so use a fresh query in the same workbook
+			// to reopen the filter through the real UI after the persisted locale changes.
+			const englishQuery = await createQuery(adminApi, { workbook: workbook.name })
+			await page.goto(
+				`${INSIGHTS_PATH}/workbook/${workbook.name}/query/${englishQuery.name}`,
+			)
+			await expect(page.getByRole('cell', { name: 'order_purchase_timestamp' })).toBeVisible()
+			const englishDateColumn = page.locator(
+				'td[data-column-name="order_purchase_timestamp"]',
+			)
+			await englishDateColumn.locator('button').last().click()
 			await page.getByRole('button', { name: 'Filter' }).click()
 			await page.getByText('Specific Dates', { exact: true }).click()
 			await page.getByRole('combobox', { name: /^(From|از)$/ }).click()
