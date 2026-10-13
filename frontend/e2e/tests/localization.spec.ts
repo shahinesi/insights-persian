@@ -1,53 +1,121 @@
+import { randomUUID } from 'node:crypto'
 import { expect, test } from '../fixtures'
-import { INSIGHTS_PATH } from '../helpers/auth'
+import { INSIGHTS_PATH, login, type Credentials } from '../helpers/auth'
+import { shareWorkbook } from '../helpers/insights'
+
+const PERSIAN_MONTHS =
+	/فروردین|اردیبهشت|خرداد|تیر|مرداد|شهریور|مهر|آبان|آذر|دی|بهمن|اسفند/
 
 test.describe('localization', () => {
-	test('a date control follows the document locale without changing the saved date format', async ({
+	test('a saved Persian locale displays Jalali dates and stores the selected ISO date', async ({
 		page,
-	}) => {
-		await page.goto(`${INSIGHTS_PATH}/dashboards`)
-		await expect(page.getByText('Settings', { exact: true })).toBeVisible()
-		await page.getByText('Settings', { exact: true }).click()
-		await page.getByText('General', { exact: true }).click()
-
-		// This changes only the browser document for this isolated test page; it
-		// does not write the user's saved language or any site setting.
-		await page.evaluate(() => {
-			document.documentElement.lang = 'fa-IR'
-			document.documentElement.dir = 'rtl'
-			document.documentElement.classList.add('fui-vazirmatn')
+		adminApi,
+		workbookWithQuery,
+	}, testInfo) => {
+		const { workbook, query } = workbookWithQuery
+		const email = `e2e-localization-${randomUUID()}@example.com`
+		const password = `E2e-${randomUUID()}!`
+		const user = await adminApi.createDoc<{ name: string }>('User', {
+			email,
+			first_name: 'E2E',
+			last_name: 'Localization',
+			user_type: 'Website User',
+			enabled: 1,
+			send_welcome_email: 0,
+			new_password: password,
+			language: 'fa',
+			roles: [{ role: 'Insights User' }],
 		})
-		await expect(page.locator('html')).toHaveAttribute('dir', 'rtl')
-		await expect(page.getByText('Fiscal Year Start', { exact: true })).toBeVisible()
 
-		const picker = page.getByRole('button', { name: /Select Date/ })
-		await picker.click()
-		const fromDate = page.getByPlaceholder('From')
-		await expect(fromDate).toBeVisible()
-		await fromDate.click()
-		const calendar = page.getByRole('grid', { name: 'Calendar dates' })
-		await expect(calendar).toBeVisible()
-		await expect(
-			page.getByText(/فروردین|اردیبهشت|خرداد|تیر|مرداد|شهریور|مهر|آبان|آذر|دی|بهمن|اسفند/),
-		).toBeVisible()
+		try {
+			await shareWorkbook(adminApi, workbook.name, [{ user: email, access: 'edit' }])
+			const savedUser = await adminApi.getDoc<{ language: string }>('User', user.name)
+			expect(savedUser.language).toBe('fa')
 
-		const fontLoaded = await page.evaluate(async () => {
-			await document.fonts.load('16px Vazirmatn', 'فارسی')
-			return (
-				getComputedStyle(document.documentElement).fontFamily.includes('Vazirmatn') &&
-				document.fonts.check('16px Vazirmatn', 'فارسی')
+			const credentials: Credentials = { usr: email, pwd: password }
+			await login(page, credentials)
+			await page.goto(`${INSIGHTS_PATH}/workbook/${workbook.name}/query/${query.name}`)
+
+			const localeResponse = await page.request.get('/api/method/insights.api.get_user_info')
+			expect(localeResponse.ok()).toBe(true)
+			expect((await localeResponse.json()).message.locale).toBe('fa')
+			await expect(page.locator('html')).toHaveAttribute('lang', 'fa')
+			await expect(page.locator('html')).toHaveAttribute('dir', 'rtl')
+			await expect(page.locator('html')).toHaveClass(/fui-vazirmatn/)
+			await expect(page.getByRole('cell', { name: 'order_purchase_timestamp' })).toBeVisible()
+
+			// The header contains unlabeled type and menu buttons; the last button opens its column menu.
+			const dateColumn = page.locator('td[data-column-name="order_purchase_timestamp"]')
+			await dateColumn.locator('button').last().click()
+			await page.getByRole('button', { name: 'Filter' }).click()
+			await page.getByText('Specific Dates', { exact: true }).click()
+
+			const fromDate = page.getByPlaceholder('From')
+			await fromDate.click()
+			const calendar = page.getByRole('grid', { name: 'Calendar dates' })
+			await expect(calendar).toBeVisible()
+			await expect(page.getByText(PERSIAN_MONTHS).first()).toBeVisible()
+
+			await page.getByRole('button', { name: 'cycle-calendar-view' }).click()
+			const yearList = page.getByRole('listbox', { name: 'Select year' })
+			await yearList.getByRole('button', { name: /1405|۱۴۰۵/ }).click()
+			const monthList = page.getByRole('listbox', { name: 'Select month' })
+			await monthList.getByRole('button', { name: 'دی', exact: true }).click()
+
+			// data-value is the DatePicker's public canonical Gregorian date contract;
+			// the visible label and calendar navigation above exercise its Persian presentation.
+			const selectedDate = calendar.locator('[data-value="2027-01-01"]')
+			await expect(selectedDate).toBeVisible()
+			await testInfo.attach('insights-persian-jalali-date-picker', {
+				body: await page.screenshot({ type: 'png', fullPage: true }),
+				contentType: 'image/png',
+			})
+			await selectedDate.click()
+
+			const filterPopover = page.locator('[data-reka-popper-content-wrapper]').filter({
+				has: page.getByText('Specific Dates', { exact: true }),
+			})
+			// The apply control is icon-only; the Lucide class is its only stable selector.
+			await filterPopover.locator('button:has(.lucide-check)').click()
+
+			await expect
+				.poll(async () => {
+					const savedQuery = await adminApi.getDoc<{ operations: unknown }>(
+						'Insights Query v3',
+						query.name,
+					)
+					return JSON.stringify(savedQuery.operations)
+				})
+				.toContain('2027-01-01')
+			const savedQuery = await adminApi.getDoc<{ operations: unknown }>(
+				'Insights Query v3',
+				query.name,
 			)
-		})
-		expect(fontLoaded).toBe(true)
+			const operations = JSON.stringify(savedQuery.operations)
+			expect(operations).toContain('order_purchase_timestamp')
+			expect(operations).toContain('2027-01-01')
+			expect(operations).not.toContain('۱۴۰۵')
 
-		await page.evaluate(() => {
-			document.documentElement.lang = 'en-US'
-			document.documentElement.dir = 'ltr'
-			document.documentElement.classList.remove('fui-vazirmatn')
-		})
-		await expect(page.locator('html')).toHaveAttribute('dir', 'ltr')
-		await expect(
-			page.getByText(/فروردین|اردیبهشت|خرداد|تیر|مرداد|شهریور|مهر|آبان|آذر|دی|بهمن|اسفند/),
-		).toHaveCount(0)
+			await adminApi.updateDoc('User', user.name, { language: 'en' })
+			await expect
+				.poll(async () => (await adminApi.getDoc<{ language: string }>('User', user.name)).language)
+				.toBe('en')
+			await page.reload()
+			const englishLocaleResponse = await page.request.get('/api/method/insights.api.get_user_info')
+			expect((await englishLocaleResponse.json()).message.locale).toBe('en')
+			await expect(page.locator('html')).toHaveAttribute('lang', 'en')
+			await expect(page.locator('html')).toHaveAttribute('dir', 'ltr')
+			await expect(page.locator('html')).not.toHaveClass(/fui-vazirmatn/)
+
+			// Reopen the real date filter after the saved locale changes and verify Gregorian labels.
+			await dateColumn.locator('button').last().click()
+			await page.getByRole('button', { name: 'Filter' }).click()
+			await page.getByText('Specific Dates', { exact: true }).click()
+			await page.getByPlaceholder('From').click()
+			await expect(page.getByRole('grid', { name: 'Calendar dates' })).toBeVisible()
+			await expect(page.getByText(PERSIAN_MONTHS).first()).toHaveCount(0)
+		} finally {
+			await adminApi.deleteDoc('User', user.name).catch(() => {})
+		}
 	})
 })
