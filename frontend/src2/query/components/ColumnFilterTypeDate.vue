@@ -7,6 +7,7 @@ import { ChevronDown, ChevronRight } from 'lucide-vue-next'
 import { computed, ref } from 'vue'
 import { formatLocaleDate, useDocumentLocale } from 'frappe-ui/localization'
 import { FilterOperator, FilterValue, QueryResultColumn } from '../../types/query.types'
+import { calendarForLocale } from '../../localization'
 import DatePicker from './DatePicker.vue'
 import { getSpecificDateFilter } from './date_filter'
 
@@ -16,7 +17,7 @@ const filter = defineModel<{ operator: FilterOperator; value: FilterValue }>({
 	default: () => ({ operator: '=', value: [] }),
 })
 const locale = useDocumentLocale().locale
-const isPersian = computed(() => locale.value.toLowerCase().split(/[-_]/, 1)[0] === 'fa')
+const isPersian = computed(() => calendarForLocale(locale.value) === 'persian')
 
 const currentSection = ref<'presets' | 'relative' | 'specific' | ''>('presets')
 wheneverChanges(currentSection, () => {

@@ -29,6 +29,7 @@ import { computed, ref, watch } from 'vue'
 import { formatLocaleDate, useDocumentLocale } from 'frappe-ui/localization'
 import { __ } from '../../translation'
 import { setDateRangeEndpoint } from './date_filter'
+import { calendarForLocale } from '../../localization'
 
 const props = defineProps({
 	range: {
@@ -42,8 +43,8 @@ const selectedDates = defineModel<string[]>({
 })
 
 const locale = useDocumentLocale().locale
-const isPersian = computed(() => locale.value.toLowerCase().split(/[-_]/, 1)[0] === 'fa')
-const calendar = computed(() => (isPersian.value ? 'persian' : 'gregorian'))
+const calendar = computed(() => calendarForLocale(locale.value))
+const isPersian = computed(() => calendar.value === 'persian')
 const fromDate = ref(selectedDates.value[0] || '')
 const toDate = ref(selectedDates.value[1] || '')
 

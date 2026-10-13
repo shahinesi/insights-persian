@@ -7,6 +7,7 @@ import {
 	useDocumentLocale,
 } from 'frappe-ui/localization'
 import DatePicker from './DatePicker.vue'
+import { calendarForLocale } from '../../localization'
 
 const props = defineProps({
 	placeholder: {
@@ -24,7 +25,8 @@ const dates = defineModel<string[]>({
 })
 
 const locale = useDocumentLocale().locale
-const isPersian = computed(() => locale.value.toLowerCase().split(/[-_]/, 1)[0] === 'fa')
+const calendar = computed(() => calendarForLocale(locale.value))
+const isPersian = computed(() => calendar.value === 'persian')
 
 function asISODate(value: string | Date): string | null {
 	if (typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value)) return value

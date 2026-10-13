@@ -5,7 +5,7 @@ import {
 	getISODateFromPersianDate,
 	getPersianDateFromISO,
 } from 'frappe-ui/localization'
-import { directionForLocale, displayLocale } from './localization'
+import { calendarForLocale, directionForLocale, displayLocale } from './localization'
 
 afterEach(() => vi.unstubAllGlobals())
 
@@ -38,5 +38,19 @@ describe('document direction for locale', () => {
 		for (const isoDate of ['2024-03-20', '2025-03-20', '2026-03-21']) {
 			expect(getISODateFromPersianDate(getPersianDateFromISO(isoDate))).toBe(isoDate)
 		}
+	})
+})
+
+describe('calendar selected for a document locale', () => {
+	it('selects the shared Persian calendar for Persian language tags', () => {
+		expect(calendarForLocale('fa')).toBe('persian')
+		expect(calendarForLocale('fa-IR')).toBe('persian')
+		expect(calendarForLocale('fa_IR')).toBe('persian')
+	})
+
+	it('keeps the shared date picker Gregorian for other locales and missing locale', () => {
+		expect(calendarForLocale('en-US')).toBe('gregorian')
+		expect(calendarForLocale('ar')).toBe('gregorian')
+		expect(calendarForLocale(undefined)).toBe('gregorian')
 	})
 })
