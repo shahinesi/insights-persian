@@ -3,8 +3,7 @@ import { expect, test } from '../fixtures'
 import { INSIGHTS_PATH, login, type Credentials } from '../helpers/auth'
 import { shareWorkbook } from '../helpers/insights'
 
-const PERSIAN_MONTHS =
-	/فروردین|اردیبهشت|خرداد|تیر|مرداد|شهریور|مهر|آبان|آذر|دی|بهمن|اسفند/
+const PERSIAN_MONTHS = /فروردین|اردیبهشت|خرداد|تیر|مرداد|شهریور|مهر|آبان|آذر|دی|بهمن|اسفند/
 
 test.describe('localization', () => {
 	test('a saved Persian locale displays Jalali dates and stores the selected ISO date', async ({
@@ -98,10 +97,15 @@ test.describe('localization', () => {
 
 			await adminApi.updateDoc('User', user.name, { language: 'en' })
 			await expect
-				.poll(async () => (await adminApi.getDoc<{ language: string }>('User', user.name)).language)
+				.poll(
+					async () =>
+						(await adminApi.getDoc<{ language: string }>('User', user.name)).language,
+				)
 				.toBe('en')
 			await page.reload()
-			const englishLocaleResponse = await page.request.get('/api/method/insights.api.get_user_info')
+			const englishLocaleResponse = await page.request.get(
+				'/api/method/insights.api.get_user_info',
+			)
 			expect((await englishLocaleResponse.json()).message.locale).toBe('en')
 			await expect(page.locator('html')).toHaveAttribute('lang', 'en')
 			await expect(page.locator('html')).toHaveAttribute('dir', 'ltr')
