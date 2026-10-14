@@ -71,6 +71,56 @@ class InsightsTablev3(Document):
             except Exception as e:
                 frappe.throw(f"Error executing before import script: {e}")
 
+    def before_save(self):
+        self.drop_full_copy_on_switch_to_incremental()
+        self.check_cursor_is_stored()
+
+    def drop_full_copy_on_switch_to_incremental(self):
+        """An incremental import resumes from the newest stored cursor, so a Full copy
+        capped by the row limit must go, and the first import starts from Sync From.
+
+        Rows an incremental import stored stay: the source may have purged them."""
+        if not self.get_doc_before_save() or not self.has_value_changed("sync_mode"):
+            return
+        if self.sync_mode != "Incremental":
+            return
+
+        from insights.insights.doctype.insights_data_source_v3.data_warehouse import (
+            WarehouseTableImporter,
+        )
+
+        table = insights.warehouse.get_table(self.data_source, self.table)
+        # a running import commits rows read under the old settings after this drop
+        if WarehouseTableImporter(table).import_in_progress():
+            frappe.throw(
+                frappe._("{0} is being imported. Change its sync settings once the import finishes.").format(
+                    frappe.bold(self.table)
+                )
+            )
+
+        table.drop()
+        self.last_sync_bookmark = None
+
+    def check_cursor_is_stored(self):
+        """An incremental import resumes from the newest stored cursor, so a new cursor
+        must be a column of the stored rows."""
+        if not self.get_doc_before_save() or not self.has_value_changed("sync_cursor_column"):
+            return
+        if self.sync_mode != "Incremental":
+            return
+
+        table = insights.warehouse.get_table(self.data_source, self.table)
+        db = insights.warehouse.db
+        if table.warehouse_table_name not in db.list_tables(database=table.schema):
+            return
+
+        if self.sync_cursor_column not in db.table(table.warehouse_table_name, database=table.schema).columns:
+            frappe.throw(
+                frappe._(
+                    "The stored rows of {0} have no column {1}. Clear its stored data to use it as the cursor."
+                ).format(frappe.bold(self.table), frappe.bold(self.sync_cursor_column))
+            )
+
     def _validate_incremental_sync_config(self):
         try:
             remote = InsightsDataSourcev3.get_doc(self.data_source).get_ibis_table(self.table)
