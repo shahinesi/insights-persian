@@ -17,6 +17,7 @@ import {
 	type SpanUnit,
 } from '../../helpers/span_grammar'
 import { column, filter_group } from '../../query/helpers'
+import { currentMonthDateRange } from '../../query/components/date_filter'
 import session from '../../session'
 import { calendarForLocale, displayLocale } from '../../localization'
 import { __, translatedTable } from '../../translation'
@@ -347,11 +348,23 @@ export function spanOf(form: RelativeForm): string {
  * this range is a preview of the rows the server will return, and the server
  * counts by those.
  */
-export function resolveSpan(span: string, anchor?: string): [string, string] {
+function activeLocale(): string {
+	return typeof document === 'undefined' ? session.user.locale : document.documentElement.lang || session.user.locale
+}
+
+export function resolveSpan(span: string, anchor?: string, locale = 'en-US'): [string, string] {
 	const today = anchor ? dayjs(anchor) : dayjs()
 
 	const form = parseSpan(span)
 	if (!form) return [span, span]
+	if (
+		calendarForLocale(locale) === 'persian' &&
+		form.unit === 'month' &&
+		(form.shape === 'current' || form.shape === 'to date')
+	) {
+		const [from, to] = currentMonthDateRange(locale, today.format(DATE_FORMAT))
+		return [from, form.shape === 'to date' ? today.format(DATE_FORMAT) : to]
+	}
 
 	const currentStart = startOfPeriod(today, form.unit)
 
@@ -398,7 +411,7 @@ export function spanLabel(span: string): string {
 export function spanDates(value: FilterValue, anchor?: string): string {
 	const timespan = timespanOf(value)
 	if (!timespan) return ''
-	const [from, to] = resolveSpan(timespan.span, anchor || timespan.anchor)
+	const [from, to] = resolveSpan(timespan.span, anchor || timespan.anchor, activeLocale())
 	return formatDate(from, to)
 }
 

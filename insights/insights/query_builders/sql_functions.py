@@ -239,7 +239,35 @@ def resolve_timespan(timespan) -> tuple[datetime.date, datetime.date]:
     A filter tests one span and a span number card groups by several, so both
     read a span the same way.
     """
-    return get_window(*read_timespan(timespan))
+    span, anchor, anchor_is_explicit = read_timespan(timespan)
+    return get_window(span, anchor, anchor_is_explicit=anchor_is_explicit)
+
+
+@contextmanager
+def set_calendar_context(context):
+    """Apply request-only calendar semantics while a query is built."""
+    previous = getattr(frappe.local, "insights_calendar_context", None)
+    if context is not None:
+        if not isinstance(context, dict):
+            raise ValueError("Invalid calendar context")
+        calendar = context.get("calendar", "gregorian")
+        if calendar not in ("gregorian", "persian"):
+            raise ValueError(f"Unsupported calendar: {calendar}")
+        normalized = {"calendar": calendar}
+        if calendar == "persian":
+            anchor = getdate(context.get("anchor"))
+            date_range = context.get("current_month_range")
+            if not isinstance(date_range, list | tuple) or len(date_range) != 2:
+                raise ValueError("Persian calendar context requires current_month_range")
+            start, end = (getdate(value) for value in date_range)
+            if start > end or not start <= anchor <= end:
+                raise ValueError("Invalid Persian current-month range")
+            normalized.update(anchor=anchor, current_month_range=(start, end))
+        frappe.local.insights_calendar_context = normalized
+    try:
+        yield
+    finally:
+        frappe.local.insights_calendar_context = previous
 
 
 def reading_day():
@@ -264,28 +292,31 @@ def read_on(day: str | None):
         frappe.local.insights_reading_day = previous
 
 
-def read_timespan(timespan) -> tuple[str, datetime.date | None]:
+def read_timespan(timespan) -> tuple[str, datetime.date | None, bool]:
     """The span a `within` filter names, and the date to resolve it against.
 
     A filter written before periods names the span alone, as a string or as the
-    words of one, and resolves against `reading_day`. A period also pins the anchor, and
-    a comparison span moves it, so both arrive beside the span.
+    words of one, and resolves against `reading_day` unless a request calendar
+    context supplies its anchor. A period may pin the anchor, and a comparison
+    span moves it, so those arrive beside the span.
     """
     if isinstance(timespan, list):
         # the column header seeds the count as a number, so the words are not all
         # strings
-        return " ".join(str(word) for word in timespan), None
+        return " ".join(str(word) for word in timespan), None, False
     if isinstance(timespan, str):
-        return timespan, None
+        return timespan, None, False
     if not isinstance(timespan, dict) or not timespan.get("span"):
         raise Exception(f"Invalid timespan {timespan}")
 
-    anchor = getdate(timespan.get("anchor") or reading_day())
+    explicit_anchor = timespan.get("anchor")
+    anchor = getdate(explicit_anchor or reading_day())
     shift = timespan.get("shift") or {}
     if shift.get("unit"):
         anchor = shift_anchor(anchor, shift["unit"], shift.get("count") or 0)
 
-    return timespan["span"], anchor
+    anchor_is_explicit = bool(explicit_anchor or shift.get("unit"))
+    return timespan["span"], anchor if anchor_is_explicit else None, anchor_is_explicit
 
 
 def get_descendants(node, tree, include_self=False):
@@ -543,18 +574,43 @@ def span_unit(span: str) -> str:
     return parsed.unit if parsed else ""
 
 
-def get_window(span: str, anchor: datetime.date | None = None) -> tuple[datetime.date, datetime.date]:
+def get_window(
+    span: str,
+    anchor: datetime.date | None = None,
+    anchor_is_explicit: bool = False,
+) -> tuple[datetime.date, datetime.date]:
     """The dates a span names, as (start, end).
 
     Accepts every span `get_date_range` accepts, plus "<unit> to date", which
     ends at the anchor instead of at the end of the period. `anchor` defaults to
     `reading_day`.
     """
-    anchor = getdate(anchor or reading_day())
-
     parsed = parse_span(span)
     if not parsed:
         raise Exception(f"Invalid timespan {span}")
+
+    calendar_context = getattr(frappe.local, "insights_calendar_context", None) or {}
+    use_persian_month = parsed.unit == "month" and parsed.shape in ("current", "to date")
+    if (
+        not anchor_is_explicit
+        and anchor is None
+        and use_persian_month
+        and calendar_context.get("calendar") == "persian"
+    ):
+        anchor = calendar_context.get("anchor")
+    anchor = getdate(anchor or reading_day())
+
+    if use_persian_month:
+        range_anchor = calendar_context.get("anchor")
+        month_range = calendar_context.get("current_month_range")
+        if (
+            not anchor_is_explicit
+            and calendar_context.get("calendar") == "persian"
+            and range_anchor == anchor
+            and month_range
+        ):
+            start, end = month_range
+            return (start, end if parsed.shape == "current" else anchor)
 
     if parsed.shape == "to date":
         start = get_current_date_range(parsed.unit, anchor)[0]

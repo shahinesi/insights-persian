@@ -90,6 +90,21 @@ describe('the range a relative span covers', () => {
 		expect(resolveSpan('year to date', ANCHOR)).toEqual(['2026-01-01', ANCHOR])
 	})
 
+	it('uses shared Persian month bounds for current-month previews in Persian', () => {
+		expect(resolveSpan('current month', '2026-10-15', 'fa-IR')).toEqual([
+			'2026-09-23',
+			'2026-10-22',
+		])
+		expect(resolveSpan('month to date', '2026-10-15', 'fa-IR')).toEqual([
+			'2026-09-23',
+			'2026-10-15',
+		])
+		expect(resolveSpan('current month', '2026-10-15', 'en-US')).toEqual([
+			'2026-10-01',
+			'2026-10-31',
+		])
+	})
+
 	// @feature query.filter-relative-date
 	it('hands back a span it cannot read, so a typed day filters itself', () => {
 		expect(resolveSpan('2026-08-10', ANCHOR)).toEqual([ANCHOR, ANCHOR])

@@ -18,6 +18,7 @@ import useDocumentResource from '../helpers/resource'
 import { useResultExport } from '../helpers/result_export'
 import { __ } from '../translation'
 import session from '../session'
+import { queryCalendarContext } from './calendar_context'
 import { isServerBusyError, scheduleQueryExecution } from './execution_queue'
 import {
 	AdhocFilters,
@@ -166,6 +167,7 @@ export function makeQuery(name: string) {
 		adhoc_filters?: AdhocFilters
 		page?: number
 		page_size?: number
+		calendar_context?: ReturnType<typeof queryCalendarContext>
 	}>()
 	let currentExecutionToken = 0
 
@@ -175,11 +177,16 @@ export function makeQuery(name: string) {
 	const executionPriority = ref<number>()
 
 	function currentExecutionArgs() {
+		const locale =
+			typeof document === 'undefined'
+				? session.user.locale
+				: document.documentElement.lang || session.user.locale
 		return {
 			operations: currentOperations.value,
 			adhoc_filters: adhocFilters.value,
 			page: currentPage.value,
 			page_size: pageSize.value,
+			calendar_context: queryCalendarContext(locale, dayjs().format('YYYY-MM-DD')),
 		}
 	}
 
@@ -213,7 +220,8 @@ export function makeQuery(name: string) {
 		// recorded before the request, and above the empty-operations return,
 		// because both paths replace `result`. A caller watching it would
 		// otherwise re-ask before the write landed, or never see one at all.
-		lastExecutionArgs.value = currentExecutionArgs()
+		const executionArgs = currentExecutionArgs()
+		lastExecutionArgs.value = executionArgs
 
 		if (!query.doc.operations.length) {
 			result.value = emptyResult()
@@ -232,6 +240,7 @@ export function makeQuery(name: string) {
 					force: Boolean(force),
 					page: currentPage.value,
 					page_size: pageSize.value,
+					calendar_context: executionArgs.calendar_context,
 				}),
 			{ isStale, priority: executionPriority.value },
 		)
@@ -303,6 +312,7 @@ export function makeQuery(name: string) {
 				query.call('get_count', {
 					active_operation_idx: activeOperationIdx.value,
 					adhoc_filters: adhocFilters.value,
+					calendar_context: currentExecutionArgs().calendar_context,
 				}),
 			)
 				.then((count: number) => {
@@ -641,6 +651,7 @@ export function makeQuery(name: string) {
 			column_name: column,
 			search_term,
 			limit,
+			calendar_context: currentExecutionArgs().calendar_context,
 		})
 	}
 
@@ -658,6 +669,7 @@ export function makeQuery(name: string) {
 			active_operation_idx: _activeOperationIdx,
 			adhoc_filters,
 			column_name: column,
+			calendar_context: currentExecutionArgs().calendar_context,
 		})
 	}
 
