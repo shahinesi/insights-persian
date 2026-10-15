@@ -221,6 +221,7 @@ function roundish(value: number): number {
 }
 
 export function formatNumber(raw: any): string {
+	if (raw === null || raw === undefined || raw === '') return ''
 	const value = Number(raw)
 	// the reader's locale, like every other number this app prints
 	return Number.isFinite(value) ? value.toLocaleString() : String(raw ?? '')

@@ -156,6 +156,12 @@ test.describe('localization', () => {
 			await page.getByRole('combobox', { name: /^(From|از)$/ }).click()
 			await expect(page.getByRole('grid', { name: 'Calendar dates' })).toBeVisible()
 			await expect(page.getByText(PERSIAN_MONTHS).first()).toHaveCount(0)
+			const currentEnglishMonth = await page.evaluate(() =>
+				new Intl.DateTimeFormat('en-US', { month: 'short' }).format(new Date()),
+			)
+			await expect(
+				page.getByRole('button', { name: 'cycle-calendar-view' }),
+			).toContainText(currentEnglishMonth)
 		} finally {
 			await deleteTeam(adminApi, teamName)
 			await adminApi.deleteDoc('User', user.name).catch(() => {})

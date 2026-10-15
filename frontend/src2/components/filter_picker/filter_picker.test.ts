@@ -8,6 +8,7 @@ import {
 	numberQuickValues,
 	operatorOf,
 	formatDate,
+	formatNumber,
 	resolveSpan,
 	selectedRowKey,
 	spanLabel,
@@ -184,6 +185,12 @@ describe('what a host sends', () => {
 })
 
 describe('the numbers a number filter lists', () => {
+	it('keeps an explicit zero distinct from an empty value', () => {
+		expect(formatNumber(0)).toBe('0')
+		expect(formatNumber(null)).toBe('')
+		expect(formatNumber(undefined)).toBe('')
+	})
+
 	// @feature query.filter-number-range
 	it('cuts them from the column, not from a fixed list', () => {
 		expect(numberQuickValues([0, 100])).toEqual([25, 50, 75])
