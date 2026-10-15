@@ -1,11 +1,12 @@
 import io
 from contextlib import suppress
+from unittest.mock import patch
 
 import frappe
 import pandas as pd
 from frappe.utils.file_manager import save_file
 
-from insights.api import import_csv_data
+from insights.api import create_uploads_if_not_exists, import_csv_data
 from insights.insights.doctype.insights_data_source_v3.insights_data_source_v3 import db_connections
 from insights.insights.doctype.insights_table_v3.insights_table_v3 import get_table_name
 from insights.tests.base import InsightsIntegrationTestCase
@@ -63,6 +64,17 @@ class TestUploadedFileImports(InsightsIntegrationTestCase):
             rows = data_source.get_ibis_table(table_name).order_by("id").execute().to_dict("records")
 
         self.assertEqual(rows, expected_rows)
+
+    def test_uploads_data_source_creation_tolerates_concurrent_first_use(self):
+        """A concurrent first upload may insert the shared source first."""
+        with (
+            patch("insights.api.frappe.db.exists", return_value=False),
+            patch("insights.api.frappe.new_doc") as new_doc,
+        ):
+            uploads = new_doc.return_value
+            create_uploads_if_not_exists()
+
+        uploads.insert.assert_called_once_with(ignore_permissions=True, ignore_if_duplicate=True)
 
     # @feature data-source.upload-file
     def test_import_csv_data_imports_private_csv_upload(self):
