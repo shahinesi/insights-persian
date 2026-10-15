@@ -159,9 +159,9 @@ test.describe('localization', () => {
 			const currentEnglishMonth = await page.evaluate(() =>
 				new Intl.DateTimeFormat('en-US', { month: 'short' }).format(new Date()),
 			)
-			await expect(
-				page.getByRole('button', { name: 'cycle-calendar-view' }),
-			).toContainText(currentEnglishMonth)
+			await expect(page.getByRole('button', { name: 'cycle-calendar-view' })).toContainText(
+				currentEnglishMonth,
+			)
 		} finally {
 			await deleteTeam(adminApi, teamName)
 			await adminApi.deleteDoc('User', user.name).catch(() => {})
