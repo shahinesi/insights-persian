@@ -110,7 +110,17 @@ test.describe('localization', () => {
 			expect(monthPresetOperations).toContain('2026-10-22')
 			expect(monthPresetOperations).not.toContain('۱۴۰۵')
 
-			await dateColumn.locator('button').last().click()
+			// The selected month has no demo rows. Start a fresh query before opening
+			// another column menu, matching the actual empty-result UI behavior.
+			const persianDateQuery = await createQuery(adminApi, { workbook: workbook.name })
+			await page.goto(
+				`${INSIGHTS_PATH}/workbook/${workbook.name}/query/${persianDateQuery.name}`,
+			)
+			await expect(page.getByRole('cell', { name: 'order_purchase_timestamp' })).toBeVisible()
+			const persianDateColumn = page.locator(
+				'td[data-column-name="order_purchase_timestamp"]',
+			)
+			await persianDateColumn.locator('button').last().click()
 			await page.getByRole('button', { name: 'Filter' }).click()
 			await page.getByText('تاریخ‌های مشخص', { exact: true }).click()
 
@@ -146,14 +156,14 @@ test.describe('localization', () => {
 				.poll(async () => {
 					const savedQuery = await adminApi.getDoc<{ operations: unknown }>(
 						'Insights Query v3',
-						query.name,
+						persianDateQuery.name,
 					)
 					return JSON.stringify(savedQuery.operations)
 				})
 				.toContain('2027-01-01')
 			const savedQuery = await adminApi.getDoc<{ operations: unknown }>(
 				'Insights Query v3',
-				query.name,
+				persianDateQuery.name,
 			)
 			const operations = JSON.stringify(savedQuery.operations)
 			expect(operations).toContain('order_purchase_timestamp')
