@@ -34,6 +34,7 @@ import { showErrorToast } from '../helpers'
 import type { FilterType } from '../helpers/constants'
 import { navigate } from '../helpers/navigation'
 import { stableStringify } from '../helpers/stable_stringify'
+import { currentQueryCalendarContext } from '../query/calendar_context'
 import type { NumberChartConfig } from '../types/chart.types'
 import type { FilterOperator, FilterValue } from '../types/query.types'
 import type {
@@ -576,6 +577,7 @@ function makeDashboardPage(
 				dashboard: state.name,
 				filter_name,
 				filters: state.filters,
+				calendar_context: currentQueryCalendarContext(),
 			}),
 		cardFilters: computed(() => state.cardFilters),
 		setCardFilters,
@@ -585,9 +587,15 @@ function makeDashboardPage(
 				chart,
 				column,
 				search_term,
+				calendar_context: currentQueryCalendarContext(),
 			}),
 		cardRange: (chart: string, column: string) =>
-			call('insights.api.view.get_card_range', { dashboard: state.name, chart, column }),
+			call('insights.api.view.get_card_range', {
+				dashboard: state.name,
+				chart,
+				column,
+				calendar_context: currentQueryCalendarContext(),
+			}),
 		filtered,
 		resetCardFilters,
 		chartView: (chart: string) => reads.get(chart),
@@ -641,6 +649,7 @@ function fetchFilterValues(
 		filter_name,
 		search_term,
 		filters,
+		calendar_context: currentQueryCalendarContext(),
 	})
 }
 

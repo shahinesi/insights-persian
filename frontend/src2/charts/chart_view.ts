@@ -45,6 +45,7 @@ import {
 import { sortBy } from './adapter/table'
 import { normalizeChartConfig } from './helpers'
 import { labelWindowRows, withLentPeriod, type NumberPeriod } from './window'
+import { currentQueryCalendarContext } from '../query/calendar_context'
 
 /**
  * The server reads the dashboard's filter links to decide which query each
@@ -632,6 +633,7 @@ function makeSavedChartView(
 		filters: filterContext?.filters,
 		card_filters: filterContext?.cardFilters,
 		order_by: readerOrder.value,
+		calendar_context: currentQueryCalendarContext(),
 	})
 
 	return makeChartRead(
@@ -666,8 +668,8 @@ function makeSavedChartView(
 			drillable: session.isLoggedIn,
 			// card filters apply after the chart's summarize, and a drill cuts before it
 			fetchDrillData: (drill_stack, filterContext) => {
-				const { chart, dashboard, filters } = request(filterContext)
-				return fetchViewDrillData({ chart, dashboard, filters }, drill_stack)
+				const { chart, dashboard, filters, calendar_context } = request(filterContext)
+				return fetchViewDrillData({ chart, dashboard, filters, calendar_context }, drill_stack)
 			},
 			rowsSource: (drill_stack, filterContext) => {
 				const { chart, dashboard, filters } = request(filterContext)

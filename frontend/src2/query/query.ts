@@ -1,6 +1,6 @@
 import { useDebouncedRefHistory } from '@vueuse/core'
 import { isEqual } from 'es-toolkit'
-import { call, dayjs, toast } from 'frappe-ui'
+import { call, toast } from 'frappe-ui'
 import { computed, reactive, ref, toRefs, unref, watch } from 'vue'
 import {
 	copy,
@@ -18,7 +18,7 @@ import useDocumentResource from '../helpers/resource'
 import { useResultExport } from '../helpers/result_export'
 import { __ } from '../translation'
 import session from '../session'
-import { queryCalendarContext } from './calendar_context'
+import { currentQueryCalendarContext } from './calendar_context'
 import { isServerBusyError, scheduleQueryExecution } from './execution_queue'
 import {
 	AdhocFilters,
@@ -167,7 +167,7 @@ export function makeQuery(name: string) {
 		adhoc_filters?: AdhocFilters
 		page?: number
 		page_size?: number
-		calendar_context?: ReturnType<typeof queryCalendarContext>
+		calendar_context?: ReturnType<typeof currentQueryCalendarContext>
 	}>()
 	let currentExecutionToken = 0
 
@@ -177,16 +177,12 @@ export function makeQuery(name: string) {
 	const executionPriority = ref<number>()
 
 	function currentExecutionArgs() {
-		const locale =
-			typeof document === 'undefined'
-				? session.user.locale
-				: document.documentElement.lang || session.user.locale
 		return {
 			operations: currentOperations.value,
 			adhoc_filters: adhocFilters.value,
 			page: currentPage.value,
 			page_size: pageSize.value,
-			calendar_context: queryCalendarContext(locale, dayjs().format('YYYY-MM-DD')),
+			calendar_context: currentQueryCalendarContext(),
 		}
 	}
 
