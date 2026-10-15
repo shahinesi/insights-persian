@@ -215,7 +215,7 @@ test.describe('localization', () => {
 				'aria-expanded',
 				'false',
 			)
-			await englishDateColumn.locator('button').last().click()
+			await expect(page.getByRole('button', { name: 'Filter' })).toBeVisible()
 			await page.getByRole('button', { name: 'Filter' }).click()
 			await page.getByText('This Month', { exact: true }).click()
 			const englishPresetPopover = page
