@@ -120,7 +120,7 @@ function onDatePickerInput(value: string[]) {
 				class="flex cursor-pointer items-center justify-between text-sm text-ink-gray-5 hover:underline"
 				@click="currentSection = currentSection == 'presets' ? '' : 'presets'"
 			>
-				<span> Presets </span>
+				<span>{{ __('Presets') }}</span>
 				<component
 					:is="currentSection == 'presets' ? ChevronDown : ChevronRight"
 					class="h-4 w-4"
@@ -151,7 +151,7 @@ function onDatePickerInput(value: string[]) {
 					class="flex cursor-pointer items-center justify-between text-sm text-ink-gray-5 hover:underline"
 					@click="currentSection = currentSection == 'relative' ? '' : 'relative'"
 				>
-					<span> Relative Dates </span>
+					<span>{{ __('Relative Dates') }}</span>
 					<component
 						:is="currentSection == 'relative' ? ChevronDown : ChevronRight"
 						class="h-4 w-4"
@@ -162,7 +162,7 @@ function onDatePickerInput(value: string[]) {
 					v-if="currentSection == 'relative' && Array.isArray(filter.value)"
 					class="flex flex-col gap-1 py-2"
 				>
-					<span>In Last...</span>
+					<span>{{ __('In Last...') }}</span>
 					<div class="flex gap-2">
 						<div class="flex-1">
 							<FormControl
@@ -178,7 +178,7 @@ function onDatePickerInput(value: string[]) {
 							<FormControl
 								type="select"
 								autocomplete="off"
-								:options="['Day', 'Week', 'Month', 'Quarter', 'Year']"
+								:options="['Day', 'Week', 'Month', 'Quarter', 'Year'].map((unit) => ({ label: __(unit), value: unit }))"
 								:modelValue="filter.value[2]"
 								@update:modelValue="filter.value[2] = $event"
 							/>
@@ -194,7 +194,7 @@ function onDatePickerInput(value: string[]) {
 					class="flex cursor-pointer items-center justify-between text-sm text-ink-gray-5 hover:underline"
 					@click="currentSection = currentSection == 'specific' ? '' : 'specific'"
 				>
-					<span> Specific Dates </span>
+					<span>{{ __('Specific Dates') }}</span>
 					<component
 						:is="currentSection == 'specific' ? ChevronDown : ChevronRight"
 						class="h-4 w-4"

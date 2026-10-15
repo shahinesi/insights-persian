@@ -4,7 +4,7 @@
 			<SharedDatePicker
 				class="min-w-0 flex-1"
 				:modelValue="fromDate"
-				:calendar="calendar"
+				calendar="auto"
 				:placeholder="__('From')"
 				@update:modelValue="setEndpoint(0, $event)"
 			/>
@@ -12,7 +12,7 @@
 				v-if="range"
 				class="min-w-0 flex-1"
 				:modelValue="toDate"
-				:calendar="calendar"
+				calendar="auto"
 				:placeholder="__('To')"
 				@update:modelValue="setEndpoint(1, $event)"
 			/>
@@ -43,8 +43,7 @@ const selectedDates = defineModel<string[]>({
 })
 
 const locale = useDocumentLocale().locale
-const calendar = computed(() => calendarForLocale(locale.value))
-const isPersian = computed(() => calendar.value === 'persian')
+const isPersian = computed(() => calendarForLocale(locale.value) === 'persian')
 const fromDate = ref(selectedDates.value[0] || '')
 const toDate = ref(selectedDates.value[1] || '')
 

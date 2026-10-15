@@ -28,12 +28,14 @@ const day = computed(() => (Array.isArray(value.value) ? '' : value.value))
 	<div class="filter-picker-calendar" @mousedown.prevent>
 		<DateRangeCalendar
 			v-if="mode === 'range'"
+			calendar="auto"
 			:model-value="range"
 			today-label=""
 			@select="emit('write', calendarText($event))"
 		/>
 		<DateCalendar
 			v-else
+			calendar="auto"
 			:model-value="day"
 			today-label=""
 			@select="emit('write', calendarText($event))"

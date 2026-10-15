@@ -1,17 +1,21 @@
-import { describe, expect, it } from 'vitest'
+import { afterEach, describe, expect, it, vi } from 'vitest'
 import type { QueryResultColumn } from '../../types/query.types'
+import session from '../../session'
 import {
 	SPAN_UNITS,
 	isPreset,
 	numberPairValues,
 	numberQuickValues,
 	operatorOf,
+	formatDate,
 	resolveSpan,
 	selectedRowKey,
 	spanLabel,
 	toFilterArgs,
 	unitOf,
 } from './filter_picker'
+
+afterEach(() => vi.unstubAllGlobals())
 
 // 2026-08-10 is a Monday. The same anchor the server's date range tests use, so
 // the two tables below can be read against `TestDirectionalSpans` in
@@ -133,6 +137,35 @@ describe('the operator table', () => {
 		// no kind's table holds every operator
 		expect(operatorOf('number', 'in')).toBeUndefined()
 		expect(operatorOf('text', 'within')).toBeUndefined()
+	})
+})
+
+describe('date summaries follow the active calendar', () => {
+	const previousLocale = session.user.locale
+
+	afterEach(() => {
+		session.user.locale = previousLocale
+	})
+
+	it('formats date-filter summaries as Persian dates without changing the ISO values', () => {
+		session.user.locale = 'fa-IR'
+		vi.stubGlobal('document', { documentElement: { lang: 'fa-IR' } })
+
+		const summary = formatDate('2026-10-01', '2026-10-02')
+		expect(summary).toContain('مهر')
+		expect(summary).toContain('۱۴۰۵')
+		expect(summary).not.toContain('2026')
+
+		const monthBoundary = formatDate('2026-10-22', '2026-10-23')
+		expect(monthBoundary).toContain('مهر')
+		expect(monthBoundary).toContain('آبان')
+	})
+
+	it('keeps date summaries Gregorian in English', () => {
+		session.user.locale = 'en-US'
+		vi.stubGlobal('document', { documentElement: { lang: 'en-US' } })
+
+		expect(formatDate('2026-10-01', '2026-10-02')).toContain('Oct')
 	})
 })
 
