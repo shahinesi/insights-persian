@@ -206,6 +206,12 @@ test.describe('localization', () => {
 			await expect(page.getByRole('button', { name: 'cycle-calendar-view' })).toContainText(
 				currentEnglishMonth,
 			)
+			// Close the nested date-picker and its filter popover before opening the
+			// column menu again; otherwise the still-open calendar intercepts the click.
+			await page.keyboard.press('Escape')
+			await expect(page.getByRole('grid', { name: 'Calendar dates' })).toBeHidden()
+			await page.keyboard.press('Escape')
+			await expect(page.getByRole('button', { name: 'Filter' })).toBeHidden()
 			await englishDateColumn.locator('button').last().click()
 			await page.getByRole('button', { name: 'Filter' }).click()
 			await page.getByText('This Month', { exact: true }).click()
