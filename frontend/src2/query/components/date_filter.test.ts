@@ -1,7 +1,25 @@
 import { describe, expect, it } from 'vitest'
-import { getSpecificDateFilter, setDateRangeEndpoint } from './date_filter'
+import {
+	currentMonthDateRange,
+	getSpecificDateFilter,
+	setDateRangeEndpoint,
+} from './date_filter'
 
 describe('shared date picker consumer adapter', () => {
+	it('uses the Persian month boundaries as Gregorian ISO dates for fa-IR', () => {
+		expect(currentMonthDateRange('fa-IR', '2026-10-15')).toEqual([
+			'2026-09-23',
+			'2026-10-22',
+		])
+	})
+
+	it('keeps the English current month Gregorian and ISO', () => {
+		expect(currentMonthDateRange('en-US', '2026-10-15')).toEqual([
+			'2026-10-01',
+			'2026-10-31',
+		])
+	})
+
 	it('preserves open-ended ISO date filters', () => {
 		expect(setDateRangeEndpoint([], 0, '2027-01-01')).toEqual(['2027-01-01', ''])
 		expect(setDateRangeEndpoint([], 1, '2027-01-01')).toEqual(['', '2027-01-01'])

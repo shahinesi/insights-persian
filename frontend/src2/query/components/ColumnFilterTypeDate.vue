@@ -9,7 +9,7 @@ import { formatLocaleDate, useDocumentLocale } from 'frappe-ui/localization'
 import { FilterOperator, FilterValue, QueryResultColumn } from '../../types/query.types'
 import { calendarForLocale } from '../../localization'
 import DatePicker from './DatePicker.vue'
-import { getSpecificDateFilter } from './date_filter'
+import { currentMonthDateRange, getSpecificDateFilter } from './date_filter'
 
 const props = defineProps<{ column: QueryResultColumn }>()
 const filter = defineModel<{ operator: FilterOperator; value: FilterValue }>({
@@ -55,6 +55,10 @@ function startOfWeek() {
 const predefinedRanges = computed(() => {
 	const weekStart = startOfWeek()
 	const fyStart = dayjs(session.site.fiscal_year_start)
+	const [monthStart, monthEnd] = currentMonthDateRange(
+		locale.value,
+		dayjs().format('YYYY-MM-DD'),
+	)
 	return [
 		{ label: __('Today'), value: 'Day', description: getValue(new Date()) },
 		{
@@ -65,7 +69,7 @@ const predefinedRanges = computed(() => {
 		{
 			label: __('This Month'),
 			value: 'Month',
-			description: getRange(dayjs().startOf('month'), dayjs().endOf('month')),
+			description: getRange(dayjs(monthStart), dayjs(monthEnd)),
 		},
 		{
 			label: __('This Quarter'),
@@ -97,12 +101,27 @@ const predefinedRanges = computed(() => {
 })
 
 function onPredefinedRangeInput(rangeValue: string) {
+	if (rangeValue === 'Month' && isPersian.value) {
+		filter.value = {
+			operator: 'between',
+			value: currentMonthDateRange(locale.value, dayjs().format('YYYY-MM-DD')),
+		}
+		return
+	}
 	filter.value = { operator: 'within', value: ['Current', rangeValue] }
 }
 
 function isRangeSelected(rangeValue: string) {
 	if (!filter.value || !filter.value.value) return false
 	const value = filter.value.value as string[]
+	if (rangeValue === 'Month' && isPersian.value) {
+		const monthRange = currentMonthDateRange(locale.value, dayjs().format('YYYY-MM-DD'))
+		return (
+			filter.value.operator === 'between' &&
+			value[0] === monthRange[0] &&
+			value[1] === monthRange[1]
+		)
+	}
 	return filter.value.operator === 'within' && value[1] === rangeValue
 }
 
