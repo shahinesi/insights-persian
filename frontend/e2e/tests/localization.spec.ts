@@ -78,7 +78,7 @@ test.describe('localization', () => {
 			const dateColumn = page.locator('td[data-column-name="order_purchase_timestamp"]')
 			await dateColumn.locator('button').last().click()
 			await page.getByRole('button', { name: 'Filter' }).click()
-			await page.getByText('Specific Dates', { exact: true }).click()
+			await page.getByText('تاریخ‌های مشخص', { exact: true }).click()
 
 			const fromDate = page.getByRole('combobox', { name: /^(From|از)$/ })
 			await fromDate.click()
@@ -103,7 +103,7 @@ test.describe('localization', () => {
 			await selectedDate.click()
 
 			const filterPopover = page.locator('[data-reka-popper-content-wrapper]').filter({
-				has: page.getByText('Specific Dates', { exact: true }),
+				has: page.getByText('تاریخ‌های مشخص', { exact: true }),
 			})
 			// The apply control is icon-only; the Lucide class is its only stable selector.
 			await filterPopover.locator('button:has(.lucide-check)').click()
