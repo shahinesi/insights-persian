@@ -64,6 +64,9 @@ test.describe('localization', () => {
 
 			const credentials: Credentials = { usr: email, pwd: password }
 			await login(page, credentials)
+			// Keep the relative-period preset deterministic without changing the site
+			// clock or any shared User/locale setting.
+			await page.clock.install({ time: new Date('2026-10-15T12:00:00.000Z') })
 			await page.goto(`${INSIGHTS_PATH}/workbook/${workbook.name}/query/${query.name}`)
 
 			const localeResponse = await page.request.get('/api/method/insights.api.get_user_info')
@@ -76,6 +79,37 @@ test.describe('localization', () => {
 
 			// The header contains unlabeled type and menu buttons; the last button opens its column menu.
 			const dateColumn = page.locator('td[data-column-name="order_purchase_timestamp"]')
+			await dateColumn.locator('button').last().click()
+			await page.getByRole('button', { name: 'Filter' }).click()
+
+			// Select the Persian "This Month" preset through the real filter UI.
+			// The frozen browser date is 2026-10-15 (Mehr 1405), whose Persian
+			// calendar month maps to Gregorian ISO 2026-09-23 through 2026-10-22.
+			await page.getByText('این ماه', { exact: true }).click()
+			const presetPopover = page.locator('[data-reka-popper-content-wrapper]').filter({
+				has: page.getByText('این ماه', { exact: true }),
+			})
+			await presetPopover.locator('button:has(.lucide-check)').click()
+
+			await expect
+				.poll(async () => {
+					const savedQuery = await adminApi.getDoc<{ operations: unknown }>(
+						'Insights Query v3',
+						query.name,
+					)
+					return JSON.stringify(savedQuery.operations)
+				})
+				.toContain('2026-09-23')
+			const monthPresetQuery = await adminApi.getDoc<{ operations: unknown }>(
+				'Insights Query v3',
+				query.name,
+			)
+			const monthPresetOperations = JSON.stringify(monthPresetQuery.operations)
+			expect(monthPresetOperations).toContain('between')
+			expect(monthPresetOperations).toContain('2026-09-23')
+			expect(monthPresetOperations).toContain('2026-10-22')
+			expect(monthPresetOperations).not.toContain('۱۴۰۵')
+
 			await dateColumn.locator('button').last().click()
 			await page.getByRole('button', { name: 'Filter' }).click()
 			await page.getByText('تاریخ‌های مشخص', { exact: true }).click()
@@ -162,6 +196,34 @@ test.describe('localization', () => {
 			await expect(page.getByRole('button', { name: 'cycle-calendar-view' })).toContainText(
 				currentEnglishMonth,
 			)
+
+			const englishDateColumn = page.locator(
+				'td[data-column-name="order_purchase_timestamp"]',
+			)
+			await englishDateColumn.locator('button').last().click()
+			await page.getByRole('button', { name: 'Filter' }).click()
+			await page.getByText('This Month', { exact: true }).click()
+			const englishPresetPopover = page
+				.locator('[data-reka-popper-content-wrapper]')
+				.filter({ has: page.getByText('This Month', { exact: true }) })
+			await englishPresetPopover.locator('button:has(.lucide-check)').click()
+			await expect
+				.poll(async () => {
+					const savedQuery = await adminApi.getDoc<{ operations: unknown }>(
+						'Insights Query v3',
+						englishQuery.name,
+					)
+					return JSON.stringify(savedQuery.operations)
+				})
+				.toContain('Current Month')
+			const englishPresetQuery = await adminApi.getDoc<{ operations: unknown }>(
+				'Insights Query v3',
+				englishQuery.name,
+			)
+			const englishPresetOperations = JSON.stringify(englishPresetQuery.operations)
+			expect(englishPresetOperations).toContain('within')
+			expect(englishPresetOperations).toContain('Current Month')
+			expect(englishPresetOperations).not.toContain('2026-09-23')
 		} finally {
 			await deleteTeam(adminApi, teamName)
 			await adminApi.deleteDoc('User', user.name).catch(() => {})
