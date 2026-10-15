@@ -211,7 +211,10 @@ test.describe('localization', () => {
 			await page.keyboard.press('Escape')
 			await expect(page.getByRole('grid', { name: 'Calendar dates' })).toBeHidden()
 			await page.keyboard.press('Escape')
-			await expect(page.getByRole('button', { name: 'Filter' })).toBeHidden()
+			await expect(page.getByRole('button', { name: 'Filter' })).toHaveAttribute(
+				'aria-expanded',
+				'false',
+			)
 			await englishDateColumn.locator('button').last().click()
 			await page.getByRole('button', { name: 'Filter' }).click()
 			await page.getByText('This Month', { exact: true }).click()
