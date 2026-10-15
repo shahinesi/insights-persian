@@ -16,7 +16,7 @@
 // descriptor for both: literals and an action per level.
 
 import { call } from 'frappe-ui'
-import { currentQueryCalendarContext } from '../../query/calendar_context'
+import type { QueryCalendarContext } from '../../query/calendar_context'
 import type { ChartConfig } from '../../types/chart.types'
 import type { Operation } from '../../types/query.types'
 import type { FilterValues } from '../../types/workbook.types'
@@ -34,7 +34,7 @@ export type ViewDrillSubject = {
 	chart: string
 	dashboard?: string
 	filters?: FilterValues
-	calendar_context?: ReturnType<typeof currentQueryCalendarContext>
+	calendar_context?: QueryCalendarContext
 }
 
 export function fetchViewDrillData(
@@ -44,12 +44,7 @@ export function fetchViewDrillData(
 	// uses none of it
 	state?: DrillRowsState,
 ): Promise<DrillLevelData> {
-	return call('insights.api.view.get_drill_data', {
-		...subject,
-		calendar_context: subject.calendar_context ?? currentQueryCalendarContext(),
-		drill_stack,
-		...state,
-	})
+	return call('insights.api.view.get_drill_data', { ...subject, drill_stack, ...state })
 }
 
 /** A file needs no page, so the state is sent without it. */
@@ -61,7 +56,6 @@ export function downloadViewDrillRows(
 ): Promise<string> {
 	return call('insights.api.view.download_drill_rows', {
 		...subject,
-		calendar_context: subject.calendar_context ?? currentQueryCalendarContext(),
 		drill_stack,
 		row_filters: state.row_filters,
 		sort: state.sort,
@@ -79,7 +73,6 @@ export function fetchViewDrillRowsValues(
 ): Promise<string[]> {
 	return call('insights.api.view.get_drill_rows_values', {
 		...subject,
-		calendar_context: subject.calendar_context ?? currentQueryCalendarContext(),
 		drill_stack,
 		column,
 		search_term,
@@ -95,7 +88,6 @@ export function fetchViewDrillRowsRange(
 ): Promise<[number, number] | undefined> {
 	return call('insights.api.view.get_drill_rows_range', {
 		...subject,
-		calendar_context: subject.calendar_context ?? currentQueryCalendarContext(),
 		drill_stack,
 		column,
 		row_filters,

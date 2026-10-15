@@ -672,8 +672,8 @@ function makeSavedChartView(
 				return fetchViewDrillData({ chart, dashboard, filters, calendar_context }, drill_stack)
 			},
 			rowsSource: (drill_stack, filterContext) => {
-				const { chart, dashboard, filters } = request(filterContext)
-				const drilled = { chart, dashboard, filters }
+				const { chart, dashboard, filters, calendar_context } = request(filterContext)
+				const drilled = { chart, dashboard, filters, calendar_context }
 				return {
 					read: (state) => fetchViewDrillData(drilled, drill_stack, state),
 					download: (state, format) =>
