@@ -101,27 +101,12 @@ const predefinedRanges = computed(() => {
 })
 
 function onPredefinedRangeInput(rangeValue: string) {
-	if (rangeValue === 'Month' && isPersian.value) {
-		filter.value = {
-			operator: 'between',
-			value: currentMonthDateRange(locale.value, dayjs().format('YYYY-MM-DD')),
-		}
-		return
-	}
 	filter.value = { operator: 'within', value: ['Current', rangeValue] }
 }
 
 function isRangeSelected(rangeValue: string) {
 	if (!filter.value || !filter.value.value) return false
 	const value = filter.value.value as string[]
-	if (rangeValue === 'Month' && isPersian.value) {
-		const monthRange = currentMonthDateRange(locale.value, dayjs().format('YYYY-MM-DD'))
-		return (
-			filter.value.operator === 'between' &&
-			value[0] === monthRange[0] &&
-			value[1] === monthRange[1]
-		)
-	}
 	return filter.value.operator === 'within' && value[1] === rangeValue
 }
 

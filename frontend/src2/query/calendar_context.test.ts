@@ -10,6 +10,17 @@ describe('query calendar context', () => {
 		})
 	})
 
+	it('recomputes the Persian month range when the reading day crosses a month boundary', () => {
+		expect(queryCalendarContext('fa-IR', '2026-10-22').current_month_range).toEqual([
+			'2026-09-23',
+			'2026-10-22',
+		])
+		expect(queryCalendarContext('fa-IR', '2026-10-23').current_month_range).toEqual([
+			'2026-10-23',
+			'2026-11-21',
+		])
+	})
+
 	it('keeps Gregorian callers explicit without adding persisted filter metadata', () => {
 		expect(queryCalendarContext('en-US', '2026-10-15')).toEqual({ calendar: 'gregorian' })
 	})
