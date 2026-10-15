@@ -83,8 +83,8 @@ test.describe('localization', () => {
 			await page.getByRole('button', { name: 'Filter' }).click()
 
 			// Select the Persian "This Month" preset through the real filter UI.
-			// The frozen browser date is 2026-10-15 (Mehr 1405), whose Persian
-			// calendar month maps to Gregorian ISO 2026-09-23 through 2026-10-22.
+			// The preset remains relative in the saved query; calendar_context resolves
+			// its current Persian month to Gregorian ISO bounds at execution time.
 			await page.getByText('این ماه', { exact: true }).click()
 			const presetPopover = page.locator('[data-reka-popper-content-wrapper]').filter({
 				has: page.getByText('این ماه', { exact: true }),
@@ -99,15 +99,16 @@ test.describe('localization', () => {
 					)
 					return JSON.stringify(savedQuery.operations)
 				})
-				.toContain('2026-09-23')
+				.toContain('Current Month')
 			const monthPresetQuery = await adminApi.getDoc<{ operations: unknown }>(
 				'Insights Query v3',
 				query.name,
 			)
 			const monthPresetOperations = JSON.stringify(monthPresetQuery.operations)
-			expect(monthPresetOperations).toContain('between')
-			expect(monthPresetOperations).toContain('2026-09-23')
-			expect(monthPresetOperations).toContain('2026-10-22')
+			expect(monthPresetOperations).toContain('within')
+			expect(monthPresetOperations).toContain('Current Month')
+			expect(monthPresetOperations).not.toContain('2026-09-23')
+			expect(monthPresetOperations).not.toContain('2026-10-22')
 			expect(monthPresetOperations).not.toContain('۱۴۰۵')
 
 			// The selected month has no demo rows. Start a fresh query before opening
