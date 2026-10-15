@@ -196,10 +196,6 @@ test.describe('localization', () => {
 			await expect(page.getByRole('button', { name: 'cycle-calendar-view' })).toContainText(
 				currentEnglishMonth,
 			)
-
-			const englishDateColumn = page.locator(
-				'td[data-column-name="order_purchase_timestamp"]',
-			)
 			await englishDateColumn.locator('button').last().click()
 			await page.getByRole('button', { name: 'Filter' }).click()
 			await page.getByText('This Month', { exact: true }).click()
