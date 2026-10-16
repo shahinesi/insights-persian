@@ -14,6 +14,8 @@ const PERSIAN_MONTHS = /فروردین|اردیبهشت|خرداد|تیر|مرد
 const ENGLISH_MONTH_YEAR = /^(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) \d{4}$/
 
 test.describe('localization', () => {
+	test.use({ timezoneId: 'Asia/Tehran' })
+
 	test('a saved Persian locale displays Jalali dates and stores the selected ISO date', async ({
 		page,
 		adminApi,
@@ -72,6 +74,9 @@ test.describe('localization', () => {
 
 			const credentials: Credentials = { usr: email, pwd: password }
 			await login(page, credentials)
+			expect(
+				await page.evaluate(() => Intl.DateTimeFormat().resolvedOptions().timeZone),
+			).toBe('Asia/Tehran')
 			// Keep the relative-period preset deterministic without changing the site
 			// clock or any shared User/locale setting.
 			await page.clock.install({ time: new Date('2026-10-15T12:00:00.000Z') })
