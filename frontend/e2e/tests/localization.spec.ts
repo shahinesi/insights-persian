@@ -1,7 +1,14 @@
 import { randomUUID } from 'node:crypto'
 import { expect, test } from '../fixtures'
 import { INSIGHTS_PATH, login, type Credentials } from '../helpers/auth'
-import { createQuery, deleteTeam, shareWorkbook, uniqueTitle } from '../helpers/insights'
+import {
+	createChart,
+	createDashboard,
+	createQuery,
+	deleteTeam,
+	shareWorkbook,
+	uniqueTitle,
+} from '../helpers/insights'
 
 const PERSIAN_MONTHS = /فروردین|اردیبهشت|خرداد|تیر|مرداد|شهریور|مهر|آبان|آذر|دی|بهمن|اسفند/
 
@@ -170,6 +177,52 @@ test.describe('localization', () => {
 			expect(operations).toContain('order_purchase_timestamp')
 			expect(operations).toContain('2027-01-01')
 			expect(operations).not.toContain('۱۴۰۵')
+
+			const chartQuery = await createQuery(adminApi, { workbook: workbook.name })
+			const dateChart = await createChart(adminApi, {
+				workbook: workbook.name,
+				query: chartQuery.name,
+				config: {
+					x_axis: {
+						dimension: {
+							dimension_name: 'order_purchase_timestamp',
+							column_name: 'order_purchase_timestamp',
+							data_type: 'Datetime',
+							granularity: 'month',
+						},
+					},
+					y_axis: {
+						series: [
+							{
+								measure: {
+									measure_name: 'count_of_rows',
+									column_name: 'count',
+									data_type: 'Integer',
+									aggregation: 'count',
+								},
+							},
+						],
+					},
+				},
+			})
+			await page.goto(`${INSIGHTS_PATH}/workbook/${workbook.name}/chart/${dateChart.name}`)
+			await expect(page.locator('html')).toHaveAttribute('lang', 'fa')
+			const chart = page.locator('[_echarts_instance_]')
+			await expect(chart.getByText(PERSIAN_MONTHS).first()).toBeVisible({ timeout: 30_000 })
+			await testInfo.attach('insights-persian-date-chart', {
+				body: await page.screenshot({ type: 'png', fullPage: true }),
+				contentType: 'image/png',
+			})
+
+			const dashboard = await createDashboard(adminApi, {
+				workbook: workbook.name,
+				charts: [dateChart.name],
+			})
+			await page.goto(`${INSIGHTS_PATH}/workbook/${workbook.name}/dashboard/${dashboard.name}`)
+			await expect(page.locator('html')).toHaveAttribute('dir', 'rtl')
+			await expect(
+				page.locator('[_echarts_instance_]').getByText(PERSIAN_MONTHS).first(),
+			).toBeVisible({ timeout: 30_000 })
 
 			await adminApi.updateDoc('User', user.name, { language: 'en' })
 			await expect

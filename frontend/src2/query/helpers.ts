@@ -20,6 +20,8 @@ import { h } from 'vue'
 import { copy } from '../helpers'
 import { FIELDTYPES, getDefaultGranularity, GranularityType } from '../helpers/constants'
 import dayjs from '../helpers/dayjs'
+import { formatLocaleDate, formatLocaleNumber } from 'frappe-ui/localization'
+import { calendarForLocale, displayLocale } from '../localization'
 import useSettings from '../settings/settings'
 import {
 	Cast,
@@ -247,6 +249,29 @@ const LONG_DATE_FORMATS: Record<string, string> = {
 	quarter: '[Q]Q, YYYY',
 }
 
+const DATE_DISPLAY_OPTIONS: Record<string, Intl.DateTimeFormatOptions> = {
+	second: {
+		month: 'long',
+		day: 'numeric',
+		year: 'numeric',
+		hour: 'numeric',
+		minute: '2-digit',
+		second: '2-digit',
+	},
+	minute: {
+		month: 'long',
+		day: 'numeric',
+		year: 'numeric',
+		hour: 'numeric',
+		minute: '2-digit',
+	},
+	hour: { month: 'long', day: 'numeric', year: 'numeric', hour: 'numeric' },
+	day: { month: 'long', day: 'numeric', year: 'numeric' },
+	week: { month: 'short', day: 'numeric', year: 'numeric' },
+	month: { month: 'long', year: 'numeric' },
+	year: { year: 'numeric' },
+}
+
 /**
  * How the same date reads on an axis. A category axis shows a label per column,
  * so a spelled-out month is dropped by the overlap rule and the reader is left
@@ -290,6 +315,12 @@ function formatDateBy(date: string, granularity: string, formats: Record<string,
 		return parsed.isValid() ? parsed.format(timeFormats[granularity]) : date
 	}
 
+	const locale = displayLocale(
+		typeof document === 'undefined' ? session.user?.locale : document.documentElement.lang || session.user?.locale,
+		session.site?.country,
+	)
+	const calendar = calendarForLocale(locale) === 'persian' ? 'persian' : 'gregory'
+
 	if (granularity === 'fiscal_year') {
 		const d = dayjs(date)
 		const fiscalYearStart = session.site.fiscal_year_start
@@ -299,11 +330,29 @@ function formatDateBy(date: string, granularity: string, formats: Record<string,
 		const fiscalStartThisYear = d.month(fiscalStartMonth).date(fiscalStartDay)
 		const startYear = d.isBefore(fiscalStartThisYear) ? d.year() - 1 : d.year()
 		const endYear = startYear + 1
+		if (calendar === 'persian') {
+			const fiscalStart = fiscalStartThisYear.format('YYYY-MM-DD')
+			const fiscalEnd = fiscalStartThisYear.add(1, 'year').subtract(1, 'day').format('YYYY-MM-DD')
+			const fromYear = formatLocaleDate(fiscalStart, { calendar, year: 'numeric' })
+			const toYear = formatLocaleDate(fiscalEnd, { calendar, year: 'numeric' })
+			return `FY ${fromYear}-${toYear}`
+		}
 
 		return `FY ${startYear}-${String(endYear).slice(-2)}`
 	}
 
 	if (!formats[granularity]) return date
+	if (granularity === 'quarter') {
+		const quarter = Math.floor(dayjs(date).month() / 3) + 1
+		const localizedQuarter = calendar === 'persian' ? formatLocaleNumber(quarter) : String(quarter)
+		const year = formatLocaleDate(date, { calendar, year: 'numeric' })
+		return `Q${localizedQuarter}, ${year}`
+	}
+	const options = DATE_DISPLAY_OPTIONS[granularity]
+	if (options) {
+		const month = formats === AXIS_DATE_FORMATS ? 'short' : options.month
+		return formatLocaleDate(date, { ...options, month, calendar })
+	}
 	return dayjs(date).format(formats[granularity])
 }
 

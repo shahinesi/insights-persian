@@ -1,6 +1,8 @@
-import { describe, expect, it } from 'vitest'
+import { afterEach, describe, expect, it, vi } from 'vitest'
 import type { QueryResult } from '../types/query.types'
-import { emptyResult, rawRowOf } from './helpers'
+import { emptyResult, getAxisDate, getFormattedDate, rawRowOf } from './helpers'
+
+afterEach(() => vi.unstubAllGlobals())
 
 function resultOf(rows: QueryResult['rows']): QueryResult {
 	return {
@@ -39,5 +41,30 @@ describe('the raw row behind a formatted one', () => {
 
 		expect(rawRowOf(result, result.formattedRows[0])).toBe(result.rows[0])
 		expect(rawRowOf(result, result.formattedRows[1])).toBe(result.rows[1])
+	})
+})
+
+describe('chart date labels follow the active calendar', () => {
+	it('uses the shared Jalali formatter for Persian chart grains', () => {
+		vi.stubGlobal('document', { documentElement: { lang: 'fa-IR' } })
+
+		const day = getFormattedDate('2026-10-01', 'day')
+		expect(day).toContain('مهر')
+		expect(day).toContain('۱۴۰۵')
+		expect(day).not.toContain('October')
+		expect(getFormattedDate('2026-10-01', 'month')).toContain('مهر')
+		expect(getFormattedDate('2026-10-01', 'year')).toContain('۱۴۰۵')
+		expect(getFormattedDate('2026-10-01', 'quarter')).toContain('۱۴۰۵')
+		expect(getAxisDate('2026-10-01', 'month')).toContain('مهر')
+		expect(getAxisDate('2026-10-01', 'month')).toContain('۱۴۰۵')
+	})
+
+	it('keeps chart labels Gregorian when the document language is English', () => {
+		vi.stubGlobal('document', { documentElement: { lang: 'en-US' } })
+
+		expect(getFormattedDate('2026-10-01', 'month')).toContain('October')
+		expect(getFormattedDate('2026-10-01', 'year')).toBe('2026')
+		expect(getFormattedDate('2026-10-01', 'quarter')).toBe('Q4, 2026')
+		expect(getAxisDate('2026-10-01', 'month')).toContain('Oct')
 	})
 })
