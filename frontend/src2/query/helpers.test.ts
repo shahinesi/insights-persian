@@ -68,3 +68,19 @@ describe('chart date labels follow the active calendar', () => {
 		expect(getAxisDate('2026-10-01', 'month')).toContain('Oct')
 	})
 })
+
+describe('chart time labels follow the active locale', () => {
+	it('formats time-only chart values with Persian digits in Persian', () => {
+		vi.stubGlobal('document', { documentElement: { lang: 'fa-IR' } })
+
+		expect(getFormattedDate('13:05:07', 'minute')).toContain('۱۳:۰۵')
+		expect(getFormattedDate('13:05:07', 'second')).toContain('۱۳:۰۵:۰۷')
+	})
+
+	it('keeps time-only chart values in English when the document language is English', () => {
+		vi.stubGlobal('document', { documentElement: { lang: 'en-US' } })
+
+		expect(getFormattedDate('13:05:07', 'minute')).toContain('1:05 PM')
+		expect(getFormattedDate('13:05:07', 'second')).toContain('1:05:07 PM')
+	})
+})

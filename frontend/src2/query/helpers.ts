@@ -300,25 +300,31 @@ export function getAxisDate(date: string, granularity: string) {
 
 function formatDateBy(date: string, granularity: string, formats: Record<string, string>) {
 	if (!date) return ''
-
-	const isTimeOnlyValue = /^\d{1,2}:\d{2}(:\d{2}(\.\d+)?)?$/.test(date)
-	if (isTimeOnlyValue) {
-		const timeFormats: Record<string, string> = {
-			second: 'h:mm:ss A',
-			minute: 'h:mm A',
-			hour: 'h:00 A',
-		}
-
-		if (!timeFormats[granularity]) return date
-
-		const parsed = dayjs(date, ['HH:mm:ss.SSSSSS', 'HH:mm:ss', 'HH:mm'], true)
-		return parsed.isValid() ? parsed.format(timeFormats[granularity]) : date
-	}
-
 	const locale = displayLocale(
 		typeof document === 'undefined' ? session.user?.locale : document.documentElement.lang || session.user?.locale,
 		session.site?.country,
 	)
+
+	const isTimeOnlyValue = /^\d{1,2}:\d{2}(:\d{2}(\.\d+)?)?$/.test(date)
+	if (isTimeOnlyValue) {
+		const timeOptions: Record<string, Intl.DateTimeFormatOptions> = {
+			second: { hour: 'numeric', minute: '2-digit', second: '2-digit' },
+			minute: { hour: 'numeric', minute: '2-digit' },
+			hour: { hour: 'numeric', minute: '2-digit' },
+		}
+
+		if (!timeOptions[granularity]) return date
+
+		const parsed = dayjs(date, ['HH:mm:ss.SSSSSS', 'HH:mm:ss', 'HH:mm'], true)
+		if (!parsed.isValid()) return date
+
+		const time = new Date(Date.UTC(2000, 0, 1, parsed.hour(), parsed.minute(), parsed.second()))
+		return new Intl.DateTimeFormat(locale, {
+			...timeOptions[granularity],
+			timeZone: 'UTC',
+		}).format(time)
+	}
+
 	const calendar = calendarForLocale(locale) === 'persian' ? 'persian' : 'gregory'
 
 	if (granularity === 'fiscal_year') {
