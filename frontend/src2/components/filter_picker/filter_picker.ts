@@ -349,10 +349,16 @@ export function spanOf(form: RelativeForm): string {
  * counts by those.
  */
 function activeLocale(): string {
-	return typeof document === 'undefined' ? session.user.locale : document.documentElement.lang || session.user.locale
+	return typeof document === 'undefined'
+		? session.user.locale
+		: document.documentElement.lang || session.user.locale
 }
 
-export function resolveSpan(span: string, anchor?: string, locale = 'en-US'): [string, string] {
+export function resolveSpan(
+	span: string,
+	anchor?: string,
+	locale = activeLocale(),
+): [string, string] {
 	const today = anchor ? dayjs(anchor) : dayjs()
 
 	const form = parseSpan(span)

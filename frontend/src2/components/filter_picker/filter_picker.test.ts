@@ -85,9 +85,16 @@ describe('the range a relative span covers', () => {
 
 	// @feature query.filter-relative-date
 	it('covers the anchor period for a current span, and the period so far for a to-date one', () => {
-		expect(resolveSpan('current month', ANCHOR)).toEqual(['2026-08-01', '2026-08-31'])
+		expect(resolveSpan('current month', ANCHOR, 'en-US')).toEqual(['2026-08-01', '2026-08-31'])
 		expect(resolveSpan('month to date', ANCHOR)).toEqual(['2026-08-01', ANCHOR])
 		expect(resolveSpan('year to date', ANCHOR)).toEqual(['2026-01-01', ANCHOR])
+	})
+
+	// @feature query.filter-relative-date
+	it('uses the active document locale when resolving a month without an explicit locale', () => {
+		vi.stubGlobal('document', { documentElement: { lang: 'fa-IR' } })
+
+		expect(resolveSpan('current month', '2026-10-15')).toEqual(['2026-09-23', '2026-10-22'])
 	})
 
 	it('uses shared Persian month bounds for current-month previews in Persian', () => {

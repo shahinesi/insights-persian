@@ -11,8 +11,7 @@ import {
 } from '../helpers/insights'
 
 const PERSIAN_MONTHS = /فروردین|اردیبهشت|خرداد|تیر|مرداد|شهریور|مهر|آبان|آذر|دی|بهمن|اسفند/
-const ENGLISH_MONTH_YEAR =
-	/^(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) \d{4}$/
+const ENGLISH_MONTH_YEAR = /^(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) \d{4}$/
 
 test.describe('localization', () => {
 	test('a saved Persian locale displays Jalali dates and stores the selected ISO date', async ({
