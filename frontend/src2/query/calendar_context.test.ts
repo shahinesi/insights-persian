@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { queryCalendarContext } from './calendar_context'
 
 describe('query calendar context', () => {
+	// @feature query.filter-relative-date-persian-month
 	it('sends Persian current-month ISO bounds as runtime execution context', () => {
 		expect(queryCalendarContext('fa-IR', '2026-10-15')).toEqual({
 			calendar: 'persian',
@@ -10,6 +11,7 @@ describe('query calendar context', () => {
 		})
 	})
 
+	// @feature query.filter-relative-date-persian-month
 	it('recomputes the Persian month range when the reading day crosses a month boundary', () => {
 		expect(queryCalendarContext('fa-IR', '2026-10-22').current_month_range).toEqual([
 			'2026-09-23',
@@ -21,6 +23,7 @@ describe('query calendar context', () => {
 		])
 	})
 
+	// @feature query.filter-relative-date-persian-month
 	it('keeps Gregorian callers explicit without adding persisted filter metadata', () => {
 		expect(queryCalendarContext('en-US', '2026-10-15')).toEqual({ calendar: 'gregorian' })
 	})

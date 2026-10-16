@@ -16,6 +16,7 @@ const ENGLISH_MONTH_YEAR = /^(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) \
 test.describe('localization', () => {
 	test.use({ timezoneId: 'Asia/Tehran' })
 
+	// @feature settings.locale-presentation query.filter-relative-date-persian-month query.filter-date-summary-locale
 	test('a saved Persian locale displays Jalali dates and stores the selected ISO date', async ({
 		page,
 		adminApi,

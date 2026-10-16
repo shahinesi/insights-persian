@@ -100,6 +100,7 @@ describe('the page of rows a reader is reading', () => {
 })
 
 describe('request-only calendar semantics', () => {
+	// @feature query.filter-relative-date-persian-month
 	it('sends the active Persian month range without writing it into saved operations', async () => {
 		const originalLocale = session.user.locale
 		vi.useFakeTimers()

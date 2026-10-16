@@ -144,6 +144,7 @@ describe('a dashboard opened a second time', () => {
 })
 
 describe('dashboard calendar context', () => {
+	// @feature query.filter-relative-date-persian-month
 	it('sends the active Persian calendar to chart and dashboard filter reads', async () => {
 		vi.stubGlobal('document', { cookie: '', documentElement: { lang: 'fa-IR' } })
 		try {
@@ -172,6 +173,7 @@ describe('dashboard calendar context', () => {
 		}
 	})
 
+	// @feature query.filter-relative-date-persian-month
 	it('keeps Gregorian semantics for an English dashboard reader', async () => {
 		vi.stubGlobal('document', { cookie: '', documentElement: { lang: 'en-US' } })
 		try {

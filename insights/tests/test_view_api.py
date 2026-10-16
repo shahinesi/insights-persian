@@ -185,6 +185,7 @@ class TestViewAPI(InsightsIntegrationTestCase):
         with as_user(user), db_connections():
             return get_chart_data(chart=chart, dashboard=dashboard, **kwargs)
 
+    # @feature query.filter-relative-date-persian-month
     def test_saved_chart_uses_the_readers_persian_calendar_context(self):
         """A dashboard's request context must reach the query that reads its card."""
         _, chart, dashboard = self.make_content()

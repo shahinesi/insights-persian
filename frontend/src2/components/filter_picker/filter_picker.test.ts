@@ -97,6 +97,7 @@ describe('the range a relative span covers', () => {
 		expect(resolveSpan('current month', '2026-10-15')).toEqual(['2026-09-23', '2026-10-22'])
 	})
 
+	// @feature query.filter-relative-date-persian-month
 	it('uses shared Persian month bounds for current-month previews in Persian', () => {
 		expect(resolveSpan('current month', '2026-10-15', 'fa-IR')).toEqual([
 			'2026-09-23',
@@ -170,6 +171,7 @@ describe('date summaries follow the active calendar', () => {
 		session.user.locale = previousLocale
 	})
 
+	// @feature query.filter-date-summary-locale
 	it('formats date-filter summaries as Persian dates without changing the ISO values', () => {
 		session.user.locale = 'fa-IR'
 		vi.stubGlobal('document', { documentElement: { lang: 'fa-IR' } })
@@ -184,6 +186,7 @@ describe('date summaries follow the active calendar', () => {
 		expect(monthBoundary).toContain('آبان')
 	})
 
+	// @feature query.filter-date-summary-locale
 	it('keeps date summaries Gregorian in English', () => {
 		session.user.locale = 'en-US'
 		vi.stubGlobal('document', { documentElement: { lang: 'en-US' } })
@@ -191,6 +194,7 @@ describe('date summaries follow the active calendar', () => {
 		expect(formatDate('2026-10-01', '2026-10-02')).toContain('Oct')
 	})
 
+	// @feature query.filter-date-summary-locale
 	it('follows the active document language when it differs from the saved user locale', () => {
 		session.user.locale = 'fa-IR'
 		vi.stubGlobal('document', { documentElement: { lang: 'en-US' } })
@@ -219,6 +223,7 @@ describe('what a host sends', () => {
 })
 
 describe('the numbers a number filter lists', () => {
+	// @feature query.filter-number-zero-null
 	it('keeps an explicit zero distinct from an empty value', () => {
 		expect(formatNumber(0)).toBe('0')
 		expect(formatNumber(null)).toBe('')

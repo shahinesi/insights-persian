@@ -65,6 +65,7 @@ class TestUploadedFileImports(InsightsIntegrationTestCase):
 
         self.assertEqual(rows, expected_rows)
 
+    # @feature data-source.upload-file
     def test_uploads_data_source_creation_tolerates_concurrent_first_use(self):
         """A concurrent first upload may insert the shared source first."""
         with (

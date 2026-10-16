@@ -45,6 +45,7 @@ describe('the raw row behind a formatted one', () => {
 })
 
 describe('chart date labels follow the active calendar', () => {
+	// @feature charts.date-label-locale
 	it('uses the shared Jalali formatter for Persian chart grains', () => {
 		vi.stubGlobal('document', { documentElement: { lang: 'fa-IR' } })
 
@@ -59,6 +60,7 @@ describe('chart date labels follow the active calendar', () => {
 		expect(getAxisDate('2026-10-01', 'month')).toContain('۱۴۰۵')
 	})
 
+	// @feature charts.date-label-locale
 	it('keeps chart labels Gregorian when the document language is English', () => {
 		vi.stubGlobal('document', { documentElement: { lang: 'en-US' } })
 
@@ -70,6 +72,7 @@ describe('chart date labels follow the active calendar', () => {
 })
 
 describe('chart time labels follow the active locale', () => {
+	// @feature charts.date-label-locale
 	it('formats time-only chart values with Persian digits in Persian', () => {
 		vi.stubGlobal('document', { documentElement: { lang: 'fa-IR' } })
 
@@ -77,6 +80,7 @@ describe('chart time labels follow the active locale', () => {
 		expect(getFormattedDate('13:05:07', 'second')).toContain('۱۳:۰۵:۰۷')
 	})
 
+	// @feature charts.date-label-locale
 	it('keeps time-only chart values in English when the document language is English', () => {
 		vi.stubGlobal('document', { documentElement: { lang: 'en-US' } })
 
