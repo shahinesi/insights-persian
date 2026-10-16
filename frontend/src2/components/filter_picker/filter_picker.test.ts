@@ -190,6 +190,18 @@ describe('date summaries follow the active calendar', () => {
 
 		expect(formatDate('2026-10-01', '2026-10-02')).toContain('Oct')
 	})
+
+	it('follows the active document language when it differs from the saved user locale', () => {
+		session.user.locale = 'fa-IR'
+		vi.stubGlobal('document', { documentElement: { lang: 'en-US' } })
+		expect(formatDate('2026-10-01', '2026-10-02')).toContain('Oct')
+
+		session.user.locale = 'en-US'
+		vi.stubGlobal('document', { documentElement: { lang: 'fa-IR' } })
+		const summary = formatDate('2026-10-01', '2026-10-02')
+		expect(summary).toContain('مهر')
+		expect(summary).toContain('۱۴۰۵')
+	})
 })
 
 describe('what a host sends', () => {

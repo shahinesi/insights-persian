@@ -474,7 +474,7 @@ export function spanFromText(text: string): string | undefined {
 
 /** Format ISO date values for display in the active locale and calendar. */
 export function formatDate(from: string, to?: string): string {
-	const locale = displayLocale(session.user.locale, session.site.country)
+	const locale = displayLocale(activeLocale(), session.site.country)
 	const calendar = calendarForLocale(locale) === 'persian' ? 'persian' : 'gregory'
 	const full = (value: string) =>
 		formatLocaleDate(value, { calendar, day: 'numeric', month: 'short', year: 'numeric' })
