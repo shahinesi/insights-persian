@@ -15,7 +15,7 @@ import type {
 import type { Component } from 'vue'
 import { toNumber } from '../../helpers'
 import { FIELDTYPES, isCalendarDateType } from '../../helpers/constants'
-import { getFormattedDate } from '../../query/helpers'
+import { getAxisDate, getFormattedDate } from '../../query/helpers'
 import type {
 	MixedChartConfig,
 	ReferenceAggregate,
@@ -327,6 +327,7 @@ function xAxisFor(dimension: Dimension): ChartXAxisOptions {
 		axis.format = (value: any) => getFormattedDate(value, 'fiscal_year')
 	} else if (dimension.granularity) {
 		axis.timeGrain = dimension.granularity as TimeGrain
+		axis.format = (value: any) => getAxisDate(value, dimension.granularity!)
 	}
 	return axis
 }

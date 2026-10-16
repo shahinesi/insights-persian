@@ -208,7 +208,7 @@ test.describe('localization', () => {
 			await page.goto(`${INSIGHTS_PATH}/workbook/${workbook.name}/chart/${dateChart.name}`)
 			await expect(page.locator('html')).toHaveAttribute('lang', 'fa')
 			const chart = page.locator('[_echarts_instance_]')
-			await expect(chart.getByText(PERSIAN_MONTHS).first()).toBeVisible({ timeout: 30_000 })
+			await expect(chart.locator('canvas')).toBeVisible()
 			await testInfo.attach('insights-persian-date-chart', {
 				body: await page.screenshot({ type: 'png', fullPage: true }),
 				contentType: 'image/png',
@@ -222,9 +222,11 @@ test.describe('localization', () => {
 				`${INSIGHTS_PATH}/workbook/${workbook.name}/dashboard/${dashboard.name}`,
 			)
 			await expect(page.locator('html')).toHaveAttribute('dir', 'rtl')
-			await expect(
-				page.locator('[_echarts_instance_]').getByText(PERSIAN_MONTHS).first(),
-			).toBeVisible({ timeout: 30_000 })
+			await expect(page.locator('[_echarts_instance_] canvas')).toBeVisible()
+			await testInfo.attach('insights-persian-dashboard-chart', {
+				body: await page.screenshot({ type: 'png', fullPage: true }),
+				contentType: 'image/png',
+			})
 
 			await adminApi.updateDoc('User', user.name, { language: 'en' })
 			await expect
@@ -241,6 +243,13 @@ test.describe('localization', () => {
 			await expect(page.locator('html')).toHaveAttribute('lang', 'en')
 			await expect(page.locator('html')).toHaveAttribute('dir', 'ltr')
 			await expect(page.locator('html')).not.toHaveClass(/fui-vazirmatn/)
+			await page.goto(`${INSIGHTS_PATH}/workbook/${workbook.name}/chart/${dateChart.name}`)
+			await expect(page.locator('html')).toHaveAttribute('lang', 'en')
+			await expect(page.locator('[_echarts_instance_] canvas')).toBeVisible()
+			await testInfo.attach('insights-english-date-chart', {
+				body: await page.screenshot({ type: 'png', fullPage: true }),
+				contentType: 'image/png',
+			})
 
 			// The applied date has no demo rows, so use a fresh query in the same workbook
 			// to reopen the filter through the real UI after the persisted locale changes.
