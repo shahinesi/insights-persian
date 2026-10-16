@@ -225,24 +225,37 @@ class TestAgentQuery(InsightsIntegrationTestCase):
     # @feature permissions.agent-profile-respects-access data-store.run-without-import
     def test_a_table_the_reader_may_not_read_is_refused_before_it_is_named_not_stored(self):
         WarehouseTable("Site DB", "tabError Log").drop()
-        for method, args in (
-            ("execute", {"import_if_not_exists": False}),
-            ("profile_column", {"column_name": "name"}),
+        with (
+            patch.object(
+                WarehouseTable,
+                "get_ibis_table",
+                side_effect=AssertionError("permission must be checked before a warehouse read"),
+            ),
+            patch.object(
+                InsightsDataSourcev3,
+                "get_ibis_table",
+                side_effect=AssertionError("permission must be checked before a live table read"),
+            ),
         ):
-            frappe.local.message_log = []
-            with self.subTest(method=method):
-                with self.assertRaises(NotPermitted):
-                    self.call_as(
-                        OWNER,
-                        method,
-                        operations=table_operations("tabError Log"),
-                        use_live_connection=0,
-                        **args,
-                    )
-                self.assertEqual(
-                    [message.get("message") for message in frappe.local.message_log],
-                    ["Needs read access to <strong>Error Log</strong>"],
-                )
+            for method, args in (
+                ("execute", {"import_if_not_exists": False}),
+                ("profile_column", {"column_name": "name"}),
+            ):
+                for use_live_connection in (0, 1):
+                    frappe.local.message_log = []
+                    with self.subTest(method=method, use_live_connection=use_live_connection):
+                        with self.assertRaises(NotPermitted):
+                            self.call_as(
+                                OWNER,
+                                method,
+                                operations=table_operations("tabError Log"),
+                                use_live_connection=use_live_connection,
+                                **args,
+                            )
+                        self.assertEqual(
+                            [message.get("message") for message in frappe.local.message_log],
+                            ["Needs read access to <strong>Error Log</strong>"],
+                        )
 
     # @feature tooling.agent-profile-column
     def test_a_profile_refuses_a_name_the_query_lacks(self):

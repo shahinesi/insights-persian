@@ -388,7 +388,9 @@ test.describe('charts', () => {
 		await page.goto(`${INSIGHTS_PATH}/workbook/${workbook.name}/chart/${chart.name}`)
 
 		const rendered = chartOf(page)
-		await expect(rendered.getByText('2017')).toBeVisible()
+		await expect(
+			rendered.getByText(/^(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) 2017$/).first(),
+		).toBeVisible()
 		await expect(rendered.getByText('delivered')).toHaveCount(0)
 
 		await section(page, 'Split Series').getByRole('button', { name: 'Select a column' }).click()
@@ -585,8 +587,12 @@ test.describe('charts', () => {
 		// A date x-axis shows a time scale. The demo orders run into 2018, and a
 		// month grain keeps every month under 100 orders.
 		const chart = chartOf(page)
-		await expect(chart.getByText('2017')).toBeVisible()
-		await expect(chart.getByText('2018')).toBeVisible()
+		await expect(
+			chart.getByText(/^(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) 2017$/).first(),
+		).toBeVisible()
+		await expect(
+			chart.getByText(/^(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) 2018$/).first(),
+		).toBeVisible()
 		await expect(chart.getByText('100')).toBeVisible()
 	})
 

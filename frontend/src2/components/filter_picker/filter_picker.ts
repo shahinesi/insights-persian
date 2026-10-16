@@ -6,6 +6,7 @@
 import type { Component } from 'vue'
 import { FIELDTYPES, type FilterType } from '../../helpers/constants'
 import dayjs from '../../helpers/dayjs'
+import { formatLocaleDate } from 'frappe-ui/localization'
 import { endOfPeriod, shiftPeriods, startOfPeriod } from '../../helpers/calendar'
 import {
 	buildSpan,
@@ -16,6 +17,9 @@ import {
 	type SpanUnit,
 } from '../../helpers/span_grammar'
 import { column, filter_group } from '../../query/helpers'
+import { currentMonthDateRange } from '../../query/components/date_filter'
+import session from '../../session'
+import { calendarForLocale, displayLocale } from '../../localization'
 import { __, translatedTable } from '../../translation'
 import type {
 	ColumnDataType,
@@ -218,6 +222,7 @@ function roundish(value: number): number {
 }
 
 export function formatNumber(raw: any): string {
+	if (raw === null || raw === undefined || raw === '') return ''
 	const value = Number(raw)
 	// the reader's locale, like every other number this app prints
 	return Number.isFinite(value) ? value.toLocaleString() : String(raw ?? '')
@@ -343,11 +348,29 @@ export function spanOf(form: RelativeForm): string {
  * this range is a preview of the rows the server will return, and the server
  * counts by those.
  */
-export function resolveSpan(span: string, anchor?: string): [string, string] {
+function activeLocale(): string {
+	return typeof document === 'undefined'
+		? session.user.locale
+		: document.documentElement.lang || session.user.locale
+}
+
+export function resolveSpan(
+	span: string,
+	anchor?: string,
+	locale = activeLocale(),
+): [string, string] {
 	const today = anchor ? dayjs(anchor) : dayjs()
 
 	const form = parseSpan(span)
 	if (!form) return [span, span]
+	if (
+		calendarForLocale(locale) === 'persian' &&
+		form.unit === 'month' &&
+		(form.shape === 'current' || form.shape === 'to date')
+	) {
+		const [from, to] = currentMonthDateRange(locale, today.format(DATE_FORMAT))
+		return [from, form.shape === 'to date' ? today.format(DATE_FORMAT) : to]
+	}
 
 	const currentStart = startOfPeriod(today, form.unit)
 
@@ -394,7 +417,7 @@ export function spanLabel(span: string): string {
 export function spanDates(value: FilterValue, anchor?: string): string {
 	const timespan = timespanOf(value)
 	if (!timespan) return ''
-	const [from, to] = resolveSpan(timespan.span, anchor || timespan.anchor)
+	const [from, to] = resolveSpan(timespan.span, anchor || timespan.anchor, activeLocale())
 	return formatDate(from, to)
 }
 
@@ -449,22 +472,45 @@ export function spanFromText(text: string): string | undefined {
 	return form ? buildSpan(form) : undefined
 }
 
-/**
- * The one date formatter the picker prints through. A single day reads
- * `11 Sep 2026`; a range drops whatever repeats between its two ends —
- * `5 – 11 Sep 2026`, `5 Sep – 11 Sep 2026`, `21 Mar 2023 – 11 Sep 2026`.
- */
+/** Format ISO date values for display in the active locale and calendar. */
 export function formatDate(from: string, to?: string): string {
-	const start = dayjs(from)
-	if (!start.isValid()) return from ?? ''
-	if (!to || to === from) return start.format('D MMM YYYY')
+	const locale = displayLocale(activeLocale(), session.site.country)
+	const calendar = calendarForLocale(locale) === 'persian' ? 'persian' : 'gregory'
+	const full = (value: string) =>
+		formatLocaleDate(value, { calendar, day: 'numeric', month: 'short', year: 'numeric' })
+	const start = full(from)
+	if (!start) return from ?? ''
+	if (!to || to === from) return start
 
-	const end = dayjs(to)
-	if (!end.isValid()) return `${start.format('D MMM YYYY')} – ${to}`
-	if (start.year() !== end.year())
-		return `${start.format('D MMM YYYY')} – ${end.format('D MMM YYYY')}`
-	if (start.month() === end.month()) return `${start.format('D')} – ${end.format('D MMM YYYY')}`
-	return `${start.format('D MMM')} – ${end.format('D MMM YYYY')}`
+	const end = full(to)
+	if (!end) return `${start} – ${to}`
+	const startDate = new Date(`${from}T00:00:00Z`)
+	const endDate = new Date(`${to}T00:00:00Z`)
+	if (Number.isNaN(startDate.getTime()) || Number.isNaN(endDate.getTime()))
+		return `${start} – ${end}`
+
+	const parts = (date: Date) =>
+		new Intl.DateTimeFormat(locale, {
+			calendar,
+			month: 'numeric',
+			year: 'numeric',
+			timeZone: 'UTC',
+		}).formatToParts(date)
+	const part = (values: Intl.DateTimeFormatPart[], type: string) =>
+		values.find((value) => value.type === type)?.value
+	const startParts = parts(startDate)
+	const endParts = parts(endDate)
+	const sameYear = part(startParts, 'year') === part(endParts, 'year')
+	const sameMonth = sameYear && part(startParts, 'month') === part(endParts, 'month')
+	if (sameMonth) {
+		const day = formatLocaleDate(from, { calendar, day: 'numeric' })
+		return `${day} – ${end}`
+	}
+	if (sameYear) {
+		const dayMonth = formatLocaleDate(from, { calendar, day: 'numeric', month: 'short' })
+		return `${dayMonth} – ${end}`
+	}
+	return `${start} – ${end}`
 }
 
 export type ParsedDate = { operator: FilterOperator; value: FilterValue }

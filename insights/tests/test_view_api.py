@@ -12,6 +12,7 @@ from insights.api.view import (
     get_filter_values,
 )
 from insights.insights.doctype.insights_data_source_v3.insights_data_source_v3 import db_connections
+from insights.insights.query_builders.sql_functions import get_window
 from insights.not_permitted import NotPermitted
 from insights.permission_user import permission_user, permission_user_for
 from insights.resolver import may_read
@@ -183,6 +184,32 @@ class TestViewAPI(InsightsIntegrationTestCase):
     def fetch_data(self, user, chart, dashboard=None, **kwargs):
         with as_user(user), db_connections():
             return get_chart_data(chart=chart, dashboard=dashboard, **kwargs)
+
+    # @feature query.filter-relative-date-persian-month
+    def test_saved_chart_uses_the_readers_persian_calendar_context(self):
+        """A dashboard's request context must reach the query that reads its card."""
+        _, chart, dashboard = self.make_content()
+        context = {
+            "calendar": "persian",
+            "anchor": "2026-10-15",
+            "current_month_range": ["2026-09-23", "2026-10-22"],
+        }
+
+        def current_month(*_args, **_kwargs):
+            return get_window("Current Month")
+
+        with patch("insights.api.view.chart_answer", side_effect=current_month):
+            actual = self.fetch_data(
+                OWNER,
+                chart.name,
+                dashboard.name,
+                calendar_context=context,
+            )
+
+        self.assertEqual(
+            actual,
+            (frappe.utils.getdate("2026-09-23"), frappe.utils.getdate("2026-10-22")),
+        )
 
     # the desk reader
 

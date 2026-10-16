@@ -5,14 +5,19 @@ import { __ } from '../../translation'
 import dayjs from '../../helpers/dayjs'
 import { ChevronDown, ChevronRight } from 'lucide-vue-next'
 import { computed, ref } from 'vue'
+import { formatLocaleDate, useDocumentLocale } from 'frappe-ui/localization'
 import { FilterOperator, FilterValue, QueryResultColumn } from '../../types/query.types'
+import { calendarForLocale } from '../../localization'
 import DatePicker from './DatePicker.vue'
+import { currentMonthDateRange, getSpecificDateFilter } from './date_filter'
 
 const props = defineProps<{ column: QueryResultColumn }>()
 const filter = defineModel<{ operator: FilterOperator; value: FilterValue }>({
 	type: Object,
 	default: () => ({ operator: '=', value: [] }),
 })
+const locale = useDocumentLocale().locale
+const isPersian = computed(() => calendarForLocale(locale.value) === 'persian')
 
 const currentSection = ref<'presets' | 'relative' | 'specific' | ''>('presets')
 wheneverChanges(currentSection, () => {
@@ -27,11 +32,14 @@ wheneverChanges(currentSection, () => {
 	}
 })
 
-const getValue = (date: Date) =>
-	date.toLocaleDateString('en-US', {
+const getValue = (date: Date) => {
+	const isoDate = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`
+	return formatLocaleDate(isoDate, {
+		calendar: isPersian.value ? 'persian' : 'gregory',
 		month: 'short',
 		day: 'numeric',
 	})
+}
 type Day = ReturnType<typeof dayjs>
 const getRange = (start: Day, end: Day) => `${getValue(start.toDate())} - ${getValue(end.toDate())}`
 
@@ -47,6 +55,10 @@ function startOfWeek() {
 const predefinedRanges = computed(() => {
 	const weekStart = startOfWeek()
 	const fyStart = dayjs(session.site.fiscal_year_start)
+	const [monthStart, monthEnd] = currentMonthDateRange(
+		locale.value,
+		dayjs().format('YYYY-MM-DD'),
+	)
 	return [
 		{ label: __('Today'), value: 'Day', description: getValue(new Date()) },
 		{
@@ -57,7 +69,7 @@ const predefinedRanges = computed(() => {
 		{
 			label: __('This Month'),
 			value: 'Month',
-			description: getRange(dayjs().startOf('month'), dayjs().endOf('month')),
+			description: getRange(dayjs(monthStart), dayjs(monthEnd)),
 		},
 		{
 			label: __('This Quarter'),
@@ -99,22 +111,9 @@ function isRangeSelected(rangeValue: string) {
 }
 
 function onDatePickerInput(value: string[]) {
-	// if both dates are same, set operator to '='
-	// if only first date is present, set operator to '>'
-	// if only second date is present, set operator to '<'
-	// if both dates are present, set operator to 'between'
-	filter.value.value = value
-	if (value[0] === value[1]) {
-		filter.value.operator = '='
-	} else if (value[0] && !value[1]) {
-		filter.value.operator = '>='
-	} else if (!value[0] && value[1]) {
-		filter.value.operator = '<='
-	} else if (value[0] && value[1]) {
-		filter.value.operator = 'between'
-	} else {
-		filter.value.operator = '='
-	}
+	const specificDateFilter = getSpecificDateFilter(value)
+	filter.value.value = specificDateFilter.value
+	filter.value.operator = specificDateFilter.operator
 }
 </script>
 
@@ -125,7 +124,7 @@ function onDatePickerInput(value: string[]) {
 				class="flex cursor-pointer items-center justify-between text-sm text-ink-gray-5 hover:underline"
 				@click="currentSection = currentSection == 'presets' ? '' : 'presets'"
 			>
-				<span> Presets </span>
+				<span>{{ __('Presets') }}</span>
 				<component
 					:is="currentSection == 'presets' ? ChevronDown : ChevronRight"
 					class="h-4 w-4"
@@ -156,7 +155,7 @@ function onDatePickerInput(value: string[]) {
 					class="flex cursor-pointer items-center justify-between text-sm text-ink-gray-5 hover:underline"
 					@click="currentSection = currentSection == 'relative' ? '' : 'relative'"
 				>
-					<span> Relative Dates </span>
+					<span>{{ __('Relative Dates') }}</span>
 					<component
 						:is="currentSection == 'relative' ? ChevronDown : ChevronRight"
 						class="h-4 w-4"
@@ -167,7 +166,7 @@ function onDatePickerInput(value: string[]) {
 					v-if="currentSection == 'relative' && Array.isArray(filter.value)"
 					class="flex flex-col gap-1 py-2"
 				>
-					<span>In Last...</span>
+					<span>{{ __('In Last...') }}</span>
 					<div class="flex gap-2">
 						<div class="flex-1">
 							<FormControl
@@ -183,7 +182,7 @@ function onDatePickerInput(value: string[]) {
 							<FormControl
 								type="select"
 								autocomplete="off"
-								:options="['Day', 'Week', 'Month', 'Quarter', 'Year']"
+								:options="['Day', 'Week', 'Month', 'Quarter', 'Year'].map((unit) => ({ label: __(unit), value: unit }))"
 								:modelValue="filter.value[2]"
 								@update:modelValue="filter.value[2] = $event"
 							/>
@@ -199,7 +198,7 @@ function onDatePickerInput(value: string[]) {
 					class="flex cursor-pointer items-center justify-between text-sm text-ink-gray-5 hover:underline"
 					@click="currentSection = currentSection == 'specific' ? '' : 'specific'"
 				>
-					<span> Specific Dates </span>
+					<span>{{ __('Specific Dates') }}</span>
 					<component
 						:is="currentSection == 'specific' ? ChevronDown : ChevronRight"
 						class="h-4 w-4"

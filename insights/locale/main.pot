@@ -3651,4 +3651,38 @@ msgstr ""
 #: frontend/src2/workbook/WorkbookTemplates.vue:106
 msgid "{0} updated"
 msgstr ""
+#: frontend/src2/query/components/ColumnFilterTypeDate.vue
+msgid "Presets"
+msgstr ""
 
+#: frontend/src2/query/components/ColumnFilterTypeDate.vue
+msgid "Relative Dates"
+msgstr ""
+
+#: frontend/src2/query/components/ColumnFilterTypeDate.vue
+msgid "Specific Dates"
+msgstr ""
+
+#: frontend/src2/query/components/ColumnFilterTypeDate.vue
+msgid "In Last..."
+msgstr ""
+
+#: frontend/src2/query/components/ColumnFilterTypeDate.vue
+msgid "Day"
+msgstr ""
+
+#: frontend/src2/query/components/ColumnFilterTypeDate.vue
+msgid "Week"
+msgstr ""
+
+#: frontend/src2/query/components/ColumnFilterTypeDate.vue
+msgid "Month"
+msgstr ""
+
+#: frontend/src2/query/components/ColumnFilterTypeDate.vue
+msgid "Quarter"
+msgstr ""
+
+#: frontend/src2/query/components/ColumnFilterTypeDate.vue
+msgid "Year"
+msgstr ""

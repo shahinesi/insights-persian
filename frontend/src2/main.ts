@@ -6,10 +6,12 @@ import { registerControllers } from './controllers.ts'
 import { registerGlobalComponents } from './globals.ts'
 import { setRouter } from './helpers/navigation.ts'
 import './index.css'
+import 'frappe-ui/localization/style.css'
 import router from './router.ts'
 import { translationPlugin } from './translation.ts'
 import { telemetryPlugin } from '@framework/ui/telemetry/index.ts'
 import session from './session.ts'
+import { applyDocumentLocale, displayLocale } from './localization.ts'
 
 setConfig('resourceFetcher', frappeRequest)
 
@@ -31,6 +33,11 @@ useColorScheme()
 
 const app = createApp(App)
 const pinia = createPinia()
+
+watchEffect(() => {
+	const locale = displayLocale(session.user.locale, session.site.country)
+	applyDocumentLocale(locale)
+})
 
 app.use(pinia)
 app.use(router)

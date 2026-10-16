@@ -774,11 +774,11 @@ msgstr "منبع داده"
 #: frontend/src2/data_source/DataSourceTable.vue:25
 #: frontend/src2/data_source/DataSourceTableList.vue:65
 msgid "Data Sources"
-msgstr ""
+msgstr "منابع داده"
 
 #: frontend/src2/data_source/DataSourceList.vue:141
 msgid "Data Sources | Insights"
-msgstr ""
+msgstr "منابع داده | Insights"
 
 #. Label of the data_store (Check) field in DocType 'Insights Query Execution
 #. Log'
@@ -787,7 +787,7 @@ msgstr ""
 #: frontend/src2/settings/Settings.vue:43
 #: insights/insights/doctype/insights_query_execution_log/insights_query_execution_log.json
 msgid "Data Store"
-msgstr ""
+msgstr "انبار داده"
 
 #: frontend/src2/charts/components/NewMeasureSelectorDialog.vue:120
 msgid "Data Type"
@@ -3592,4 +3592,38 @@ msgstr "شروع می‌شود با"
 #: frontend/src2/query/components/ColumnsSelectorDialog.vue:120
 msgid "{0} columns selected"
 msgstr ""
+#: frontend/src2/query/components/ColumnFilterTypeDate.vue
+msgid "Presets"
+msgstr "گزینه‌های آماده"
 
+#: frontend/src2/query/components/ColumnFilterTypeDate.vue
+msgid "Relative Dates"
+msgstr "تاریخ‌های نسبی"
+
+#: frontend/src2/query/components/ColumnFilterTypeDate.vue
+msgid "Specific Dates"
+msgstr "تاریخ‌های مشخص"
+
+#: frontend/src2/query/components/ColumnFilterTypeDate.vue
+msgid "In Last..."
+msgstr "در"
+
+#: frontend/src2/query/components/ColumnFilterTypeDate.vue
+msgid "Day"
+msgstr "روز"
+
+#: frontend/src2/query/components/ColumnFilterTypeDate.vue
+msgid "Week"
+msgstr "هفته"
+
+#: frontend/src2/query/components/ColumnFilterTypeDate.vue
+msgid "Month"
+msgstr "ماه"
+
+#: frontend/src2/query/components/ColumnFilterTypeDate.vue
+msgid "Quarter"
+msgstr "سه‌ماهه"
+
+#: frontend/src2/query/components/ColumnFilterTypeDate.vue
+msgid "Year"
+msgstr "سال"

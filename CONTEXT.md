@@ -81,6 +81,7 @@ _Avoid_: slice, window (in prose — `window` is the stored key), timeframe
 
 **Span**:
 A Period the engine resolves against the clock, written as the string `get_window` parses — `month to date`, `current month`, `last 3 months (include current)`. It filters to the stretch it names and groups by which stretch a row fell in, so a comparison gets a real row of its own. A `grain` Period filters nothing and groups by the grain instead.
+The saved `span` remains calendar-neutral. A query request may carry a transient `calendar_context`; Persian `current month` and `month to date` use its shared-UI-computed Gregorian ISO bounds, while requests without that context keep Gregorian resolution.
 _Avoid_: timespan (Frappe's word for the same thing, kept only in the `within` operator's value)
 
 **Expression**:

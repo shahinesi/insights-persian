@@ -1,6 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { nextTick } from 'vue'
 import type { AdhocFilters } from '../types/query.types'
+import session from '../session'
 
 const calls = vi.hoisted(() => [] as any[])
 
@@ -95,6 +96,45 @@ describe('the page of rows a reader is reading', () => {
 		await nextTick()
 		expect(query.currentPage).toBe(2)
 		expect(executionsSent()).toEqual([1, 2])
+	})
+})
+
+describe('request-only calendar semantics', () => {
+	// @feature query.filter-relative-date-persian-month
+	it('sends the active Persian month range without writing it into saved operations', async () => {
+		const originalLocale = session.user.locale
+		vi.useFakeTimers()
+		vi.setSystemTime(new Date('2026-10-15T08:00:00'))
+		vi.stubGlobal('document', { documentElement: { lang: 'fa-IR' } })
+		try {
+			const query = makeAdhocQuery()
+			query.setSource(ordersTable)
+			query.addFilterGroup({
+				logical_operator: 'And',
+				filters: [
+					{
+						column: { type: 'column', column_name: 'order_date' },
+						operator: 'within',
+						value: { span: 'current month' },
+					},
+				],
+			})
+			await query.execute()
+
+			const executeCall = calls.find((entry) => entry.args.method === 'execute')
+			expect(executeCall.args.args.calendar_context).toEqual({
+				calendar: 'persian',
+				anchor: '2026-10-15',
+				current_month_range: ['2026-09-23', '2026-10-22'],
+			})
+			expect(query.doc.operations[1]).toMatchObject({
+				filters: [{ operator: 'within', value: { span: 'current month' } }],
+			})
+		} finally {
+			session.user.locale = originalLocale
+			vi.useRealTimers()
+			vi.unstubAllGlobals()
+		}
 	})
 })
 

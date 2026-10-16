@@ -34,6 +34,7 @@ from insights.insights.doctype.insights_dashboard_v3.insights_dashboard_v3 impor
     card_filter_source,
     route_filters,
 )
+from insights.insights.query_builders.sql_functions import set_calendar_context
 from insights.not_permitted import answers_refusal
 from insights.permission_user import runs_as
 from insights.permissions import can_copy, can_export, can_read_rows, can_write
@@ -104,6 +105,7 @@ def get_chart_data(
     force: bool = False,
     page: int = 1,
     order_by: list | None = None,
+    calendar_context: dict | None = None,
 ):
     """A chart's rows, fetched under the permissions its Run as owner setting selects.
 
@@ -117,9 +119,9 @@ def get_chart_data(
     **Not Permitted**: it does not run, and the answer names the doctypes it
     needs.
     """
-    doc, adhoc_filters = routed_chart(chart, dashboard, filters)
-
-    return chart_answer(doc, adhoc_filters, card_filters, force, page, order_by)
+    with set_calendar_context(calendar_context):
+        doc, adhoc_filters = routed_chart(chart, dashboard, filters)
+        return chart_answer(doc, adhoc_filters, card_filters, force, page, order_by)
 
 
 @frappe.whitelist(allow_guest=True)  # nosemgrep - resolve_for_read lets a guest read Public content only
@@ -129,15 +131,16 @@ def get_chart_count(
     filters: dict | None = None,
     card_filters: list | None = None,
     force: bool = False,
+    calendar_context: dict | None = None,
 ):
     """The total number of rows behind the pages of `get_chart_data`, under the same filters.
 
     For readers `can_read_rows` allows. A refusal raises, because the card asks
     for the count only when its data answer allowed it.
     """
-    doc, adhoc_filters = routed_chart(chart, dashboard, filters)
-
-    return doc.count_rows(adhoc_filters, card_filters, force=force)
+    with set_calendar_context(calendar_context):
+        doc, adhoc_filters = routed_chart(chart, dashboard, filters)
+        return doc.count_rows(adhoc_filters, card_filters, force=force)
 
 
 @frappe.whitelist(allow_guest=True)  # nosemgrep - resolve_for_read lets a guest read Public content only
@@ -148,11 +151,12 @@ def download_chart_rows(
     card_filters: list | None = None,
     format: str = "csv",
     order_by: list | None = None,
+    calendar_context: dict | None = None,
 ):
     """Every row behind the pages of `get_chart_data` as a file, under the same filters and sort."""
-    doc, adhoc_filters = routed_chart(chart, dashboard, filters)
-
-    return doc.export_rows(format, adhoc_filters, card_filters, order_by)
+    with set_calendar_context(calendar_context):
+        doc, adhoc_filters = routed_chart(chart, dashboard, filters)
+        return doc.export_rows(format, adhoc_filters, card_filters, order_by)
 
 
 def chart_answer(
@@ -234,6 +238,7 @@ def get_drill_data(
     find: str | None = None,
     page: int = 1,
     row_filters: list | None = None,
+    calendar_context: dict | None = None,
 ):
     """The data behind a segment of a chart, one drill level at a time.
 
@@ -275,19 +280,19 @@ def get_drill_data(
     Permitted chart. So the level says the reader may not read the rows,
     instead of showing a Retry that cannot succeed.
     """
-    check_can_drill()
+    with set_calendar_context(calendar_context):
+        check_can_drill()
+        doc, adhoc_filters = routed_chart(chart, dashboard, filters)
 
-    doc, adhoc_filters = routed_chart(chart, dashboard, filters)
-
-    answer = drill_data(
-        doc,
-        drill_stack,
-        adhoc_filters=adhoc_filters,
-        sort=sort,
-        find=find,
-        page=page,
-        row_filters=row_filters,
-    )
+        answer = drill_data(
+            doc,
+            drill_stack,
+            adhoc_filters=adhoc_filters,
+            sort=sort,
+            find=find,
+            page=page,
+            row_filters=row_filters,
+        )
     if asks_for_rows(drill_stack):
         answer["can_export"] = can_export(doc)
 
@@ -304,6 +309,7 @@ def download_drill_rows(
     find: str | None = None,
     format: str = "csv",
     row_filters: list | None = None,
+    calendar_context: dict | None = None,
 ):
     """The rows behind a segment as a file, with the reader's own filters, sort and find.
 
@@ -311,19 +317,20 @@ def download_drill_rows(
     download row limit. The request includes no more than that one does: the
     chart, the segments, and how to read them.
     """
-    doc, adhoc_filters = routed_chart(chart, dashboard, filters)
-    if not can_export(doc):
-        frappe.throw(_("You are not allowed to download data"), exc=frappe.PermissionError)
+    with set_calendar_context(calendar_context):
+        doc, adhoc_filters = routed_chart(chart, dashboard, filters)
+        if not can_export(doc):
+            frappe.throw(_("You are not allowed to download data"), exc=frappe.PermissionError)
 
-    return drill_rows_export(
-        doc,
-        drill_stack,
-        adhoc_filters=adhoc_filters,
-        sort=sort,
-        find=find,
-        format=format,
-        row_filters=row_filters,
-    )
+        return drill_rows_export(
+            doc,
+            drill_stack,
+            adhoc_filters=adhoc_filters,
+            sort=sort,
+            find=find,
+            format=format,
+            row_filters=row_filters,
+        )
 
 
 @frappe.whitelist(allow_guest=True)  # nosemgrep - resolve_for_read lets a guest read Public content only
@@ -336,6 +343,7 @@ def get_drill_rows_values(
     filters: dict | None = None,
     row_filters: list | None = None,
     search_term: str | None = None,
+    calendar_context: dict | None = None,
 ):
     """The values listed by the reader's own filter on a rows level.
 
@@ -343,18 +351,18 @@ def get_drill_rows_values(
     surface is allowed, and the values come from the cut the reader is reading,
     not from the table under it.
     """
-    check_can_drill()
+    with set_calendar_context(calendar_context):
+        check_can_drill()
+        doc, adhoc_filters = routed_chart(chart, dashboard, filters)
 
-    doc, adhoc_filters = routed_chart(chart, dashboard, filters)
-
-    return drill_rows_values(
-        doc,
-        drill_stack,
-        column,
-        search_term=search_term,
-        adhoc_filters=adhoc_filters,
-        row_filters=row_filters,
-    )
+        return drill_rows_values(
+            doc,
+            drill_stack,
+            column,
+            search_term=search_term,
+            adhoc_filters=adhoc_filters,
+            row_filters=row_filters,
+        )
 
 
 @frappe.whitelist(allow_guest=True)  # nosemgrep - resolve_for_read lets a guest read Public content only
@@ -366,19 +374,20 @@ def get_drill_rows_range(
     dashboard: str | None = None,
     filters: dict | None = None,
     row_filters: list | None = None,
+    calendar_context: dict | None = None,
 ):
     """The range shown by a number filter on a rows level, limited like its values."""
-    check_can_drill()
+    with set_calendar_context(calendar_context):
+        check_can_drill()
+        doc, adhoc_filters = routed_chart(chart, dashboard, filters)
 
-    doc, adhoc_filters = routed_chart(chart, dashboard, filters)
-
-    return drill_rows_range(
-        doc,
-        drill_stack,
-        column,
-        adhoc_filters=adhoc_filters,
-        row_filters=row_filters,
-    )
+        return drill_rows_range(
+            doc,
+            drill_stack,
+            column,
+            adhoc_filters=adhoc_filters,
+            row_filters=row_filters,
+        )
 
 
 def check_can_drill():
@@ -429,6 +438,7 @@ def get_filter_values(
     filter_name: str,
     search_term: str | None = None,
     filters: dict | None = None,
+    calendar_context: dict | None = None,
 ):
     """The values a filter on this dashboard lists.
 
@@ -442,63 +452,83 @@ def get_filter_values(
     without this filter itself. Narrowing a filter's values by its own current
     value would make picking a second value impossible.
     """
-    doc = frappe.get_doc(DASHBOARD, resolve_for_read(DASHBOARD, dashboard))
+    with set_calendar_context(calendar_context):
+        doc = frappe.get_doc(DASHBOARD, resolve_for_read(DASHBOARD, dashboard))
 
-    def values(chart, query, column):
-        adhoc_filters = route_filters(doc.items, chart, filters, exclude_filter=filter_name)
-        return query.distinct_column_values(column, search_term=search_term, adhoc_filters=adhoc_filters)
+        def values(chart, query, column):
+            adhoc_filters = route_filters(doc.items, chart, filters, exclude_filter=filter_name)
+            return query.distinct_column_values(column, search_term=search_term, adhoc_filters=adhoc_filters)
 
-    return doc.lookup_filter(filter_name, values, missing=not_found)
+        return doc.lookup_filter(filter_name, values, missing=not_found)
 
 
 @frappe.whitelist(allow_guest=True)  # nosemgrep - resolve_for_read lets a guest read Public content only
 @answers_refusal(lambda: None)
-def get_filter_range(dashboard: str, filter_name: str, filters: dict | None = None):
+def get_filter_range(
+    dashboard: str,
+    filter_name: str,
+    filters: dict | None = None,
+    calendar_context: dict | None = None,
+):
     """The range a filter on this dashboard shows.
 
     Looked up and routed like `get_filter_values`, because a picker's preset
     ranges and its list of values describe the same rows.
     """
-    doc = frappe.get_doc(DASHBOARD, resolve_for_read(DASHBOARD, dashboard))
+    with set_calendar_context(calendar_context):
+        doc = frappe.get_doc(DASHBOARD, resolve_for_read(DASHBOARD, dashboard))
 
-    def column_range(chart, query, column):
-        adhoc_filters = route_filters(doc.items, chart, filters, exclude_filter=filter_name)
-        return query.column_range(column, adhoc_filters=adhoc_filters)
+        def column_range(chart, query, column):
+            adhoc_filters = route_filters(doc.items, chart, filters, exclude_filter=filter_name)
+            return query.column_range(column, adhoc_filters=adhoc_filters)
 
-    return doc.lookup_filter(filter_name, column_range, missing=not_found)
+        return doc.lookup_filter(filter_name, column_range, missing=not_found)
 
 
 @frappe.whitelist(allow_guest=True)  # nosemgrep - resolve_for_read lets a guest read Public content only
 @answers_refusal(list)
-def get_card_values(chart: str, column: str, dashboard: str | None = None, search_term: str | None = None):
+def get_card_values(
+    chart: str,
+    column: str,
+    dashboard: str | None = None,
+    search_term: str | None = None,
+    calendar_context: dict | None = None,
+):
     """The values listed by the reader's own filter on one card.
 
     Only a column the card shows is allowed. A column with no source column (a
     measure, or a column a pivot made) lists nothing. The card's own filters
     narrow the list, so it lists only what the card shows.
     """
-    source = card_source(chart, dashboard, column)
-    if not source:
-        return []
-    doc, query, column_name, card_filters = source
+    with set_calendar_context(calendar_context):
+        source = card_source(chart, dashboard, column)
+        if not source:
+            return []
+        doc, query, column_name, card_filters = source
 
-    with runs_as(doc):
-        return frappe.get_cached_doc(QUERY, query).distinct_column_values(
-            column_name, search_term=search_term, adhoc_filters=card_filters
-        )
+        with runs_as(doc):
+            return frappe.get_cached_doc(QUERY, query).distinct_column_values(
+                column_name, search_term=search_term, adhoc_filters=card_filters
+            )
 
 
 @frappe.whitelist(allow_guest=True)  # nosemgrep - resolve_for_read lets a guest read Public content only
 @answers_refusal(lambda: None)
-def get_card_range(chart: str, column: str, dashboard: str | None = None):
+def get_card_range(
+    chart: str,
+    column: str,
+    dashboard: str | None = None,
+    calendar_context: dict | None = None,
+):
     """The range shown by the reader's own filter on one card, narrowed like `get_card_values`."""
-    source = card_source(chart, dashboard, column)
-    if not source:
-        return None
-    doc, query, column_name, card_filters = source
+    with set_calendar_context(calendar_context):
+        source = card_source(chart, dashboard, column)
+        if not source:
+            return None
+        doc, query, column_name, card_filters = source
 
-    with runs_as(doc):
-        return frappe.get_cached_doc(QUERY, query).column_range(column_name, adhoc_filters=card_filters)
+        with runs_as(doc):
+            return frappe.get_cached_doc(QUERY, query).column_range(column_name, adhoc_filters=card_filters)
 
 
 def card_source(chart: str, dashboard: str | None, column: str):

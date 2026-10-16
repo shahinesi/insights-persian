@@ -1,6 +1,6 @@
 import * as echarts from 'echarts'
 import { BarChart, LineChart, type ChartTokens } from 'frappe-ui/charts'
-import { describe, expect, it } from 'vitest'
+import { afterEach, describe, expect, it, vi } from 'vitest'
 import type { ReferenceLine } from '../../types/chart.types'
 import { fitLine, takesTrendLine } from './axis'
 import { normalizeChartConfig, setStack } from '../helpers'
@@ -9,6 +9,8 @@ import { axisChart, type AxisChartSpec } from './fixtures'
 import { buildAxisChartOption } from '../../../node_modules/frappe-ui/src/charts/axisChartOptions'
 import { normalizeAxisChartProps } from '../../../node_modules/frappe-ui/src/charts/seriesData'
 import { resolveChartTokens } from '../../../node_modules/frappe-ui/src/charts/tokens'
+
+afterEach(() => vi.unstubAllGlobals())
 
 // Everything here asserts on the props a chart is handed. What echarts renders
 // from them is v2's concern, and v2 tests it.
@@ -91,13 +93,26 @@ describe('the category axis', () => {
 
 	// @feature charts.x-axis
 	it('reads a date Dimension as a timeline at the grain it was grouped by', () => {
-		expect(
-			propsOf({
-				type: 'Line',
-				dimension: { name: 'order_date', type: 'Date', granularity: 'month' },
-				measures: ['revenue'],
-			}).xAxis,
-		).toEqual({ type: 'time', timeGrain: 'month' })
+		const xAxis = propsOf({
+			type: 'Line',
+			dimension: { name: 'order_date', type: 'Date', granularity: 'month' },
+			measures: ['revenue'],
+		}).xAxis
+		expect(xAxis).toMatchObject({ type: 'time', timeGrain: 'month' })
+		expect(xAxis.format('2026-10-01')).toContain('Oct')
+	})
+
+	// @feature charts.x-axis
+	it('formats Persian time-axis labels through shared localization', () => {
+		vi.stubGlobal('document', { documentElement: { lang: 'fa-IR' } })
+		const xAxis = propsOf({
+			type: 'Line',
+			dimension: { name: 'order_date', type: 'Date', granularity: 'month' },
+			measures: ['revenue'],
+		}).xAxis
+
+		expect(xAxis.format('2026-10-01')).toContain('مهر')
+		expect(xAxis.format('2026-10-01')).toContain('۱۴۰۵')
 	})
 
 	// @feature charts.x-axis

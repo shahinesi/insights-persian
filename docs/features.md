@@ -23,8 +23,11 @@ One row per thing a user can do or rely on. Slugs are `<area>.<feature>` in the 
 | query.filter-number-range | A number filter lists presets cut from the column's own smallest and largest values, and a between range. |
 | query.filter-values | A text filter lists the column's distinct values to pick from. |
 | query.filter-relative-date | A user filters on a date with the relative date picker: last, current or next N days, weeks, months, quarters, years or fiscal years. |
+| query.filter-relative-date-persian-month | In Persian, Current Month and Month to Date use Jalali month boundaries but send Gregorian ISO dates; other locales keep Gregorian month boundaries. |
 | query.filter-relative-date-include-current | A relative date span can take in the current period. |
 | query.filter-relative-date-shift | A relative span can be measured from a shifted anchor rather than today. |
+| query.filter-date-summary-locale | Date filter summaries follow the active document locale and calendar while the filter values remain Gregorian ISO dates. |
+| query.filter-number-zero-null | A filter displays a real numeric zero as zero and leaves null or missing values empty. |
 | query.filter-date-on-datetime | A date picked for a Datetime column names that whole day, whichever operator compares it. |
 | query.filter-is-set | A user filters rows to those with or without a value. |
 | query.filter-expression | A user converts a filter row into a free-form expression. |
@@ -126,6 +129,7 @@ One row per thing a user can do or rely on. Slugs are `<area>.<feature>` in the 
 | charts.measure-unit | A measure prints as a plain number, a percent, or a currency read from the site or from a column. |
 | charts.dimension-label | A user relabels a dimension. |
 | charts.dimension-grain | A user sets a date dimension's grain and the chart groups by it. |
+| charts.date-label-locale | Date and time labels on chart axes and tooltips follow the active locale and calendar, while English remains Gregorian. |
 | charts.split-by | A user splits the series by a dimension and sees one series per value. |
 | charts.split-by-max-values | A user caps how many split values are plotted; the rest fold into Others. |
 | charts.tooltip-measures | A user adds measures that print in the tooltip only. |
@@ -454,6 +458,7 @@ One row per thing a user can do or rely on. Slugs are `<area>.<feature>` in the 
 | settings.log-out | A user logs out after a confirm. |
 | settings.login | A user logs in with email and password and sees an error on failure. |
 | settings.translations | The UI shows in the user's language, and every label the app ships reaches the translator. |
+| settings.locale-presentation | A user's active language controls document direction, font, and shared calendar presentation; changing to English restores LTR and Gregorian presentation. |
 
 ## upgrade
 

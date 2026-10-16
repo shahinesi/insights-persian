@@ -1,17 +1,22 @@
-import { describe, expect, it } from 'vitest'
+import { afterEach, describe, expect, it, vi } from 'vitest'
 import type { QueryResultColumn } from '../../types/query.types'
+import session from '../../session'
 import {
 	SPAN_UNITS,
 	isPreset,
 	numberPairValues,
 	numberQuickValues,
 	operatorOf,
+	formatDate,
+	formatNumber,
 	resolveSpan,
 	selectedRowKey,
 	spanLabel,
 	toFilterArgs,
 	unitOf,
 } from './filter_picker'
+
+afterEach(() => vi.unstubAllGlobals())
 
 // 2026-08-10 is a Monday. The same anchor the server's date range tests use, so
 // the two tables below can be read against `TestDirectionalSpans` in
@@ -80,9 +85,32 @@ describe('the range a relative span covers', () => {
 
 	// @feature query.filter-relative-date
 	it('covers the anchor period for a current span, and the period so far for a to-date one', () => {
-		expect(resolveSpan('current month', ANCHOR)).toEqual(['2026-08-01', '2026-08-31'])
+		expect(resolveSpan('current month', ANCHOR, 'en-US')).toEqual(['2026-08-01', '2026-08-31'])
 		expect(resolveSpan('month to date', ANCHOR)).toEqual(['2026-08-01', ANCHOR])
 		expect(resolveSpan('year to date', ANCHOR)).toEqual(['2026-01-01', ANCHOR])
+	})
+
+	// @feature query.filter-relative-date
+	it('uses the active document locale when resolving a month without an explicit locale', () => {
+		vi.stubGlobal('document', { documentElement: { lang: 'fa-IR' } })
+
+		expect(resolveSpan('current month', '2026-10-15')).toEqual(['2026-09-23', '2026-10-22'])
+	})
+
+	// @feature query.filter-relative-date-persian-month
+	it('uses shared Persian month bounds for current-month previews in Persian', () => {
+		expect(resolveSpan('current month', '2026-10-15', 'fa-IR')).toEqual([
+			'2026-09-23',
+			'2026-10-22',
+		])
+		expect(resolveSpan('month to date', '2026-10-15', 'fa-IR')).toEqual([
+			'2026-09-23',
+			'2026-10-15',
+		])
+		expect(resolveSpan('current month', '2026-10-15', 'en-US')).toEqual([
+			'2026-10-01',
+			'2026-10-31',
+		])
 	})
 
 	// @feature query.filter-relative-date
@@ -136,6 +164,50 @@ describe('the operator table', () => {
 	})
 })
 
+describe('date summaries follow the active calendar', () => {
+	const previousLocale = session.user.locale
+
+	afterEach(() => {
+		session.user.locale = previousLocale
+	})
+
+	// @feature query.filter-date-summary-locale
+	it('formats date-filter summaries as Persian dates without changing the ISO values', () => {
+		session.user.locale = 'fa-IR'
+		vi.stubGlobal('document', { documentElement: { lang: 'fa-IR' } })
+
+		const summary = formatDate('2026-10-01', '2026-10-02')
+		expect(summary).toContain('مهر')
+		expect(summary).toContain('۱۴۰۵')
+		expect(summary).not.toContain('2026')
+
+		const monthBoundary = formatDate('2026-10-22', '2026-10-23')
+		expect(monthBoundary).toContain('مهر')
+		expect(monthBoundary).toContain('آبان')
+	})
+
+	// @feature query.filter-date-summary-locale
+	it('keeps date summaries Gregorian in English', () => {
+		session.user.locale = 'en-US'
+		vi.stubGlobal('document', { documentElement: { lang: 'en-US' } })
+
+		expect(formatDate('2026-10-01', '2026-10-02')).toContain('Oct')
+	})
+
+	// @feature query.filter-date-summary-locale
+	it('follows the active document language when it differs from the saved user locale', () => {
+		session.user.locale = 'fa-IR'
+		vi.stubGlobal('document', { documentElement: { lang: 'en-US' } })
+		expect(formatDate('2026-10-01', '2026-10-02')).toContain('Oct')
+
+		session.user.locale = 'en-US'
+		vi.stubGlobal('document', { documentElement: { lang: 'fa-IR' } })
+		const summary = formatDate('2026-10-01', '2026-10-02')
+		expect(summary).toContain('مهر')
+		expect(summary).toContain('۱۴۰۵')
+	})
+})
+
 describe('what a host sends', () => {
 	// @feature query.filter
 	it('sends the column by name, and the rule as it stands', () => {
@@ -151,6 +223,13 @@ describe('what a host sends', () => {
 })
 
 describe('the numbers a number filter lists', () => {
+	// @feature query.filter-number-zero-null
+	it('keeps an explicit zero distinct from an empty value', () => {
+		expect(formatNumber(0)).toBe('0')
+		expect(formatNumber(null)).toBe('')
+		expect(formatNumber(undefined)).toBe('')
+	})
+
 	// @feature query.filter-number-range
 	it('cuts them from the column, not from a fixed list', () => {
 		expect(numberQuickValues([0, 100])).toEqual([25, 50, 75])

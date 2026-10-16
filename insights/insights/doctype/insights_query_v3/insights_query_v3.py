@@ -27,6 +27,7 @@ from insights.insights.doctype.insights_data_source_v3.ibis_utils import (
     is_hidden_column,
 )
 from insights.insights.doctype.insights_data_source_v3.insights_data_source_v3 import source_type
+from insights.insights.query_builders.sql_functions import set_calendar_context
 from insights.insights.query_utils import (
     check_source_workbook,
     extract_query_deps_from_operations,
@@ -288,6 +289,7 @@ class InsightsQueryv3(Document):
         page: int = 1,
         page_size: int = 100,
         import_if_not_exists: bool = True,
+        calendar_context: dict | None = None,
     ):
         """Run this query and answer with its rows.
 
@@ -301,7 +303,13 @@ class InsightsQueryv3(Document):
         """
         try:
             return self._run(
-                active_operation_idx, adhoc_filters, force, page, page_size, import_if_not_exists
+                active_operation_idx,
+                adhoc_filters,
+                force,
+                page,
+                page_size,
+                import_if_not_exists,
+                calendar_context,
             )
         except Exception as e:
             self.capture_failure(e)
@@ -315,8 +323,9 @@ class InsightsQueryv3(Document):
         page: int = 1,
         page_size: int = 100,
         import_if_not_exists: bool = True,
+        calendar_context: dict | None = None,
     ):
-        with set_adhoc_filters(adhoc_filters):
+        with set_adhoc_filters(adhoc_filters), set_calendar_context(calendar_context):
             ibis_query = self.build(
                 active_operation_idx, force=force, import_if_not_exists=import_if_not_exists
             )
@@ -361,20 +370,26 @@ class InsightsQueryv3(Document):
         return sqlparse.format(str(raw_sql), reindent=True, keyword_case="upper")
 
     @insights_whitelist()
-    def get_count(self, active_operation_idx: int | None = None, adhoc_filters: dict | None = None):
+    def get_count(
+        self,
+        active_operation_idx: int | None = None,
+        adhoc_filters: dict | None = None,
+        calendar_context: dict | None = None,
+    ):
         """The authoring client's endpoint for `count_rows`.
 
         The `Insights User` role belongs to the endpoint a client reaches, not to
         the computation behind it: a surface that settled its own read before it
         counts anything calls the plain method instead.
         """
-        return self.count_rows(active_operation_idx, adhoc_filters)
+        return self.count_rows(active_operation_idx, adhoc_filters, calendar_context=calendar_context)
 
     def count_rows(
         self,
         active_operation_idx: int | None = None,
         adhoc_filters: dict | None = None,
         force: bool = False,
+        calendar_context: dict | None = None,
     ):
         """How many rows the query has, which is `execute`'s other half.
 
@@ -383,7 +398,7 @@ class InsightsQueryv3(Document):
         forces the rows and not the count can print a page of fresh rows under a
         stale total.
         """
-        with set_adhoc_filters(adhoc_filters):
+        with set_adhoc_filters(adhoc_filters), set_calendar_context(calendar_context):
             ibis_query = self.build(active_operation_idx, force=force)
 
         count_query = ibis_query.aggregate(count=_.count())
@@ -399,7 +414,11 @@ class InsightsQueryv3(Document):
 
     @insights_whitelist()
     def download_results(
-        self, format: str = "csv", active_operation_idx: int | None = None, adhoc_filters: dict | None = None
+        self,
+        format: str = "csv",
+        active_operation_idx: int | None = None,
+        adhoc_filters: dict | None = None,
+        calendar_context: dict | None = None,
     ):
         """Download this query's rows as a file, if `can_export` allows it. A
         View's drill download checks the same."""
@@ -411,16 +430,20 @@ class InsightsQueryv3(Document):
                 frappe.PermissionError,
             )
 
-        return self.export_rows(format, active_operation_idx, adhoc_filters)
+        return self.export_rows(format, active_operation_idx, adhoc_filters, calendar_context)
 
     def export_rows(
-        self, format: str = "csv", active_operation_idx: int | None = None, adhoc_filters: dict | None = None
+        self,
+        format: str = "csv",
+        active_operation_idx: int | None = None,
+        adhoc_filters: dict | None = None,
+        calendar_context: dict | None = None,
     ):
         """This query's rows as the text of a file, capped at the site's `max_export_rows`.
 
         Checks no permission; the caller checks `can_export`.
         """
-        with set_adhoc_filters(adhoc_filters):
+        with set_adhoc_filters(adhoc_filters), set_calendar_context(calendar_context):
             ibis_query = self.build(active_operation_idx)
 
         hidden = [col for col in ibis_query.columns if is_hidden_column(col)]
@@ -467,11 +490,12 @@ class InsightsQueryv3(Document):
         search_term: str | None = None,
         limit: int = 20,
         adhoc_filters: dict | None = None,
+        calendar_context: dict | None = None,
     ):
         """The Builder's endpoint for `distinct_column_values`, checked like
         `get_count`. It answers a refusal as a View's picker does."""
         return self.distinct_column_values(
-            column_name, active_operation_idx, search_term, limit, adhoc_filters
+            column_name, active_operation_idx, search_term, limit, adhoc_filters, calendar_context
         )
 
     def distinct_column_values(
@@ -481,8 +505,9 @@ class InsightsQueryv3(Document):
         search_term: str | None = None,
         limit: int = 20,
         adhoc_filters: dict | None = None,
+        calendar_context: dict | None = None,
     ):
-        with set_adhoc_filters(adhoc_filters):
+        with set_adhoc_filters(adhoc_filters), set_calendar_context(calendar_context):
             builder = self.get_builder(active_operation_idx)
         column_name = builder.get_column(column_name).get_name()
 
@@ -507,15 +532,17 @@ class InsightsQueryv3(Document):
         column_name: str,
         active_operation_idx: int | None = None,
         adhoc_filters: dict | None = None,
+        calendar_context: dict | None = None,
     ):
         """The authoring client's endpoint for `column_range`, gated like `get_count`."""
-        return self.column_range(column_name, active_operation_idx, adhoc_filters)
+        return self.column_range(column_name, active_operation_idx, adhoc_filters, calendar_context)
 
     def column_range(
         self,
         column_name: str,
         active_operation_idx: int | None = None,
         adhoc_filters: dict | None = None,
+        calendar_context: dict | None = None,
     ) -> list | None:
         """The smallest and largest a numeric column goes, as [min, max].
 
@@ -523,7 +550,7 @@ class InsightsQueryv3(Document):
         lists 1,000 for a column of percentages and nothing at all for a column
         of revenues, so the column is asked instead.
         """
-        with set_adhoc_filters(adhoc_filters):
+        with set_adhoc_filters(adhoc_filters), set_calendar_context(calendar_context):
             builder = self.get_builder(active_operation_idx)
 
         column = builder.get_column(column_name)

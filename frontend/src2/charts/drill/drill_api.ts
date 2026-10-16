@@ -16,6 +16,7 @@
 // descriptor for both: literals and an action per level.
 
 import { call } from 'frappe-ui'
+import type { QueryCalendarContext } from '../../query/calendar_context'
 import type { ChartConfig } from '../../types/chart.types'
 import type { Operation } from '../../types/query.types'
 import type { FilterValues } from '../../types/workbook.types'
@@ -33,6 +34,7 @@ export type ViewDrillSubject = {
 	chart: string
 	dashboard?: string
 	filters?: FilterValues
+	calendar_context?: QueryCalendarContext
 }
 
 export function fetchViewDrillData(

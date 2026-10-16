@@ -143,6 +143,48 @@ describe('a dashboard opened a second time', () => {
 	})
 })
 
+describe('dashboard calendar context', () => {
+	// @feature query.filter-relative-date-persian-month
+	it('sends the active Persian calendar to chart and dashboard filter reads', async () => {
+		vi.stubGlobal('document', { cookie: '', documentElement: { lang: 'fa-IR' } })
+		try {
+			const view = await opened('persian-calendar')
+			const chartRead = dataCalls()[0]
+			expect(chartRead.args.calendar_context).toMatchObject({ calendar: 'persian' })
+			expect(chartRead.args.calendar_context.anchor).toMatch(/^\d{4}-\d{2}-\d{2}$/)
+			expect(chartRead.args.calendar_context.current_month_range).toHaveLength(2)
+
+			await view.filterValues('region')
+			await view.filterRange('region')
+			await view.cardValues('chart-1', 'region')
+			await view.cardRange('chart-1', 'region')
+
+			const contextualReads = calls.filter((entry) =>
+				['get_filter_values', 'get_filter_range', 'get_card_values', 'get_card_range'].some(
+					(method) => entry.method === `insights.api.view.${method}`,
+				),
+			)
+			expect(contextualReads).toHaveLength(4)
+			for (const read of contextualReads) {
+				expect(read.args.calendar_context).toMatchObject({ calendar: 'persian' })
+			}
+		} finally {
+			vi.stubGlobal('document', { cookie: '' })
+		}
+	})
+
+	// @feature query.filter-relative-date-persian-month
+	it('keeps Gregorian semantics for an English dashboard reader', async () => {
+		vi.stubGlobal('document', { cookie: '', documentElement: { lang: 'en-US' } })
+		try {
+			await opened('english-calendar')
+			expect(dataCalls()[0].args.calendar_context).toEqual({ calendar: 'gregorian' })
+		} finally {
+			vi.stubGlobal('document', { cookie: '' })
+		}
+	})
+})
+
 // A dashboard shipped by an app is read-only. To change it, a site duplicates
 // its workbook.
 describe('a shipped dashboard', () => {

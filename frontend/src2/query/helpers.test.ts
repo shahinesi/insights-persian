@@ -1,6 +1,8 @@
-import { describe, expect, it } from 'vitest'
+import { afterEach, describe, expect, it, vi } from 'vitest'
 import type { QueryResult } from '../types/query.types'
-import { emptyResult, rawRowOf } from './helpers'
+import { emptyResult, getAxisDate, getFormattedDate, rawRowOf } from './helpers'
+
+afterEach(() => vi.unstubAllGlobals())
 
 function resultOf(rows: QueryResult['rows']): QueryResult {
 	return {
@@ -39,5 +41,50 @@ describe('the raw row behind a formatted one', () => {
 
 		expect(rawRowOf(result, result.formattedRows[0])).toBe(result.rows[0])
 		expect(rawRowOf(result, result.formattedRows[1])).toBe(result.rows[1])
+	})
+})
+
+describe('chart date labels follow the active calendar', () => {
+	// @feature charts.date-label-locale
+	it('uses the shared Jalali formatter for Persian chart grains', () => {
+		vi.stubGlobal('document', { documentElement: { lang: 'fa-IR' } })
+
+		const day = getFormattedDate('2026-10-01', 'day')
+		expect(day).toContain('مهر')
+		expect(day).toContain('۱۴۰۵')
+		expect(day).not.toContain('October')
+		expect(getFormattedDate('2026-10-01', 'month')).toContain('مهر')
+		expect(getFormattedDate('2026-10-01', 'year')).toContain('۱۴۰۵')
+		expect(getFormattedDate('2026-10-01', 'quarter')).toContain('۱۴۰۵')
+		expect(getAxisDate('2026-10-01', 'month')).toContain('مهر')
+		expect(getAxisDate('2026-10-01', 'month')).toContain('۱۴۰۵')
+	})
+
+	// @feature charts.date-label-locale
+	it('keeps chart labels Gregorian when the document language is English', () => {
+		vi.stubGlobal('document', { documentElement: { lang: 'en-US' } })
+
+		expect(getFormattedDate('2026-10-01', 'month')).toBe('October, 2026')
+		expect(getFormattedDate('2026-10-01', 'year')).toBe('2026')
+		expect(getFormattedDate('2026-10-01', 'quarter')).toBe('Q4, 2026')
+		expect(getAxisDate('2026-10-01', 'month')).toContain('Oct')
+	})
+})
+
+describe('chart time labels follow the active locale', () => {
+	// @feature charts.date-label-locale
+	it('formats time-only chart values with Persian digits in Persian', () => {
+		vi.stubGlobal('document', { documentElement: { lang: 'fa-IR' } })
+
+		expect(getFormattedDate('13:05:07', 'minute')).toContain('۱۳:۰۵')
+		expect(getFormattedDate('13:05:07', 'second')).toContain('۱۳:۰۵:۰۷')
+	})
+
+	// @feature charts.date-label-locale
+	it('keeps time-only chart values in English when the document language is English', () => {
+		vi.stubGlobal('document', { documentElement: { lang: 'en-US' } })
+
+		expect(getFormattedDate('13:05:07', 'minute')).toContain('1:05 PM')
+		expect(getFormattedDate('13:05:07', 'second')).toContain('1:05:07 PM')
 	})
 })

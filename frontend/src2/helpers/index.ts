@@ -14,6 +14,8 @@ import {
 } from 'vue'
 import { getFormattedDate } from '../query/helpers'
 import session from '../session'
+import { displayLocale } from '../localization'
+import { formatLocaleNumber } from 'frappe-ui/localization'
 import {
 	ColumnDataType,
 	DataFormat,
@@ -211,11 +213,10 @@ export function toNumber(value: any): number | null {
 export function formatNumber(number: number, precision?: number): string {
 	if (isNaN(number)) return String(number)
 	precision = precision ?? guessPrecision(number)
-	const locale = session.site?.country == 'India' ? 'en-IN' : session.user?.locale
-	return new Intl.NumberFormat(locale || 'en-US', {
+	return formatLocaleNumber(number, {
 		minimumFractionDigits: precision,
 		maximumFractionDigits: precision,
-	}).format(number)
+	})
 }
 
 export type FormatUnits = {
@@ -253,11 +254,11 @@ export function guessPrecision(number: number) {
 }
 
 export function getShortNumber(number: number, precision = 0) {
-	const locale = session.site?.country == 'India' ? 'en-IN' : session.user?.locale
-	let formatted = new Intl.NumberFormat(locale || 'en-US', {
+	const locale = displayLocale(session.user?.locale, session.site?.country)
+	let formatted = formatLocaleNumber(number, {
 		notation: 'compact',
 		maximumFractionDigits: precision,
-	}).format(number)
+	})
 
 	if (locale == 'en-IN') {
 		formatted = formatted.replace('T', 'K')

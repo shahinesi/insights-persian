@@ -8,6 +8,8 @@ from insights.insights.query_builders.sql_functions import (
     get_fiscal_year_start_date,
     get_window,
     handle_timespan,
+    read_on,
+    set_calendar_context,
     shift_anchor,
     within_days,
 )
@@ -194,6 +196,92 @@ class TestTimespanFilter(InsightsIntegrationTestCase):
             sql = self.compiled("Month to Date")
             self.assertIn(">= '2026-08-01 00:00:00'", sql)
             self.assertIn("< '2026-08-11 00:00:00'", sql)
+
+    # @feature query.filter-relative-date-persian-month
+    def test_a_persian_request_resolves_current_month_to_iso_bounds(self):
+        context = {
+            "calendar": "persian",
+            "anchor": "2026-10-15",
+            "current_month_range": ["2026-09-23", "2026-10-22"],
+        }
+        with patch(NOW, return_value="2026-10-15"), set_calendar_context(context):
+            sql = self.compiled("Current Month")
+        self.assertIn(">= '2026-09-23 00:00:00'", sql)
+        self.assertIn("< '2026-10-23 00:00:00'", sql)
+
+    # @feature query.filter-relative-date-persian-month
+    def test_persian_month_to_date_uses_the_same_iso_month_start(self):
+        context = {
+            "calendar": "persian",
+            "anchor": "2026-10-15",
+            "current_month_range": ["2026-09-23", "2026-10-22"],
+        }
+        with patch(NOW, return_value="2026-10-15"), set_calendar_context(context):
+            sql = self.compiled("Month to Date")
+        self.assertIn(">= '2026-09-23 00:00:00'", sql)
+        self.assertIn("< '2026-10-16 00:00:00'", sql)
+
+    # @feature query.filter-relative-date-persian-month
+    def test_a_persian_request_does_not_change_gregorian_defaults(self):
+        with patch(NOW, return_value="2026-10-15"):
+            sql = self.compiled("Current Month")
+        self.assertIn(">= '2026-10-01 00:00:00'", sql)
+        self.assertIn("< '2026-11-01 00:00:00'", sql)
+
+    # @feature query.filter-relative-date-persian-month
+    def test_non_month_spans_keep_the_reading_day_under_persian_context(self):
+        """A request's Persian month anchor must not retarget other spans."""
+        context = {
+            "calendar": "persian",
+            "anchor": "2026-11-02",
+            "current_month_range": ["2026-10-23", "2026-11-21"],
+        }
+        expected = {
+            "Current Week": ("2026-10-12", "2026-10-19"),
+            "Current Year": ("2026-01-01", "2027-01-01"),
+            "Last 3 Months": ("2026-07-01", "2026-10-01"),
+        }
+        with self.change_settings("Insights Settings", week_starts_on="Monday"):
+            with (
+                patch(NOW, return_value="2026-11-02"),
+                read_on("2026-10-15"),
+                set_calendar_context(context),
+            ):
+                for span, (start, end) in expected.items():
+                    with self.subTest(span=span):
+                        sql = self.compiled(span)
+                        self.assertIn(f">= '{start} 00:00:00'", sql)
+                        self.assertIn(f"< '{end} 00:00:00'", sql)
+
+    # @feature query.filter-relative-date-persian-month
+    def test_explicit_saved_anchor_wins_when_it_matches_request_anchor(self):
+        """An identical request anchor cannot make a saved span unpinned."""
+        context = {
+            "calendar": "persian",
+            "anchor": "2026-10-15",
+            "current_month_range": ["2026-09-23", "2026-10-22"],
+        }
+        with patch(NOW, return_value="2026-10-15"), set_calendar_context(context):
+            sql = self.compiled({"span": "month to date", "anchor": "2026-10-15"})
+        self.assertIn(">= '2026-10-01 00:00:00'", sql)
+        self.assertIn("< '2026-10-16 00:00:00'", sql)
+
+    # @feature query.filter-relative-date-persian-month
+    def test_shifted_span_keeps_its_moved_reading_day_under_persian_context(self):
+        """Request month bounds do not replace the anchor of a comparison span."""
+        context = {
+            "calendar": "persian",
+            "anchor": "2026-11-02",
+            "current_month_range": ["2026-10-23", "2026-11-21"],
+        }
+        with (
+            patch(NOW, return_value="2026-11-02"),
+            read_on("2026-10-15"),
+            set_calendar_context(context),
+        ):
+            sql = self.compiled({"span": "month to date", "shift": {"unit": "year", "count": -1}})
+        self.assertIn(">= '2025-10-01 00:00:00'", sql)
+        self.assertIn("< '2025-10-16 00:00:00'", sql)
 
     # @feature settings.week-start
     def test_an_existing_span_is_unchanged(self):

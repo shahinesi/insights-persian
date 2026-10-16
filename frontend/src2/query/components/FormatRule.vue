@@ -469,12 +469,14 @@ const isInvalidColumn = computed(() => {
 						<!-- todo: find a proper fix for datepicker v-model -->
 						<DatePicker
 							v-model="(format as date_rules).value as string"
+							calendar="auto"
 							:range="true"
 						/>
 					</template>
 					<template v-else>
 						<DatePicker
 							v-model="(format as date_rules).value as string"
+							calendar="auto"
 							:range="false"
 						/>
 					</template>

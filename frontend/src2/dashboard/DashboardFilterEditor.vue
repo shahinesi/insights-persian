@@ -268,6 +268,7 @@ function saveEdit() {
 										<template v-if="defaultValueSelectorType">
 											<DatePicker
 												v-if="defaultValueSelectorType === 'date'"
+												calendar="auto"
 												class="flex-1"
 												:modelValue="filter.default_value as string"
 												@update:modelValue="filter.default_value = $event"
@@ -276,6 +277,7 @@ function saveEdit() {
 												v-else-if="
 													defaultValueSelectorType === 'date_range'
 												"
+												calendar="auto"
 												class="flex-1"
 												v-model="dateRangeVal as [string, string]"
 											/>
