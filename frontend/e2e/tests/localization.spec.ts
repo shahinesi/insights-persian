@@ -11,6 +11,8 @@ import {
 } from '../helpers/insights'
 
 const PERSIAN_MONTHS = /فروردین|اردیبهشت|خرداد|تیر|مرداد|شهریور|مهر|آبان|آذر|دی|بهمن|اسفند/
+const ENGLISH_MONTH_YEAR =
+	/^(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) \d{4}$/
 
 test.describe('localization', () => {
 	test('a saved Persian locale displays Jalali dates and stores the selected ISO date', async ({
@@ -208,7 +210,9 @@ test.describe('localization', () => {
 			await page.goto(`${INSIGHTS_PATH}/workbook/${workbook.name}/chart/${dateChart.name}`)
 			await expect(page.locator('html')).toHaveAttribute('lang', 'fa')
 			const chart = page.locator('[_echarts_instance_]')
-			await expect(chart.locator('canvas')).toBeVisible()
+			const chartSvg = chart.locator('svg')
+			await expect(chartSvg).toBeVisible()
+			await expect(chartSvg.getByText('دی ۱۳۹۵', { exact: true })).toBeVisible()
 			await testInfo.attach('insights-persian-date-chart', {
 				body: await page.screenshot({ type: 'png', fullPage: true }),
 				contentType: 'image/png',
@@ -222,7 +226,7 @@ test.describe('localization', () => {
 				`${INSIGHTS_PATH}/workbook/${workbook.name}/dashboard/${dashboard.name}`,
 			)
 			await expect(page.locator('html')).toHaveAttribute('dir', 'rtl')
-			await expect(page.locator('[_echarts_instance_] canvas')).toBeVisible()
+			await expect(page.locator('[_echarts_instance_] svg')).toBeVisible()
 			await testInfo.attach('insights-persian-dashboard-chart', {
 				body: await page.screenshot({ type: 'png', fullPage: true }),
 				contentType: 'image/png',
@@ -245,7 +249,10 @@ test.describe('localization', () => {
 			await expect(page.locator('html')).not.toHaveClass(/fui-vazirmatn/)
 			await page.goto(`${INSIGHTS_PATH}/workbook/${workbook.name}/chart/${dateChart.name}`)
 			await expect(page.locator('html')).toHaveAttribute('lang', 'en')
-			await expect(page.locator('[_echarts_instance_] canvas')).toBeVisible()
+			const englishChart = page.locator('[_echarts_instance_] svg')
+			await expect(englishChart).toBeVisible()
+			await expect(englishChart.getByText(ENGLISH_MONTH_YEAR).first()).toBeVisible()
+			await expect(englishChart.getByText(PERSIAN_MONTHS).first()).toHaveCount(0)
 			await testInfo.attach('insights-english-date-chart', {
 				body: await page.screenshot({ type: 'png', fullPage: true }),
 				contentType: 'image/png',
