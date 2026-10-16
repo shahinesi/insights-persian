@@ -218,7 +218,9 @@ test.describe('localization', () => {
 				workbook: workbook.name,
 				charts: [dateChart.name],
 			})
-			await page.goto(`${INSIGHTS_PATH}/workbook/${workbook.name}/dashboard/${dashboard.name}`)
+			await page.goto(
+				`${INSIGHTS_PATH}/workbook/${workbook.name}/dashboard/${dashboard.name}`,
+			)
 			await expect(page.locator('html')).toHaveAttribute('dir', 'rtl')
 			await expect(
 				page.locator('[_echarts_instance_]').getByText(PERSIAN_MONTHS).first(),
