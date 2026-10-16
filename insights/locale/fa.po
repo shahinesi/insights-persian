@@ -774,11 +774,11 @@ msgstr "منبع داده"
 #: frontend/src2/data_source/DataSourceTable.vue:25
 #: frontend/src2/data_source/DataSourceTableList.vue:65
 msgid "Data Sources"
-msgstr ""
+msgstr "منابع داده"
 
 #: frontend/src2/data_source/DataSourceList.vue:141
 msgid "Data Sources | Insights"
-msgstr ""
+msgstr "منابع داده | Insights"
 
 #. Label of the data_store (Check) field in DocType 'Insights Query Execution
 #. Log'
@@ -787,7 +787,7 @@ msgstr ""
 #: frontend/src2/settings/Settings.vue:43
 #: insights/insights/doctype/insights_query_execution_log/insights_query_execution_log.json
 msgid "Data Store"
-msgstr ""
+msgstr "انبار داده"
 
 #: frontend/src2/charts/components/NewMeasureSelectorDialog.vue:120
 msgid "Data Type"
