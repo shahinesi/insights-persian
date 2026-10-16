@@ -350,6 +350,11 @@ function formatDateBy(date: string, granularity: string, formats: Record<string,
 	}
 	const options = DATE_DISPLAY_OPTIONS[granularity]
 	if (options) {
+		if (granularity === 'month' && formats === LONG_DATE_FORMATS && calendar === 'gregory') {
+			const month = formatLocaleDate(date, { calendar, month: 'long' })
+			const year = formatLocaleDate(date, { calendar, year: 'numeric' })
+			return `${month}, ${year}`
+		}
 		const month = formats === AXIS_DATE_FORMATS ? 'short' : options.month
 		return formatLocaleDate(date, { ...options, month, calendar })
 	}

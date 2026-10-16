@@ -62,7 +62,7 @@ describe('chart date labels follow the active calendar', () => {
 	it('keeps chart labels Gregorian when the document language is English', () => {
 		vi.stubGlobal('document', { documentElement: { lang: 'en-US' } })
 
-		expect(getFormattedDate('2026-10-01', 'month')).toContain('October')
+		expect(getFormattedDate('2026-10-01', 'month')).toBe('October, 2026')
 		expect(getFormattedDate('2026-10-01', 'year')).toBe('2026')
 		expect(getFormattedDate('2026-10-01', 'quarter')).toBe('Q4, 2026')
 		expect(getAxisDate('2026-10-01', 'month')).toContain('Oct')
