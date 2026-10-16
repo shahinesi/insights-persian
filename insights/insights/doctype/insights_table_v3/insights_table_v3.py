@@ -16,7 +16,6 @@ from ibis.backends.duckdb import Backend as DuckDBBackend
 
 import insights
 from insights import not_permitted, user_permissions
-from insights.exceptions import TableNotStored
 from insights.permission_user import get_permission_user
 from insights.utils import InsightsDataSourcev3
 
@@ -158,8 +157,15 @@ class InsightsTablev3(Document):
         user = get_permission_user()
         site_db = is_site_db(data_source)
 
-        # on the site database, `apply_user_permissions` refuses and names the doctypes
-        if not site_db:
+        # Decide site-table access from Frappe metadata before live schema lookup.
+        if site_db:
+            if not check_table_permission(data_source, table_name, user=user, raise_error=False):
+                try:
+                    doctypes = not_permitted.unreadable_doctypes(strip_schema_prefix(table_name), user)
+                except frappe.DoesNotExistError:
+                    doctypes = []
+                not_permitted.refuse(doctypes=doctypes)
+        else:
             check_table_permission(data_source, table_name, user=user)
 
         def readable(t):
@@ -171,18 +177,7 @@ class InsightsTablev3(Document):
         ds_type = frappe.db.get_value("Insights Data Source v3", data_source, "type", cache=True)
         if not use_live_connection and ds_type != "REST API":
             wt = insights.warehouse.get_table(data_source, table_name)
-            try:
-                t = wt.get_ibis_table(import_if_not_exists=import_if_not_exists)
-            except TableNotStored as not_stored:
-                # a reader the live read refuses is told only that, not that the table is not
-                # stored. Only the site database refuses there; other sources were decided above
-                if site_db:
-                    try:
-                        readable(InsightsDataSourcev3.get_doc(data_source).get_ibis_table(table_name))
-                    except not_permitted.NotPermitted:
-                        not_permitted.forget_refusal(not_stored)
-                        raise
-                raise
+            t = wt.get_ibis_table(import_if_not_exists=import_if_not_exists)
             return readable(t)
 
         return readable(InsightsDataSourcev3.get_doc(data_source).get_ibis_table(table_name))
