@@ -8,7 +8,7 @@ defineProps<{ label: string }>()
 <template>
 	<button
 		type="button"
-		class="mt-1.5 rounded-4 text-left text-xs text-ink-gray-5 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-outline-gray-3"
+		class="mt-1.5 rounded-4 text-start text-xs text-ink-gray-5 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-outline-gray-3"
 	>
 		+ {{ label }}
 	</button>

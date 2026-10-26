@@ -163,7 +163,7 @@ watch(
 									class="h-4.5 w-4.5 flex-shrink-0 text-ink-gray-6"
 									stroke-width="1.5"
 								/>
-								<div class="flex flex-1 flex-col text-left">
+								<div class="flex flex-1 flex-col text-start">
 									<p class="truncate text-p-sm">{{ button.label }}</p>
 									<p class="w-40 text-p-xs text-ink-gray-4">
 										{{ button.description }}

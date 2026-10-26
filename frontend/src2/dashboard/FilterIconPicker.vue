@@ -85,7 +85,7 @@ function clear(close: () => void) {
 				<button
 					v-if="selected"
 					type="button"
-					class="mt-1 rounded-4 border-t px-2 py-1 text-left text-base text-ink-gray-6 hover:bg-surface-gray-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-outline-gray-3"
+					class="mt-1 rounded-4 border-t px-2 py-1 text-start text-base text-ink-gray-6 hover:bg-surface-gray-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-outline-gray-3"
 					@click="clear(close)"
 				>
 					{{ __('Remove icon') }}

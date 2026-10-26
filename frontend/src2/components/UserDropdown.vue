@@ -18,7 +18,7 @@
 						class="h-8 w-8 flex-shrink-0 rounded-4"
 					/>
 					<div
-						class="flex flex-1 flex-col text-left duration-300 ease-in-out"
+						class="flex flex-1 flex-col text-start duration-300 ease-in-out"
 						:class="
 							props.isCollapsed
 								? 'ml-0 w-0 overflow-hidden opacity-0'

@@ -75,7 +75,7 @@ function onDrilldown(column: QueryResultColumn, row: QueryResultRow) {
 		     The card renders the one loading veil, over the whole card: the grid
 		     does not know a run is in flight and never veils itself. -->
 		<div
-			class="relative mt-1 h-full [&_tr>*:last-child]:border-r-0 [margin-inline:calc(var(--chart-card-inset,0px)*-1)] [width:calc(100%_+_2_*_var(--chart-card-inset,0px))]"
+			class="relative mt-1 h-full [&_tr>*:last-child]:border-e-0 [margin-inline:calc(var(--chart-card-inset,0px)*-1)] [width:calc(100%_+_2_*_var(--chart-card-inset,0px))]"
 		>
 			<DataTable
 				:columns="props.columns"

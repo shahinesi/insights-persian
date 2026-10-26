@@ -150,7 +150,7 @@ const isStickyColumn = (column: string) => {
 const getStickyColumnStyle = (column: string) => {
 	if (!isStickyColumn(column)) return {}
 	return {
-		left: stickyColumnPositions.value[column] || '48px',
+		insetInlineStart: stickyColumnPositions.value[column] || '48px',
 	}
 }
 
@@ -535,18 +535,19 @@ function toggleNewColumn() {
 				<thead ref="$header" class="sticky top-0 z-10 bg-surface-gray-1">
 					<tr v-for="headerRow in headers">
 						<td
-							class="sticky left-0 z-[1] h-8 whitespace-nowrap border-b border-r bg-surface-gray-1 px-3"
+							class="sticky z-[1] h-8 whitespace-nowrap border-b border-e bg-surface-gray-1 px-3"
+							:style="{ insetInlineStart: '0px' }"
 							data-column-name="__index"
 							width="1px"
 						></td>
 						<td
 							v-for="(header, idx) in headerRow"
 							:key="idx"
-							class="h-8 border-b border-r"
+							class="h-8 border-b border-e"
 							:class="[
 								header.isLast && isNumberColumn(header.column.name)
 									? 'text-right'
-									: 'text-left',
+									: 'text-start',
 								isStickyColumn(header.column.name)
 									? 'sticky z-[1] bg-surface-gray-1'
 									: '',
@@ -588,7 +589,7 @@ function toggleNewColumn() {
 							</div>
 						</td>
 
-						<td v-if="props.enableNewColumn" class="h-8 border-b border-r">
+						<td v-if="props.enableNewColumn" class="h-8 border-b border-e">
 							<Button
 								v-if="!showNewColumn"
 								variant="ghost"
@@ -608,10 +609,10 @@ function toggleNewColumn() {
 
 						<td
 							v-if="props.showRowTotals"
-							class="h-8 border-b border-r px-3 text-right"
+							class="h-8 border-b border-e px-3 text-right"
 							width="1px"
 						>
-							<div class="truncate pl-3 pr-20"></div>
+							<div class="truncate ps-3 pe-20"></div>
 						</td>
 					</tr>
 				</thead>
@@ -625,7 +626,8 @@ function toggleNewColumn() {
 						:key="idx"
 					>
 						<td
-							class="tnum sticky left-0 z-[1] h-8 whitespace-nowrap border-b border-r bg-surface-base px-3 text-right text-xs"
+							class="tnum sticky z-[1] h-8 whitespace-nowrap border-b border-e bg-surface-base px-3 text-right text-xs"
+							:style="{ insetInlineStart: '0px' }"
 							width="1px"
 							height="30px"
 						>
@@ -634,10 +636,10 @@ function toggleNewColumn() {
 
 						<td
 							v-for="col in props.columns"
-							class="group/cell h-8 border-b border-r px-3 text-ink-gray-7 leading-5 py-1.5"
+							class="group/cell h-8 border-b border-e px-3 text-ink-gray-7 leading-5 py-1.5"
 							:class="[
 								getTextWrapClass(col.name),
-								isNumberColumn(col.name) ? 'tnum text-right' : 'text-left',
+								isNumberColumn(col.name) ? 'tnum text-right' : 'text-start',
 								isNumberColumn(col.name) && props.onDrilldown
 									? 'cursor-pointer hover:ring-1 hover:ring-inset hover:ring-outline-gray-4'
 									: '',
@@ -688,11 +690,11 @@ function toggleNewColumn() {
 							</template>
 						</td>
 
-						<td v-if="props.enableNewColumn" class="h-8 border-b border-r px-3"></td>
+						<td v-if="props.enableNewColumn" class="h-8 border-b border-e px-3"></td>
 
 						<td
 							v-if="props.showRowTotals && totalPerRow"
-							class="tnum h-8 border-b border-r px-3 text-right font-bold"
+							class="tnum h-8 border-b border-e px-3 text-right font-bold"
 						>
 							{{ _formatNumber(totalPerRow[idx]) }}
 						</td>
@@ -704,12 +706,12 @@ function toggleNewColumn() {
 						v-if="props.showColumnTotals && totalPerColumn"
 						class="sticky bottom-0 bg-surface-base"
 					>
-						<td class="h-8 whitespace-nowrap border-b border-r border-t px-3"></td>
+						<td class="h-8 whitespace-nowrap border-b border-e border-t px-3"></td>
 						<td
 							v-for="col in props.columns"
-							class="h-8 truncate border-b border-r border-t px-3 font-bold text-ink-gray-7"
+							class="h-8 truncate border-b border-e border-t px-3 font-bold text-ink-gray-7"
 							:class="[
-								isNumberColumn(col.name) ? 'tnum text-right' : 'text-left',
+								isNumberColumn(col.name) ? 'tnum text-right' : 'text-start',
 								isStickyColumn(col.name) ? 'sticky z-[1] bg-surface-base' : '',
 							]"
 							:style="{
@@ -726,7 +728,7 @@ function toggleNewColumn() {
 
 						<td
 							v-if="props.showRowTotals && totalColumnTotal"
-							class="tnum h-8 border-b border-r border-t px-3 text-right font-bold"
+							class="tnum h-8 border-b border-e border-t px-3 text-right font-bold"
 						>
 							{{ _formatNumber(totalColumnTotal) }}
 						</td>
