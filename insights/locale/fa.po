@@ -3613,3 +3613,7 @@ msgstr "شروع می‌شود با"
 msgid "{0} columns selected"
 msgstr ""
 
+#: frontend/src2/home/Home.vue:20
+msgid "Hello, {0} 👋"
+msgstr "سلام، {0} 👋"
+

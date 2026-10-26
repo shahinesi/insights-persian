@@ -3672,3 +3672,7 @@ msgstr ""
 msgid "{0} updated"
 msgstr ""
 
+#: frontend/src2/home/Home.vue:20
+msgid "Hello, {0} 👋"
+msgstr ""
+

@@ -97,3 +97,34 @@ export function formatLocaleTime(
 		...(isPersian ? { numberingSystem: 'arabext' } : {}),
 	}).format(date)
 }
+
+/** Format an instant as localized relative time without mutating its canonical value. */
+export function formatLocaleRelativeTime(
+	value: Date | string | number | null | undefined,
+	locale: string | null | undefined,
+	now: Date | number = Date.now(),
+): string {
+	if (value === null || value === undefined || value === '') return ''
+	const instant = value instanceof Date ? value : new Date(value)
+	const reference = now instanceof Date ? now : new Date(now)
+	if (Number.isNaN(instant.getTime()) || Number.isNaN(reference.getTime())) return ''
+	const delta = (instant.getTime() - reference.getTime()) / 1000
+	const absolute = Math.abs(delta)
+	const units: Array<[Intl.RelativeTimeFormatUnit, number, number]> = [
+		['second', 1, 45], ['minute', 60, 2700], ['hour', 3600, 79200],
+		['day', 86400, 2246400], ['month', 2592000, 28512000],
+		['year', 31536000, Infinity],
+	]
+	let unit: Intl.RelativeTimeFormatUnit = 'year'
+	let unitSeconds = 31536000
+	for (const [candidate, seconds, limit] of units) {
+		if (absolute < limit) {
+			unit = candidate
+			unitSeconds = seconds
+			break
+		}
+	}
+	const amount = delta / unitSeconds
+	return new Intl.RelativeTimeFormat(locale || 'en-US', { numeric: 'auto', style: 'long' })
+		.format(Math.round(amount), unit)
+}

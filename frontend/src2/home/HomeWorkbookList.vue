@@ -4,9 +4,17 @@ import { ArrowUpRight, Book } from 'lucide-vue-next'
 import { ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import dayjs from '../helpers/dayjs'
+import session from '../session'
+import { formatLocaleRelativeTime } from '../helpers/locale_format'
 import { __ } from '../translation'
 
 const router = useRouter()
+
+function formatCreationTime(value: string) {
+	const locale = session.user.locale || 'en-US'
+	if (/^en(?:[-_]|$)/i.test(locale)) return (dayjs(value) as any).fromNow()
+	return formatLocaleRelativeTime(value, locale)
+}
 
 const workbooks = createListResource({
 	cache: 'insights_workbooks',
@@ -55,7 +63,7 @@ watch(searchQuery, (query) => {
 						<span class="ml-1.5">{{ row.owner }}</span>
 					</div>
 					<div class="flex-1 text-sm text-ink-gray-4">
-						{{ (dayjs(row.creation) as any).fromNow() }}
+						{{ formatCreationTime(row.creation) }}
 					</div>
 				</li>
 			</ul>

@@ -3,6 +3,7 @@ import {
 	formatLocaleDate,
 	formatLocaleDateRange,
 	formatLocaleNumber,
+	formatLocaleRelativeTime,
 	parseLocaleNumber,
 	directionForLocale,
 } from './locale_format'
@@ -67,6 +68,16 @@ describe('locale display formatting', () => {
 	// @feature query.filter-date-on-datetime
 	it('returns no display value for impossible dates', () => {
 		expect(formatLocaleDate('2026-02-30', 'fa-IR')).toBe('')
+	})
+
+	it('formats relative time in Persian digits and preserves English phrasing', () => {
+		const now = new Date('2026-10-26T12:00:00Z')
+		const past = '2026-10-26T10:00:00Z'
+		const persian = formatLocaleRelativeTime(past, 'fa-IR', now)
+		expect(persian).toMatch(/[۰-۹]/)
+		expect(persian).toContain('پیش')
+		expect(formatLocaleRelativeTime(past, 'en-US', now)).toBe('2 hours ago')
+		expect(formatLocaleRelativeTime('invalid', 'fa-IR', now)).toBe('')
 	})
 
 	// @feature charts.x-axis
