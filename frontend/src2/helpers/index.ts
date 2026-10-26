@@ -1,136 +1,594 @@
-YªçŠx-®éÜj×¢ëiºÚ+Š§j[h‘éÜ¢éíçÍ=N‹Z–‹­¦ëeŠw¬Õ¥µÁ½ÉÐìÝ…Ñ¡•‰½Õ¹•ô™É½´€ÙÕ•ÕÍ”½½É”œ4)¥µÁ½ÉÐì}|ô™É½´€œ¸¸½ÑÉ…¹Í±…Ñ¥½¸œ4)¥µÁ½ÉÐì‘•‰½Õ¹”°¥ÍÅÕ…°ô™É½´€•ÌµÑ½½±­¥Ðœ4)¥µÁ½ÉÐì…±°°Ñ½…ÍÐô™É½´€™É…ÁÁ”µÕ¤œ4)¥µÁ½ÉÐÑåÁ”ìM½­•Ðô™É½´€Í½­•Ð¹¥¼µ±¥•¹Ðœ4)¥µÁ½ÉÐì4(%¥¹©•Ð°4(%Ý…Ñ °4(%½¹	•™½É•U¹µ½Õ¹Ð°4(%Ý…Ñ …ÌÙÕ•]…Ñ °4(%]…Ñ¡…±±‰…¬°4(%]…Ñ¡M½ÕÉ”°4(%]…Ñ¡MÑ½Á!…¹‘±”°4)ô™É½´€ÙÕ”œ4)¥µÁ½ÉÐì•Ñ½Éµ…ÑÑ•‘…Ñ”ô™É½´€œ¸¸½ÅÕ•Éä½¡•±Á•ÉÌœ4)¥µÁ½ÉÐÍ•ÍÍ¥½¸™É½´€œ¸¸½Í•ÍÍ¥½¸œ4)¥µÁ½ÉÐì4(%½±Õµ¹…Ñ…QåÁ”°4(%…Ñ…½Éµ…Ð°4(%É½Á‘½Ý¹=ÁÑ¥½¸°4(%É½ÕÁ•‘É½Á‘½Ý¹=ÁÑ¥½¸°4(%EÕ•ÉåI•ÍÕ±Ñ½±Õµ¸°4)ô™É½´€œ¸¸½ÑåÁ•Ì½ÅÕ•Éä¹ÑåÁ•Ìœ4)¥µÁ½ÉÐì%1QeALô™É½´€œ¸½½¹ÍÑ…¹ÑÌœ4)¥µÁ½ÉÐì™½Éµ…Ñ1½…±•9Õµ‰•Èô™É½´€œ¸½±½…±•}™½Éµ…Ðœ4(4)•áÁ½ÉÐ™Õ¹Ñ¥½¸•ÑU¹¥ÅÕ•%¡±•¹Ñ €ô€à¤ì4(%É•ÑÕÉ¸€ ­¹•Ü…Ñ” ¤€¨5…Ñ ¹É…¹‘½´ ¤¤¹Ñ½MÑÉ¥¹œ ÌØ¤¹ÍÕ‰ÍÑÉ¥¹œ À°±•¹Ñ ¤4)ô4(4)•áÁ½ÉÐ™Õ¹Ñ¥½¸½ÁäñPø¡½‰¨èP¤ì4(%¥˜€ …½‰¨¤É•ÑÕÉ¸½‰¨4(%É•ÑÕÉ¸)M=8¹Á…ÉÍ”¡)M=8¹ÍÑÉ¥¹¥™ä¡½‰¨¤¤…ÌP4)ô4(4)•áÁ½ÉÐ™Õ¹Ñ¥½¸Ý¡•¹•Ù•É¡…¹•Ì¡Í½ÕÉ”è]…Ñ¡M½ÕÉ”°…±±‰…¬è]…Ñ¡…±±‰…¬°½ÁÑ¥½¹Ìè…¹ä€ôíô¤ì4(%±•ÐÁÉ•Y…°è…¹ä4(%É•ÑÕÉ¸Ý…Ñ¡•‰½Õ¹• 4($%Í½ÕÉ”°4($$¡Ù…°°|°½¹±•…¹ÕÀ¤€ôøì4($$$¼¼……¥¹ÍÐ„±½¹”°‰•…ÕÍ”ÁÉ•Y…±€¥Ì½¹”ƒŠPÍ•”¥Í¥ÉÑå€¥¸€¸½É•Í½ÕÉ”4($$%¥˜€¡¥ÍÅÕ…°¡½Áä¡Ù…°¤°ÁÉ•Y…°¤¤É•ÑÕÉ¸4($$%ÁÉ•Y…°€ô½Áä¡Ù…°¤4($$%…±±‰…¬¡Ù…°°ÁÉ•Y…°°½¹±•…¹ÕÀ¤4($%ô°4($%½ÁÑ¥½¹Ì°4($¤4)ô4(4)•áÁ½ÉÐÑåÁ”]…Ñ¡=ÁÑ¥½¹Ì€ôì4(%‘••Àüè‰½½±•…¸4(%¥µµ•‘¥…Ñ”üè‰½½±•…¸4(%‘•‰½Õ¹”üè¹Õµ‰•È4(%Ñ½±•½¹‘¥Ñ¥½¸üè€ ¤€ôø‰½½±•…¸4)ô4)•áÁ½ÉÐ™Õ¹Ñ¥½¸Ý…Ñ¡Q½±” 4(%Í½ÕÉ”è]…Ñ¡M½ÕÉ”°4(%…±±‰…¬è]…Ñ¡…±±‰…¬°4(%½ÁÑ¥½¹Ìè]…Ñ¡=ÁÑ¥½¹Ì€ôíô°4(¤ì4(%½¹ÍÐ…ÑÑ…¡M½ÕÉ•]…Ñ¡•È€ô€ ¤€ôø}Ý…Ñ ¡Í½ÕÉ”°…±±‰…¬°½ÁÑ¥½¹Ì¤4(4(%¥˜€ …½ÁÑ¥½¹Ì¹Ñ½±•½¹‘¥Ñ¥½¸¤ì4($%…ÑÑ…¡M½ÕÉ•]…Ñ¡•È ¤4($%É•ÑÕÉ¸4(%ô4(4(%¥˜€¡½ÁÑ¥½¹Ì¹Ñ½±•½¹‘¥Ñ¥½¸¤ì4($$¼¼½¹±äÝ…Ñ ¥˜½¹‘¥Ñ¥½¸¥ÌÑÉÕ”4($$¼¼ÍÑ½ÀÑ¡”Ý…Ñ¡•È¥˜½¹‘¥Ñ¥½¸¥Ì™…±Í”4($%±•ÐÝ…Ñ¡¥¹œ€ô™…±Í”4($%±•ÐÍÑ½Àè]…Ñ¡MÑ½Á!…¹‘±”4($%}Ý…Ñ  4($$%½ÁÑ¥½¹Ì¹Ñ½±•½¹‘¥Ñ¥½¸°4($$$¡Í¡½Õ±‘]…Ñ ¤€ôøì4($$$%¥˜€¡Í¡½Õ±‘]…Ñ €˜˜€…Ý…Ñ¡¥¹œ¤ì4($$$$%Ý…Ñ¡¥¹œ€ôÑÉÕ”4($$$$%ÍÑ½À€ô…ÑÑ…¡M½ÕÉ•]…Ñ¡•È ¤4($$$%ô•±Í”¥˜€ …Í¡½Õ±‘]…Ñ €˜˜Ý…Ñ¡¥¹œ¤ì4($$$$%Ý…Ñ¡¥¹œ€ô™…±Í”4($$$$%ÍÑ½À ¤4($$$%ô4($$%ô°4($$%ì4($$$%¥µµ•‘¥…Ñ”èÑÉÕ”°4($$%ô°4($$¤4(%ô4)ô4(4)™Õ¹Ñ¥½¸}Ý…Ñ ¡Í½ÕÉ”è]…Ñ¡M½ÕÉ”°…±±‰…¬è]…Ñ¡…±±‰…¬°½ÁÑ¥½¹Ìè]…Ñ¡=ÁÑ¥½¹Ì€ôíô¤ì4(%±•Ð}…±±‰…¬€ô…±±‰…¬4(4(%½¹ÍÐ‘•‰½Õ¹•€ô½ÁÑ¥½¹Ì¹‘•‰½Õ¹”€ü‘•‰½Õ¹”¡}…±±‰…¬°½ÁÑ¥½¹Ì¹‘•‰½Õ¹”¤€èÕ¹‘•™¥¹•4(%¥˜€¡‘•‰½Õ¹•¤}…±±‰…¬€ô‘•‰½Õ¹•4(4($¼¼‘•‰½Õ¹•…±±‰…¬½ÕÑ±¥Ù•ÌÑ¡”Ý…Ñ¡•Èè‘•Ñ…¡¥¹œÑ¡”Í½ÕÉ”±•…Ù•ÌÑ¡”4($¼¼ÅÕ•Õ•…±°Ñ¼™¥É”¸M¼Ñ¡”ÍÑ½À¡…¹‘±”‘É½ÁÌÑ¡”ÅÕ•Õ”…ÌÝ•±°°…¹„4($¼¼Ñ½±•½¹‘¥Ñ¥½¹€Ñ¡…Ð¡…Ì½¹”™…±Í”•ÑÌ¹¼™ÕÉÑ¡•È…±±‰…¬ƒŠP…¸4($¼¼…ÕÑ½Í…Ù”ÅÕ•Õ•‰•™½É”…¸…ÕÑ¡½ÈÍÑ…ÉÑ••‘¥Ñ¥¹œÝ½Õ±½Ñ¡•ÉÝ¥Í”ÝÉ¥Ñ”4($¼¼Ñ¡•¥È…ÉÉ…¹•µ•¹Ðµ¥µ•‘¥Ð¸4(%½¹ÍÐÍÑ½À€ôÙÕ•]…Ñ ¡Í½ÕÉ”°}…±±‰…¬°½ÁÑ¥½¹Ì¤4(%É•ÑÕÉ¸€ ¤€ôøì4($%‘•‰½Õ¹•ü¹…¹•° ¤4($%ÍÑ½À ¤4(%ô4)ô4(4)•áÁ½ÉÐ™Õ¹Ñ¥½¸Ý…¥ÑU¹Ñ¥°¡™¸è€ ¤€ôø‰½½±•…¸¤ì4(%É•ÑÕÉ¸¹•ÜAÉ½µ¥Í”ñÙ½¥ø ¡É•Í½±Ù”¤€ôøì4($%¥˜€¡™¸ ¤¤ì4($$%É•Í½±Ù” ¤4($$%É•ÑÕÉ¸4($%ô4($%½¹ÍÐÍÑ½À€ôÝ…Ñ ¡™¸°€¡Ù…±Õ”¤€ôøì4($$%¥˜€¡Ù…±Õ”¤ì4($$$%ÍÑ½À ¤4($$$%É•Í½±Ù” ¤4($$%ô4($%ô¤4(%ô¤4)ô4(4)•áÁ½ÉÐ™Õ¹Ñ¥½¸ÍÑ½É”ñPø¡­•äèÍÑÉ¥¹œ°Ù…±Õ”è€ ¤€ôøP¤ì4($¼¼Ù¥Ñ•ÍÐ¡…Ì¹¼±½…±MÑ½É…”ìÑ¡”Ù…±Õ”ÍÑ¥±°Ý½É­Ì°¥Ð¥Ì©ÕÍÐ¹½ÐÉ•µ•µ‰•É•4(%½¹ÍÐÍÑ½É…”€ô±½‰…±Q¡¥Ì¹±½…±MÑ½É…”4(%¥˜€ …ÍÑ½É…”¤É•ÑÕÉ¸Ù…±Õ” ¤4(4(%½¹ÍÐÍÑ½É•€ôÍÑ½É…”¹•Ñ%Ñ•´¡­•ä¤4(%Ý…Ñ¡•‰½Õ¹•¡Ù…±Õ”°€¡Ù…°¤€ôøÍÑ½É…”¹Í•Ñ%Ñ•´¡­•ä°)M=8¹ÍÑÉ¥¹¥™ä¡Ù…°¤¤°ì4($%‘•‰½Õ¹”è€ÔÀÀ°4($%‘••ÀèÑÉÕ”°4(%ô¤4(%É•ÑÕÉ¸ÍÑ½É•€ü)M=8¹Á…ÉÍ”¡ÍÑ½É•¤€èÙ…±Õ” ¤4)ô4(4(¼¼Ý¡…Ð™É…ÁÁ”µÕ¤ÁÕÑÌ¥¸µ•ÍÍ…•Í€Ý¡•¸Ñ¡”Í•ÉÙ•ÈÍ•¹Ð¹¼µ•ÍÍ…”4)½¹ÍÐ9=}M9Q9€ô€%¹Ñ•É¹…°M•ÉÙ•ÈÉÉ½Èœ4(4(¼¨¨4(€¨Q¡”µ•ÍÍ…”Ñ¼Í¡½ÜÑ¡”ÕÍ•È™½È„™…¥±•É•ÅÕ•ÍÐ¸4(€¨4(€¨Q¡”Í•ÉÙ•ÈÌ½Ý¸µ•ÍÍ…”½µ•Ì™¥ÉÍÐ¸É…ÁÁ”Í•¹‘Ì¥ÐÑ¼•Ù•ÉäÕÍ•È°‰ÕÐ4(€¨Í•¹‘ÌÑ¡”ÑÉ…•‰…¬¥¸•á€½¹±äÑ¼„MåÍÑ•´UÍ•È¸Q¡”ÑÉ…•‰…¬Ì•á•ÁÑ¥½¸4(€¨±¥¹”¥ÌÕÍ•½¹±äÝ¡•¸Ñ¡”Í•ÉÙ•ÈÍ•¹Ð¹¼µ•ÍÍ…”¸É…ÁÁ”ÝÉ¥Ñ•ÌÑ¡”µ•ÍÍ…”4(€¨…Ì!Q50™½È‘•Í¬¸Q¡¥Ì…ÁÀÍ¡½ÝÌ¥Ð…ÌÑ•áÐ°Í¼Ñ¡”µ…É­ÕÀ¥ÌÉ•µ½Ù•¸4(€¨¼4)•áÁ½ÉÐ™Õ¹Ñ¥½¸•ÑÉÉ½É5•ÍÍ…”¡•ÉÈè…¹ä¤ì4(%½¹ÍÐÍ•¹Ñ•¹”€ô•ÉÈ¹µ•ÍÍ…•Ìü¹™¥±Ñ•È ¡µ•ÍÍ…”èÍÑÉ¥¹œ¤€ôøµ•ÍÍ…”€„ôô9=}M9Q9¤¹…Ð ´Ä¤4(%¥˜€¡Í•¹Ñ•¹”¤É•ÑÕÉ¸…ÍQ•áÐ¡Í•¹Ñ•¹”¤4(4($¼¼Ñ¡”•á•ÁÑ¥½¸±¥¹”¥Ì¹½Ð…±Ý…åÌ±…ÍÐèÕ­…ÁÁ•¹‘ÌÑ¡”½™™•¹‘¥¹œME0…¹„…É•Ð4(%½¹ÍÐ±¥¹•ÌèÍÑÉ¥¹mt€ô•ÉÈ¹•áŒü¹ÍÁ±¥Ð q¸œ¤€üümt4(%½¹ÍÐ•á1¥¹”€ô±¥¹•Ì¹™¥±Ñ•È ¡±¥¹”¤€ôø€½ymqÜ¹t¬¡ÉÉ½Éñá•ÁÑ¥½¸¤è€¼¹Ñ•ÍÐ¡±¥¹”¤¤¹…Ð ´Ä¤4(%¥˜€ …•á1¥¹”¤É•ÑÕÉ¸•ÉÈ¹µ•ÍÍ…”ñð•ÉÈ¹Ñ½MÑÉ¥¹œ ¤4(%½¹ÍÐµ•ÍÍ…”€ô•á1¥¹”¹ÍÁ±¥Ð œè€œ¤¹Í±¥” Ä¤¹©½¥¸ œè€œ¤4(%½¹ÍÐ‘•Ñ…¥±Ì€ô±¥¹•Ì¹Í±¥”¡±¥¹•Ì¹±…ÍÑ%¹‘•á=˜¡•á1¥¹”¤€¬€Ä¤4(%É•ÑÕÉ¸mµ•ÍÍ…”°€¸¸¹‘•Ñ…¥±Ít¹©½¥¸ q¸œ¤¹ÑÉ¥´ ¤4)ô4(4)™Õ¹Ñ¥½¸…ÍQ•áÐ¡¡Ñµ°èÍÑÉ¥¹œ¤ì4(%É•ÑÕÉ¸¡Ñµ°4($$¹É•Á±…” ¼ñmxùt¨ø½œ°€œœ¤4($$¹É•Á±…” ¼™±Ðì½œ°€œðœ¤4($$¹É•Á±…” ¼™Ðì½œ°€œøœ¤4($$¹É•Á±…” ¼™ÅÕ½Ðì½œ°€œˆœ¤4($$¹É•Á±…” ¼˜ŒÌäì½œ°€ˆœˆ¤4($$¹É•Á±…” ¼™…µÀì½œ°€œ˜œ¤4)ô4(4)•áÁ½ÉÐ™Õ¹Ñ¥½¸Í¡½ÝÉÉ½ÉQ½…ÍÐ¡•ÉÈèÉÉ½È°É…¥Í”è™…±Í”¤èÙ½¥4)•áÁ½ÉÐ™Õ¹Ñ¥½¸Í¡½ÝÉÉ½ÉQ½…ÍÐ¡•ÉÈèÉÉ½È°É…¥Í”üèÑÉÕ”¤è¹•Ù•È4)•áÁ½ÉÐ™Õ¹Ñ¥½¸Í¡½ÝÉÉ½ÉQ½…ÍÐ¡•ÉÈèÉÉ½È°É…¥Í”€ôÑÉÕ”¤ì4(%Ñ½…ÍÐ¹•ÉÉ½È¡•ÑÉÉ½É5•ÍÍ…”¡•ÉÈ¤¤4(%¥˜€¡É…¥Í”¤Ñ¡É½Ü•ÉÈ4)ô4(4)•áÁ½ÉÐ™Õ¹Ñ¥½¸‘½Ý¹±½…‘%µ…”¡•±•µ•¹Ðè!Q51±•µ•¹Ð°™¥±•¹…µ”èÍÑÉ¥¹œ°Í…±”€ô€È°½ÁÑ¥½¹Ì€ôíô¤ì4(%É•ÑÕÉ¸¥µÁ½ÉÐ ¡Ñµ°µÑ¼µ¥µ…”œ¤4($$¹Ñ¡•¸ ¡ìÑ½A¹œô¤€ôø4($$%Ñ½A¹œ¡•±•µ•¹Ð°ì4($$$%Ý¥‘Ñ è•±•µ•¹Ð¹ÍÉ½±±]¥‘Ñ °4($$$%¡•¥¡Ðè•±•µ•¹Ð¹ÍÉ½±±!•¥¡Ð°4($$$%Á¥á•±I…Ñ¥¼èÍ…±”°4($$$%‰…­É½Õ¹‘½±½Èè€Ý¡¥Ñ”œ°4($$$%ÍÑå±”èì4($$$$%Ý¥‘Ñ è€‘í•±•µ•¹Ð¹ÍÉ½±±]¥‘Ñ¡õÁá€°4($$$$%¡•¥¡Ðè€‘í•±•µ•¹Ð¹ÍÉ½±±!•¥¡ÑõÁá€°4($$$$%½Ù•É™±½Üè€Ù¥Í¥‰±”œ°4($$$%ô°4($$$$¸¸¹½ÁÑ¥½¹Ì°4($$%ô¤°4($$¤4($$¹Ñ¡•¸ ¡‘…Ñ…UÉ°¤€ôøì4($$%½¹ÍÐ±¥¹¬€ô‘½Õµ•¹Ð¹É•…Ñ•±•µ•¹Ð „œ¤4($$%±¥¹¬¹‘½Ý¹±½…€ô™¥±•¹…µ”4($$%±¥¹¬¹¡É•˜€ô‘…Ñ…UÉ°4($$%±¥¹¬¹±¥¬ ¤4($%ô¤4($$¹…Ñ  ¡•ÉÈ¤€ôøÍ¡½ÝÉÉ½ÉQ½…ÍÐ¡•ÉÈ°™…±Í”¤¤4)ô4(4(¼¨¨•±°É•……Ì„¹Õµ‰•È°½È¹½Ñ¡¥¹œè¹Õ±°°‰±…¹¬…¹Ñ•áÐ…É”¹½Ðé•É¼¸€¨¼4)•áÁ½ÉÐ™Õ¹Ñ¥½¸Ñ½9Õµ‰•È¡Ù…±Õ”è…¹ä¤è¹Õµ‰•Èð¹Õ±°ì4(%¥˜€¡Ù…±Õ”€ôôô¹Õ±°ñðÙ…±Õ”€ôôôÕ¹‘•™¥¹•ñðÙ…±Õ”€ôôô€œœ¤É•ÑÕÉ¸¹Õ±°4(%½¹ÍÐ¹Õµ‰•È€ô9Õµ‰•È¡Ù…±Õ”¤4(%É•ÑÕÉ¸9Õµ‰•È¹¥Í9…8¡¹Õµ‰•È¤€ü¹Õ±°€è¹Õµ‰•È4)ô4(4(¼¼ÁÉ•¥Í¥½¹€¥Ì±•™Ð½ÕÐ°¹½Ðé•É½•°Ý¡•¸¹½‰½‘äÍÑ…Ñ•Ì½¹”è„…±±•È…Í­¥¹œ4(¼¼™½È¹¼‘•¥µ…±Ìµ•…¹Ì¹¼‘•¥µ…±Ì°…¹€ÀñðÕ•ÍÍ€ÍÝ…±±½Ý•Ñ¡…Ð¸4)•áÁ½ÉÐ™Õ¹Ñ¥½¸™½Éµ…Ñ9Õµ‰•È¡¹Õµ‰•Èè¹Õµ‰•È°ÁÉ•¥Í¥½¸üè¹Õµ‰•È¤èÍÑÉ¥¹œì4(%¥˜€¡¥Í9…8¡¹Õµ‰•È¤¤É•ÑÕÉ¸MÑÉ¥¹œ¡¹Õµ‰•È¤4(%ÁÉ•¥Í¥½¸€ôÁÉ•¥Í¥½¸€üüÕ•ÍÍAÉ•¥Í¥½¸¡¹Õµ‰•È¤4(%½¹ÍÐ±½…±”€ôÍ•ÍÍ¥½¸¹Í¥Ñ”ü¹½Õ¹ÑÉä€ôô€%¹‘¥„œ€ü€•¸µ%8œ€èÍ•ÍÍ¥½¸¹ÕÍ•Èü¹±½…±”4(%É•ÑÕÉ¸™½Éµ…Ñ1½…±•9Õµ‰•È¡¹Õµ‰•È°±½…±”°ì4($%µ¥¹¥µÕµÉ…Ñ¥½¹¥¥ÑÌèÁÉ•¥Í¥½¸°4($%µ…á¥µÕµÉ…Ñ¥½¹¥¥ÑÌèÁÉ•¥Í¥½¸°4(%ô¤4)ô4(4)•áÁ½ÉÐÑåÁ”½Éµ…ÑU¹¥ÑÌ€ôì4($¼¼Ý¡…ÐÑ¡”ÍÑ½É•¹Õµ‰•ÈµÕÍÐ‰”µÕ±Ñ¥Á±¥•‰äÑ¼É•… Ñ¡”ÁÉ¥¹Ñ•½¹”4(%Í…±”è¹Õµ‰•È4(%ÁÉ•™¥àèÍÑÉ¥¹œ4(%ÍÕ™™¥àèÍÑÉ¥¹œ4)ô4(4)½¹ÍÐ9=}U9%QLè½Éµ…ÑU¹¥ÑÌ€ôìÍ…±”è€Ä°ÁÉ•™¥àè€œœ°ÍÕ™™¥àè€œœô4(4(¼¼µ•…ÍÕÉ”ÍÑ…Ñ•Ì¥ÑÌÕ¹¥Ð½¹”°…¹•Ù•ÉäÉ•…‘¥¹œ½˜¥ÐÁÉ¥¹ÑÌÑ¡…ÐÕ¹¥ÐÑ¡”4(¼¼Í…µ”Ý…ä¸Q¡”Íåµ‰½°Í¥ÑÌÝ¡•É”™µÑ}µ½¹•äÁÕÑÌ¥Ð°Í¼%¹Í¥¡ÑÌ…¹‘•Í¬…É•”¸4)•áÁ½ÉÐ™Õ¹Ñ¥½¸•Ñ½Éµ…ÑU¹¥ÑÌ¡™½Éµ…Ðüè…Ñ…½Éµ…Ð°½‘”üèÍÑÉ¥¹œð¹Õ±°¤è½Éµ…ÑU¹¥ÑÌì4(%¥˜€¡™½Éµ…Ð€ôôô€Á•É•¹Ðœ¤ì4($%É•ÑÕÉ¸ì4($$%Í…±”è€ÄÀÀ°4($$%ÁÉ•™¥àè€œœ°4($$%ÍÕ™™¥àèÍ•ÍÍ¥½¸¹ÕÍ•Èü¹±½…±”ü¹Ñ½1½Ý•É…Í” ¤¹ÍÑ…ÉÑÍ]¥Ñ  ™„œ¤€ü€Ÿf¨œ€è€œ”œ°4($%ô4(%ô4(%¥˜€¡™½Éµ…Ð€„ôô€ÕÉÉ•¹äœ¤É•ÑÕÉ¸9=}U9%QL4(4(%½¹ÍÐÉ•Í½±Ù•€ô½‘”€ôôôÕ¹‘•™¥¹•€üÍ•ÍÍ¥½¸¹Í¥Ñ”ü¹ÕÉÉ•¹ä€è½‘”4(%½¹ÍÐÕÉÉ•¹ä€ôÉ•Í½±Ù•€üÍ•ÍÍ¥½¸¹Í¥Ñ”ü¹ÕÉÉ•¹å}Íåµ‰½±Ìü¹mÉ•Í½±Ù•‘t€èÕ¹‘•™¥¹•4(%¥˜€ …ÕÉÉ•¹äü¹Íåµ‰½°¤É•ÑÕÉ¸9=}U9%QL4(%É—Í=¶‰žËkºwµçY˜[ÙJJCB‚B\™]\›ƒB‚_CBƒB‚[˜]šYØ]Ü‹˜Û\›Ø\™B‚BKÜš]U^
-^
-CB‚BK[Š
+import { watchDebounced } from '@vueuse/core'
+import { __ } from '../translation'
+import { debounce, isEqual } from 'es-toolkit'
+import { call, toast } from 'frappe-ui'
+import type { Socket } from 'socket.io-client'
+import {
+	inject,
+	watch,
+	onBeforeUnmount,
+	watch as vueWatch,
+	WatchCallback,
+	WatchSource,
+	WatchStopHandle,
+} from 'vue'
+import { getFormattedDate } from '../query/helpers'
+import session from '../session'
+import {
+	ColumnDataType,
+	DataFormat,
+	DropdownOption,
+	GroupedDropdownOption,
+	QueryResultColumn,
+} from '../types/query.types'
+import { FIELDTYPES } from './constants'
+import { formatLocaleNumber } from './locale_format'
 
-HOˆÚÝÐÛÜUØ\Ý
-YJJCB‚BK˜Ø]Ú
+export function getUniqueId(length = 8) {
+	return (+new Date() * Math.random()).toString(36).substring(0, length)
+}
 
+export function copy<T>(obj: T) {
+	if (!obj) return obj
+	return JSON.parse(JSON.stringify(obj)) as T
+}
 
-HOˆÚÝÐÛÜUØ\Ý
-˜[ÙJJCBŸCBƒB™[˜Ý[ÛˆÚÝÐÛÜUØ\Ý
-ÝXØÙ\ÜÎˆ›ÛÛX[ŠHÃB‚ZYˆ
-ÝXØÙ\ÜÊHÃB‚B]Ø\ÝœÝXØÙ\ÜÊ×Ê	ÐÛÜYYÈÛ\›Ø\™	ÊJCB‚_H[ÙHÃB‚B]Ø\Ý™\œ›ÜŠ×Ê	Ñ˜Z[YÈÛÜHÈÛ\›Ø\™	ÊJCB‚_CBŸCBƒB™^Ü[˜Ý[Ûˆ[\Ú\Ê˜[YNˆÝš[™Ë[™Ýˆ[X™\ŠHÃB‚ZYˆ
-˜[YH	‰ˆ˜[YK›[™Ýˆ[™Ý
-HÃB‚B\™]\›ˆ˜[YKœÝXœÝš[™Ê[™Ý
-H
-È	Ë‹‹‰ÃB‚_CB‚\™]\›ˆ˜[YCBŸCBƒB™^Ü[˜Ý[Ûˆ›][“Ü[ÛœÊB‚[Ü[ÛœÎˆ›ÜÝÛ“Ü[Û–×HÜ›Ý\Y›ÜÝÛ“Ü[Û–×KBŠNˆ›ÜÝÛ“Ü[Û–×HÃB‚ZYˆ
-[Ü[ÛœË›[™Ý
-H™]\›ˆ×CB‚\™]\›ˆ	ÙÜ›Ý\	È[ˆÜ[ÛœÖÌCB‚BOÈ
-Ü[ÛœÈ\ÈÜ›Ý\Y›ÜÝÛ“Ü[Û–×JK›X\
+export function wheneverChanges(source: WatchSource, callback: WatchCallback, options: any = {}) {
+	let preVal: any
+	return watchDebounced(
+		source,
+		(val, _, onCleanup) => {
+			// against a clone, because `preVal` is one â€” see `isDirty` in ./resource
+			if (isEqual(copy(val), preVal)) return
+			preVal = copy(val)
+			callback(val, preVal, onCleanup)
+		},
+		options,
+	)
+}
 
-ÊHOˆË›Ü[ÛœÊK™›]
+export type WatchOptions = {
+	deep?: boolean
+	immediate?: boolean
+	debounce?: number
+	toggleCondition?: () => boolean
+}
+export function watchToggle(
+	source: WatchSource,
+	callback: WatchCallback,
+	options: WatchOptions = {},
+) {
+	const attachSourceWatcher = () => _watch(source, callback, options)
 
-CB‚BNˆ
-Ü[ÛœÈ\È›ÜÝÛ“Ü[Û–×JCBŸCBƒB™^Ü[˜Ý[ÛˆÜ›Ý\Ü[ÛœÏ^[™È›ÜÝÛ“Ü[ÛŠB‚[Ü[ÛœÎˆ×KB‚YÜ›Ý\žNˆÙ^[ÙˆBŠNˆÜ›Ý\Y›ÜÝÛ“Ü[Û–×HÃB‚\™]\›ˆÜ[ÛœËœ™YXÙJ
-XØËÜ[ÛŠHOˆÃB‚BXÛÛœÝÜ›Ý\HÜ[Û–ÙÜ›Ý\žWH\ÈÝš[™ÃB‚BXÛÛœÝ[™^HXØË™š[™[™^
+	if (!options.toggleCondition) {
+		attachSourceWatcher()
+		return
+	}
 
-ÊHOˆË™Ü›Ý\OOHÜ›Ý\
-CB‚BZYˆ
-[™^OOHLJHÃB‚BBXXØËœ\Ú
-ÈÜ›Ý\Ü[ÛœÎˆÛÜ[Û—HJCB‚B_H[ÙHÃB‚BBXXØÖÚ[™^K›Ü[ÛœËœ\Ú
-Ü[ÛŠCB‚B_CB‚B\™]\›ˆXØÃB‚_K×H\ÈÜ›Ý\Y›ÜÝÛ“Ü[Û–×JCBŸCBƒB™^Ü[˜Ý[ÛˆØÜXŠ^ˆÝš[™ËÜXÙ\ˆH	×ÉÊHÃB‚\™]\›ˆ^œ™\XÙJÈÙËÜXÙ\ŠKÓÝÙ\Ø\ÙJ
-CBŸCBƒB\HÜ[Û’Ù^HHÙ^[Ùˆ›ÜÝÛ“Ü[ÛƒB™^Ü[˜Ý[ÛˆÓÜ[ÛœÊ\œŽˆ[žV×KX\ˆ™XÛÜ™Ü[Û’Ù^KÝš[™ÏŠHÃB‚\™]\›ˆ\œ‹›X\
+	if (options.toggleCondition) {
+		// only watch if condition is true
+		// stop the watcher if condition is false
+		let watching = false
+		let stop: WatchStopHandle
+		_watch(
+			options.toggleCondition,
+			(shouldWatch) => {
+				if (shouldWatch && !watching) {
+					watching = true
+					stop = attachSourceWatcher()
+				} else if (!shouldWatch && watching) {
+					watching = false
+					stop()
+				}
+			},
+			{
+				immediate: true,
+			},
+		)
+	}
+}
 
-][JHOˆÃB‚BSØš™XÝšÙ^\ÊX\
-K™›Ü‘XXÚ
+function _watch(source: WatchSource, callback: WatchCallback, options: WatchOptions = {}) {
+	let _callback = callback
 
-Ù^JHOˆÃB‚BBKËÈËZYÛ›Ü™CB‚BBZ][VÚÙ^WHH][VÛX\ÚÙ^WWCB‚B_JCB‚B\™]\›ˆ][CB‚_JCBŸCBƒB™^Ü[˜Ý[ÛˆØ[š]^™PÛÛ[[“˜[YJ˜[YNˆÝš[™ÊHÃB‚\™]\›ˆ˜[YCB‚BOÈ˜[YCB‚BBBKš[J
-CB‚BBBKœ™\XÙJ	È	Ë	×ÉÊCB‚BBBKœ™\XÙJ	ËIË	×ÉÊCB‚BBBKœ™\XÙJ	Ë‰Ë	×ÉÊCB‚BBBKœ™\XÙJ	ËÉË	×ÉÊCB‚BBBKœ™\XÙJ	Ê	Ë	×ÉÊCB‚BBBKœ™\XÙJ	ÊIË	×ÉÊCB‚BBBKÓÝÙ\Ø\ÙJ
-CB‚BNˆ˜[YCBŸCBƒB™^Ü[˜Ý[Ûˆ\Ñ]J]WÝ\NˆÛÛ[[‘]U\JHÃB‚\™]\›ˆ’QSTTË‘UKš[˜ÛY\Ê]WÝ\JCBŸCBƒB™^Ü[˜Ý[Ûˆ\Ó[X™\Š]WÝ\NˆÛÛ[[‘]U\JHÃB‚\™]\›ˆ’QSTTË“•SP‘T‹š[˜ÛY\Ê]WÝ\JCBŸCBƒB™^Ü[˜Ý[Ûˆ\ÔÝš[™Ê]WÝ\NˆÛÛ[[‘]U\JHÃB‚\™]\›ˆ’QSTTË•Vš[˜ÛY\Ê]WÝ\JCBŸCBƒB™^Ü[˜Ý[Ûˆ]XÚ™X[[YS\Ý[™\Š]™[ˆÝš[™ËØ[˜XÚÎˆ
-‹‹˜\™ÜÎˆ[žV×JHOˆ›ÚY
-HÃB‚XÛÛœÝ	ÛØÚÙ]H[š™XÝÛØÚÙ]Š	ÉÛØÚÙ]	ÊHCB‚IÛØÚÙ]›ÛŠ]™[Ø[˜XÚÊCB‚[Û™Y›Ü™U[›[Ý[
+	const debounced = options.debounce ? debounce(_callback, options.debounce) : undefined
+	if (debounced) _callback = debounced
 
+	// A debounced callback outlives the watcher: detaching the source leaves the
+	// queued call to fire. So the stop handle drops the queue as well, and a
+	// `toggleCondition` that has gone false gets no further callback â€” an
+	// autosave queued before an author started editing would otherwise write
+	// their arrangement mid-edit.
+	const stop = vueWatch(source, _callback, options)
+	return () => {
+		debounced?.cancel()
+		stop()
+	}
+}
 
-HOˆÃB‚BIÛØÚÙ]›Ù™Š]™[
-CB‚_JCBŸCBƒB™^Ü[˜Ý[ÛˆÜ™X]RXY\œÊÛÛ[[œÎˆ]Y\žT™\Ý[ÛÛ[[–×JHÃB‚XÛÛœÝ™\ÝYÛÛ[[œÈHÛÛ[[œË™š[\Š
-ÛÛ[[ŠHOˆÛÛ[[‹›˜[YKš[˜ÛY\Ê	×××ÉÊJCB‚XÛÛœÝ]™[ÈH™\ÝYÛÛ[[œË›[™ÝÈ™\ÝYÛÛ[[œÖÌK›˜[YKœÜ]
-	×××ÉÊK›[™ÝˆCBƒB‚XÛÛœÝØÛÛ[[œÈHÛÛ[[œË›X\
+export function waitUntil(fn: () => boolean) {
+	return new Promise<void>((resolve) => {
+		if (fn()) {
+			resolve()
+			return
+		}
+		const stop = watch(fn, (value) => {
+			if (value) {
+				stop()
+				resolve()
+			}
+		})
+	})
+}
 
-ÛÛ[[ŠHOˆÃB‚B\™]\›ˆÃB‚BBK‹‹˜ÛÛ[[‹B‚BBZ\Ó™\ÝYˆÛÛ[[‹›˜[YKš[˜ÛY\Ê	×××ÉÊKB‚BBKËÈXš\È]›ÝÈÈYX\Ý\™W××Ý˜[YLW××Ý˜[YL‹Y\\Ý˜[YH\ÝˆCB‚BBKËÈXY\ˆ™XYÈHÝ\ˆØ^H›Ý[™HÝ]\›[ÜÝ[Y[œÚ[ÛˆÛˆCB‚BBKËÈÜ›ÝÈ[™HYX\Ý\™HÛˆH›ÝÛKÛÈH\È\™H™]™\œÙYƒB‚BB\\ÎˆÛÛ[[‹›˜[YKœÜ]
-	×××ÉÊKœ™]™\œÙJ
-KB‚B_CB‚_JCBƒB‚XÛÛœÝXY\œÈH×CBƒB‚Y›Üˆ
-]]™[HÈ]™[]™[ÎÈ]™[
-ÊÊHÃB‚BXÛÛœÝXY\”›ÝÈH×CBƒB‚BY›Üˆ
-]ÛÛ[[ˆÙˆØÛÛ[[œÊHÃB‚BBXÛÛœÝ\Ó™\ÝYHÛÛ[[‹š\Ó™\ÝYB‚BBXÛÛœÝ\Ó\ÝH]™[OOH]™[ÈHCBƒB‚BBZXY\”›ÝËœ\Ú
-ÃB‚BBB[X™[ˆ\Ó™\ÝYÈÛÛ[[‹œ\ÖÛ]™[Hˆ\Ó\ÝÈÛÛ[[‹›˜[YHˆ	ÉËB‚BBB[]™[B‚BBBZ\Ó\ÝB‚BBBXÛÛ[[ŽˆÛÛ[[‹B‚BB_JCB‚B_CBƒB‚BZXY\œËœ\Ú
-XY\”›ÝÊCB‚_CBƒB‚XÛÛœÝÜ›Ý\YXY\œÈH×CBƒB‚Y›Üˆ
-]XY\”›ÝÈÙˆXY\œÊHÃB‚BXÛÛœÝÜ›Ý\YXY\”›ÝÈH×CBƒB‚B[]Ý\œ™[XY\ˆHXY\”›ÝÖÌCB‚B[]Ý\œ™[ÛÛÜ[ˆHCBƒB‚BY›Üˆ
-]HHNÈHXY\”›ÝË›[™ÝÈJÊÊHÃB‚BBXÛÛœÝXY\ˆHXY\”›ÝÖÚWCBƒB‚BBZYˆ
-XY\‹›X™[OOHÝ\œ™[XY\‹›X™[
-HÃB‚BBBXÝ\œ™[ÛÛÜ[ŠÊÃB‚BB_H[ÙHÃB‚BBBYÜ›Ý\YXY\”›ÝËœ\Ú
-ÃB‚BBBBK‹‹˜Ý\œ™[XY\‹B‚BBBBXÛÛÜ[ŽˆÝ\œ™[ÛÛÜ[‹B‚BBB_JCB‚BBBXÝ\œ™[XY\ˆHXY\ƒB‚BBBXÝ\œ™[ÛÛÜ[ˆHCB‚BB_CB‚B_CBƒB‚BYÜ›Ý\YXY\”›ÝËœ\Ú
-ÃB‚BBK‹‹˜Ý\œ™[XY\‹B‚BBXÛÛÜ[ŽˆÝ\œ™[ÛÛÜ[‹B‚B_JCBƒB‚BYÜ›Ý\YXY\œËœ\Ú
-Ü›Ý\YXY\”›ÝÊCB‚_CBƒB‚KËÈYˆXY\ˆ›ÝÜÈ]™H][\ÈÚ]˜[Y\ÈZÙNˆŒM‹LLLKŒM‹LLKLKŒM‹LL‹LCB‚KËÈK™Hš\œÝ^HÙˆXXÚ[Û[ˆÙH›Ü›X]H˜[Y\È\È	ÓØÝŒM‰Ë	Ó›ÝˆŒM‰Ë	ÑXÈŒM‰ÃBƒB‚Y›Üˆ
-]XY\”›ÝÈÙˆÜ›Ý\YXY\œÊHÃB‚BXÛÛœÝ\™Q]\ÈH\™U˜[Y]\ÊXY\”›ÝË›X\
+export function store<T>(key: string, value: () => T) {
+	// vitest has no localStorage; the value still works, it is just not remembered
+	const storage = globalThis.localStorage
+	if (!storage) return value()
 
-XY\ŠHOˆXY\‹›X™[
-JCB‚BZYˆ
-X\™Q]\ÊHÛÛ[YCBƒB‚BXÛÛœÝ\™Qš\œÝÙ‘š\ØØ[YX\ˆH\™Qš\œÝ^SÙ‘š\ØØ[YX\ŠB‚BBZXY\”›ÝË›X\
+	const stored = storage.getItem(key)
+	watchDebounced(value, (val) => storage.setItem(key, JSON.stringify(val)), {
+		debounce: 500,
+		deep: true,
+	})
+	return stored ? JSON.parse(stored) : value()
+}
 
-XY\ŠHOˆXY\‹›X™[
-KB‚BJCB‚BXÛÛœÝ\™Qš\œÝÙ–YX\ˆH\™Qš\œÝ^SÙ–YX\ŠXY\”›ÝË›X\
+// what frappe-ui puts in `messages` when the server sent no message
+const NO_SENTENCE = 'Internal Server Error'
 
-XY\ŠHOˆXY\‹›X™[
-JCB‚BXÛÛœÝ\™Qš\œÝÙ“[ÛH\™Qš\œÝ^SÙ“[Û
-XY\”›ÝË›X\
+/**
+ * The message to show the user for a failed request.
+ *
+ * The server's own message comes first. Frappe sends it to every user, but
+ * sends the traceback in `exc` only to a System User. The traceback's exception
+ * line is used only when the server sent no message. Frappe writes the message
+ * as HTML for desk. This app shows it as text, so the markup is removed.
+ */
+export function getErrorMessage(err: any) {
+	const sentence = err.messages?.filter((message: string) => message !== NO_SENTENCE).at(-1)
+	if (sentence) return asText(sentence)
 
-XY\ŠHOˆXY\‹›X™[
-JCBƒB‚BY›Üˆ
-]XY\ˆÙˆXY\”›ÝÊHÃB‚BBZYˆ
-Z\Õ˜[Y]JXY\‹›X™[
-JHÛÛ[YCBƒB‚BBZYˆ
-\™Qš\œÝÙ‘š\ØØ[YX\ŠHÃB‚BBBZXY\‹›X™[HÙ]›Ü›X]Y]JXY\‹›X™[	Ùš\ØØ[ÞYX\‰ÊCB‚BB_H[ÙHYˆ
-\™Qš\œÝÙ–YX\ŠHÃB‚BBBZXY\‹›X™[HÙ]›Ü›X]Y]JXY\‹›X™[	ÞYX\‰ÊCB‚BB_H[ÙHYˆ
-\™Qš\œÝÙ“[Û
-HÃB‚BBBZXY\‹›X™[HÙ]›Ü›X]Y]JXY\‹›X™[	Û[Û	ÊCB‚BB_H[ÙHYˆ
-\™Q]\ÊHÃB‚BBBZXY\‹›X™[HÙ]›Ü›X]Y]JXY\‹›X™[	Ù^IÊCB‚BB_CB‚B_CB‚_CBƒB‚\™]\›ˆÜ›Ý\YXY\œÃBŸCBƒB™[˜Ý[Ûˆ\™Qš\œÝ^SÙ‘š\ØØ[YX\Š]NˆÝš[™Ö×JHÃB‚XÛÛœÝš\ØØ[YX\”Ý\HÙ\ÜÚ[Û‹œÚ]OË™š\ØØ[ÞYX\—ÜÝ\B‚ZYˆ
-Yš\ØØ[YX\”Ý\
-H™]\›ˆ˜[ÙCBƒB‚XÛÛœÝÝ\H™]È]Jš\ØØ[YX\”Ý\
-CB‚XÛÛœÝš\ØØ[Ý\[ÛHÝ\™Ù][Û
+	// the exception line is not always last: DuckDB appends the offending SQL and a caret
+	const lines: string[] = err.exc?.split('\n') ?? []
+	const excLine = lines.filter((line) => /^[\w.]+(Error|Exception): /.test(line)).at(-1)
+	if (!excLine) return err.message || err.toString()
+	const message = excLine.split(': ').slice(1).join(': ')
+	const details = lines.slice(lines.lastIndexOf(excLine) + 1)
+	return [message, ...details].join('\n').trim()
+}
 
-CB‚XÛÛœÝš\ØØ[Ý\^HHÝ\™Ù]]J
-CBƒB‚KËÈÚ[ˆHš\ØØ[YX\ˆ[YÛœÈÚ]HØ[[™\ˆYX\‹Y™\ˆÈYX\ˆ›Ü›X][™ÃB‚ZYˆ
-š\ØØ[Ý\[ÛOOH	‰ˆš\ØØ[Ý\^HOOHJH™]\›ˆ˜[ÙCBƒB‚XÛÛœÝš\œÝ^SÙ‘š\ØØ[YX\ˆH
-]NˆÝš[™ÊHOˆÃB‚BXÛÛœÝH™]È]J]JCB‚B\™]\›ˆ™Ù][Û
+function asText(html: string) {
+	return html
+		.replace(/<[^>]*>/g, '')
+		.replace(/&lt;/g, '<')
+		.replace(/&gt;/g, '>')
+		.replace(/&quot;/g, '"')
+		.replace(/&#39;/g, "'")
+		.replace(/&amp;/g, '&')
+}
 
-HOOHš\ØØ[Ý\[Û	‰ˆ™Ù]]J
-HOOHš\ØØ[Ý\^CB‚_CB‚\™]\›ˆ]K›X\
-š\œÝ^SÙ‘š\ØØ[YX\ŠK™š[\Š›ÛÛX[ŠK›[™ÝÈ]K›[™ÝHCBŸCBƒB™[˜Ý[Ûˆ\™Qš\œÝ^SÙ“[Û
-]NˆÝš[™Ö×JHÃB‚XÛÛœÝš\œÝ^SÙ“[ÛH
-]NˆÝš[™ÊHOˆ™]È]J]JK™Ù]]J
-HOOHCB‚\™]\›ˆ]K›X\
-š\œÝ^SÙ“[Û
-K™š[\Š›ÛÛX[ŠK›[™ÝÈ]K›[™ÝHCBŸCBƒB™[˜Ý[Ûˆ\™Qš\œÝ^SÙ–YX\Š]NˆÝš[™Ö×JHÃB‚XÛÛœÝš\œÝ^SÙ–YX\ˆH
-]NˆÝš[™ÊHOƒB‚B[™]È]J]JK™Ù][Û
+export function showErrorToast(err: Error, raise: false): void
+export function showErrorToast(err: Error, raise?: true): never
+export function showErrorToast(err: Error, raise = true) {
+	toast.error(getErrorMessage(err))
+	if (raise) throw err
+}
 
-HOOH	‰ˆ™]È]J]JK™Ù]]J
-HOOHCB‚\™]\›ˆ]K›X\
-š\œÝ^SÙ–YX\ŠK™š[\Š›ÛÛX[ŠK›[™ÝÈ]K›[™ÝHCBŸCBƒB™[˜Ý[Ûˆ\™U˜[Y]\Ê]NˆÝš[™Ö×JHÃB‚\™]\›ˆ]K›X\
-\Õ˜[Y]JK™š[\Š›ÛÛX[ŠK›[™ÝÈ]K›[™ÝHCBŸCBƒB™[˜Ý[Ûˆ\Õ˜[Y]J˜[YNˆÝš[™ÊHÃB‚KËÈ[[ÜÝ[]\ÈÚ[]™HH˜[YYÚ]YX\ƒB‚ZYˆ
-]˜[YJH™]\›ˆ˜[ÙCB‚ZYˆ
-K×ÍKË\Ý
-˜[YJJH™]\›ˆ˜[ÙCB‚XÛÛœÝ]HH™]È]J˜[YJCB‚\™]\›ˆZ\Ó˜SŠ]K™Ù][YJ
-JH	‰ˆ]K™Ù][YX\Š
-HHNL	‰ˆ]K™Ù][YX\Š
-HHŽLBŸCBƒB˜ÛÛœÝØ[ØXÚHH™]ÈX\Ýš[™Ë[žOŠ
-CB™^Ü[˜Ý[ÛˆØXÚYØ[
-\›ˆÝš[™ËÜ[ÛœÏÎˆ[žJNˆ›ÛZ\ÙO[žOˆÃB‚KËÈH[˜Ý[Ûˆ]XZÙ\ÈH™]ÚØ[][ÛÈØXÚ\ÈH™\ÜÛœÙH›ÜˆHØ[YH\›	ˆÜ[ÛœÃB‚XÛÛœÝÙ^HH”ÓÓ‹œÝš[™ÚYžJÈ\›Ü[ÛœÈJCB‚ZYˆ
-Ø[ØXÚKš\ÊÙ^JJHÃB‚B\™]\›ˆ›ÛZ\ÙKœ™\ÛÛ™JØ[ØXÚK™Ù]
-Ù^JJCB‚_CBƒB‚\™]\›ˆØ[
-\›Ü[ÛœÊCB‚BK[Š
-™\ÜÛœÙNˆ[žJHOˆÃB‚BBXØ[ØXÚKœÙ]
-Ù^K™\ÜÛœÙJCB‚BB\™]\›ˆ™\ÜÛœÙCB‚B_JCB‚BK˜Ø]Ú
+export function downloadImage(element: HTMLElement, filename: string, scale = 2, options = {}) {
+	return import('html-to-image')
+		.then(({ toPng }) =>
+			toPng(element, {
+				width: element.scrollWidth,
+				height: element.scrollHeight,
+				pixelRatio: scale,
+				backgroundColor: 'white',
+				style: {
+					width: `${element.scrollWidth}px`,
+					height: `${element.scrollHeight}px`,
+					overflow: 'visible',
+				},
+				...options,
+			}),
+		)
+		.then((dataUrl) => {
+			const link = document.createElement('a')
+			link.download = filename
+			link.href = dataUrl
+			link.click()
+		})
+		.catch((err) => showErrorToast(err, false))
+}
 
-\œŽˆ\œ›ÜŠHOˆÃB‚BBXØ[ØXÚK™[]JÙ^JCB‚BB]›ÝÈ\œƒB‚B_JCBŸCBƒB™^Ü[˜Ý[ÛˆÕ]PØ\ÙJÝŽˆÝš[™ÊNˆÝš[™ÈÃB‚ZYˆ
-\ÝŠH™]\›ˆÝƒBƒB‚\™]\›ˆÝƒB‚BKœ™\XÙJÉ‹ÙË	Ø[™	ÊCB‚BKÓÝÙ\Ø\ÙJ
-CB‚BKœÜ]
-	È	ÊCB‚BK›X\
+/** A cell read as a number, or nothing: null, blank and text are not zero. */
+export function toNumber(value: any): number | null {
+	if (value === null || value === undefined || value === '') return null
+	const number = Number(value)
+	return Number.isNaN(number) ? null : number
+}
 
-ÛÜ™
-HOˆÃB‚BBZYˆ
-ÛÜ™OOH	Ø[™	ÊH™]\›ˆ	Ø[™	ÃB‚BB\™]\›ˆÛÜ™˜Ú\]
-
-KÕ\\Ø\ÙJ
-H
-ÈÛÜ™œÛXÙJJCB‚B_JCB‚BKš›Ú[Š	È	ÊCB‚BKš[J
-CBŸCB
+// `precision` is left out, not zeroed, when nobody states one: a caller asking
+// for no decimals means no decimals, and `0 || guess` swallowed that.
+export function formatNumber(number: number, precision?: number): string {
+	if (isNaN(number)) return String(number)
+	precision = precision ?? guessPrecision(number)
+	const locale = session.site?.country == 'India' ? 'en-IN' : session.user?.locale
+	return formatLocaleNumber(number, locale, {
+		minimumFractionDigits: precision,
+		maximumFractionDigits: precision,
+	})
+}
+
+export type FormatUnits = {
+	// what the stored number must be multiplied by to reach the printed one
+	scale: number
+	prefix: string
+	suffix: string
+}
+
+const NO_UNITS: FormatUnits = { scale: 1, prefix: '', suffix: '' }
+
+// A measure states its unit once, and every reading of it prints that unit the
+// same way. The symbol sits where fmt_money puts it, so Insights and desk agree.
+export function getFormatUnits(format?: DataFormat, code?: string | null): FormatUnits {
+	if (format === 'percent') {
+		return {
+			scale: 100,
+			prefix: '',
+			suffix: session.user?.locale?.toLowerCase().startsWith('fa') ? 'Ùª' : '%',
+		}
+	}
+	if (format !== 'currency') return NO_UNITS
+
+	const resolved = code === undefined ? session.site?.currency : code
+	const currency = resolved ? session.site?.currency_symbols?.[resolved] : undefined
+	if (!currency?.symbol) return NO_UNITS
+	return currency.symbol_on_right
+		? { scale: 1, prefix: '', suffix: ` ${currency.symbol}` }
+		: { scale: 1, prefix: `${currency.symbol} `, suffix: '' }
+}
+
+export function guessPrecision(number: number) {
+	if (!number || isNaN(number)) return 0
+	// eg. 1.0 precision = 1, 1.00 precision = 2
+	const str = number.toString()
+	const decimalIndex = str.indexOf('.')
+	if (decimalIndex === -1) return 0
+	return Math.min(str.length - decimalIndex - 1, 2)
+}
+
+export function getShortNumber(number: number, precision = 0) {
+	const locale = session.site?.country == 'India' ? 'en-IN' : session.user?.locale
+	let formatted = formatLocaleNumber(number, locale, {
+		notation: 'compact',
+		maximumFractionDigits: precision,
+	})
+
+	if (locale == 'en-IN') {
+		formatted = formatted.replace('T', 'K')
+	}
+	return formatted
+}
+
+export function fuzzySearch(arr: any[], { term, keys }: { term: string; keys: string[] }) {
+	// search for term in all keys of arr items and sort by relevance
+	const lowerCaseTerm = term.toLowerCase()
+	type Result = { item: any; score: number }
+	const results: Result[] = arr.reduce((acc, item) => {
+		const score = keys.reduce((acc, key) => {
+			const value = item[key]
+			if (value) {
+				const match = value.toLowerCase().indexOf(lowerCaseTerm)
+				if (match !== -1) {
+					return acc + match + 1
+				}
+			}
+			return acc
+		}, 0)
+		if (score) {
+			acc.push({ item, score })
+		}
+		return acc
+	}, [])
+	return results.sort((a, b) => a.score - b.score).map((item) => item.item)
+}
+
+export function safeJSONParse(str: string, defaultValue = null) {
+	if (str === null || str === undefined) {
+		return defaultValue
+	}
+
+	if (typeof str !== 'string') {
+		return str
+	}
+
+	try {
+		return JSON.parse(str)
+	} catch (e) {
+		console.groupCollapsed('Error parsing JSON')
+		console.log(str)
+		console.error(e)
+		console.groupEnd()
+		toast.error(__('Error parsing JSON'))
+		return defaultValue
+	}
+}
+
+export function copyToClipboard(text: string | Promise<string>) {
+	if (text instanceof Promise) {
+		// Safari blocks clipboard access if called after an async operation
+		// fix: use call ClipboardItem synchronously but with the text as a promise
+		const blob = text.then((t) => new Blob([t], { type: 'text/plain' }))
+		navigator.clipboard
+			.write([new ClipboardItem({ 'text/plain': blob })])
+			.then(() => showCopyToast(true))
+			.catch(() => showCopyToast(false))
+		return
+	}
+
+	navigator.clipboard
+		.writeText(text)
+		.then(() => showCopyToast(true))
+		.catch(() => showCopyToast(false))
+}
+
+function showCopyToast(success: boolean) {
+	if (success) {
+		toast.success(__('Copied to clipboard'))
+	} else {
+		toast.error(__('Failed to copy to clipboard'))
+	}
+}
+
+export function ellipsis(value: string, length: number) {
+	if (value && value.length > length) {
+		return value.substring(0, length) + '...'
+	}
+	return value
+}
+
+export function flattenOptions(
+	options: DropdownOption[] | GroupedDropdownOption[],
+): DropdownOption[] {
+	if (!options.length) return []
+	return 'group' in options[0]
+		? (options as GroupedDropdownOption[]).map((c) => c.options).flat()
+		: (options as DropdownOption[])
+}
+
+export function groupOptions<T extends DropdownOption>(
+	options: T[],
+	groupBy: keyof T,
+): GroupedDropdownOption[] {
+	return options.reduce((acc, option) => {
+		const group = option[groupBy] as string
+		const index = acc.findIndex((g) => g.group === group)
+		if (index === -1) {
+			acc.push({ group, options: [option] })
+		} else {
+			acc[index].options.push(option)
+		}
+		return acc
+	}, [] as GroupedDropdownOption[])
+}
+
+export function scrub(text: string, spacer = '_') {
+	return text.replace(/ /g, spacer).toLowerCase()
+}
+
+type OptionKey = keyof DropdownOption
+export function toOptions(arr: any[], map: Record<OptionKey, string>) {
+	return arr.map((item) => {
+		Object.keys(map).forEach((key) => {
+			// @ts-ignore
+			item[key] = item[map[key]]
+		})
+		return item
+	})
+}
+
+export function sanitizeColumnName(name: string) {
+	return name
+		? name
+				.trim()
+				.replace(' ', '_')
+				.replace('-', '_')
+				.replace('.', '_')
+				.replace('/', '_')
+				.replace('(', '_')
+				.replace(')', '_')
+				.toLowerCase()
+		: name
+}
+
+export function isDate(data_type: ColumnDataType) {
+	return FIELDTYPES.DATE.includes(data_type)
+}
+
+export function isNumber(data_type: ColumnDataType) {
+	return FIELDTYPES.NUMBER.includes(data_type)
+}
+
+export function isString(data_type: ColumnDataType) {
+	return FIELDTYPES.TEXT.includes(data_type)
+}
+
+export function attachRealtimeListener(event: string, callback: (...args: any[]) => void) {
+	const $socket = inject<Socket>('$socket')!
+	$socket.on(event, callback)
+	onBeforeUnmount(() => {
+		$socket.off(event)
+	})
+}
+
+export function createHeaders(columns: QueryResultColumn[]) {
+	const nestedColumns = columns.filter((column) => column.name.includes('___'))
+	const levels = nestedColumns.length ? nestedColumns[0].name.split('___').length : 1
+
+	const _columns = columns.map((column) => {
+		return {
+			...column,
+			isNested: column.name.includes('___'),
+			// ibis pivots to measure___value1___value2, deepest value last. A
+			// header reads the other way round, the outermost dimension on the
+			// top row and the measure on the bottom, so the parts are reversed.
+			parts: column.name.split('___').reverse(),
+		}
+	})
+
+	const headers = []
+
+	for (let level = 0; level < levels; level++) {
+		const headerRow = []
+
+		for (let column of _columns) {
+			const isNested = column.isNested
+			const isLast = level === levels - 1
+
+			headerRow.push({
+				label: isNested ? column.parts[level] : isLast ? column.name : '',
+				level,
+				isLast,
+				column: column,
+			})
+		}
+
+		headers.push(headerRow)
+	}
+
+	const groupedHeaders = []
+
+	for (let headerRow of headers) {
+		const groupedHeaderRow = []
+
+		let currentHeader = headerRow[0]
+		let currentColspan = 1
+
+		for (let i = 1; i < headerRow.length; i++) {
+			const header = headerRow[i]
+
+			if (header.label === currentHeader.label) {
+				currentColspan++
+			} else {
+				groupedHeaderRow.push({
+					...currentHeader,
+					colspan: currentColspan,
+				})
+				currentHeader = header
+				currentColspan = 1
+			}
+		}
+
+		groupedHeaderRow.push({
+			...currentHeader,
+			colspan: currentColspan,
+		})
+
+		groupedHeaders.push(groupedHeaderRow)
+	}
+
+	// if header rows have items with values like: 2016-10-01, 2016-11-01, 2016-12-01
+	// i.e first day of each month, then we format the values as 'Oct 2016', 'Nov 2016', 'Dec 2016'
+
+	for (let headerRow of groupedHeaders) {
+		const areDates = areValidDates(headerRow.map((header) => header.label))
+		if (!areDates) continue
+
+		const areFirstOfFiscalYear = areFirstDayOfFiscalYear(
+			headerRow.map((header) => header.label),
+		)
+		const areFirstOfYear = areFirstDayOfYear(headerRow.map((header) => header.label))
+		const areFirstOfMonth = areFirstDayOfMonth(headerRow.map((header) => header.label))
+
+		for (let header of headerRow) {
+			if (!isValidDate(header.label)) continue
+
+			if (areFirstOfFiscalYear) {
+				header.label = getFormattedDate(header.label, 'fiscal_year')
+			} else if (areFirstOfYear) {
+				header.label = getFormattedDate(header.label, 'year')
+			} else if (areFirstOfMonth) {
+				header.label = getFormattedDate(header.label, 'month')
+			} else if (areDates) {
+				header.label = getFormattedDate(header.label, 'day')
+			}
+		}
+	}
+
+	return groupedHeaders
+}
+
+function areFirstDayOfFiscalYear(data: string[]) {
+	const fiscalYearStart = session.site?.fiscal_year_start
+	if (!fiscalYearStart) return false
+
+	const start = new Date(fiscalYearStart)
+	const fiscalStartMonth = start.getMonth()
+	const fiscalStartDay = start.getDate()
+
+	// when the fiscal year aligns with the calendar year, defer to year formatting
+	if (fiscalStartMonth === 0 && fiscalStartDay === 1) return false
+
+	const firstDayOfFiscalYear = (date: string) => {
+		const d = new Date(date)
+		return d.getMonth() === fiscalStartMonth && d.getDate() === fiscalStartDay
+	}
+	return data.map(firstDayOfFiscalYear).filter(Boolean).length / data.length >= 0.5
+}
+
+function areFirstDayOfMonth(data: string[]) {
+	const firstDayOfMonth = (date: string) => new Date(date).getDate() === 1
+	return data.map(firstDayOfMonth).filter(Boolean).length / data.length >= 0.5
+}
+
+function areFirstDayOfYear(data: string[]) {
+	const firstDayOfYear = (date: string) =>
+		new Date(date).getMonth() === 0 && new Date(date).getDate() === 1
+	return data.map(firstDayOfYear).filter(Boolean).length / data.length >= 0.5
+}
+
+function areValidDates(data: string[]) {
+	return data.map(isValidDate).filter(Boolean).length / data.length >= 0.5
+}
+
+function isValidDate(value: string) {
+	// almost all dates will have a valid 4 digit year
+	if (!value) return false
+	if (!/\d{4}/.test(value)) return false
+	const date = new Date(value)
+	return !isNaN(date.getTime()) && date.getFullYear() >= 1900 && date.getFullYear() <= 2900
+}
+
+const callCache = new Map<string, any>()
+export function cachedCall(url: string, options?: any): Promise<any> {
+	// a function that makes a fetch call, but also caches the response for the same url & options
+	const key = JSON.stringify({ url, options })
+	if (callCache.has(key)) {
+		return Promise.resolve(callCache.get(key))
+	}
+
+	return call(url, options)
+		.then((response: any) => {
+			callCache.set(key, response)
+			return response
+		})
+		.catch((err: Error) => {
+			callCache.delete(key)
+			throw err
+		})
+}
+
+export function toTitleCase(str: string): string {
+	if (!str) return str
+
+	return str
+		.replace(/&/g, 'and')
+		.toLowerCase()
+		.split(' ')
+		.map((word) => {
+			if (word === 'and') return 'and'
+			return word.charAt(0).toUpperCase() + word.slice(1)
+		})
+		.join(' ')
+		.trim()
+}

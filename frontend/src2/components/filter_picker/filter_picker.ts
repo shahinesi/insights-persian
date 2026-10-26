@@ -1,4 +1,510 @@
-YªçŠx-®éÜj×¢ëiºÚ+Š§j[h‘éÜ¢éíóÍùN‹Z–‹­¦ëeŠw¬Ô¼¼Q¡”Ù½…‰Õ±…ÉäÑ¡”™¥±Ñ•ÈÁ¥­•ÈÍÁ•…­ÌèÑ¡”­¥¹‘Ì„½±Õµ¸™…±±Ì¥¸°Ñ¡”4(¼¼½Á•É…Ñ½ÈÑ…‰±”•… ­¥¹…±±½İÌ°Ñ¡”ÍÁ…¹Ì„‘…Ñ”™¥±Ñ•È¥ÌİÉ¥ÑÑ•¸¥¸°Ñ¡”4(¼¼½¹”‘…Ñ”™½Éµ…ÑÑ•È•Ù•ÉäÍÑ…”ÁÉ¥¹ÑÌÑ¡É½Õ °…¹Ñ¡”Á…ÉÑÌ½˜Ñ¡”±¥¹”…¸4(¼¼½Ù•ÉÙ¥•ÜÉ½ÜÁÉ¥¹ÑÌ¸4(4)¥µÁ½ÉĞÑåÁ”ì½µÁ½¹•¹Ğô™É½´€ÙÕ”œ4)¥µÁ½ÉĞì%1QeAL°ÑåÁ”¥±Ñ•ÉQåÁ”ô™É½´€œ¸¸¼¸¸½¡•±Á•ÉÌ½½¹ÍÑ…¹ÑÌœ4)¥µÁ½ÉĞ‘…å©Ì™É½´€œ¸¸¼¸¸½¡•±Á•ÉÌ½‘…å©Ìœ4)¥µÁ½ÉĞì•¹‘=™A•É¥½°Í¡¥™ÑA•É¥½‘Ì°ÍÑ…ÉÑ=™A•É¥½ô™É½´€œ¸¸¼¸¸½¡•±Á•ÉÌ½…±•¹‘…Èœ4)¥µÁ½ÉĞì4(%™½Éµ…Ñ1½…±•…Ñ”°4(%™½Éµ…Ñ1½…±•…Ñ•I…¹”°4(%™½Éµ…Ñ1½…±•9Õµ‰•È°4(%Á…ÉÍ•1½…±•9Õµ‰•È°4)ô™É½´€œ¸¸¼¸¸½¡•±Á•ÉÌ½±½…±•}™½Éµ…Ğœ4)¥µÁ½ÉĞÍ•ÍÍ¥½¸™É½´€œ¸¸¼¸¸½Í•ÍÍ¥½¸œ4)¥µÁ½ÉĞì4(%‰Õ¥±‘MÁ…¸°4(%Á…ÉÍ•MÁ…¸°4(%MA9}U9%QL°4(%ÍÁ…¹U¹¥Ñ=˜°4(%ÑåÁ”MÁ…¹M¡…Á”°4(%ÑåÁ”MÁ…¹U¹¥Ğ°4)ô™É½´€œ¸¸¼¸¸½¡•±Á•ÉÌ½ÍÁ…¹}É…µµ…Èœ4)¥µÁ½ÉĞì½±Õµ¸°™¥±Ñ•É}É½ÕÀô™É½´€œ¸¸¼¸¸½ÅÕ•Éä½¡•±Á•ÉÌœ4)¥µÁ½ÉĞì}|°ÑÉ…¹Í±…Ñ•‘Q…‰±”ô™É½´€œ¸¸¼¸¸½ÑÉ…¹Í±…Ñ¥½¸œ4)¥µÁ½ÉĞÑåÁ”ì4(%½±Õµ¹…Ñ…QåÁ”°4(%¥±Ñ•ÉÉÌ°4(%¥±Ñ•ÉÉ½ÕÀ°4(%¥±Ñ•É=Á•É…Ñ½È°4(%¥±Ñ•ÉY…±Õ”°4(%EÕ•ÉåI•ÍÕ±Ñ½±Õµ¸°4(%Q¥µ•ÍÁ…¸°4)ô™É½´€œ¸¸¼¸¸½ÑåÁ•Ì½ÅÕ•Éä¹ÑåÁ•Ìœ4(4(¼¨¨=¹”ÉÕ±”Ñ¡”Á¥­•È¡½±‘Ì¸!½ÍÑÌ­•ä„±¥ÍĞ½˜Ñ¡•Í”‰ä¥¹‘•à¸€¨¼4)•áÁ½ÉĞÑåÁ”¥±Ñ•È€ôì4(%½±Õµ¸èEÕ•ÉåI•ÍÕ±Ñ½±Õµ¸4(%½Á•É…Ñ½Èè¥±Ñ•É=Á•É…Ñ½È4(%Ù…±Õ”è¥±Ñ•ÉY…±Õ”4)ô4(4)•áÁ½ÉĞÑåÁ”¥±Ñ•É-¥¹€ô€Ñ•áĞœğ€¹Õµ‰•Èœğ€‘…Ñ”œ4(4)•áÁ½ÉĞ™Õ¹Ñ¥½¸­¥¹‘=˜¡ÑåÁ”è½±Õµ¹…Ñ…QåÁ”¤è¥±Ñ•É-¥¹ì4(%¥˜€¡%1QeAL¹9U5	H¹¥¹±Õ‘•Ì¡ÑåÁ”¤¤É•ÑÕÉ¸€¹Õµ‰•Èœ4(%¥˜€¡%1QeAL¹Q¹¥¹±Õ‘•Ì¡ÑåÁ”¤¤É•ÑÕÉ¸€‘…Ñ”œ4(%É•ÑÕÉ¸€Ñ•áĞœ4)ô4(4(¼¨¨¸½Á•É…Ñ½È¥Ì„Í¥¸İ¡•É•Ù•È½¹”•á¥ÍÑÌ°…¹Ñ¡”İ½É¥Ğ¥ÌÉ•……Ì¸€¨¼4)•áÁ½ÉĞÑåÁ”=Á•É…Ñ½É•˜€ôì4(%Í¥¸èÍÑÉ¥¹œ4(%İ½ÉèÍÑÉ¥¹œ4(%½Á•É…Ñ½Èè¥±Ñ•É=Á•É…Ñ½È4(%¹••‘ÍY…±Õ”è‰½½±•…¸4)ô4(4)•áÁ½ÉĞ½¹ÍĞ½Á•É…Ñ½ÉÌ€ôÑÉ…¹Í±…Ñ•‘Q…‰±”ñI•½Éñ¥±Ñ•É-¥¹°=Á•É…Ñ½É•™mtøø  ¤€ôø€¡ì4(%Ñ•áĞèl4($%ìÍ¥¸è}| ¥Ìœ¤°İ½Éè}| ¥Ìœ¤°½Á•É…Ñ½Èè€¥¸œ°¹••‘ÍY…±Õ”èÑÉÕ”ô°4($%ìÍ¥¸è}| ¥Ì¹½Ğœ¤°İ½Éè}| ¥Ì¹½Ğœ¤°½Á•É…Ñ½Èè€¹½Ñ}¥¸œ°¹••‘ÍY…±Õ”èÑÉÕ”ô°4($%ìÍ¥¸è€œôœ°İ½Éè}| •ÅÕ…±Ìœ¤°½Á•É…Ñ½Èè€œôœ°¹••‘ÍY…±Õ”èÑÉÕ”ô°4($%ìÍ¥¸è€ŸŠ&€œ°İ½Éè}| ¹½Ğ•ÅÕ…±Ìœ¤°½Á•É…Ñ½Èè€œ„ôœ°¹••‘ÍY…±Õ”èÑÉÕ”ô°4($%ìÍ¥¸è}| ½¹Ñ…¥¹Ìœ¤°İ½Éè}| ½¹Ñ…¥¹Ìœ¤°½Á•É…Ñ½Èè€½¹Ñ…¥¹Ìœ°¹••‘ÍY…±Õ”èÑÉÕ”ô°4($%ì4($$%Í¥¸è}| ‘½•Ì¹½Ğ½¹Ñ…¥¸œ¤°4($$%İ½Éè}| ‘½•Ì¹½Ğ½¹Ñ…¥¸œ¤°4($$%½Á•É…Ñ½Èè€¹½Ñ}½¹Ñ…¥¹Ìœ°4($$%¹••‘ÍY…±Õ”èÑÉÕ”°4($%ô°4($%ì4($$%Í¥¸è}| ÍÑ…ÉÑÌİ¥Ñ œ¤°4($$%İ½Éè}| ÍÑ…ÉÑÌİ¥Ñ œ¤°4($$%½Á•É…Ñ½Èè€ÍÑ…ÉÑÍ}İ¥Ñ œ°4($$%¹••‘ÍY…±Õ”èÑÉÕ”°4($%ô°4($%ìÍ¥¸è}| •¹‘Ìİ¥Ñ œ¤°İ½Éè}| •¹‘Ìİ¥Ñ œ¤°½Á•É…Ñ½Èè€•¹‘Í}İ¥Ñ œ°¹••‘ÍY…±Õ”èÑÉÕ”ô°4($%ìÍ¥¸è}| ¥ÌÍ•Ğœ¤°İ½Éè}| ¥ÌÍ•Ğœ¤°½Á•É…Ñ½Èè€¥Í}Í•Ğœ°¹••‘ÍY…±Õ”è™…±Í”ô°4($%ì4($$%Í¥¸è}| ¥Ì¹½ĞÍ•Ğœ¤°4($$%İ½Éè}| ¥Ì¹½ĞÍ•Ğœ¤°4($$%½Á•É…Ñ½Èè€¥Í}¹½Ñ}Í•Ğœ°4($$%¹••‘ÍY…±Õ”è™…±Í”°4($%ô°4(%t°4(%¹Õµ‰•Èèl4($%ìÍ¥¸è€œôœ°İ½Éè}| •ÅÕ…±Ìœ¤°½Á•É…Ñ½Èè€œôœ°¹••‘ÍY…±Õ”èÑÉÕ”ô°4($%ìÍ¥¸è€ŸŠ&€œ°İ½Éè}| ¹½Ğ•ÅÕ…±Ìœ¤°½Á•É…Ñ½Èè€œ„ôœ°¹••‘ÍY…±Õ”èÑÉÕ”ô°4($%ìÍ¥¸è€œøœ°İ½Éè}| É•…Ñ•ÈÑ¡…¸œ¤°½Á•É…Ñ½Èè€œøœ°¹••‘ÍY…±Õ”èÑÉÕ”ô°4($%ìÍ¥¸è€ŸŠ&”œ°İ½Éè}| É•…Ñ•ÈÑ¡…¸½È•ÅÕ…±Ìœ¤°½Á•É…Ñ½Èè€œøôœ°¹••‘ÍY…±Õ”èÑÉÕ”ô°4($%ìÍ¥¸è€œğœ°İ½Éè}| ±•ÍÌÑ¡…¸œ¤°½Á•É…Ñ½Èè€œğœ°¹••‘ÍY…±Õ”èÑÉÕ”ô°4($%ìÍ¥¸è€ŸŠ&œ°İ½Éè}| ±•ÍÌÑ¡…¸½È•ÅÕ…±Ìœ¤°½Á•É…Ñ½Èè€œğôœ°¹••‘ÍY…±Õ”èÑÉÕ”ô°4($%ìÍ¥¸è}| ‰•Ñİ••¸œ¤°İ½Éè}| ‰•Ñİ••¸œ¤°½Á•É…Ñ½Èè€‰•Ñİ••¸œ°¹••‘ÍY…±Õ”èÑÉÕ”ô°4($%ìÍ¥¸è}| ¥ÌÍ•Ğœ¤°İ½Éè}| ¥ÌÍ•Ğœ¤°½Á•É…Ñ½Èè€¥Í}Í•Ğœ°¹••‘ÍY…±Õ”è™…±Í”ô°4($%ì4($$%Í¥¸è}| ¥Ì¹½ĞÍ•Ğœ¤°4($$%İ½Éè}| ¥Ì¹½ĞÍ•Ğœ¤°4($$%½Á•É…Ñ½Èè€¥Í}¹½Ñ}Í•Ğœ°4($$%¹••‘ÍY…±Õ”è™…±Í”°4($%ô°4(%t°4(%‘…Ñ”èl4($%ìÍ¥¸è}| ‰•Ñİ••¸œ¤°İ½Éè}| ‰•Ñİ••¸œ¤°½Á•É…Ñ½Èè€‰•Ñİ••¸œ°¹••‘ÍY…±Õ”èÑÉÕ”ô°4($%ìÍ¥¸è}| İ¥Ñ¡¥¸œ¤°İ½Éè}| İ¥Ñ¡¥¸œ¤°½Á•É…Ñ½Èè€İ¥Ñ¡¥¸œ°¹••‘ÍY…±Õ”èÑÉÕ”ô°4($%ìÍ¥¸è€œôœ°İ½Éè}| •ÅÕ…±Ìœ¤°½Á•É…Ñ½Èè€œôœ°¹••‘ÍY…±Õ”èÑÉÕ”ô°4($%ìÍ¥¸è€ŸŠ&€œ°İ½Éè}| ¹½Ğ•ÅÕ…±Ìœ¤°½Á•É…Ñ½Èè€œ„ôœ°¹••‘ÍY…±Õ”èÑÉÕ”ô°4($%ìÍ¥¸è€œøœ°İ½Éè}| …™Ñ•Èœ¤°½Á•É…Ñ½Èè€œøœ°¹••‘ÍY…±Õ”èÑÉÕ”ô°4($%ìÍ¥¸è€ŸŠ&”œ°İ½Éè}| ½¸½È…™Ñ•Èœ¤°½Á•É…Ñ½Èè€œøôœ°¹••‘ÍY…±Õ”èÑÉÕ”ô°4($%ìÍ¥¸è€œğœ°İ½Éè}| ‰•™½É”œ¤°½Á•É…Ñ½Èè€œğœ°¹••‘ÍY…±Õ”èÑÉÕ”ô°4($%ìÍ¥¸è€ŸŠ&œ°İ½Éè}| ½¸½È‰•™½É”œ¤°½Á•É…Ñ½Èè€œğôœ°¹••‘ÍY…±Õ”èÑÉÕ”ô°4($%ìÍ¥¸è}| ¥ÌÍ•Ğœ¤°İ½Éè}| ¥ÌÍ•Ğœ¤°½Á•É…Ñ½Èè€¥Í}Í•Ğœ°¹••‘ÍY…±Õ”è™…±Í”ô°4($%ì4($$%Í¥¸è}| ¥Ì¹½ĞÍ•Ğœ¤°4($$%İ½Éè}| ¥Ì¹½ĞÍ•Ğœ¤°4($$%½Á•É…Ñ½Èè€¥Í}¹½Ñ}Í•Ğœ°4($$%¹••‘ÍY…±Õ”è™…±Í”°4($%ô°4(%t°4)ô¤¤4(4(¼¨¨4(€¨‘…Í¡‰½…É™¥±Ñ•È¹…µ•Ì¥ÑÌÑåÁ”¥¸Ñ¡”…ÕÑ¡½ÈÌİ½É‘ÌÉ…Ñ¡•ÈÑ¡…¸¥¸„4(€¨½±Õµ¸Ì‘…Ñ„ÑåÁ”°…¹Ñ¡…Ğ¥ÌÑ¡”Í…µ”Ñ¡É•”­¥¹‘ÌÕ¹‘•È…¹½Ñ¡•È¹…µ”¸4(€¨¼4)•áÁ½ÉĞ½¹ÍĞ%1QI}QeA}-%9LèI•½Éñ¥±Ñ•ÉQåÁ”°¥±Ñ•É-¥¹ø€ôì4(%MÑÉ¥¹œè€Ñ•áĞœ°4(%9Õµ‰•Èè€¹Õµ‰•Èœ°4(%…Ñ”è€‘…Ñ”œ°4)ô4(4(¼¨¨9¼­¥¹ÌÑ…‰±”¡½±‘Ì•Ù•Éä½Á•É…Ñ½È°Í¼„ÉÕ±”İÉ¥ÑÑ•¸•±Í•İ¡•É”µ…ä¹…µ”½¹”¥Ğ¡…Ì¹½Ğ¸€¨¼4)•áÁ½ÉĞ™Õ¹Ñ¥½¸½Á•É…Ñ½É=˜¡­¥¹è¥±Ñ•É-¥¹°½Á•É…Ñ½Èè¥±Ñ•É=Á•É…Ñ½È¤è=Á•É…Ñ½É•˜ğÕ¹‘•™¥¹•ì4(%É•ÑÕÉ¸½Á•É…Ñ½ÉÌ ¥m­¥¹‘t¹™¥¹ ¡½À¤€ôø½À¹½Á•É…Ñ½È€ôôô½Á•É…Ñ½È¤4)ô4(4)•áÁ½ÉĞ™Õ¹Ñ¥½¸‘•™…Õ±Ñ=Á•É…Ñ½È¡­¥¹è¥±Ñ•É-¥¹¤è=Á•É…Ñ½É•˜ì4(%½¹ÍĞ½Á•É…Ñ½Èè¥±Ñ•É=Á•É…Ñ½È€ô­¥¹€ôôô€Ñ•áĞœ€ü€¥¸œ€è­¥¹€ôôô€¹Õµ‰•Èœ€ü€œøôœ€è€‰•Ñİ••¸œ4(%É•ÑÕÉ¸½Á•É…Ñ½É=˜¡­¥¹°½Á•É…Ñ½È¤…Ì=Á•É…Ñ½É•˜4)ô4(4(¼¨¨Q¡”­¥¹Ì½Á•É…Ñ½ÉÌ°¥ÑÌ‘•™…Õ±Ğ™¥ÉÍĞ¸€¨¼4)•áÁ½ÉĞ™Õ¹Ñ¥½¸½Á•É…Ñ½ÉI½İÌ¡­¥¹è¥±Ñ•É-¥¹¤è=Á•É…Ñ½É•™mtì4(%½¹ÍĞ™¥ÉÍĞ€ô‘•™…Õ±Ñ=Á•É…Ñ½È¡­¥¹¤4(%É•ÑÕÉ¸m™¥ÉÍĞ°€¸¸¹½Á•É…Ñ½ÉÌ ¥m­¥¹‘t¹™¥±Ñ•È ¡½À¤€ôø½À€„ôô™¥ÉÍĞ¥t4)ô4(4(¼¨¨¥Í€…¹¥Ì¹½Ñ€½Ù•ÈÑ•áĞ…É”„µÕ±Ñ¤µÍ•±•Ğ½Ù•ÈÑ¡”‘¥ÍÑ¥¹ĞÙ…±Õ•Ì¸€¨¼4)•áÁ½ÉĞ™Õ¹Ñ¥½¸¥Í5Õ±Ñ¤¡­¥¹è¥±Ñ•É-¥¹°½Àüè=Á•É…Ñ½É•˜¤è‰½½±•…¸ì4(%É•ÑÕÉ¸­¥¹€ôôô€Ñ•áĞœ€˜˜€¡½Àü¹½Á•É…Ñ½È€ôôô€¥¸œñğ½Àü¹½Á•É…Ñ½È€ôôô€¹½Ñ}¥¸œ¤4)ô4(4(¼¨¨Q¡”½Á•É…Ñ½ÈÙ…±Õ•€Á…¥È„Ñ•áĞµÕ±Ñ¤µÍ•±•Ğ½µµ¥ÑÌè…±İ…åÌ„±¥ÍĞ¸€¨¼4)•áÁ½ÉĞ™Õ¹Ñ¥½¸Ñ•áÑIÕ±” 4(%½Àè=Á•É…Ñ½É•˜°4(%Á¥­•èÍÑÉ¥¹mt°4(¤èì½Á•É…Ñ½Èè¥±Ñ•É=Á•É…Ñ½ÈìÙ…±Õ”è¥±Ñ•ÉY…±Õ”ôì4(%É•ÑÕÉ¸ì½Á•É…Ñ½Èè½À¹½Á•É…Ñ½È°Ù…±Õ”èl¸¸¹Á¥­•‘tô4)ô4(4(¼¨¨4(€¨]¡•É”Ñ¡”Á…Ñ ÍÑ…¹‘Ì¸Q¡”Ñ¡É•”‘…Ñ”ÍÑ…•Ì…™Ñ•Èİ¥Ñ¡¥¹€…É”ÍÑ…•Ì½˜4(€¨Ñ¡•¥È½İ¸°Í¼Ñ¡”­•å‰½…ÉÉ•…¡•Ì„É•±…Ñ¥Ù”ÍÁ…¸Ñ¡”İ…ä¥ĞÉ•…¡•Ì4(€¨•Ù•ÉåÑ¡¥¹œ•±Í”¸4(€¨¼4)•áÁ½ÉĞÑåÁ”MÑ…”€ô€½Ù•ÉÙ¥•Üœğ€½±Õµ¸œğ€½Á•É…Ñ½Èœğ€Ù…±Õ”œğ€É•±…Ñ¥Ù”œğ€Õ¹¥Ğœ4(4(¼¨¨=¹”É½Ü½˜„ÍÑ…”Ì±¥ÍĞ¸€¨¼4)•áÁ½ÉĞÑåÁ”1¥ÍÑ%Ñ•´€ôì4(%­•äèÍÑÉ¥¹œ4(%±…‰•°èÍÑÉ¥¹œ4(%¥½¸üè½µÁ½¹•¹Ğ4($¼¨¨„¡•­‰½à‰•™½É”Ñ¡”±…‰•°€¨¼4(%¡•­•üè‰½½±•…¸4($¼¨¨É•­„½İ¹ÌÑ¡¥ÌÉ½ÜÌÑ¥¬°Ñ¡É½Õ ¥ÑÌ½İ¸µ½‘•°€¨¼4(%Ñ¥¬üè‰½½±•…¸4($¼¨¨‘¥´Ñ•áĞ…™Ñ•ÈÑ¡”±…‰•°€¨¼4(%¹½Ñ”üèÍÑÉ¥¹œ4($¼¨¨½Ù•ÉÙ¥•ÜÉ½İÌèÑ¡”Í¥¸…¹Ñ¡”Ù…±Õ”°ÑåÁ•…Á…ÉĞ™É½´Ñ¡”±…‰•°€¨¼4(%½Á•É…Ñ½ÈüèÍÑÉ¥¹œ4(%Ù…±Õ”üèÍÑÉ¥¹œ4($¼¨¨„¡½ÍĞƒ\…ĞÑ¡”•¹½˜Ñ¡”É½Ü€¨¼4(%É•µ½Ù…‰±”üè‰½½±•…¸4($¼¨¨„‘¥Ù¥‘•È…‰½Ù”Ñ¡”É½Ü€¨¼4(%Í•Á…É…Ñ•üè‰½½±•…¸4(%™¥±Ñ•Èüè¥±Ñ•È4)ô4(4(¼¨¨4(€¨Q¡”¹Õµ‰•ÉÌ„€øõ€µÍÑå±”ÍÑ…”±¥ÍÑÌ°ÕĞ™É½´Ñ¡”½±Õµ¸Ì½İ¸É…¹”¸4(€¨4(€¨EÕ…ÉÑ•ÉÌ½˜¥Ğ°É½Õ¹‘•Ñ¼Í½µ•Ñ¡¥¹œ„É•…‘•Èİ½Õ±ÑåÁ”¸™¥á•±¥ÍĞ½˜4(€¨É½Õ¹¹Õµ‰•ÉÌ±¥ÍÑ•€Ä°ÀÀÀ™½È„½±Õµ¸½˜Á•É•¹Ñ…•Ì…¹¹½Ñ¡¥¹œ…Ğ…±°™½È4(€¨„½±Õµ¸½˜É•Ù•¹Õ•ÌƒŠPÁÉ•Í•ÑÌ¡…Ù”Ñ¼½µ”™É½´Ñ¡”½±Õµ¸½È¹½Ğ•á¥ÍĞ¸4(€¨¼4)•áÁ½ÉĞ™Õ¹Ñ¥½¸¹Õµ‰•ÉEÕ¥­Y…±Õ•Ì¡É…¹”üèm¹Õµ‰•È°¹Õµ‰•Ét¤è¹Õµ‰•Émtì4(%¥˜€ …É…¹”¤É•ÑÕÉ¸mt4(%½¹ÍĞm±½Ü°¡¥¡t€ôÉ…¹”4(%¥˜€ …9Õµ‰•È¹¥Í¥¹¥Ñ”¡±½Ü¤ñğ€…9Õµ‰•È¹¥Í¥¹¥Ñ”¡¡¥ ¤ñğ¡¥ €ğô±½Ü¤É•ÑÕÉ¸mt4(4(%½¹ÍĞÕÑÌ€ôlÀ¸ÈÔ°€À¸Ô°€À¸ÜÕt¹µ…À ¡Á…ÉĞ¤€ôøÉ½Õ¹‘¥Í ¡±½Ü€¬€¡¡¥ €´±½Ü¤€¨Á…ÉĞ¤¤4(%É•ÑÕÉ¸l¸¸¹¹•ÜM•Ğ¡ÕÑÌ¥t¹™¥±Ñ•È ¡Ù…±Õ”¤€ôøÙ…±Õ”€ø±½Ü€˜˜Ù…±Õ”€ğ¡¥ ¤4)ô4(4(¼¨¨Q¡”É…¹•Ì„‰•Ñİ••¹€ÍÑ…”±¥ÍÑÌèÑ¡”½±Õµ¸Ì½İ¸°¥¸Ñ¡É•”Á…ÉÑÌ¸€¨¼4)•áÁ½ÉĞ™Õ¹Ñ¥½¸¹Õ·7æÚ$z{-®éÜj×r
+// The vocabulary the filter picker speaks: the kinds a column falls in, the
+// operator table each kind allows, the spans a date filter is written in, the
+// one date formatter every stage prints through, and the parts of the line an
+// overview row prints.
+
+import type { Component } from 'vue'
+import { FIELDTYPES, type FilterType } from '../../helpers/constants'
+import dayjs from '../../helpers/dayjs'
+import { endOfPeriod, shiftPeriods, startOfPeriod } from '../../helpers/calendar'
+import {
+	formatLocaleDate,
+	formatLocaleDateRange,
+	formatLocaleNumber,
+	parseLocaleNumber,
+} from '../../helpers/locale_format'
+import session from '../../session'
+import {
+	buildSpan,
+	parseSpan,
+	SPAN_UNITS,
+	spanUnitOf,
+	type SpanShape,
+	type SpanUnit,
+} from '../../helpers/span_grammar'
+import { column, filter_group } from '../../query/helpers'
+import { __, translatedTable } from '../../translation'
+import type {
+	ColumnDataType,
+	FilterArgs,
+	FilterGroup,
+	FilterOperator,
+	FilterValue,
+	QueryResultColumn,
+	Timespan,
+} from '../../types/query.types'
+
+/** One rule the picker holds. Hosts key a list of these by index. */
+export type Filter = {
+	column: QueryResultColumn
+	operator: FilterOperator
+	value: FilterValue
+}
+
+export type FilterKind = 'text' | 'number' | 'date'
+
+export function kindOf(type: ColumnDataType): FilterKind {
+	if (FIELDTYPES.NUMBER.includes(type)) return 'number'
+	if (FIELDTYPES.DATE.includes(type)) return 'date'
+	return 'text'
+}
+
+/** An operator is a sign wherever one exists, and the word it is read as. */
+export type OperatorDef = {
+	sign: string
+	word: string
+	operator: FilterOperator
+	needsValue: boolean
+}
+
+export const operators = translatedTable<Record<FilterKind, OperatorDef[]>>(() => ({
+	text: [
+		{ sign: __('is'), word: __('is'), operator: 'in', needsValue: true },
+		{ sign: __('is not'), word: __('is not'), operator: 'not_in', needsValue: true },
+		{ sign: '=', word: __('equals'), operator: '=', needsValue: true },
+		{ sign: 'â‰ ', word: __('not equals'), operator: '!=', needsValue: true },
+		{ sign: __('contains'), word: __('contains'), operator: 'contains', needsValue: true },
+		{
+			sign: __('does not contain'),
+			word: __('does not contain'),
+			operator: 'not_contains',
+			needsValue: true,
+		},
+		{
+			sign: __('starts with'),
+			word: __('starts with'),
+			operator: 'starts_with',
+			needsValue: true,
+		},
+		{ sign: __('ends with'), word: __('ends with'), operator: 'ends_with', needsValue: true },
+		{ sign: __('is set'), word: __('is set'), operator: 'is_set', needsValue: false },
+		{
+			sign: __('is not set'),
+			word: __('is not set'),
+			operator: 'is_not_set',
+			needsValue: false,
+		},
+	],
+	number: [
+		{ sign: '=', word: __('equals'), operator: '=', needsValue: true },
+		{ sign: 'â‰ ', word: __('not equals'), operator: '!=', needsValue: true },
+		{ sign: '>', word: __('greater than'), operator: '>', needsValue: true },
+		{ sign: 'â‰¥', word: __('greater than or equals'), operator: '>=', needsValue: true },
+		{ sign: '<', word: __('less than'), operator: '<', needsValue: true },
+		{ sign: 'â‰¤', word: __('less than or equals'), operator: '<=', needsValue: true },
+		{ sign: __('between'), word: __('between'), operator: 'between', needsValue: true },
+		{ sign: __('is set'), word: __('is set'), operator: 'is_set', needsValue: false },
+		{
+			sign: __('is not set'),
+			word: __('is not set'),
+			operator: 'is_not_set',
+			needsValue: false,
+		},
+	],
+	date: [
+		{ sign: __('between'), word: __('between'), operator: 'between', needsValue: true },
+		{ sign: __('within'), word: __('within'), operator: 'within', needsValue: true },
+		{ sign: '=', word: __('equals'), operator: '=', needsValue: true },
+		{ sign: 'â‰ ', word: __('not equals'), operator: '!=', needsValue: true },
+		{ sign: '>', word: __('after'), operator: '>', needsValue: true },
+		{ sign: 'â‰¥', word: __('on or after'), operator: '>=', needsValue: true },
+		{ sign: '<', word: __('before'), operator: '<', needsValue: true },
+		{ sign: 'â‰¤', word: __('on or before'), operator: '<=', needsValue: true },
+		{ sign: __('is set'), word: __('is set'), operator: 'is_set', needsValue: false },
+		{
+			sign: __('is not set'),
+			word: __('is not set'),
+			operator: 'is_not_set',
+			needsValue: false,
+		},
+	],
+}))
+
+/**
+ * A dashboard filter names its type in the author's words rather than in a
+ * column's data type, and that is the same three kinds under another name.
+ */
+export const FILTER_TYPE_KINDS: Record<FilterType, FilterKind> = {
+	String: 'text',
+	Number: 'number',
+	Date: 'date',
+}
+
+/** No kind's table holds every operator, so a rule written elsewhere may name one it has not. */
+export function operatorOf(kind: FilterKind, operator: FilterOperator): OperatorDef | undefined {
+	return operators()[kind].find((op) => op.operator === operator)
+}
+
+export function defaultOperator(kind: FilterKind): OperatorDef {
+	const operator: FilterOperator = kind === 'text' ? 'in' : kind === 'number' ? '>=' : 'between'
+	return operatorOf(kind, operator) as OperatorDef
+}
+
+/** The kind's operators, its default first. */
+export function operatorRows(kind: FilterKind): OperatorDef[] {
+	const first = defaultOperator(kind)
+	return [first, ...operators()[kind].filter((op) => op !== first)]
+}
+
+/** `is` and `is not` over text are a multi-select over the distinct values. */
+export function isMulti(kind: FilterKind, op?: OperatorDef): boolean {
+	return kind === 'text' && (op?.operator === 'in' || op?.operator === 'not_in')
+}
+
+/** The `operator value` pair a text multi-select commits: always a list. */
+export function textRule(
+	op: OperatorDef,
+	picked: string[],
+): { operator: FilterOperator; value: FilterValue } {
+	return { operator: op.operator, value: [...picked] }
+}
+
+/**
+ * Where the path stands. The three date stages after `within` are stages of
+ * their own, so the keyboard reaches a relative span the way it reaches
+ * everything else.
+ */
+export type Stage = 'overview' | 'column' | 'operator' | 'value' | 'relative' | 'unit'
+
+/** One row of a stage's list. */
+export type ListItem = {
+	key: string
+	label: string
+	icon?: Component
+	/** a Checkbox before the label */
+	checked?: boolean
+	/** reka owns this row's tick, through its own model */
+	tick?: boolean
+	/** dim text after the label */
+	note?: string
+	/** overview rows: the sign and the value, typed apart from the label */
+	operator?: string
+	value?: string
+	/** a ghost Ã— at the end of the row */
+	removable?: boolean
+	/** a divider above the row */
+	separated?: boolean
+	filter?: Filter
+}
+
+/**
+ * The numbers a `>=`-style stage lists, cut from the column's own range.
+ *
+ * Quarters of it, rounded to something a reader would type. A fixed list of
+ * round numbers listed 1,000 for a column of percentages and nothing at all for
+ * a column of revenues â€” presets have to come from the column or not exist.
+ */
+export function numberQuickValues(range?: [number, number]): number[] {
+	if (!range) return []
+	const [low, high] = range
+	if (!Number.isFinite(low) || !Number.isFinite(high) || high <= low) return []
+
+	const cuts = [0.25, 0.5, 0.75].map((part) => roundish(low + (high - low) * part))
+	return [...new Set(cuts)].filter((value) => value > low && value < high)
+}
+
+/** The ranges a `between` stage lists: the column's own, in three parts. */
+export function numberPairValues(range?: [number, number]): Array<[number, number]> {
+	if (!range) return []
+	const cuts = numberQuickValues(range)
+	if (!cuts.length) return []
+
+	const edges = [range[0], ...cuts, range[1]]
+	return edges.slice(0, -1).map((from, index) => [from, edges[index + 1]] as [number, number])
+}
+
+/**
+ * A number rounded to one a reader would have typed: 1,237 reads as 1,200 and
+ * 0.37 as 0.4. The scale comes from the number itself, so a column of percents
+ * and a column of revenues both get cuts that look picked rather than computed.
+ */
+function roundish(value: number): number {
+	if (!value) return 0
+	const magnitude = Math.pow(10, Math.floor(Math.log10(Math.abs(value))) - 1)
+	return Math.round(value / magnitude) * magnitude
+}
+
+export function formatNumber(raw: any): string {
+	const value = Number(raw)
+	const locale = session.site?.country === 'India' ? 'en-IN' : session.user?.locale
+	return Number.isFinite(value)
+		? formatLocaleNumber(value, locale)
+		: String(raw ?? '')
+}
+
+export function parseNumber(text: string): number | undefined {
+	return parseLocaleNumber(text)
+}
+
+/** "a to b", "a - b", "a-b", or "a b" */
+export function splitPair(text: string): [string, string] | undefined {
+	const t = text.trim()
+	const at = t.search(/\s+to\s+/) >= 0 ? t.search(/\s+to\s+/) : t.search(/\s+-\s+/)
+	if (at >= 0) {
+		const width = t.slice(at).match(/^\s+(to|-)\s+/)![0].length
+		return [t.slice(0, at), t.slice(at + width)]
+	}
+	const dashes = t.split('-').length - 1
+	if (dashes === 1 && /^\d/.test(t)) {
+		const [a, b] = t.split('-')
+		return [a.trim(), b.trim()]
+	}
+	const words = t.split(/\s+/)
+	if (words.length === 2) return [words[0], words[1]]
+	return undefined
+}
+
+/** What a number rule reads as, wherever the picker prints one. */
+export function numberPreview(op: OperatorDef, value: number | [number, number]): string {
+	if (Array.isArray(value))
+		return __('between {0} and {1}', formatNumber(value[0]), formatNumber(value[1]))
+	return `${op.sign} ${formatNumber(value)}`
+}
+
+const DATE_FORMAT = 'YYYY-MM-DD'
+
+export { SPAN_UNITS, type SpanUnit } from '../../helpers/span_grammar'
+/** The unit a typed word names, as the picker's own vocabulary calls it. */
+export const unitOf = spanUnitOf
+
+const unitLabels = translatedTable<Record<SpanUnit, [string, string]>>(() => ({
+	day: [__('day'), __('days')],
+	week: [__('week'), __('weeks')],
+	month: [__('month'), __('months')],
+	quarter: [__('quarter'), __('quarters')],
+	year: [__('year'), __('years')],
+	'fiscal year': [__('fiscal year'), __('fiscal years')],
+}))
+
+function unitWords(unit: SpanUnit, count: number): string {
+	const [one, many] = unitLabels()[unit]
+	return count === 1 ? one : `${count} ${many}`
+}
+
+/**
+ * The span a `within` value names, whatever shape it was written in. The old
+ * date control wrote the words of a span as a list or as a string; the picker
+ * writes `{ span }`. The server reads all three through `read_timespan`, so the
+ * picker does too.
+ */
+function timespanOf(value: FilterValue): Timespan | undefined {
+	const clean = (span: string) => span.trim().toLowerCase().replace(/\s+/g, ' ')
+
+	if (Array.isArray(value)) {
+		const span = clean(value.filter((word) => word != null && word !== '').join(' '))
+		return span ? { span } : undefined
+	}
+	if (typeof value === 'string') {
+		const span = clean(value)
+		return span ? { span } : undefined
+	}
+	if (value && typeof value === 'object' && typeof (value as Timespan).span === 'string') {
+		const timespan = value as Timespan
+		const span = clean(timespan.span)
+		return span ? { ...timespan, span } : undefined
+	}
+	return undefined
+}
+
+/** The directions the relative stage lists, which are the grammar's own. */
+export type SpanDirection = Extract<SpanShape, 'last' | 'next' | 'current'>
+
+export type RelativeForm = {
+	direction: SpanDirection
+	count: number
+	unit: SpanUnit
+	includeCurrent: boolean
+}
+
+/**
+ * The presets the `within` stage lists. Every span here is one
+ * `charts/window.ts` writes and the server's `get_window` parses â€” a "last N"
+ * span covers whole periods behind today, so "Last 7 days" ends yesterday.
+ */
+export const datePresets = translatedTable<Array<{ label: string; span: string }>>(() => [
+	{ label: __('Today'), span: 'current day' },
+	{ label: __('Yesterday'), span: 'last 1 day' },
+	{ label: __('Last 7 days'), span: 'last 7 days' },
+	{ label: __('Last 30 days'), span: 'last 30 days' },
+	{ label: __('This month'), span: 'current month' },
+	{ label: __('Last month'), span: 'last 1 month' },
+	{ label: __('This quarter'), span: 'current quarter' },
+	{ label: __('This year'), span: 'current year' },
+	{ label: __('Fiscal year to date'), span: 'fiscal year to date' },
+])
+
+export function isPreset(span: string): boolean {
+	return datePresets().some((p) => p.span === span)
+}
+
+/** The span a relative form is written as. */
+export function spanOf(form: RelativeForm): string {
+	return buildSpan({ ...form, shape: form.direction })
+}
+
+/**
+ * `get_window` in dayjs, for the range the calendar and the notes print.
+ *
+ * The periods are the site's own, its week start and its fiscal year, because
+ * this range is a preview of the rows the server will return, and the server
+ * counts by those.
+ */
+export function resolveSpan(span: string, anchor?: string): [string, string] {
+	const today = anchor ? dayjs(anchor) : dayjs()
+
+	const form = parseSpan(span)
+	if (!form) return [span, span]
+
+	const currentStart = startOfPeriod(today, form.unit)
+
+	if (form.shape === 'to date') {
+		return [currentStart.format(DATE_FORMAT), today.format(DATE_FORMAT)]
+	}
+
+	if (form.shape === 'current') {
+		return [currentStart.format(DATE_FORMAT), endOfPeriod(today, form.unit).format(DATE_FORMAT)]
+	}
+
+	if (form.shape === 'last') {
+		// N whole periods, the last of them ending the day before the current
+		// one starts, unless the current one is asked for too.
+		const from = shiftPeriods(currentStart, form.unit, -form.count)
+		const to = form.includeCurrent
+			? endOfPeriod(today, form.unit)
+			: currentStart.subtract(1, 'day')
+		return [from.format(DATE_FORMAT), to.format(DATE_FORMAT)]
+	}
+
+	const nextStart = shiftPeriods(currentStart, form.unit, 1)
+	const from = form.includeCurrent ? currentStart : nextStart
+	const to = shiftPeriods(nextStart, form.unit, form.count).subtract(1, 'day')
+	return [from.format(DATE_FORMAT), to.format(DATE_FORMAT)]
+}
+
+/** A span in the picker's words: `Today`, `Last 7 days`, `Next 2 weeks`. */
+export function spanLabel(span: string): string {
+	const preset = datePresets().find((p) => p.span === span)
+	if (preset) return preset.label
+
+	const form = parseSpan(span)
+	if (!form) return span
+	if (form.shape === 'to date') return __('This {0} to date', unitLabels()[form.unit][0])
+	if (form.shape === 'current') return __('This {0}', unitLabels()[form.unit][0])
+
+	const phrase = unitWords(form.unit, form.count)
+	const label = form.shape === 'last' ? __('Last {0}', phrase) : __('Next {0}', phrase)
+	return form.includeCurrent ? `${label} ${__('(include current)')}` : label
+}
+
+/** A span as the days it covers, through the one date formatter. */
+export function spanDates(value: FilterValue, anchor?: string): string {
+	const timespan = timespanOf(value)
+	if (!timespan) return ''
+	const [from, to] = resolveSpan(timespan.span, anchor || timespan.anchor)
+	return formatDate(from, to)
+}
+
+/** The directions the `Relativeâ€¦` row opens onto. */
+export const relativeDirections = translatedTable<Array<{ key: SpanDirection; label: string }>>(
+	() => [
+		{ key: 'last', label: __('Last') },
+		{ key: 'next', label: __('Next') },
+		{ key: 'current', label: __('This') },
+	],
+)
+
+/** The unit rows the last stage of a relative span lists, the count folded in. */
+export function unitRows(form: RelativeForm): Array<{ label: string; span: string }> {
+	return SPAN_UNITS.map((unit) => ({
+		label: form.direction === 'current' ? unitLabels()[unit][0] : unitWords(unit, form.count),
+		span: spanOf({ ...form, unit }),
+	}))
+}
+
+/** The one row the `within` stage lists past its presets. */
+export const relativeRow = translatedTable<{ key: string; label: string }>(() => ({
+	key: 'relative',
+	label: __('Relativeâ€¦'),
+}))
+
+/** The calendar an operator's value stage opens under the list. */
+export function calendarOf(op: OperatorDef): 'range' | 'day' | undefined {
+	if (op.operator === 'within') return undefined
+	return op.operator === 'between' ? 'range' : 'day'
+}
+
+/**
+ * What the author typed, as a span: "last 3 months", "this quarter", "next 2
+ * weeks".
+ *
+ * The typing words the grammar does not have ("today", "yesterday", "this" for
+ * "current") are answered here, and everything past them is the grammar's own
+ * parse. "last 0 days" spans nothing, and `buildSpan` floors the count at one.
+ */
+export function spanFromText(text: string): string | undefined {
+	const preset = datePresets().find((p) => p.label.toLowerCase() === text.trim().toLowerCase())
+	if (preset) return preset.span
+
+	const words = text.trim().toLowerCase().split(/\s+/)
+	if (words[0] === 'today') return 'current day'
+	if (words[0] === 'yesterday') return 'last 1 day'
+
+	const form = parseSpan(
+		[words[0] === 'this' ? 'current' : words[0], ...words.slice(1)].join(' '),
+	)
+	return form ? buildSpan(form) : undefined
+}
+
+/**
+ * The one date formatter the picker prints through. A single day reads
+ * `11 Sep 2026`; a range drops whatever repeats between its two ends â€”
+ * `5 â€“ 11 Sep 2026`, `5 Sep â€“ 11 Sep 2026`, `21 Mar 2023 â€“ 11 Sep 2026`.
+ */
+export function formatDate(from: string, to?: string): string {
+	const start = dayjs(from)
+	if (!start.isValid()) return from ?? ''
+	if (session.user?.locale?.toLowerCase().startsWith('fa')) {
+		const options: Intl.DateTimeFormatOptions = {
+			day: 'numeric',
+			month: 'short',
+			year: 'numeric',
+		}
+		if (!to || to === from) return formatLocaleDate(from, session.user.locale, options)
+		return formatLocaleDateRange(from, to, session.user.locale, options) || `${from} â€“ ${to}`
+	}
+	if (!to || to === from) return start.format('D MMM YYYY')
+
+	const end = dayjs(to)
+	if (!end.isValid()) return `${start.format('D MMM YYYY')} â€“ ${to}`
+	if (start.year() !== end.year())
+		return `${start.format('D MMM YYYY')} â€“ ${end.format('D MMM YYYY')}`
+	if (start.month() === end.month()) return `${start.format('D')} â€“ ${end.format('D MMM YYYY')}`
+	return `${start.format('D MMM')} â€“ ${end.format('D MMM YYYY')}`
+}
+
+export type ParsedDate = { operator: FilterOperator; value: FilterValue }
+
+const DAY = /^\d{4}-\d{2}-\d{2}$/
+
+function isDay(text: string): boolean {
+	return DAY.test(text) && dayjs(text).isValid()
+}
+
+/** What a typed date phrase means, where the value stage takes one. */
+export function parseDatePhrase(raw: string): ParsedDate | null {
+	const text = raw.trim().toLowerCase().replace(/\s+/g, ' ')
+	if (!text) return null
+
+	const preset = datePresets().find((p) => p.label.toLowerCase() === text)
+	if (preset) return { operator: 'within', value: { span: preset.span } }
+
+	let match = text.match(/^(last|next) (\d+) ([a-z]+)$/)
+	if (match) {
+		const unit = unitOf(match[3])
+		if (!unit) return null
+		const form: RelativeForm = {
+			direction: match[1] as SpanDirection,
+			// a span of no periods ends before it begins, the same clamp the other
 			// two readers of a count hold to
 			count: Math.max(1, Number(match[2])),
 			unit,

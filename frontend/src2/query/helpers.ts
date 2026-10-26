@@ -1,4 +1,388 @@
-YªçŠx-®éÜj×¢ëiºÚ+Š§j[h‘éÜ¢éíë®øN‹Z–‹­¦ëeŠw¬Õ¥µÁ½ÉĞì}|ô™É½´€œ¸¸½ÑÉ…¹Í±…Ñ¥½¸œ4)¥µÁ½ÉĞì4(%ÉÉ½İUÁ½İ¸°4(%	•Ñİ••¹!½É¥é½¹…±MÑ…ÉĞ°4(%	±•¹‘%½¸°4(%	É…•Ì°4(%½±Õµ¹Í%½¸°4(%½µ‰¥¹”°4(%…Ñ…‰…Í•i…À°4(%¥±Ñ•È…Ì¥±Ñ•É%½¸°4(%Õ¹Ñ¥½¹MÅÕ…É”°4(%¥Ñ	É…¹ °4(%%¹‘•¹Ğ°4(%I•Á•…Ğ°4(%MÉ½±±Q•áĞ°4(%Q•áÑÕÉÍ½É%¹ÁÕĞ°4(%aMÅÕ…É•%½¸°4)ô™É½´€±Õ¥‘”µÙÕ”µ¹•áĞœ4)¥µÁ½ÉĞì ô™É½´€ÙÕ”œ4)¥µÁ½ÉĞì½Áäô™É½´€œ¸¸½¡•±Á•ÉÌœ4)¥µÁ½ÉĞì%1QeAL°•Ñ•™…Õ±ÑÉ…¹Õ±…É¥Ñä°É…¹Õ±…É¥ÑåQåÁ”ô™É½´€œ¸¸½¡•±Á•ÉÌ½½¹ÍÑ…¹ÑÌœ4)¥µÁ½ÉĞ‘…å©Ì™É½´€œ¸¸½¡•±Á•ÉÌ½‘…å©Ìœ4)¥µÁ½ÉĞì•¹‘=™A•É¥½°ÍÑ…ÉÑ=™A•É¥½ô™É½´€œ¸¸½¡•±Á•ÉÌ½…±•¹‘…Èœ4)¥µÁ½ÉĞì™½Éµ…Ñ1½…±•…Ñ”°™½Éµ…Ñ1½…±•…Ñ•I…¹”°™½Éµ…Ñ1½…±•Q¥µ”ô™É½´€œ¸¸½¡•±Á•ÉÌ½±½…±•}™½Éµ…Ğœ4)¥µÁ½ÉĞÑåÁ”ìMÁ…¹U¹¥Ğô™É½´€œ¸¸½¡•±Á•ÉÌ½ÍÁ…¹}É…µµ…Èœ4)¥µÁ½ÉĞÕÍ•M•ÑÑ¥¹Ì™É½´€œ¸¸½Í•ÑÑ¥¹Ì½Í•ÑÑ¥¹Ìœ4)¥µÁ½ÉĞì4(%…ÍĞ°4(%…ÍÑÉÌ°4(%½‘”°4(%½‘•ÉÌ°4(%½±Õµ¸°4(%ÕÍÑ½µ=Á•É…Ñ¥½¸°4(%ÕÍÑ½µ=Á•É…Ñ¥½¹ÉÌ°4(%¥µ•¹Í¥½¸°4(%¥µ•¹Í¥½¹…Ñ…QåÁ”°4(%áÁÉ•ÍÍ¥½¸°4(%¥±Ñ•È°4(%¥±Ñ•ÉÉÌ°4(%¥±Ñ•ÉÉ½ÕÀ°4(%¥±Ñ•ÉÉ½ÕÁÉÌ°4(%¥±Ñ•É=Á•É…Ñ½È°4(%¥±Ñ•ÉY…±Õ”°4(%)½¥¸°4(%)½¥¹ÉÌ°4(%1¥µ¥Ğ°4(%5•…ÍÕÉ”°4(%5•…ÍÕÉ•…Ñ…QåÁ”°4(%5ÕÑ…Ñ”°4(%5ÕÑ…Ñ•ÉÌ°4(%=Á•É…Ñ¥½¸°4(%=É‘•É	ä°4(%=É‘•É	åÉÌ°4(%A¥Ù½Ñ]¥‘•È°4(%A¥Ù½Ñ]¥‘•ÉÉÌ°4(%EÕ•ÉåI•ÍÕ±Ğ°4(%EÕ•ÉåI•ÍÕ±Ñ½±Õµ¸°4(%EÕ•ÉåI•ÍÕ±ÑI½Ü°4(%EÕ•ÉåQ…‰±•ÉÌ°4(%I•µ½Ù”°4(%I•µ½Ù•ÉÌ°4(%I•¹…µ”°4(%I•¹…µ•ÉÌ°4(%M•±•Ğ°4(%M•±•ÑÉÌ°4(%M½ÕÉ”°4(%M½ÕÉ•ÉÌ°4(%ME0°4(%ME1ÉÌ°4(%ME1½±Õµ¸°4(%ME1½±Õµ¹ÉÌ°4(%MÕµµ…É¥é”°4(%MÕµµ…É¥é•ÉÌ°4(%Q…‰±”°4(%Q…‰±•ÉÌ°4(%U¹¥½¸°4(%U¹¥½¹ÉÌ°4)ô™É½´€œ¸¸½ÑåÁ•Ì½ÅÕ•Éä¹ÑåÁ•Ìœ4)¥µÁ½ÉĞÍ•ÍÍ¥½¸™É½´€œ¸¸½Í•ÍÍ¥½¸œ4(4)•áÁ½ÉĞ½¹ÍĞÑ…‰±”€ô€¡…ÉÌèA…ÉÑ¥…°ñQ…‰±•ÉÌø¤èQ…‰±”€ôø€¡ì4(%ÑåÁ”è€Ñ…‰±”œ°4(%Ñ…‰±•}¹…µ”è…ÉÌ¹Ñ…‰±•}¹…µ”ñğ€œœ°4(%‘…Ñ…}Í½ÕÉ”è…ÉÌ¹‘…Ñ…}Í½ÕÉ”ñğ€œœ°4)ô¤4)•áÁ½ÉĞ½¹ÍĞÅÕ•Éå}Ñ…‰±”€ô€¡…ÉÌèA…ÉÑ¥…°ñEÕ•ÉåQ…‰±•ÉÌø¤èQ…‰±”€ôø€¡ì4(%ÑåÁ”è€ÅÕ•Éäœ°4(%İ½É­‰½½¬è…ÉÌ¹İ½É­‰½½¬ñğ€œœ°4(%ÅÕ•Éå}¹…µ”è…ÉÌ¹ÅÕ•Éå}¹…µ”ñğ€œœ°4)ô¤4)•áÁ½ÉĞ½¹ÍĞ½±Õµ¸€ô€¡½±Õµ¹}¹…µ”èÍÑÉ¥¹œ°½ÁÑ¥½¹Ì€ôíô¤è½±Õµ¸€ôø€¡ì4(%ÑåÁ”è€½±Õµ¸œ°4(%½±Õµ¹}¹…µ”°4($¸¸¹½ÁÑ¥½¹Ì°4)ô¤4)•áÁ½ÉĞ½¹ÍĞ½Õ¹Ğ€ô€ ¤è5•…ÍÕÉ”€ôø€¡ì4(%½±Õµ¹}¹…µ”è€½Õ¹Ğœ°4(%‘…Ñ…}ÑåÁ”è€%¹Ñ••Èœ°4(%…É•…Ñ¥½¸è€½Õ¹Ğœ°4(%µ•…ÍÕÉ•}¹…µ”è€½Õ¹Ñ}½™}É½İÌœ°4)ô¤4)•áÁ½ÉĞ½¹ÍĞ½Á•É…Ñ½È€ô€¡½Á•É…Ñ½Èè¥±Ñ•É=Á•É…Ñ½È¤è¥±Ñ•É=Á•É…Ñ½È€ôø½Á•É…Ñ½È4)•áÁ½ÉĞ½¹ÍĞÙ…±Õ”€ô€¡Ù…±Õ”è¥±Ñ•ÉY…±Õ”¤è¥±Ñ•ÉY…±Õ”€ôøÙ…±Õ”4)•áÁ½ÉĞ½¹ÍĞ•áÁÉ•ÍÍ¥½¸€ô€¡•áÁÉ•ÍÍ¥½¸èÍÑÉ¥¹œ¤èáÁÉ•ÍÍ¥½¸€ôø€¡ì4(%ÑåÁ”è€•áÁÉ•ÍÍ¥½¸œ°4(%•áÁÉ•ÍÍ¥½¸°4)ô¤4(4(¼¼Ñ¡”Í•ÉÙ•ÈÌÍÕµµ…É¥é”…ÉÉ¥•Ì„µ½¹•äµ•…ÍÕÉ”ÌÕÉÉ•¹ä½‘”Õ¹‘•ÈÑ¡¥Ì¹…µ”ì4(¼¼II%}UII9e}MU%a€¥¸¥‰¥Í}ÕÑ¥±Ì¹ÁäµÕÍĞµ…Ñ 4)•áÁ½ÉĞ½¹ÍĞÕÉÉ•¹å½±Õµ¹9…µ”€ô€¡µ•…ÍÕÉ•}¹…µ”èÍÑÉ¥¹œ¤€ôø€‘íµ•…ÍÕÉ•}¹…µ•õ}}ÕÉÉ•¹å€4(4(¼¼Õ¹‘•™¥¹•‘€èÑ¡”µ•…ÍÕÉ”¹…µ•Ì¹¼½±Õµ¸¸¹Õ±±€èÑ¡”É½Üµ¥á•ÌÕÉÉ•¹¥•Ì¸4)•áÁ½ÉĞ™Õ¹Ñ¥½¸•ÑI½İÕÉÉ•¹ä¡É½Üè…¹ä°µ•…ÍÕÉ•}¹…µ”èÍÑÉ¥¹œ¤èÍÑÉ¥¹œğ¹Õ±°ğÕ¹‘•™¥¹•ì4(%½¹ÍĞ­•ä€ôÕÉÉ•¹å½±Õµ¹9…µ”¡µ•…ÍÕÉ•}¹…µ”¤4(%É•ÑÕÉ¸­•ä¥¸€¡É½Üñğíô¤€üÉ½İm­•åt€üü¹Õ±°€èÕ¹‘•™¥¹•4)ô4(4(¼¼•áÁ½ÉĞ½¹ÍĞİ¥¹‘½İ}½Á•É…Ñ¥½¸€ô€¡½ÁÑ¥½¹Ìè]¥¹‘½İ=Á•É…Ñ¥½¹ÉÌ¤è]¥¹‘½İ=Á•É…Ñ¥½¸€ôø€¡ì4(¼¼€%ÑåÁ”è€İ¥¹‘½İ}½Á•É…Ñ¥½¸œ°4(¼¼€%½Á•É…Ñ¥½¸è½ÁÑ¥½¹Ì¹½Á•É…Ñ¥½¸°4(¼¼€%½±Õµ¸è½ÁÑ¥½¹Ì¹½±Õµ¸°4(¼¼€%Á…ÉÑ¥Ñ¥½¹}‰äè½ÁÑ¥½¹Ì¹Á…ÉÑ¥Ñ¥½¹}‰ä°4(¼¼€%½É‘•É}‰äè½ÁÑ¥½¹Ì¹½É‘•É}‰ä°4(¼¼ô¤4(4(¼¼!•É”É…Ñ¡•ÈÑ¡…¸¥¸Ñ¡”ÅÕ•ÉäÍÑ½É”èÑ¡”¥Í±…¹É•¹‘•ÉÌ„É•ÍÕ±Ğİ¥Ñ¡½ÕĞ•Ù•È4(¼¼‰Õ¥±‘¥¹œ„ÅÕ•Éä°…¹¥µÁ½ÉÑ¥¹œÑ¡”ÍÑ½É”™½È„‰±…¹¬½¹”ÁÕ±±ÌÑ¡”İ¡½±”4(¼¼•á•ÕÑ¥½¸Á…Ñ ƒŠPÍ½­•Ğ°ÅÕ•Õ”°…ÕÑ½Í…Ù”ƒŠP¥¹Ñ¼Ñ¡”¥Í±…¹‰Õ¹‘±”¸4(¼¼™Õ¹Ñ¥½¸…¹¹½Ğ„½¹ÍĞè•Ù•ÉäÉ•Í•Ğ½˜„Í¡…É•½¹ÍĞ¡…¹‘Ì½ÕĞÑ¡”Í…µ”4(¼¼É½İÍ€°½±Õµ¹Í€…¹™½Éµ…ÑÑ•‘I½İÍ€…ÉÉ…åÌ…¹Ñ¡”Í…µ”¥µÁ½ÉĞµÑ¥µ”4(¼¼±…ÍÑá•ÕÑ•‘Ñ€°Í¼Ñİ¼É•ÍÕ±ÑÌÑ¡…Ğİ•É”É•Í•Ğ…É”½¹”É•ÍÕ±Ğ¸4)•áÁ½ÉĞ™Õ¹Ñ¥½¸•µÁÑåI•ÍÕ±Ğ ¤èEÕ•ÉåI•ÍÕ±Ğì4(%É•ÑÕÉ¸ì4($%•á•ÕÑ•‘ME0è€œœ°4($%Ñ½Ñ…±I½İ½Õ¹Ğè€À°4($%É½İÌèmt°4($%™½Éµ…ÑÑ•‘I½İÌèmt°4($%½±Õµ¹Ìèmt°4($%½±Õµ¹=ÁÑ¥½¹Ìèmt°4($%Ñ¥µ•Q…­•¸è€À°4($%±…ÍÑá•ÕÑ•‘Ğè¹•Ü…Ñ” ¤°4(%ô4)ô4(4)•áÁ½ÉĞ™Õ¹Ñ¥½¸•Ñ½Éµ…ÑÑ•‘I½İÌ¡É•ÍÕ±ĞèEÕ•ÉåI•ÍÕ±Ğ°½Á•É…Ñ¥½¹Ìè=Á•É…Ñ¥½¹mt¤ì4(%É•ÑÕÉ¸™½Éµ…ÑI•ÍÕ±ÑI½İÌ¡É•ÍÕ±Ğ°•Ñ½±Õµ¹É…¹Õ±…É¥Ñä¡½Á•É…Ñ¥½¹Ì¤¤4)ô4(4(¼¼Q¡”É…¥¸„‘…Ñ”½±Õµ¸İ…ÌÉ½ÕÁ•‰ä°Á•È½±Õµ¸¸É•…‘•È¹•Ù•ÈÉ••¥Ù•Ì4(¼¼Ñ¡”½Á•É…Ñ¥½¹Ì°Í¼Ñ¡”Í•ÉÙ•ÈÍ•¹‘Ì¥ĞÑ¡¥Ìµ…À¥¹ÍÑ•…ƒŠPÍ…µ”Í¡…Á”°Í¼Ñ¡”4(¼¼™½Éµ…ÑÑ¥¹œ‰•±½ÜÍÑ…åÌ½¹”¥µÁ±•µ•¹Ñ…Ñ¥½¸¸4)•áÁ½ÉĞ™Õ¹Ñ¥½¸•Ñ½±Õµ¹É…¹Õ±…É¥Ñä¡½Á•É…Ñ¥½¹Ìè=Á•É…Ñ¥½¹mt¤ì4($¼¼Q¡”±…ÍĞ½˜•… ­¥¹è„±…Ñ•È½Á•É…Ñ¥½¸É•É½ÕÁÌİ¡…Ğ…¸•…É±¥•È½¹”É½ÕÁ•°Í¼4($¼¼¥ÑÌÉ…¥¸¥ÌÑ¡”½¹”Ñ¡”É•ÍÕ±Ğ½±Õµ¹Ì¡…Ù”¸4(%½¹ÍĞÉ•Ù•ÉÍ•€ôl¸¸¹½Á•É…Ñ¥½¹Ít¹É•Ù•ÉÍ” ¤4(%½¹ÍĞÍÕµµ…É¥é•}ÍÑ•À€ôÉ•Ù•ÉÍ•¹™¥¹ ¡½À¤€ôø½À¹ÑåÁ”€ôôô€ÍÕµµ…É¥é”œ¤4(%½¹ÍĞÁ¥Ù½Ñ}ÍÑ•À€ôÉ•Ù•ÉÍ•¹™¥¹ ¡½À¤€ôø½À¹ÑåÁ”€ôôô€Á¥Ù½Ñ}İ¥‘•Èœ¤4(4(%½¹ÍĞÉ…¹Õ±…É¥ÑäèI•½ÉñÍÑÉ¥¹œ°ÍÑÉ¥¹œø€ôíô4(%½¹ÍĞ‘¥µ•¹Í¥½¹Ì€ôl¸¸¸¡ÍÕµµ…É¥é•}ÍÑ•Àü¹‘¥µ•¹Í¥½¹Ìñğmt¤°€¸¸¸¡Á¥Ù½Ñ}ÍÑ•Àü¹É½İÌñğmt¥t4(%‘¥µ•¹Í¥½¹Ì¹™½É…  ¡‘¥´¤€ôøì4($%¥˜€¡‘¥´¹É…¹Õ±…É¥Ñä€˜˜€…É…¹Õ±…É¥Ñåm‘¥´¹‘¥µ•¹Í¥½¹}¹…µ•t¤ì4($$%É…¹Õ±…É¥Ñåm‘¥´¹‘¥µ•¹Í¥½¹}¹…µ•t€ô‘¥´¹É…¹Õ±…É¥Ñä4($%ô4(%ô¤4(%É•ÑÕÉ¸É…¹Õ±…É¥Ñä4)ô4(4)•áÁ½ÉĞ™Õ¹Ñ¥½¸™½Éµ…ÑI•ÍÕ±ÑI½İÌ¡É•ÍÕ±ĞèEÕ•ÉåI•ÍÕ±Ğ°É…¹Õ±…É¥Ñå	å½±Õµ¸èI•½ÉñÍÑÉ¥¹œ°ÍÑÉ¥¹œø¤ì4(%¥˜€ …É•ÍÕ±Ğ¹É½İÌü¹±•¹Ñ ñğ€…É•ÍÕ±Ğ¹½±Õµ¹Ìü¹±•¹Ñ ¤É•ÑÕÉ¸mt4(4(%½¹ÍĞÉ½İÌ€ô½Áä¡É•ÍÕ±Ğ¹É½İÌ¤4(%½¹ÍĞ½±Õµ¹Ì€ô½Áä¡É•ÍÕ±Ğ¹½±Õµ¹Ì¤4(%½¹ÍĞ•ÑÉ…¹Õ±…É¥Ñä€ô€¡½±Õµ¹}¹…µ”èÍÑÉ¥¹œ¤€ôøÉ…¹Õ±…É¥Ñå	å½±Õµ¹m½±Õµ¹}¹…µ•tñğ¹Õ±°4(4(%½¹ÍĞ™½Éµ…ÑÑ•‘I½İÌ€ôÉ½İÌ¹µ…À ¡É½Ü¤€ôøì4($%½¹ÍĞ™½Éµ…ÑÑ•‘I½Ü€ôì€¸¸¹É½Üô4($%½±Õµ¹Ì¹™½É…  ¡½±Õµ¸¤€ôøì4($$%¥˜€¡%1QeAL¹Q¹¥¹±Õ‘•Ì¡½±Õµ¸¹ÑåÁ”¤€˜˜•ÑÉ…¹Õ±…É¥Ñä¡½±Õµ¸¹¹…µ”¤¤ì4($$$%½¹ÍĞÉ…¹Õ±…É¥Ñä€ô•ÑÉ…¹Õ±…É¥Ñä¡½±Õµ¸¹¹…µ”¤…ÌÉ…¹Õ±…É¥ÑåQåÁ”4($$$%™½Éµ…ÑÑ•‘I½İm½±Õµ¸¹¹…µ•t€ô•Ñ½Éµ…ÑÑ•‘…Ñ”¡É½İm½±Õµ¸¹¹…µ•t°É…¹Õ±…É¥Ñä¤4($$%ô4(4($$%¥˜€ 4($$$%%1QeAL¹QaP¹¥¹±Õ‘•Ì¡½±Õµ¸¹ÑåÁ”¤€˜˜4($$$%ÑåÁ•½˜É½İm½±Õµ¸¹¹…µ•t€ôôô€ÍÑÉ¥¹œœ€˜˜4($$$%É½İm½±Õµ¸¹¹…µ•t4($$$¤ì4($$$%½¹ÍĞ¡Ñµ±Q…I••à€ô€¼ñmxùt¨ø½œ4($$$%¥˜€¡¡Ñµ±Q…I••à¹Ñ•ÍĞ¡É½İm½±Õµ¸¹¹…µ•t¤¤ì4($$$$%¡Ñµ±Q…I••à¹±…ÍÑ%¹‘•à€ô€À4($$$$%™½Éµ…ÑÑ•‘I½İm½±Õµ¸¹¹…µ•t€ôÉ½İm½±Õµ¸¹¹…µ•t4($$$$$$¹É•Á±…”¡¡Ñµ±Q…I••à°€œœ¤4($$$$$$¹É•Á±…” ½qÌ¬½œ°€œ€œ¤4($$$$$$¹ÑÉ¥´ ¤4($$$%ô4($$%ô4($%ô¤4($%É•ÑÕÉ¸™½Éµ…ÑÑ•‘I½Ü4(%ô¤4(%É•ÑÕÉ¸™½Éµ…ÑÑ•‘I½İÌ4)ô4(¼¨¨4(€¨Q¡”É½Ü™½Éµ…ÑI•ÍÕ±ÑI½İÍ€ÁÉ½‘Õ•Ñ¡¥Ì½¹”™É½´¸ÍÕÉ™…”Ñ¡…ĞÉ•¹‘•ÉÌÑ¡”4(€¨™½Éµ…ÑÑ•É½İÌƒŠP„Ñ…‰±”ƒŠPÉ•Á½ÉÑÌÑ¡”É½Ü¥ĞÉ•¹‘•É•°…¹•Ù•ÉåÑ¡¥¹œ‘½İ¹ÍÑÉ•…´4(€¨½˜„±¥¬É•…‘ÌÑ¡”É…ÜÙ…±Õ•Ì°Í¼Ñ¡”É½ÍÍ¥¹œ¡…ÁÁ•¹Ì½¹”°¡•É”¸4(€¨4(€¨Q¡”Ñİ¼…É”Á…É…±±•°…ÉÉ…åÌ°Í¼Ñ¡”É…ÜÉ½Ü¥ÌÑ¡”™½Éµ…ÑÑ•½¹”ÌÁ½Í¥Ñ¥½¸¸4(€¨É½Ü™É½´…¹åİ¡•É”•±Í”¡…Ì¹¼Á½Í¥Ñ¥½¸…¹É•…‘Ì…Ì¹½Ñ¡¥¹œ¸4(€¨¼4)•áÁ½ÉĞ™Õ¹Ñ¥½¸É…İI½İ=˜ 4(%É•ÍÕ±ĞèEÕ•ÉåI•ÍÕ±Ğ°4(%™½Éµ…ÑÑ•‘I½ÜèEÕ•ÉåI•ÍÕ±ÑI½Ü°4(¤èEÕ•ÉåI•ÍÕ±ÑI½ÜğÕ¹‘•™¥¹•ì4(%É•ÑÕÉ¸Á½Í¥Ñ¥½¹Í%¸¡É•ÍÕ±Ğ¤¹•Ğ¡™½Éµ…ÑÑ•‘I½Ü¤4)ô4(4(¼¨¨4(€¨]¡•É”•… ™½Éµ…ÑÑ•É½ÜÍ¥ÑÌ°‰Õ¥±Ğ½¹”Á•ÈÍ•Ğ½˜™½Éµ…ÑÑ•É½İÌ¸4(€¨4(€¨Ñ…‰±”…Í­ÌÑ¡¥ÌÁ•È•±°°Í¼„Í…¸½˜Ñ¡”É½İÌ™½È•… ½˜Ñ¡•´¥ÌÑ¡”4(€¨İ¡½±”É•ÍÕ±Ğİ…±­•½¹”„•±°¸-•å•½¸™½Éµ…ÑÑ•‘I½İÍ€É…Ñ¡•ÈÑ¡…¸½¸Ñ¡”4(€¨É•ÍÕ±Ğè…¸•á•ÕÑ¥½¸İÉ¥Ñ•Ì™É•Í É½İÌ¥¹Ñ¼Ñ¡”Í…µ”É•ÍÕ±Ğ½‰©•Ğ°Í¼„4(€¨É•ÍÕ±Ğµ­•å•µ…Àİ½Õ±…¹Íİ•ÈÑ¡”¹•áĞÉÕ¸™É½´Ñ¡”±…ÍĞÉÕ¸ÌÉ½İÌ¸Q¡”µ…À4(€¨¥Ì¡•±İ•…­±ä°Í¼¥Ğ½•Ìİ¡•¸Ñ¡”É½İÌ‘¼¸4(€¨¼4)½¹ÍĞÁ½Í¥Ñ¥½¹Ì€ô¹•Ü]•…­5…ÀñEÕ•ÉåI•ÍÕ±ÑI½İmt°5…ÀñEÕ•ÉåI•ÍÕ±ÑI½Ü°EÕ•ÉåI•ÍÕ±ÑI½Üøø ¤4)™Õ¹Ñ¥½¸Á½Í¥Ñ¥½¹Í%¸¡É•ÍÕ±ĞèEÕ•ÉåI•ÍÕ±Ğ¤ì4(%±•Ğ™½Õ¹€ôÁ½Í¥Ñ¥½¹Ì¹•Ğ¡É•ÍÕ±Ğ¹™½Éµ…ÑÑ•‘I½İÌ¤4(%¥˜€ …™½Õ¹¤ì4($%™½Õ¹€ô¹•Ü5…À ¤4($%É•ÍÕ±Ğ¹™½Éµ…ÑÑ•‘I½İÌ¹™½É…  ¡™½Éµ…ÑÑ•°¥¹‘•à¤€ôøì4($$%¥˜€¡É•ÍÕ±Ğ¹É½İÍm¥¹‘•át¤™½Õ¹„¹Í•Ğ¡™½Éµ…ÑÑ•°É•ÍÕ±Ğ¹É½İÍm¥¹‘•át¤4($%ô¤4($%Á½Í¥Ñ¥½¹Ì¹Í•Ğ¡É•ÍÕ±Ğ¹™½Éµ…ÑÑ•‘I½İÌ°™½Õ¹¤4(%ô4(%É•ÑÕÉ¸™½Õ¹4)ô4(7^»âÚ$z{-®éÜj×nularity(column.type),
+import { __ } from '../translation'
+import {
+	ArrowUpDown,
+	BetweenHorizonalStart,
+	BlendIcon,
+	Braces,
+	ColumnsIcon,
+	Combine,
+	DatabaseZap,
+	Filter as FilterIcon,
+	FunctionSquare,
+	GitBranch,
+	Indent,
+	Repeat,
+	ScrollText,
+	TextCursorInput,
+	XSquareIcon,
+} from 'lucide-vue-next'
+import { h } from 'vue'
+import { copy } from '../helpers'
+import { FIELDTYPES, getDefaultGranularity, GranularityType } from '../helpers/constants'
+import dayjs from '../helpers/dayjs'
+import { endOfPeriod, startOfPeriod } from '../helpers/calendar'
+import { formatLocaleDate, formatLocaleDateRange, formatLocaleTime } from '../helpers/locale_format'
+import type { SpanUnit } from '../helpers/span_grammar'
+import useSettings from '../settings/settings'
+import {
+	Cast,
+	CastArgs,
+	Code,
+	CodeArgs,
+	Column,
+	CustomOperation,
+	CustomOperationArgs,
+	Dimension,
+	DimensionDataType,
+	Expression,
+	Filter,
+	FilterArgs,
+	FilterGroup,
+	FilterGroupArgs,
+	FilterOperator,
+	FilterValue,
+	Join,
+	JoinArgs,
+	Limit,
+	Measure,
+	MeasureDataType,
+	Mutate,
+	MutateArgs,
+	Operation,
+	OrderBy,
+	OrderByArgs,
+	PivotWider,
+	PivotWiderArgs,
+	QueryResult,
+	QueryResultColumn,
+	QueryResultRow,
+	QueryTableArgs,
+	Remove,
+	RemoveArgs,
+	Rename,
+	RenameArgs,
+	Select,
+	SelectArgs,
+	Source,
+	SourceArgs,
+	SQL,
+	SQLArgs,
+	SQLColumn,
+	SQLColumnArgs,
+	Summarize,
+	SummarizeArgs,
+	Table,
+	TableArgs,
+	Union,
+	UnionArgs,
+} from '../types/query.types'
+import session from '../session'
+
+export const table = (args: Partial<TableArgs>): Table => ({
+	type: 'table',
+	table_name: args.table_name || '',
+	data_source: args.data_source || '',
+})
+export const query_table = (args: Partial<QueryTableArgs>): Table => ({
+	type: 'query',
+	workbook: args.workbook || '',
+	query_name: args.query_name || '',
+})
+export const column = (column_name: string, options = {}): Column => ({
+	type: 'column',
+	column_name,
+	...options,
+})
+export const count = (): Measure => ({
+	column_name: 'count',
+	data_type: 'Integer',
+	aggregation: 'count',
+	measure_name: 'count_of_rows',
+})
+export const operator = (operator: FilterOperator): FilterOperator => operator
+export const value = (value: FilterValue): FilterValue => value
+export const expression = (expression: string): Expression => ({
+	type: 'expression',
+	expression,
+})
+
+// the server's summarize carries a money measure's currency code under this name;
+// `CARRIED_CURRENCY_SUFFIX` in ibis_utils.py must match
+export const currencyColumnName = (measure_name: string) => `${measure_name}__currency`
+
+// `undefined`: the measure names no column. `null`: the row mixes currencies.
+export function getRowCurrency(row: any, measure_name: string): string | null | undefined {
+	const key = currencyColumnName(measure_name)
+	return key in (row || {}) ? row[key] ?? null : undefined
+}
+
+// export const window_operation = (options: WindowOperationArgs): WindowOperation => ({
+// 	type: 'window_operation',
+// 	operation: options.operation,
+// 	column: options.column,
+// 	partition_by: options.partition_by,
+// 	order_by: options.order_by,
+// })
+
+// Here rather than in the query store: the island renders a result without ever
+// building a query, and importing the store for a blank one pulls the whole
+// execution path â€” socket, queue, autosave â€” into the island bundle.
+// A function and not a const: every reset of a shared const hands out the same
+// `rows`, `columns` and `formattedRows` arrays and the same import-time
+// `lastExecutedAt`, so two results that were reset are one result.
+export function emptyResult(): QueryResult {
+	return {
+		executedSQL: '',
+		totalRowCount: 0,
+		rows: [],
+		formattedRows: [],
+		columns: [],
+		columnOptions: [],
+		timeTaken: 0,
+		lastExecutedAt: new Date(),
+	}
+}
+
+export function getFormattedRows(result: QueryResult, operations: Operation[]) {
+	return formatResultRows(result, getColumnGranularity(operations))
+}
+
+// The grain a date column was grouped by, per column. A reader never receives
+// the operations, so the server sends it this map instead â€” same shape, so the
+// formatting below stays one implementation.
+export function getColumnGranularity(operations: Operation[]) {
+	// The last of each kind: a later operation regroups what an earlier one grouped, so
+	// its grain is the one the result columns have.
+	const reversed = [...operations].reverse()
+	const summarize_step = reversed.find((op) => op.type === 'summarize')
+	const pivot_step = reversed.find((op) => op.type === 'pivot_wider')
+
+	const granularity: Record<string, string> = {}
+	const dimensions = [...(summarize_step?.dimensions || []), ...(pivot_step?.rows || [])]
+	dimensions.forEach((dim) => {
+		if (dim.granularity && !granularity[dim.dimension_name]) {
+			granularity[dim.dimension_name] = dim.granularity
+		}
+	})
+	return granularity
+}
+
+export function formatResultRows(result: QueryResult, granularityByColumn: Record<string, string>) {
+	if (!result.rows?.length || !result.columns?.length) return []
+
+	const rows = copy(result.rows)
+	const columns = copy(result.columns)
+	const getGranularity = (column_name: string) => granularityByColumn[column_name] || null
+
+	const formattedRows = rows.map((row) => {
+		const formattedRow = { ...row }
+		columns.forEach((column) => {
+			if (FIELDTYPES.DATE.includes(column.type) && getGranularity(column.name)) {
+				const granularity = getGranularity(column.name) as GranularityType
+				formattedRow[column.name] = getFormattedDate(row[column.name], granularity)
+			}
+
+			if (
+				FIELDTYPES.TEXT.includes(column.type) &&
+				typeof row[column.name] === 'string' &&
+				row[column.name]
+			) {
+				const htmlTagRegex = /<[^>]*>/g
+				if (htmlTagRegex.test(row[column.name])) {
+					htmlTagRegex.lastIndex = 0
+					formattedRow[column.name] = row[column.name]
+						.replace(htmlTagRegex, '')
+						.replace(/\s+/g, ' ')
+						.trim()
+				}
+			}
+		})
+		return formattedRow
+	})
+	return formattedRows
+}
+/**
+ * The row `formatResultRows` produced this one from. A surface that renders the
+ * formatted rows â€” a table â€” reports the row it rendered, and everything downstream
+ * of a click reads the raw values, so the crossing happens once, here.
+ *
+ * The two are parallel arrays, so the raw row is the formatted one's position.
+ * A row from anywhere else has no position and reads as nothing.
+ */
+export function rawRowOf(
+	result: QueryResult,
+	formattedRow: QueryResultRow,
+): QueryResultRow | undefined {
+	return positionsIn(result).get(formattedRow)
+}
+
+/**
+ * Where each formatted row sits, built once per set of formatted rows.
+ *
+ * A table asks this per cell, so a scan of the rows for each of them is the
+ * whole result walked once a cell. Keyed on `formattedRows` rather than on the
+ * result: an execution writes fresh rows into the same result object, so a
+ * result-keyed map would answer the next run from the last run's rows. The map
+ * is held weakly, so it goes when the rows do.
+ */
+const positions = new WeakMap<QueryResultRow[], Map<QueryResultRow, QueryResultRow>>()
+function positionsIn(result: QueryResult) {
+	let found = positions.get(result.formattedRows)
+	if (!found) {
+		found = new Map()
+		result.formattedRows.forEach((formatted, index) => {
+			if (result.rows[index]) found!.set(formatted, result.rows[index])
+		})
+		positions.set(result.formattedRows, found)
+	}
+	return found
+}
+
+/** How a date reads in a cell, a tooltip or a header â€” spelled out in full. */
+const LONG_DATE_FORMATS: Record<string, string> = {
+	second: 'MMMM D, YYYY h:mm:ss A',
+	minute: 'MMMM D, YYYY h:mm A',
+	hour: 'MMMM D, YYYY h:00 A',
+	day: 'MMMM D, YYYY',
+	week: 'MMM Do, YYYY',
+	month: 'MMMM, YYYY',
+	year: 'YYYY',
+	quarter: '[Q]Q, YYYY',
+}
+
+/**
+ * How the same date reads on an axis. A category axis shows a label per column,
+ * so a spelled-out month is dropped by the overlap rule and the reader is left
+ * with a bare grid. Everything is abbreviated, and the year is kept: a category
+ * has no neighbors to read it against.
+ */
+const AXIS_DATE_FORMATS: Record<string, string> = {
+	second: 'MMM D, YYYY h:mm:ss A',
+	minute: 'MMM D, YYYY h:mm A',
+	hour: 'MMM D, YYYY h A',
+	day: 'MMM D, YYYY',
+	week: 'MMM D, YYYY',
+	month: 'MMM YYYY',
+	year: 'YYYY',
+	quarter: '[Q]Q YYYY',
+}
+
+export function getFormattedDate(date: string, granularity: string) {
+	return formatDateBy(date, granularity, LONG_DATE_FORMATS)
+}
+
+/** `getFormattedDate`, abbreviated for an axis tick. */
+export function getAxisDate(date: string, granularity: string) {
+	return formatDateBy(date, granularity, AXIS_DATE_FORMATS)
+}
+
+function formatDateBy(date: string, granularity: string, formats: Record<string, string>) {
+	if (!date) return ''
+	const locale = session.user.locale || 'en-US'
+	const isPersian = locale.toLowerCase().startsWith('fa')
+
+	const isTimeOnlyValue = /^\d{1,2}:\d{2}(:\d{2}(\.\d+)?)?$/.test(date)
+	if (isTimeOnlyValue) {
+		const timeFormats: Record<string, string> = {
+			second: 'h:mm:ss A',
+			minute: 'h:mm A',
+			hour: 'h:00 A',
+		}
+
+		if (!timeFormats[granularity]) return date
+
+		const parsed = dayjs(date, ['HH:mm:ss.SSSSSS', 'HH:mm:ss', 'HH:mm'], true)
+		if (isPersian && parsed.isValid()) {
+			const options: Record<string, Intl.DateTimeFormatOptions> = {
+				second: { hour: 'numeric', minute: '2-digit', second: '2-digit' },
+				minute: { hour: 'numeric', minute: '2-digit' },
+				hour: { hour: 'numeric' },
+			}
+			return formatLocaleTime(date, locale, options[granularity])
+		}
+		return parsed.isValid() ? parsed.format(timeFormats[granularity]) : date
+	}
+
+	if (isPersian && ['week', 'month', 'quarter', 'year', 'fiscal_year'].includes(granularity)) {
+		const unit = (granularity === 'fiscal_year' ? 'fiscal year' : granularity) as SpanUnit
+		const parsed = dayjs(date)
+		if (!parsed.isValid()) return date
+		const start = startOfPeriod(parsed, unit)
+		const end = endOfPeriod(start, unit)
+		const axis = formats === AXIS_DATE_FORMATS
+		return formatLocaleDateRange(
+			start.format('YYYY-MM-DD'),
+			end.format('YYYY-MM-DD'),
+			locale,
+			{ year: 'numeric', month: axis ? 'short' : 'long', day: 'numeric' },
+		)
+	}
+
+	if (granularity === 'fiscal_year') {
+		const d = dayjs(date)
+		const fiscalYearStart = session.site.fiscal_year_start
+		const fiscalStartMonth = dayjs(fiscalYearStart).month()
+		const fiscalStartDay = dayjs(fiscalYearStart).date()
+
+		const fiscalStartThisYear = d.month(fiscalStartMonth).date(fiscalStartDay)
+		const startYear = d.isBefore(fiscalStartThisYear) ? d.year() - 1 : d.year()
+		const endYear = startYear + 1
+
+		return `FY ${startYear}-${String(endYear).slice(-2)}`
+	}
+
+	if (!formats[granularity]) return date
+	if (isPersian) {
+		const parsed = dayjs(date)
+		if (!parsed.isValid()) return date
+		const axis = formats === AXIS_DATE_FORMATS
+		const options: Record<string, Intl.DateTimeFormatOptions> = {
+			second: {
+				month: axis ? 'short' : 'long', day: 'numeric', year: 'numeric',
+				hour: 'numeric', minute: '2-digit', second: '2-digit',
+			},
+			minute: {
+				month: axis ? 'short' : 'long', day: 'numeric', year: 'numeric',
+				hour: 'numeric', minute: '2-digit',
+			},
+			hour: {
+				month: axis ? 'short' : 'long', day: 'numeric', year: 'numeric', hour: 'numeric',
+			},
+			day: { month: axis ? 'short' : 'long', day: 'numeric', year: 'numeric' },
+		}
+		return formatLocaleDate(date, locale, options[granularity])
+	}
+	return dayjs(date).format(formats[granularity])
+}
+
+export function getMeasures(columns: QueryResultColumn[]): Measure[] {
+	if (!columns?.length) return []
+	const count_measure = count()
+	return [
+		count_measure,
+		...columns.filter((column) => FIELDTYPES.MEASURE.includes(column.type)).map(makeMeasure),
+	]
+}
+
+export function makeMeasure(column: QueryResultColumn): Measure {
+	return {
+		aggregation: 'sum',
+		column_name: column.name,
+		measure_name: `sum_of_${column.name}`,
+		data_type: column.type as MeasureDataType,
+	}
+}
+
+export function getDimensions(columns: QueryResultColumn[]): Dimension[] {
+	if (!columns?.length) return []
+	return columns.filter((column) => FIELDTYPES.DIMENSION.includes(column.type)).map(makeDimension)
+}
+
+export function makeDimension(column: QueryResultColumn): Dimension {
+	return {
+		column_name: column.name,
+		data_type: column.type as DimensionDataType,
+		granularity: getDefaultGranularity(column.type),
 		dimension_name: column.name,
 	}
 }
