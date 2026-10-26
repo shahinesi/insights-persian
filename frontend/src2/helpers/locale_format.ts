@@ -57,7 +57,6 @@ export function formatLocaleNumber(
 	locale: string | null | undefined,
 	options: Intl.NumberFormatOptions = {},
 ): string {
-	if (Number.isNaN(value)) return String(value)
 	return new Intl.NumberFormat(locale || 'en-US', options).format(value)
 }
 

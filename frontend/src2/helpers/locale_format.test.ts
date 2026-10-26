@@ -58,6 +58,8 @@ describe('locale display formatting', () => {
 	it('formats numbers in the selected locale', () => {
 		expect(formatLocaleNumber(1250, 'fa-IR')).toBe('۱٬۲۵۰')
 		expect(formatLocaleNumber(0.75, 'fa-IR', { style: 'percent' })).toContain('۷۵')
+		expect(formatLocaleNumber(Number.NaN, 'fa-IR')).not.toBe('NaN')
+		expect(formatLocaleNumber(Number.NaN, 'en-US')).toBe('NaN')
 		expect(parseLocaleNumber('۱٬۲۵۰٫۵')).toBe(1250.5)
 		expect(parseLocaleNumber('١٢٥٠٫٥')).toBe(1250.5)
 	})
