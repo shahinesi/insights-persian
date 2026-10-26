@@ -2105,11 +2105,11 @@ msgstr "بدون کاربر."
 
 #: frontend/src2/home/HomeWorkbookList.vue:66
 msgid "No workbooks created"
-msgstr ""
+msgstr "هنوز دفتر کاری ایجاد نشده است"
 
 #: frontend/src2/workbook/WorkbookList.vue:163
 msgid "No workbooks to display."
-msgstr ""
+msgstr "دفتر کاری برای نمایش وجود ندارد."
 
 #. Option for the 'Authentication Type' (Select) field in DocType 'Insights
 #. Data Source v3'
