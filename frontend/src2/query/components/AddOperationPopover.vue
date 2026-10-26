@@ -130,7 +130,7 @@ watch(
 				<Button
 					variant="outline"
 					:label="__('Add Operation')"
-					class="-ml-[14px] !h-6 !gap-1.5 bg-surface-base !px-2 text-p-xs"
+					class="-ms-[14px] !h-6 !gap-1.5 bg-surface-base !px-2 text-p-xs"
 				>
 					<template #prefix>
 						<Plus class="h-4 w-4 text-ink-gray-6" stroke-width="1.5" />
@@ -139,7 +139,7 @@ watch(
 			</div>
 		</template>
 		<template #default="{ close, open }">
-			<div v-if="open" class="flex min-w-fit flex-col p-1.5 pr-5">
+			<div v-if="open" class="flex min-w-fit flex-col p-1.5 pe-5">
 				<span class="flex h-6 items-center px-2 text-p-xs text-ink-gray-4">
 					{{ __('Select an operation') }}
 				</span>
