@@ -3447,6 +3447,26 @@ msgstr "قبل از تاریخ"
 msgid "between dates"
 msgstr "بین تاریخ‌ها"
 
+#: frontend/src2/query/components/DatePicker.vue
+msgid "Between: {0} and {1}"
+msgstr "بین {0} و {1}"
+
+#: frontend/src2/query/components/DatePicker.vue
+msgid "Equals: {0}"
+msgstr "برابر با {0}"
+
+#: frontend/src2/query/components/DatePicker.vue
+msgid "Enter date"
+msgstr "تاریخ را وارد کنید"
+
+#: frontend/src2/query/components/DatePicker.vue
+msgid "Greater than: {0}"
+msgstr "بزرگ‌تر از {0}"
+
+#: frontend/src2/query/components/DatePicker.vue
+msgid "Less than: {0}"
+msgstr "کوچک‌تر از {0}"
+
 #. Option for the 'Type' (Select) field in DocType 'Insights Folder'
 #: insights/insights/doctype/insights_folder/insights_folder.json
 msgid "chart"

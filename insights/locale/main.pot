@@ -3498,6 +3498,26 @@ msgstr ""
 msgid "between dates"
 msgstr ""
 
+#: frontend/src2/query/components/DatePicker.vue
+msgid "Between: {0} and {1}"
+msgstr ""
+
+#: frontend/src2/query/components/DatePicker.vue
+msgid "Equals: {0}"
+msgstr ""
+
+#: frontend/src2/query/components/DatePicker.vue
+msgid "Enter date"
+msgstr ""
+
+#: frontend/src2/query/components/DatePicker.vue
+msgid "Greater than: {0}"
+msgstr ""
+
+#: frontend/src2/query/components/DatePicker.vue
+msgid "Less than: {0}"
+msgstr ""
+
 #. Option for the 'Type' (Select) field in DocType 'Insights Folder'
 #: insights/insights/doctype/insights_folder/insights_folder.json
 msgid "chart"
