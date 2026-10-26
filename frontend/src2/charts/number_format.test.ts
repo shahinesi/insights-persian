@@ -155,6 +155,19 @@ describe('a negative number', () => {
 		expect(printNumber(-0.004, { scale: 1, decimals: 2 }).startsWith('-')).toBe(false)
 		session.user.locale = locale
 	})
+
+	// @feature charts.number-format
+	it('uses Persian percent digits and punctuation while preserving English output', () => {
+		const locale = session.user.locale
+		try {
+			session.user.locale = 'fa-IR'
+			expect(numberFormatter(null, measure('rate', 'percent'))(0.42)).toBe('۴۲٪')
+			session.user.locale = 'en-US'
+			expect(numberFormatter(null, measure('rate', 'percent'))(0.42)).toBe('42%')
+		} finally {
+			session.user.locale = locale
+		}
+	})
 })
 
 describe('the precision an unstated one falls back on', () => {

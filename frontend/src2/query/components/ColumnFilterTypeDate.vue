@@ -3,6 +3,7 @@ import { wheneverChanges } from '../../helpers'
 import session from '../../session'
 import { __ } from '../../translation'
 import dayjs from '../../helpers/dayjs'
+import { formatLocaleDate } from '../../helpers/locale_format'
 import { ChevronDown, ChevronRight } from 'lucide-vue-next'
 import { computed, ref } from 'vue'
 import { FilterOperator, FilterValue, QueryResultColumn } from '../../types/query.types'
@@ -28,7 +29,7 @@ wheneverChanges(currentSection, () => {
 })
 
 const getValue = (date: Date) =>
-	date.toLocaleDateString('en-US', {
+	formatLocaleDate(date, session.user.locale, {
 		month: 'short',
 		day: 'numeric',
 	})

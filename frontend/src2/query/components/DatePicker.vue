@@ -59,6 +59,8 @@
 
 <script setup lang="ts">
 import { computed, onBeforeMount, ref } from 'vue'
+import session from '../../session'
+import { formatLocaleDate } from '../../helpers/locale_format'
 
 const props = defineProps({
 	range: {
@@ -177,7 +179,7 @@ function formatMonth() {
 }
 
 function formatDate(date: Date, options: { year?: boolean } = {}) {
-	return date.toLocaleDateString('en-US', {
+	return formatLocaleDate(date, session.user.locale, {
 		day: 'numeric',
 		month: 'short',
 		year: options.year ? 'numeric' : undefined,

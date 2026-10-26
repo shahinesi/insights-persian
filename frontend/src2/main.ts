@@ -10,6 +10,7 @@ import router from './router.ts'
 import { translationPlugin } from './translation.ts'
 import { telemetryPlugin } from '@framework/ui/telemetry/index.ts'
 import session from './session.ts'
+import { directionForLocale } from './helpers/locale_format'
 
 setConfig('resourceFetcher', frappeRequest)
 
@@ -44,6 +45,12 @@ const stop = watchEffect(() => {
 		app.use(telemetryPlugin, { app_name: 'insights' })
 		stop()
 	}
+})
+
+watchEffect(() => {
+	const locale = session.user.locale || 'en-US'
+	document.documentElement.lang = locale
+	document.documentElement.dir = directionForLocale(locale)
 })
 
 app.config.errorHandler = (err, vm, info) => {

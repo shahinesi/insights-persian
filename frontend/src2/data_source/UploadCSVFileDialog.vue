@@ -5,6 +5,7 @@ import { FileUp } from 'lucide-vue-next'
 import { computed, reactive, ref } from 'vue'
 import DataTable from '../components/DataTable.vue'
 import { QueryResultColumn, QueryResultRow } from '../types/query.types'
+import { formatNumber } from '../helpers'
 
 const show = defineModel()
 
@@ -140,8 +141,8 @@ function resetFile() {
 					>
 						<template #footer-left>
 							<p class="tnum p-1 text-sm text-ink-gray-5">
-								Showing {{ csvData.rows.length.toLocaleString() }} of
-								{{ csvData.totalRowCount.toLocaleString() }} rows
+				Showing {{ formatNumber(csvData.rows.length) }} of
+				{{ formatNumber(csvData.totalRowCount) }} rows
 							</p>
 						</template>
 					</DataTable>

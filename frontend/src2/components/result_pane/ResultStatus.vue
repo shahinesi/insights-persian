@@ -4,6 +4,8 @@ import { RefreshCw } from 'lucide-vue-next'
 import { computed, ref } from 'vue'
 import type { PaginationState } from '../../composables/usePagination'
 import { __ } from '../../translation'
+import { formatLocaleNumber } from '../../helpers/locale_format'
+import session from '../../session'
 import { knownRowCount, rangeAroundCount, rowCountText } from './status'
 
 // What the result is, in one line: how many rows, what the run cost, and when.
@@ -95,7 +97,10 @@ async function fetchCount() {
 							'Showing {0}–{1} of {2} rows',
 							String(props.paging.from.value),
 							String(props.paging.to.value),
-							settledCount.toLocaleString(),
+							formatLocaleNumber(
+								settledCount,
+								session.site?.country === 'India' ? 'en-IN' : session.user?.locale,
+							),
 						)
 					}}
 				</span>

@@ -1,4 +1,6 @@
 import { __ } from '../../translation'
+import { formatLocaleNumber } from '../../helpers/locale_format'
+import session from '../../session'
 
 /**
  * Only a breakdown shows it, and only when the server returned fewer groups
@@ -19,8 +21,9 @@ export function levelBound(level: {
 	if (!level.breakdown) return ''
 	if (!level.total || level.total <= level.shown) return ''
 
-	const shown = level.shown.toLocaleString()
-	const total = level.total.toLocaleString()
+	const locale = session.site?.country === 'India' ? 'en-IN' : session.user?.locale
+	const shown = formatLocaleNumber(level.shown, locale)
+	const total = formatLocaleNumber(level.total, locale)
 	return level.ordered
 		? __('latest {0} of {1} periods', shown, total)
 		: __('top {0} of {1} groups', shown, total)

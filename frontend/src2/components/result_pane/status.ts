@@ -1,6 +1,8 @@
 import { __ } from '../../translation'
 import type { PaginationState } from '../../composables/usePagination'
 import type { QueryResult } from '../../types/query.types'
+import { formatLocaleNumber } from '../../helpers/locale_format'
+import session from '../../session'
 
 /**
  * What the run cost, for the footer's status line. A `timeTaken` of -1 is the
@@ -33,7 +35,8 @@ export function knownRowCount(options: {
 
 export function rowCountText(count: number): string {
 	if (count === 1) return __('Showing 1 row')
-	return __('Showing {0} rows', count.toLocaleString())
+	const locale = session.site?.country === 'India' ? 'en-IN' : session.user?.locale
+	return __('Showing {0} rows', formatLocaleNumber(count, locale))
 }
 
 /**

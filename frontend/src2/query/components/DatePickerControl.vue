@@ -2,6 +2,8 @@
 import { Calendar } from 'lucide-vue-next'
 import { computed } from 'vue'
 import DatePicker from './DatePicker.vue'
+import session from '../../session'
+import { formatLocaleDate } from '../../helpers/locale_format'
 
 const props = defineProps({
 	placeholder: {
@@ -19,40 +21,33 @@ const dates = defineModel<string[]>({
 })
 
 const formatDate = (dates: string | string[] | Date | Date[]) => {
-	const _dates: Date[] = []
+	const _dates: (string | Date)[] = []
 	if (typeof dates === 'string') {
-		_dates.push(new Date(dates))
+		_dates.push(dates)
 	} else if (Array.isArray(dates) && dates.every((date) => typeof date === 'string')) {
-		_dates.push(new Date(dates[0]))
-		_dates.push(new Date(dates[1]))
+		_dates.push(dates[0])
+		if (dates[1]) _dates.push(dates[1])
 	} else if (dates instanceof Date) {
 		_dates.push(dates)
 	} else if (Array.isArray(dates) && dates.every((date) => date instanceof Date)) {
 		_dates.push(dates[0] as Date)
-		_dates.push(dates[1] as Date)
+		if (dates[1]) _dates.push(dates[1] as Date)
 	}
 
-	// if year is same, show only month and day
 	const [start, end] = _dates
-	if (start && !end) {
-		return start.toLocaleDateString('en-US', {
+	if (!start) return ''
+	const locale = session.user.locale || 'en-US'
+	const year = (date: string | Date) =>
+		formatLocaleDate(date, locale, { year: 'numeric' })
+	const currentYear = year(new Date())
+	const format = (date: string | Date) =>
+		formatLocaleDate(date, locale, {
 			month: 'short',
 			day: 'numeric',
-			year: start.getFullYear() === new Date().getFullYear() ? undefined : 'numeric',
+			...(year(date) === currentYear ? {} : { year: 'numeric' }),
 		})
-	}
-	if (start && end) {
-		return `${start.toLocaleDateString('en-US', {
-			month: 'short',
-			day: 'numeric',
-			year: start.getFullYear() === new Date().getFullYear() ? undefined : 'numeric',
-		})} - ${end.toLocaleDateString('en-US', {
-			month: 'short',
-			day: 'numeric',
-			year: end.getFullYear() === new Date().getFullYear() ? undefined : 'numeric',
-		})}`
-	}
-	return ''
+	const separator = locale.toLowerCase().startsWith('fa') ? ' – ' : ' - '
+	return end ? `${format(start)}${separator}${format(end)}` : format(start)
 }
 
 const areAllDatesValid = computed(() => dates.value.length && dates.value.every((date) => date))

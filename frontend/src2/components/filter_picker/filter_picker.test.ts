@@ -1,11 +1,15 @@
 import { describe, expect, it } from 'vitest'
 import type { QueryResultColumn } from '../../types/query.types'
+import session from '../../session'
 import {
 	SPAN_UNITS,
+	formatDate,
 	isPreset,
 	numberPairValues,
 	numberQuickValues,
 	operatorOf,
+	parseNumber,
+	formatNumber,
 	resolveSpan,
 	selectedRowKey,
 	spanLabel,
@@ -151,11 +155,40 @@ describe('what a host sends', () => {
 })
 
 describe('the numbers a number filter lists', () => {
+	it('formats and parses Persian numeric input without changing canonical numbers', () => {
+		expect(formatNumber(1250)).toBe('۱٬۲۵۰')
+		expect(parseNumber('۱٬۲۵۰٫۵')).toBe(1250.5)
+		expect(parseNumber('١٢٥٠٫٥')).toBe(1250.5)
+	})
+
 	// @feature query.filter-number-range
 	it('cuts them from the column, not from a fixed list', () => {
 		expect(numberQuickValues([0, 100])).toEqual([25, 50, 75])
 		// a column of percentages gets cuts inside it, where 1,000 never was
 		expect(numberQuickValues([0, 1])).toEqual([0.25, 0.5, 0.75])
+	})
+
+	it('formats and parses Persian numeric input without changing canonical numbers', () => {
+		const locale = session.user.locale
+		try {
+			session.user.locale = 'fa-IR'
+			expect(formatNumber(1250)).toBe('۱٬۲۵۰')
+			expect(parseNumber('۱٬۲۵۰٫۵')).toBe(1250.5)
+			expect(parseNumber('١٢٥٠٫٥')).toBe(1250.5)
+		} finally {
+			session.user.locale = locale
+		}
+	})
+
+	it('prints date filter labels in Jalali while retaining ISO filter values', () => {
+		const locale = session.user.locale
+		try {
+			session.user.locale = 'fa-IR'
+			expect(formatDate('2025-03-20')).toContain('۱۴۰۳')
+			expect(formatDate('2026-03-20', '2026-03-21')).toContain('۱۴۰۵')
+		} finally {
+			session.user.locale = locale
+		}
 	})
 
 	// @feature query.filter-number-range
