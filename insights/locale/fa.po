@@ -62,7 +62,7 @@ msgstr "نام کاربری API"
 
 #: frontend/src2/query/components/FormatRule.vue:203
 msgid "Above average"
-msgstr ""
+msgstr "بالاتر از میانگین"
 
 #. Option for the 'Status' (Select) field in DocType 'Insights User Invitation'
 #: insights/insights/doctype/insights_user_invitation/insights_user_invitation.json
@@ -100,7 +100,7 @@ msgstr "افزودن"
 #: frontend/src2/data_source/ConnectMariaDBDialog.vue:106
 #: frontend/src2/data_source/ConnectPostgreSQLDialog.vue:114
 msgid "Add Data Source"
-msgstr ""
+msgstr "افزودن منبع داده"
 
 #: frontend/src2/query/components/FiltersSelector.vue:137
 msgid "Add Filter"
@@ -108,15 +108,15 @@ msgstr "افزودن فیلتر"
 
 #: frontend/src2/query/components/AddOperationPopover.vue:62
 msgid "Add New Column"
-msgstr ""
+msgstr "افزودن ستون جدید"
 
 #: frontend/src2/query/components/AddOperationPopover.vue:132
 msgid "Add Operation"
-msgstr ""
+msgstr "افزودن عملیات"
 
 #: frontend/src2/query/components/AddOperationPopover.vue:63
 msgid "Add a new column based on existing columns"
-msgstr ""
+msgstr "افزودن ستون جدید بر اساس ستون‌های موجود"
 
 #: frontend/src2/query/components/ColumnsSelectorDialog.vue:83
 #: frontend/src2/query/components/ColumnsSelectorDialog.vue:92
@@ -141,27 +141,27 @@ msgstr "شرایط تجمع"
 
 #: frontend/src2/query/components/AlertSetupDialog.vue:70
 msgid "Alert Created"
-msgstr ""
+msgstr "هشدار ایجاد شد"
 
 #: frontend/src2/query/components/AlertSetupDialog.vue:98
 msgid "Alert Disabled"
-msgstr ""
+msgstr "هشدار غیرفعال شد"
 
 #: frontend/src2/query/components/AlertSetupDialog.vue:98
 msgid "Alert Enabled"
-msgstr ""
+msgstr "هشدار فعال شد"
 
 #: frontend/src2/query/components/AlertSetupDialog.vue:144
 msgid "Alert Name"
-msgstr ""
+msgstr "نام هشدار"
 
 #: frontend/src2/query/components/AlertSetupDialog.vue:87
 msgid "Alert Sent"
-msgstr ""
+msgstr "هشدار ارسال شد"
 
 #: frontend/src2/query/components/AlertSetupDialog.vue:70
 msgid "Alert Updated"
-msgstr ""
+msgstr "هشدار به‌روزرسانی شد"
 
 #: insights/insights/doctype/insights_alert/insights_alert.js:12
 msgid "Alert sent"
@@ -169,7 +169,7 @@ msgstr "هشدار ارسال شد"
 
 #: frontend/src2/query/components/QueryAlertsDialog.vue:95
 msgid "Alerts"
-msgstr ""
+msgstr "هشدارها"
 
 #: frontend/src2/dashboard/DashboardList.vue:26
 #: frontend/src2/workbook/WorkbookList.vue:43
@@ -226,15 +226,15 @@ msgstr ""
 
 #: frontend/src2/query/components/UnionSelectorDialog.vue:116
 msgid "Append Rows"
-msgstr ""
+msgstr "افزودن ردیف‌ها"
 
 #: frontend/src2/query/components/AddOperationPopover.vue:56
 msgid "Append Table"
-msgstr ""
+msgstr "افزودن به جدول"
 
 #: frontend/src2/query/components/AddOperationPopover.vue:57
 msgid "Append this table with another table or query"
-msgstr ""
+msgstr "افزودن این جدول به جدول یا پرس‌وجوی دیگر"
 
 #: frontend/src2/query/components/FiltersSelector.vue:145
 msgid "Apply Filters"
@@ -248,15 +248,15 @@ msgstr ""
 
 #: frontend/src2/query/components/AddOperationPopover.vue:81
 msgid "Apply a custom operation using python script"
-msgstr ""
+msgstr "اجرای عملیات سفارشی با اسکریپت پایتون"
 
 #: frontend/src2/components/UserDropdown.vue:131
 msgid "Are you sure you want to log out?"
-msgstr ""
+msgstr "آیا مطمئن هستید که می‌خواهید خارج شوید؟"
 
 #: frontend/src2/components/UserDropdown.vue:81
 msgid "Are you sure you want to login to your Frappe Cloud dashboard?"
-msgstr ""
+msgstr "آیا مطمئن هستید که می‌خواهید وارد پیشخوان Frappe Cloud شوید؟"
 
 #. Label of the api_authentication_type (Select) field in DocType 'Insights
 #. Data Source v3'
@@ -341,11 +341,11 @@ msgstr "پایین"
 
 #: frontend/src2/query/components/FormatRule.vue:202
 msgid "Bottom N percent"
-msgstr ""
+msgstr "درصد N پایینی"
 
 #: frontend/src2/query/components/FormatRule.vue:200
 msgid "Bottom N values"
-msgstr ""
+msgstr "N مقدار پایینی"
 
 #: insights/insights/doctype/insights_table_import_job/insights_table_import_job.js:10
 msgid "Bulk Enqueue"
@@ -373,13 +373,13 @@ msgstr ""
 #: frontend/src2/workbook/WorkbookShareDialog.vue:128
 #: frontend/src2/workbook/WorkbookShareDialog.vue:183
 msgid "Can Edit"
-msgstr ""
+msgstr "اجازهٔ ویرایش"
 
 #: frontend/src2/workbook/WorkbookShareDialog.vue:34
 #: frontend/src2/workbook/WorkbookShareDialog.vue:124
 #: frontend/src2/workbook/WorkbookShareDialog.vue:183
 msgid "Can View"
-msgstr ""
+msgstr "اجازهٔ مشاهده"
 
 #: frontend/src2/charts/components/RegionMappingDialog.vue:312
 #: frontend/src2/components/ExportDialog.vue:77
@@ -428,23 +428,23 @@ msgstr "نمودار"
 
 #: frontend/src2/query/components/AlertSetupDialog.vue:154
 msgid "Check once a day"
-msgstr ""
+msgstr "روزی یک بار بررسی شود"
 
 #: frontend/src2/query/components/AlertSetupDialog.vue:156
 msgid "Check once a month"
-msgstr ""
+msgstr "ماهی یک بار بررسی شود"
 
 #: frontend/src2/query/components/AlertSetupDialog.vue:155
 msgid "Check once a week"
-msgstr ""
+msgstr "هفته‌ای یک بار بررسی شود"
 
 #: frontend/src2/query/components/AlertSetupDialog.vue:153
 msgid "Check once an hour"
-msgstr ""
+msgstr "ساعتی یک بار بررسی شود"
 
 #: frontend/src2/query/components/AddOperationPopover.vue:38
 msgid "Choose Columns"
-msgstr ""
+msgstr "انتخاب ستون‌ها"
 
 #. Description of the 'Sync Strategy' (Select) field in DocType 'Insights Table
 #. v3'
@@ -518,7 +518,7 @@ msgstr ""
 
 #: frontend/src2/dashboard/DashboardBuilder.vue:163
 msgid "Compact Layout"
-msgstr ""
+msgstr "چیدمان فشرده"
 
 #. Option for the 'Status' (Select) field in DocType 'Insights Table Import
 #. Log'
@@ -560,11 +560,11 @@ msgstr "اتصال"
 
 #: frontend/src2/data_source/ConnectClickhouseDialog.vue:120
 msgid "Connect to ClickHouse"
-msgstr ""
+msgstr "اتصال به ClickHouse"
 
 #: frontend/src2/data_source/DataSourceList.vue:60
 msgid "Connect to ClickHouse database"
-msgstr ""
+msgstr "اتصال به پایگاه دادهٔ ClickHouse"
 
 #: frontend/src2/data_source/ConnectDuckDBDialog.vue:95
 msgid "Connect to DuckDB"
@@ -611,7 +611,7 @@ msgstr "ادامه هید"
 
 #: frontend/src2/query/components/FiltersSelector.vue:113
 msgid "Convert to Expression"
-msgstr ""
+msgstr "تبدیل به عبارت"
 
 #: frontend/src2/charts/components/ChartBuilderToolbar.vue:60
 #: frontend/src2/workbook/WorkbookNavbarActions.vue:66
@@ -699,7 +699,7 @@ msgstr ""
 
 #: frontend/src2/query/components/JoinSelectorDialog.vue:316
 msgid "Custom Join Condition"
-msgstr ""
+msgstr "شرط سفارشی پیوند"
 
 #: frontend/src2/query/components/AddOperationPopover.vue:80
 msgid "Custom Operation"
@@ -718,7 +718,7 @@ msgstr "روزانه"
 
 #: frontend/src2/dashboard/DashboardShareDialog.vue:48
 msgid "Dashboard Access Updated"
-msgstr ""
+msgstr "دسترسی به داشبورد به‌روزرسانی شد"
 
 #: frontend/src2/components/AppSidebar.vue:74
 #: frontend/src2/dashboard/Dashboard.vue:46
@@ -774,11 +774,11 @@ msgstr "منبع داده"
 #: frontend/src2/data_source/DataSourceTable.vue:25
 #: frontend/src2/data_source/DataSourceTableList.vue:65
 msgid "Data Sources"
-msgstr ""
+msgstr "منابع داده"
 
 #: frontend/src2/data_source/DataSourceList.vue:141
 msgid "Data Sources | Insights"
-msgstr ""
+msgstr "منابع داده | Insights"
 
 #. Label of the data_store (Check) field in DocType 'Insights Query Execution
 #. Log'
@@ -787,7 +787,7 @@ msgstr ""
 #: frontend/src2/settings/Settings.vue:43
 #: insights/insights/doctype/insights_query_execution_log/insights_query_execution_log.json
 msgid "Data Store"
-msgstr ""
+msgstr "انبار داده"
 
 #: frontend/src2/charts/components/NewMeasureSelectorDialog.vue:120
 msgid "Data Type"
@@ -806,7 +806,7 @@ msgstr "پایگاه داده"
 #: insights/insights/doctype/insights_data_source/insights_data_source.json
 #: insights/insights/doctype/insights_data_source_v3/insights_data_source_v3.json
 msgid "Database Name"
-msgstr ""
+msgstr "نام پایگاه داده"
 
 #. Label of the database_type (Select) field in DocType 'Insights Data Source'
 #. Label of the database_type (Select) field in DocType 'Insights Data Source
@@ -881,11 +881,11 @@ msgstr "پیش‌نویس"
 
 #: frontend/src2/charts/components/DrillDown.vue:60
 msgid "Drill Down"
-msgstr ""
+msgstr "رفتن به جزئیات"
 
 #: frontend/src2/query/components/UnionSelectorDialog.vue:139
 msgid "Drop Duplicates"
-msgstr ""
+msgstr "حذف موارد تکراری"
 
 #. Option for the 'Database Type' (Select) field in DocType 'Insights Data
 #. Source v3'
@@ -901,11 +901,11 @@ msgstr "تکرار کردن"
 
 #: frontend/src2/charts/components/ChartBuilderToolbar.vue:44
 msgid "Duplicate Chart"
-msgstr ""
+msgstr "تکثیر نمودار"
 
 #: frontend/src2/query/components/QueryToolbar.vue:45
 msgid "Duplicate Query"
-msgstr ""
+msgstr "تکثیر پرس‌وجو"
 
 #. Label of the time_taken (Int) field in DocType 'Insights Table Import Log'
 #: insights/insights/doctype/insights_table_import_log/insights_table_import_log.json
@@ -918,11 +918,11 @@ msgstr "ویرایش"
 
 #: frontend/src2/dashboard/DashboardFilterEditor.vue:154
 msgid "Edit Filter"
-msgstr ""
+msgstr "ویرایش فیلتر"
 
 #: frontend/src2/dashboard/DashboardText.vue:24
 msgid "Edit Text"
-msgstr ""
+msgstr "ویرایش متن"
 
 #. Option for the 'Channel' (Select) field in DocType 'Insights Alert'
 #. Label of the email (Data) field in DocType 'Insights User Invitation'
@@ -942,7 +942,7 @@ msgstr "ایمیل ارسال شده در"
 
 #: frontend/src2/query/components/FiltersSelector.vue:134
 msgid "Empty - Click 'Add Filter' to add a filter"
-msgstr ""
+msgstr "خالی است؛ برای افزودن فیلتر روی «افزودن فیلتر» کلیک کنید"
 
 #: frontend/src2/workbook/WorkbookList.vue:160
 msgid "Empty Folder"
@@ -950,7 +950,7 @@ msgstr ""
 
 #: frontend/src2/query/components/AlertSetupDialog.vue:123
 msgid "Enable Alert"
-msgstr ""
+msgstr "فعال‌کردن هشدار"
 
 #. Label of the enable_data_store (Check) field in DocType 'Insights Settings'
 #: insights/insights/doctype/insights_settings/insights_settings.json
@@ -988,23 +988,23 @@ msgstr ""
 
 #: frontend/src2/components/ExportDialog.vue:60
 msgid "Enter filename"
-msgstr ""
+msgstr "نام فایل را وارد کنید"
 
 #: frontend/src2/dashboard/DashboardFilterEditor.vue:179
 msgid "Enter filter label..."
-msgstr ""
+msgstr "عنوان فیلتر را وارد کنید…"
 
 #: frontend/src2/query/components/FormatRule.vue:443
 msgid "Enter text"
-msgstr ""
+msgstr "متن را وارد کنید"
 
 #: frontend/src2/data_source/ConnectDuckDBDialog.vue:33
 msgid "Enter the URL of the DuckDB file"
-msgstr ""
+msgstr "نشانی فایل DuckDB را وارد کنید"
 
 #: frontend/src2/dashboard/DashboardText.vue:52
 msgid "Enter your text content here..."
-msgstr ""
+msgstr "متن خود را اینجا وارد کنید…"
 
 #. Label of the error (Text) field in DocType 'Insights Table Import'
 #. Label of the error (Code) field in DocType 'Insights Table Import Log'
@@ -1023,7 +1023,7 @@ msgstr "اجرا کردن"
 
 #: frontend/src2/query/components/QueryToolbar.vue:68
 msgid "Execute ({0})"
-msgstr ""
+msgstr "اجرا ({0})"
 
 #: insights/insights/doctype/insights_table_v3/insights_table_v3.js:80
 msgid "Execution Count"
@@ -1063,13 +1063,13 @@ msgstr "برون‌بُرد داده‌ها"
 
 #: frontend/src2/components/ExportDialog.vue:44
 msgid "Export Format"
-msgstr ""
+msgstr "قالب خروجی"
 
 #: frontend/src2/charts/components/ChartBuilderToolbar.vue:32
 #: frontend/src2/dashboard/Dashboard.vue:61
 #: frontend/src2/dashboard/DashboardBuilder.vue:156
 msgid "Export as PNG"
-msgstr ""
+msgstr "خروجی PNG"
 
 #. Label of the expression (JSON) field in DocType 'Insights Query Column'
 #: insights/insights/doctype/insights_query_column/insights_query_column.json
@@ -1096,24 +1096,24 @@ msgstr ""
 
 #: frontend/src2/query/components/NativeQueryEditor.vue:55
 msgid "Failed to format SQL"
-msgstr ""
+msgstr "قالب‌بندی SQL ناموفق بود"
 
 #: frontend/src2/data_source/UploadCSVFileDialog.vue:72
 msgid "Failed to import table"
-msgstr ""
+msgstr "واردکردن جدول ناموفق بود"
 
 #: frontend/src2/data_source/UploadCSVFileDialog.vue:38
 msgid "Failed to process uploaded file"
-msgstr ""
+msgstr "پردازش فایل بارگذاری‌شده ناموفق بود"
 
 #: frontend/src2/components/DemoDataBanner.vue:33
 #: frontend/src2/settings/GeneralSettings.vue:29
 msgid "Failed to setup demo data"
-msgstr ""
+msgstr "راه‌اندازی داده‌های نمونه ناموفق بود"
 
 #: frontend/src2/dashboard/DashboardList.vue:28
 msgid "Favorites"
-msgstr ""
+msgstr "موارد برگزیده"
 
 #: frontend/src2/query/components/QueryExecutionStatus.vue:18
 #: frontend/src2/query/components/ScriptQueryEditor.vue:128
@@ -1139,7 +1139,7 @@ msgstr "فیلتر"
 
 #: frontend/src2/dashboard/DashboardFilterEditor.vue:226
 msgid "Filter Icon"
-msgstr ""
+msgstr "نماد فیلتر"
 
 #: frontend/src2/query/components/AddOperationPopover.vue:44
 msgid "Filter Rows"
@@ -1147,7 +1147,7 @@ msgstr "فیلتر ردیف‌ها"
 
 #: frontend/src2/query/components/AddOperationPopover.vue:45
 msgid "Filter rows based on columns or expressions"
-msgstr ""
+msgstr "فیلترکردن ردیف‌ها بر اساس ستون‌ها یا عبارت‌ها"
 
 #. Label of the filters (JSON) field in DocType 'Insights Query'
 #: insights/insights/doctype/insights_query/insights_query.json
@@ -1183,7 +1183,7 @@ msgstr ""
 
 #: frontend/src2/query/components/ScriptQueryEditor.vue:103
 msgid "Force Run"
-msgstr ""
+msgstr "اجرای اجباری"
 
 #. Label of the foreign_key (Data) field in DocType 'Insights Table Link'
 #: insights/insights/doctype/insights_table_link/insights_table_link.json
@@ -1208,7 +1208,7 @@ msgstr ""
 
 #: frontend/src2/query/components/NativeQueryEditor.vue:65
 msgid "Format SQL"
-msgstr ""
+msgstr "قالب‌بندی SQL"
 
 #: insights/config/desktop.py:11
 msgid "Frappe Insights"
@@ -1237,7 +1237,7 @@ msgstr "عمومی"
 
 #: frontend/src2/query/components/ViewSQLDialog.vue:16
 msgid "Generated SQL"
-msgstr ""
+msgstr "SQL تولیدشده"
 
 #: frontend/src2/query/components/FormatRule.vue:160
 msgid "Green"
@@ -1245,15 +1245,15 @@ msgstr "سبز"
 
 #: frontend/src2/query/components/FormatRule.vue:213
 msgid "Green-Red"
-msgstr ""
+msgstr "سبز به قرمز"
 
 #: frontend/src2/query/components/AddOperationPopover.vue:68
 msgid "Group & Summarize"
-msgstr ""
+msgstr "گروه‌بندی و خلاصه‌سازی"
 
 #: frontend/src2/query/components/AddOperationPopover.vue:69
 msgid "Group rows by columns and summarize the data"
-msgstr ""
+msgstr "گروه‌بندی ردیف‌ها بر اساس ستون‌ها و خلاصه‌سازی داده‌ها"
 
 #. Label of the http_headers (JSON) field in DocType 'Insights Data Source v3'
 #: insights/insights/doctype/insights_data_source_v3/insights_data_source_v3.json
@@ -1271,7 +1271,7 @@ msgstr ""
 
 #: frontend/src2/charts/components/SankeyChartConfigForm.vue:60
 msgid "Horizontal"
-msgstr ""
+msgstr "افقی"
 
 #. Label of the host (Data) field in DocType 'Insights Data Source'
 #. Label of the host (Data) field in DocType 'Insights Data Source v3'
@@ -1299,7 +1299,7 @@ msgstr "درون‌بُرد"
 
 #: frontend/src2/data_source/UploadCSVFileDialog.vue:71
 msgid "Import Failed"
-msgstr ""
+msgstr "واردکردن ناموفق بود"
 
 #. Label of the import_job (Link) field in DocType 'Insights Table Import Log'
 #: insights/insights/doctype/insights_table_import_log/insights_table_import_log.json
@@ -1316,7 +1316,7 @@ msgstr ""
 #: frontend/src2/data_store/DataStoreList.vue:79
 #: frontend/src2/data_store/ImportTableDialog.vue:59
 msgid "Import Table"
-msgstr ""
+msgstr "واردکردن جدول"
 
 #: insights/insights/doctype/insights_table_v3/insights_table_v3.js:8
 msgid "Import job has been queued"
@@ -1346,7 +1346,7 @@ msgstr ""
 
 #: frontend/src2/charts/components/MapChartConfigForm.vue:55
 msgid "India"
-msgstr ""
+msgstr "هند"
 
 #. Name of a role
 #: insights/insights/doctype/insights_alert/insights_alert.json
@@ -1600,18 +1600,18 @@ msgstr "یکپارچه سازی‌ها"
 #: frontend/src2/settings/UsersSettings.vue:44
 #: frontend/src2/users/UserList.vue:44
 msgid "Invitation Expired"
-msgstr ""
+msgstr "دعوت‌نامه منقضی شد"
 
 #: frontend/src2/settings/UsersSettings.vue:43
 #: frontend/src2/users/UserList.vue:43
 msgid "Invitation Sent"
-msgstr ""
+msgstr "دعوت‌نامه ارسال شد"
 
 #: frontend/src2/settings/UsersSettings.vue:85
 #: frontend/src2/settings/UsersSettings.vue:173
 #: frontend/src2/users/UserList.vue:84 frontend/src2/users/UserList.vue:175
 msgid "Invite User"
-msgstr ""
+msgstr "دعوت از کاربر"
 
 #. Label of the invited_by (Link) field in DocType 'Insights User Invitation'
 #: insights/insights/doctype/insights_user_invitation/insights_user_invitation.json
@@ -1708,19 +1708,19 @@ msgstr "پیوستن"
 #: frontend/src2/query/components/AddOperationPopover.vue:50
 #: frontend/src2/query/components/JoinSelectorDialog.vue:251
 msgid "Join Table"
-msgstr ""
+msgstr "پیوند جدول"
 
 #: frontend/src2/components/UserDropdown.vue:121
 msgid "Join Telegram Group"
-msgstr ""
+msgstr "پیوستن به گروه تلگرام"
 
 #: frontend/src2/query/components/AddOperationPopover.vue:51
 msgid "Join this table with another table or query"
-msgstr ""
+msgstr "پیوند این جدول با جدول یا پرس‌وجوی دیگر"
 
 #: frontend/src2/charts/components/SankeyChartConfigForm.vue:69
 msgid "Justify"
-msgstr ""
+msgstr "تراز دوطرفه"
 
 #. Label of the key (Data) field in DocType 'Insights Secret Key'
 #. Label of the key (Data) field in DocType 'Insights User Invitation'
@@ -1788,7 +1788,7 @@ msgstr ""
 
 #: frontend/src2/data_store/DataStoreList.vue:48
 msgid "Last Synced"
-msgstr ""
+msgstr "آخرین همگام‌سازی"
 
 #. Label of the last_synced_on (Datetime) field in DocType 'Insights Table v3'
 #: insights/insights/doctype/insights_table_v3/insights_table_v3.js:60
@@ -1811,7 +1811,7 @@ msgstr "چپ"
 #: frontend/src2/query/components/JoinSelectorDialog.vue:280
 #: insights/insights/doctype/insights_table_link_v3/insights_table_link_v3.json
 msgid "Left Column"
-msgstr ""
+msgstr "ستون چپ"
 
 #. Label of the left_table (Data) field in DocType 'Insights Table Link v3'
 #: insights/insights/doctype/insights_table_link_v3/insights_table_link_v3.json
@@ -1833,7 +1833,7 @@ msgstr "محدودیت"
 #: frontend/src2/dashboard/DashboardFilterEditor.vue:193
 #: insights/insights/doctype/insights_dashboard_v3/insights_dashboard_v3.json
 msgid "Linked Charts"
-msgstr ""
+msgstr "نمودارهای پیوندشده"
 
 #. Label of the table_links (Table) field in DocType 'Insights Table'
 #: insights/insights/doctype/insights_table/insights_table.json
@@ -1884,11 +1884,11 @@ msgstr "متن بلند"
 
 #: frontend/src2/teams/ManageTeamDialog.vue:64
 msgid "Manage Team"
-msgstr ""
+msgstr "مدیریت تیم"
 
 #: frontend/src2/workbook/WorkbookShareDialog.vue:92
 msgid "Manage Workbook Access"
-msgstr ""
+msgstr "مدیریت دسترسی به دفترکار"
 
 #. Option for the 'Database Type' (Select) field in DocType 'Insights Data
 #. Source'
@@ -1910,7 +1910,7 @@ msgstr ""
 
 #: frontend/src2/dashboard/DashboardText.vue:54
 msgid "Markdown supported"
-msgstr ""
+msgstr "از Markdown پشتیبانی می‌شود"
 
 #. Label of the max_execution_time (Int) field in DocType 'Insights Settings'
 #: insights/insights/doctype/insights_settings/insights_settings.json
@@ -2015,7 +2015,7 @@ msgstr "پرس و جوی جدید"
 #: frontend/src2/workbook/WorkbookList.vue:167
 #: frontend/src2/workbook/WorkbookList.vue:202
 msgid "New Workbook"
-msgstr ""
+msgstr "دفترکار جدید"
 
 #. Label of the next_execution (Datetime) field in DocType 'Insights Alert'
 #: insights/insights/doctype/insights_alert/insights_alert.json
@@ -2045,11 +2045,11 @@ msgstr "هیچ جدولی یافت نشد"
 
 #: frontend/src2/data_store/DataStoreList.vue:57
 msgid "No Tables Stored"
-msgstr ""
+msgstr "جدولی ذخیره نشده است"
 
 #: frontend/src2/workbook/WorkbookList.vue:160
 msgid "No Workbooks"
-msgstr ""
+msgstr "دفترکاری وجود ندارد"
 
 #: frontend/src2/query/components/QueryAlertsDialog.vue:76
 msgid "No alerts"
@@ -2057,11 +2057,11 @@ msgstr "بدون هشدار"
 
 #: frontend/src2/query/components/ColumnsSelectorDialog.vue:108
 msgid "No columns selected"
-msgstr ""
+msgstr "هیچ ستونی انتخاب نشده است"
 
 #: frontend/src2/data_source/DataSourceList.vue:131
 msgid "No data sources to display."
-msgstr ""
+msgstr "منبع داده‌ای برای نمایش وجود ندارد."
 
 #: frontend/src2/data_source/DataSourceList.vue:130
 msgid "No data sources."
@@ -2077,26 +2077,26 @@ msgstr ""
 
 #: frontend/src2/data_source/DataSourceTableList.vue:41
 msgid "No tables found for the selected data source."
-msgstr ""
+msgstr "در منبع دادهٔ انتخاب‌شده جدولی پیدا نشد."
 
 #: frontend/src2/data_store/DataStoreList.vue:58
 msgid "No tables found in the data store."
-msgstr ""
+msgstr "در انبار داده جدولی پیدا نشد."
 
 #: frontend/src2/settings/PermissionsSettings.vue:64
 #: frontend/src2/teams/TeamList.vue:62
 msgid "No teams to display."
-msgstr ""
+msgstr "تیمی برای نمایش وجود ندارد."
 
 #: frontend/src2/settings/PermissionsSettings.vue:63
 #: frontend/src2/teams/TeamList.vue:61
 msgid "No teams."
-msgstr ""
+msgstr "تیمی وجود ندارد."
 
 #: frontend/src2/settings/UsersSettings.vue:82
 #: frontend/src2/users/UserList.vue:81
 msgid "No users to display."
-msgstr ""
+msgstr "کاربری برای نمایش وجود ندارد."
 
 #: frontend/src2/settings/UsersSettings.vue:81
 #: frontend/src2/users/UserList.vue:80
@@ -2126,7 +2126,7 @@ msgstr ""
 #: frontend/src2/dashboard/DashboardList.vue:92
 #: frontend/src2/dashboard/DashboardList.vue:97
 msgid "Nothing here"
-msgstr ""
+msgstr "اینجا چیزی نیست"
 
 #. Label of the old_name (Data) field in DocType 'Insights Chart v3'
 #. Label of the old_name (Data) field in DocType 'Insights Dashboard v3'
@@ -2150,12 +2150,12 @@ msgstr ""
 #: frontend/src2/dashboard/Dashboard.vue:68
 #: frontend/src2/dashboard/DashboardList.vue:117
 msgid "Open Workbook"
-msgstr ""
+msgstr "بازکردن دفترکار"
 
 #: frontend/src2/charts/components/ChartBuilderToolbar.vue:65
 #: frontend/src2/workbook/WorkbookNavbarActions.vue:79
 msgid "Open in Desk"
-msgstr ""
+msgstr "بازکردن در Desk"
 
 #. Label of the operations (JSON) field in DocType 'Insights Query v3'
 #: insights/insights/doctype/insights_query_v3/insights_query_v3.json
@@ -2248,21 +2248,21 @@ msgstr ""
 
 #: frontend/src2/query/components/source_selector/SourceSelectorDialog.vue:125
 msgid "Pick Starting Data"
-msgstr ""
+msgstr "انتخاب دادهٔ آغازین"
 
 #. Option for the 'Type' (Select) field in DocType 'Insights Query Transform'
 #: frontend/src2/query/components/AddOperationPopover.vue:74
 #: insights/insights/doctype/insights_query_transform/insights_query_transform.json
 msgid "Pivot"
-msgstr ""
+msgstr "محور"
 
 #: frontend/src2/query/components/NativeQueryEditor.vue:29
 msgid "Please select a data source first"
-msgstr ""
+msgstr "ابتدا یک منبع داده انتخاب کنید"
 
 #: frontend/src2/query/components/source_selector/DataSourceTableList.vue:53
 msgid "Please wait while we refresh the tables from your data source"
-msgstr ""
+msgstr "لطفاً تا نوسازی جدول‌های منبع داده صبر کنید"
 
 #. Label of the port (Data) field in DocType 'Insights Data Source'
 #. Label of the port (Int) field in DocType 'Insights Data Source v3'
@@ -2351,7 +2351,7 @@ msgstr "پرسمان"
 
 #: frontend/src2/workbook/WorkbookLineageDialog.vue:149
 msgid "Query Lineage"
-msgstr ""
+msgstr "تبار دادهٔ پرس‌وجو"
 
 #. Label of the query_result_limit (Int) field in DocType 'Insights Settings'
 #: insights/insights/doctype/insights_settings/insights_settings.json
@@ -2419,20 +2419,20 @@ msgstr "تازه کردن"
 
 #: frontend/src2/dashboard/DashboardList.vue:122
 msgid "Refresh Preview"
-msgstr ""
+msgstr "نوسازی پیش‌نمایش"
 
 #: frontend/src2/query/components/QueryToolbar.vue:28
 msgid "Refresh Stored Tables"
-msgstr ""
+msgstr "نوسازی جدول‌های ذخیره‌شده"
 
 #: frontend/src2/query/components/source_selector/DataSourceTableList.vue:62
 #: frontend/src2/query/components/source_selector/DataSourceTableList.vue:87
 msgid "Refresh Tables"
-msgstr ""
+msgstr "نوسازی جدول‌ها"
 
 #: frontend/src2/query/components/source_selector/DataSourceTableList.vue:52
 msgid "Refreshing Tables"
-msgstr ""
+msgstr "در حال نوسازی جدول‌ها"
 
 #: frontend/src2/query/components/FiltersSelector.vue:126
 #: frontend/src2/workbook/WorkbookShareDialog.vue:39
@@ -2441,7 +2441,7 @@ msgstr "حدف"
 
 #: frontend/src2/components/DataTableColumn.vue:30
 msgid "Remove Sort"
-msgstr ""
+msgstr "حذف مرتب‌سازی"
 
 #: frontend/src2/dashboard/DashboardBuilder.vue:170
 msgid "Reset Layout"
@@ -2449,11 +2449,11 @@ msgstr "بازنشانی چیدمان"
 
 #: frontend/src2/charts/components/ChartBuilderToolbar.vue:49
 msgid "Reset Options"
-msgstr ""
+msgstr "بازنشانی گزینه‌ها"
 
 #: frontend/src2/charts/components/RegionMappingDialog.vue:194
 msgid "Resolve Locations"
-msgstr ""
+msgstr "تعیین موقعیت‌ها"
 
 #. Label of the resource_name (Dynamic Link) field in DocType 'Insights
 #. Resource Permission'
@@ -2497,13 +2497,13 @@ msgstr "راست"
 #: frontend/src2/query/components/JoinSelectorDialog.vue:294
 #: insights/insights/doctype/insights_table_link_v3/insights_table_link_v3.json
 msgid "Right Column"
-msgstr ""
+msgstr "ستون راست"
 
 #. Label of the right_table (Data) field in DocType 'Insights Table Link v3'
 #: frontend/src2/query/components/JoinSelectorDialog.vue:260
 #: insights/insights/doctype/insights_table_link_v3/insights_table_link_v3.json
 msgid "Right Table"
-msgstr ""
+msgstr "جدول راست"
 
 #. Label of the row_limit (Int) field in DocType 'Insights Table Import Log'
 #. Label of the row_limit (Int) field in DocType 'Insights Table v3'
@@ -2559,11 +2559,11 @@ msgstr ""
 
 #: frontend/src2/settings/GeneralSettings.vue:23
 msgid "Sample data and workbook have been set up successfully"
-msgstr ""
+msgstr "دادهٔ نمونه و دفترکار با موفقیت آماده شدند"
 
 #: frontend/src2/components/DemoDataBanner.vue:27
 msgid "Sample data with workbook has been set up successfully"
-msgstr ""
+msgstr "دادهٔ نمونه همراه دفترکار با موفقیت آماده شد"
 
 #. Option for the 'Week Starts On' (Select) field in DocType 'Insights
 #. Settings'
@@ -2579,11 +2579,11 @@ msgstr "ذخیره"
 
 #: frontend/src2/charts/components/RegionMappingDialog.vue:314
 msgid "Save Changes"
-msgstr ""
+msgstr "ذخیرهٔ تغییرات"
 
 #: frontend/src2/components/VariablesDialog.vue:133
 msgid "Save Variables"
-msgstr ""
+msgstr "ذخیرهٔ متغیرها"
 
 #. Label of the schedule (Data) field in DocType 'Insights Table Import Job'
 #: insights/insights/doctype/insights_table_import_job/insights_table_import_job.json
@@ -2594,7 +2594,7 @@ msgstr ""
 #: frontend/src2/data_source/ConnectPostgreSQLDialog.vue:57
 #: insights/insights/doctype/insights_data_source_v3/insights_data_source_v3.json
 msgid "Schema"
-msgstr ""
+msgstr "ساختار"
 
 #. Label of the script (Code) field in DocType 'Insights Query'
 #. Label of the script (Code) field in DocType 'Insights Table Import Job'
@@ -2618,11 +2618,11 @@ msgstr "جستجو"
 #: frontend/src2/query/components/source_selector/DataSourceTableList.vue:75
 #: frontend/src2/query/components/source_selector/WorkbookQueryList.vue:63
 msgid "Search by Title"
-msgstr ""
+msgstr "جست‌وجو بر اساس عنوان"
 
 #: frontend/src2/dashboard/DashboardChartSelectorDialog.vue:85
 msgid "Search by name"
-msgstr ""
+msgstr "جست‌وجو بر اساس نام"
 
 #: frontend/src2/dashboard/DashboardList.vue:159
 #: frontend/src2/workbook/WorkbookList.vue:225
@@ -2631,7 +2631,7 @@ msgstr "جستجو بر اساس عنوان"
 
 #: frontend/src2/workbook/WorkbookLineageDialog.vue:163
 msgid "Search nodes\\u2026"
-msgstr ""
+msgstr "جست‌وجوی گره‌ها…"
 
 #. Label of the secrets (Table) field in DocType 'Insights Table Import Job'
 #: insights/insights/doctype/insights_table_import_job/insights_table_import_job.json
@@ -2640,7 +2640,7 @@ msgstr ""
 
 #: frontend/src2/dashboard/DashboardChartSelectorDialog.vue:64
 msgid "Select Charts"
-msgstr ""
+msgstr "انتخاب نمودارها"
 
 #: frontend/src2/query/components/ColumnsSelectorDialog.vue:62
 msgid "Select Columns"
@@ -2648,7 +2648,7 @@ msgstr "ستون‌ها را انتخاب کنید"
 
 #: frontend/src2/query/components/JoinSelectorDialog.vue:363
 msgid "Select Columns to Add"
-msgstr ""
+msgstr "ستون‌های موردنظر برای افزودن را انتخاب کنید"
 
 #: frontend/src2/query/components/AlertSetupDialog.vue:203
 msgid "Select Field"
@@ -2656,27 +2656,27 @@ msgstr "فیلد را انتخاب کنید"
 
 #: frontend/src2/query/components/JoinSelectorDialog.vue:335
 msgid "Select Join Type"
-msgstr ""
+msgstr "نوع پیوند را انتخاب کنید"
 
 #: frontend/src2/query/components/AddOperationPopover.vue:32
 msgid "Select Source"
-msgstr ""
+msgstr "انتخاب منبع"
 
 #: frontend/src2/query/components/UnionSelectorDialog.vue:126
 msgid "Select Table"
-msgstr ""
+msgstr "انتخاب جدول"
 
 #: frontend/src2/dashboard/DashboardFilterEditor.vue:212
 msgid "Select a column"
-msgstr ""
+msgstr "یک ستون انتخاب کنید"
 
 #: frontend/src2/data_source/DataSourceList.vue:170
 msgid "Select a data source"
-msgstr ""
+msgstr "یک منبع داده انتخاب کنید"
 
 #: frontend/src2/query/components/AddOperationPopover.vue:33
 msgid "Select a table or query to start building your query"
-msgstr ""
+msgstr "برای ساخت پرس‌وجو، یک جدول یا پرس‌وجو انتخاب کنید"
 
 #: frontend/src2/query/components/AddOperationPopover.vue:145
 msgid "Select an operation"
@@ -2684,7 +2684,7 @@ msgstr "انتخاب یک عملیات"
 
 #: frontend/src2/dashboard/DashboardFilterEditor.vue:255
 msgid "Select operator..."
-msgstr ""
+msgstr "عملگر را انتخاب کنید…"
 
 #: insights/insights/doctype/insights_alert/insights_alert.js:6
 msgid "Send Alert"
@@ -2713,7 +2713,7 @@ msgstr ""
 
 #: frontend/src2/query/components/QueryAlertsDialog.vue:77
 msgid "Set up alerts to get notified when a condition is met"
-msgstr ""
+msgstr "برای دریافت اعلان هنگام برقرارشدن شرط، هشدار تنظیم کنید"
 
 #: frontend/src2/components/AppSidebar.vue:95
 #: frontend/src2/settings/Settings.vue:58
@@ -2735,7 +2735,7 @@ msgstr "راه‌اندازی کامل شد"
 
 #: frontend/src2/components/DemoDataBanner.vue:64
 msgid "Setup Demo Data"
-msgstr ""
+msgstr "راه‌اندازی داده‌های نمونه"
 
 #: frontend/src2/components/DemoDataBanner.vue:32
 #: frontend/src2/settings/GeneralSettings.vue:28
@@ -2767,7 +2767,7 @@ msgstr ""
 
 #: frontend/src2/query/components/AddOperationPopover.vue:39
 msgid "Show or hide columns from the table"
-msgstr ""
+msgstr "نمایش یا پنهان‌کردن ستون‌های جدول"
 
 #. Label of the is_site_db (Check) field in DocType 'Insights Data Source'
 #: insights/insights/doctype/insights_data_source/insights_data_source.json
@@ -2799,7 +2799,7 @@ msgstr ""
 
 #: frontend/src2/query/components/AddOperationPopover.vue:75
 msgid "Spreading column values into separate columns"
-msgstr ""
+msgstr "گسترش مقادیر ستون در ستون‌های جداگانه"
 
 #. Description of the 'Primary Key Column' (Data) field in DocType 'Insights
 #. Table v3'
@@ -2917,7 +2917,7 @@ msgstr "استراتژی همگام‌سازی"
 
 #: frontend/src2/query/components/source_selector/DataSourceTableList.vue:59
 msgid "Sync tables from your data source to get started"
-msgstr ""
+msgstr "برای شروع، جدول‌ها را از منبع داده همگام‌سازی کنید"
 
 #. Name of a role
 #: insights/insights/doctype/insights_chart/insights_chart.json
@@ -2957,7 +2957,7 @@ msgstr "جدول"
 
 #: frontend/src2/data_source/UploadCSVFileDialog.vue:64
 msgid "Table Imported"
-msgstr ""
+msgstr "جدول وارد شد"
 
 #. Label of the table_label (Data) field in DocType 'Insights Query Column'
 #. Label of the table_label (Data) field in DocType 'Insights Table Import'
@@ -3003,7 +3003,7 @@ msgstr "اعضای تیم"
 #: frontend/src2/settings/PermissionsSettings.vue:45
 #: insights/insights/doctype/insights_team/insights_team.json
 msgid "Team Name"
-msgstr ""
+msgstr "نام تیم"
 
 #. Label of the team_permissions (Table) field in DocType 'Insights Team'
 #: insights/insights/doctype/insights_team/insights_team.json
@@ -3141,11 +3141,11 @@ msgstr "بالا"
 
 #: frontend/src2/query/components/FormatRule.vue:201
 msgid "Top N percent"
-msgstr ""
+msgstr "درصد N بالایی"
 
 #: frontend/src2/query/components/FormatRule.vue:199
 msgid "Top N values"
-msgstr ""
+msgstr "N مقدار بالایی"
 
 #: insights/insights/doctype/insights_table_v3/insights_table_v3.js:70
 msgid "Total Sync Time"
@@ -3217,7 +3217,7 @@ msgstr "هشدار به‌روزرسانی"
 
 #: frontend/src2/data_source/DataSourceTableList.vue:95
 msgid "Update Table Links"
-msgstr ""
+msgstr "به‌روزرسانی پیوندهای جدول"
 
 #: frontend/src2/data_source/DataSourceTableList.vue:82
 msgid "Update Tables"
@@ -3250,7 +3250,7 @@ msgstr ""
 
 #: frontend/src2/query/components/AlertSetupDialog.vue:231
 msgid "Use Custom Condition"
-msgstr ""
+msgstr "استفاده از شرط سفارشی"
 
 #. Label of the use_live_connection (Check) field in DocType 'Insights Query
 #. v3'
@@ -3294,7 +3294,7 @@ msgstr "کاربران"
 
 #: frontend/src2/charts/components/NewMeasureSelectorDialog.vue:57
 msgid "Validation failed"
-msgstr ""
+msgstr "اعتبارسنجی ناموفق بود"
 
 #. Label of the value (Password) field in DocType 'Insights Secret Key'
 #: frontend/src2/components/VariablesDialog.vue:85
@@ -3331,11 +3331,11 @@ msgstr "متغیرها"
 
 #: frontend/src2/components/VariablesDialog.vue:69
 msgid "Variables are used to store sensitive information such as API keys and credentials. They can be referenced and combined in your script just like any other variable. For eg."
-msgstr ""
+msgstr "متغیرها برای نگهداری اطلاعات حساس مانند کلیدهای API و اطلاعات ورود به کار می‌روند. می‌توانید مانند متغیرهای دیگر در اسکریپت به آن‌ها ارجاع دهید و ترکیبشان کنید. برای مثال:"
 
 #: frontend/src2/charts/components/SankeyChartConfigForm.vue:61
 msgid "Vertical"
-msgstr ""
+msgstr "عمودی"
 
 #. Label of the vertical_compact_layout (Check) field in DocType 'Insights
 #. Dashboard v3'
@@ -3345,7 +3345,7 @@ msgstr ""
 
 #: frontend/src2/workbook/WorkbookNavbarActions.vue:54
 msgid "View Lineage"
-msgstr ""
+msgstr "مشاهدهٔ تبار داده"
 
 #: frontend/src2/charts/components/ChartBuilderToolbar.vue:55
 #: frontend/src2/query/components/QueryToolbar.vue:40
@@ -3405,7 +3405,7 @@ msgstr "بله"
 
 #: frontend/src2/query/components/AlertSetupDialog.vue:251
 msgid "You can use markdown to format the message. Use double asterisks (**) for bold text. You can use the following fields in the message:"
-msgstr ""
+msgstr "برای قالب‌بندی پیام می‌توانید از Markdown استفاده کنید. برای پررنگ‌کردن متن، دو ستاره (**) به‌کار ببرید. از فیلدهای زیر در پیام استفاده کنید:"
 
 #: insights/decorators.py:26
 msgid "You do not have permission to access this resource"
@@ -3428,7 +3428,7 @@ msgstr ""
 
 #: frontend/src2/home/HomeWorkbookList.vue:68
 msgid "Your workbooks will appear here. Create a new workbook to get started."
-msgstr ""
+msgstr "دفترکارهای شما اینجا نمایش داده می‌شوند. برای شروع یک دفترکار جدید ایجاد کنید."
 
 #: frontend/src2/query/components/FormatRule.vue:194
 msgid "after date"
@@ -3474,7 +3474,7 @@ msgstr "نمودار"
 
 #: frontend/src2/query/components/FormatRule.vue:174
 msgid "contains"
-msgstr ""
+msgstr "شامل است"
 
 #. Option for the 'Order By' (Select) field in DocType 'Insights Query Column'
 #: insights/insights/doctype/insights_query_column/insights_query_column.json
@@ -3483,7 +3483,7 @@ msgstr "نزولی"
 
 #: frontend/src2/query/components/FormatRule.vue:175
 msgid "does not contain"
-msgstr ""
+msgstr "شامل نیست"
 
 #: frontend/src2/query/components/FormatRule.vue:179
 msgid "does not equal"
@@ -3583,11 +3583,11 @@ msgstr "کمتر از"
 
 #: frontend/src2/query/components/FormatRule.vue:170
 msgid "less than or equals"
-msgstr ""
+msgstr "کوچک‌تر یا مساوی"
 
 #: frontend/src2/workbook/WorkbookLineageDialog.vue:157
 msgid "nodes"
-msgstr ""
+msgstr "گره‌ها"
 
 #: frontend/src2/query/components/FormatRule.vue:166
 msgid "not equals"
@@ -3611,7 +3611,7 @@ msgstr "شروع می‌شود با"
 
 #: frontend/src2/query/components/ColumnsSelectorDialog.vue:120
 msgid "{0} columns selected"
-msgstr ""
+msgstr "{0} ستون انتخاب شده است"
 
 #: frontend/src2/home/Home.vue:20
 msgid "Hello, {0} 👋"
