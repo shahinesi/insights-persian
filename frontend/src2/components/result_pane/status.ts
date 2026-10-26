@@ -1,8 +1,20 @@
 import { __ } from '../../translation'
 import type { PaginationState } from '../../composables/usePagination'
 import type { QueryResult } from '../../types/query.types'
-import { formatLocaleNumber } from '../../helpers/locale_format'
+import { formatLocaleNumber, formatLocaleRelativeTime } from '../../helpers/locale_format'
 import session from '../../session'
+
+/** Keep the existing English wording and localize execution ages for other users. */
+export function lastRunText(
+	value: Date,
+	locale: string | null | undefined,
+	englishValue: string,
+	now: Date | number = Date.now(),
+): string {
+	const language = locale || 'en-US'
+	if (/^en(?:[-_]|$)/i.test(language)) return englishValue
+	return formatLocaleRelativeTime(value, language, now)
+}
 
 /**
  * What the run cost, for the footer's status line. A `timeTaken` of -1 is the

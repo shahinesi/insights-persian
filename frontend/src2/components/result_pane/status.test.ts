@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { computed } from 'vue'
 import { emptyResult } from '../../query/helpers'
 import type { QueryResult } from '../../types/query.types'
-import { fetchTiming, knownRowCount, rangeAroundCount, rowCountText } from './status'
+import { fetchTiming, knownRowCount, lastRunText, rangeAroundCount, rowCountText } from './status'
 
 const result = (patch: Partial<QueryResult>) => ({ ...emptyResult(), ...patch })
 
@@ -26,6 +26,19 @@ describe('fetchTiming', () => {
 			'fetched in 0.02s',
 		)
 		expect(fetchTiming(result({ executedSQL: 'select 1', timeTaken: 2 }))).toBe('fetched in 2s')
+	})
+})
+
+describe('last run age', () => {
+	// @feature query.result-timing
+	it('localizes Persian execution ages and preserves the English wording', () => {
+		const now = new Date('2026-10-26T12:00:00Z')
+		const lastRun = new Date('2026-10-26T10:00:00Z')
+
+		const persian = lastRunText(lastRun, 'fa-IR', '2 hours ago', now)
+		expect(persian).toMatch(/[۰-۹]/)
+		expect(persian).toContain('پیش')
+		expect(lastRunText(lastRun, 'en-US', '2 hours ago', now)).toBe('2 hours ago')
 	})
 })
 

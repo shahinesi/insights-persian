@@ -13,7 +13,7 @@ import ResultFind from './ResultFind.vue'
 import ResultFooter from './ResultFooter.vue'
 import { RESULT_GRID_HOST, type ResultGrid } from './result_grid'
 import ResultStatus from './ResultStatus.vue'
-import { fetchTiming } from './status'
+import { fetchTiming, lastRunText } from './status'
 
 // The one card around a query result: a header, the grid, and a footer. Every
 // editor used to assemble this by hand, which is why the cache line was written
@@ -119,7 +119,11 @@ const pageRange = computed(() => (bodyState.value ? undefined : pagination))
 const pager = computed(() => (columns.value.length ? pagination : undefined))
 
 const timeAgo = useTimeAgo(() => props.query.result.lastExecutedAt)
-const lastRun = computed(() => (props.query.result.executedSQL ? timeAgo.value : ''))
+const lastRun = computed(() =>
+	props.query.result.executedSQL
+		? lastRunText(props.query.result.lastExecutedAt, session.user.locale, timeAgo.value)
+		: '',
+)
 const timing = computed(() => fetchTiming(props.query.result))
 // Only a find on the loaded rows needs this. After a find on the source, the
 // paging line already prints the full count.
