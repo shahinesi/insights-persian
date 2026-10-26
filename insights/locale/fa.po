@@ -618,6 +618,19 @@ msgstr "تبدیل به عبارت"
 msgid "Copy JSON"
 msgstr "کپی کردن JSON"
 
+#: frontend/src2/dashboard/DashboardShareDialog.vue:86
+msgid "Copy Embed"
+msgstr "کپی کد جاسازی‌شده"
+
+#: frontend/src2/charts/components/ChartShareDialog.vue:105
+msgid "Copy iFrame"
+msgstr "کپی کد iframe"
+
+#: frontend/src2/charts/components/ChartShareDialog.vue:101
+#: frontend/src2/dashboard/DashboardShareDialog.vue:82
+msgid "Copy Link"
+msgstr "کپی پیوند"
+
 #: frontend/src2/query/components/QueryToolbar.vue:50
 msgid "Copy Query"
 msgstr "کپی کردن پرسمان"

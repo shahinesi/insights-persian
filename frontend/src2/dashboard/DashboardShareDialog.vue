@@ -79,11 +79,11 @@ function addSharedUser() {
 			<div class="flex flex-col gap-4">
 				<VisibilitySelector v-model:visibility="visibility" v-model:roles="visibleToRoles">
 					<template #actions>
-						<Tooltip text="Copy Link" :hoverDelay="0.1">
+						<Tooltip :text="__('Copy Link')" :hoverDelay="0.1">
 							<Button icon="lucide-link-2" @click="copyToClipboard(shareLink)">
 							</Button>
 						</Tooltip>
-						<Tooltip text="Copy Embed" :hoverDelay="0.1">
+						<Tooltip :text="__('Copy Embed')" :hoverDelay="0.1">
 							<Button icon="lucide-code" @click="copyToClipboard(iFrameLink)">
 							</Button>
 						</Tooltip>
