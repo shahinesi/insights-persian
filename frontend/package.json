@@ -17,7 +17,7 @@
 		"test:localization": "node --experimental-strip-types --test scripts/localization.test.mjs",
 		"build": "vite build -l warn --base=/assets/insights/frontend/ && yarn copy-html-entry",
 		"build:islands": "node build-islands.mjs --production",
-		"copy-html-entry": "cp ../insights/public/frontend/index.html ../insights/www/_insights.html",
+		"copy-html-entry": "node tools/copy-html-entry.mjs",
 		"postinstall": "patch-package --patch-dir node_modules/@framework/ui/patches"
 	},
 	"dependencies": {
@@ -36,7 +36,7 @@
 		"echarts": "^6.1.0",
 		"es-toolkit": "^1.34.1",
 		"feather-icons": "^4.28.0",
-		"frappe-ui": "github:shahinesi/frappe-ui-persian#90431747e6e9ea61034ae70fcb03f3ade71f633d",
+		"frappe-ui": "github:shahinesi/frappe-ui-persian#4f66fd4b452e012e0ae6e56ab79310c530e49eab",
 		"html-to-image": "^1.11.13",
 		"jalaali-js": "^2.0.1",
 		"lucide-vue-next": "^0.484.0",

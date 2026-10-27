@@ -62,7 +62,6 @@ export default defineConfig({
 	plugins: [
 		frappeui({
 			frappeProxy: true,
-			lucideIcons: true,
 			jinjaBootData: true,
 			buildConfig: false,
 		}),

@@ -11,12 +11,12 @@ const frontendDir = path.dirname(path.dirname(fileURLToPath(import.meta.url)))
 const baselinePath = path.join(frontendDir, 'typecheck-baseline.txt')
 const update = process.argv.includes('--update')
 
-const ERROR_HEAD = /^(.+?)\((\d+),(\d+)\): error (TS\d+): (.*)$/
+const ERROR_HEAD = /^(.+?)\((\d+),(\d+)\): error (TS\d+): (.*)\r?$/
 
 function runVueTsc() {
 	const result = spawnSync(
-		path.join(frontendDir, 'node_modules', '.bin', 'vue-tsc'),
-		['--noEmit', '-p', 'tsconfig.json'],
+		process.execPath,
+		[path.join(frontendDir, 'node_modules', 'vue-tsc', 'bin', 'vue-tsc.js'), '--noEmit', '-p', 'tsconfig.json'],
 		{ cwd: frontendDir, encoding: 'utf8' },
 	)
 	const output = `${result.stdout || ''}${result.stderr || ''}`
