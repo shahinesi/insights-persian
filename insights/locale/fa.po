@@ -26,11 +26,11 @@ msgstr "۱:۱"
 #. Option for the 'Cardinality' (Select) field in DocType 'Insights Table Link'
 #: insights/insights/doctype/insights_table_link/insights_table_link.json
 msgid "1:N"
-msgstr ""
+msgstr "1:N"
 
 #: insights/insights/doctype/insights_workbook_folder/insights_workbook_folder.py:35
 msgid "A folder cannot be its own parent"
-msgstr ""
+msgstr "یک پوشه نمی‌تواند والد خودش باشد"
 
 #. Label of the api_configuration_section (Section Break) field in DocType
 #. 'Insights Data Source v3'
@@ -189,7 +189,7 @@ msgstr "اجازهٔ زیرپرس‌وجو"
 #. Label of the allow_imports (Check) field in DocType 'Insights Data Source'
 #: insights/insights/doctype/insights_data_source/insights_data_source.json
 msgid "Allow Table Import"
-msgstr ""
+msgstr "اجازهٔ وارد کردن جدول"
 
 #. Label of the allowed_origins (Data) field in DocType 'Insights Settings'
 #: insights/insights/doctype/insights_settings/insights_settings.json
@@ -217,7 +217,7 @@ msgstr "هر کسی که پیوند را داشته باشد می‌تواند �
 #. Table Import'
 #: insights/insights/doctype/insights_table_import/insights_table_import.json
 msgid "Append"
-msgstr ""
+msgstr "الحاق"
 
 #. Option for the 'Sync Strategy' (Select) field in DocType 'Insights Table v3'
 #: insights/insights/doctype/insights_table_v3/insights_table_v3.json
@@ -399,7 +399,7 @@ msgstr "پوشهٔ خالی نیست و نمی‌توان آن را حذف کر�
 #. Label of the cardinality (Select) field in DocType 'Insights Table Link'
 #: insights/insights/doctype/insights_table_link/insights_table_link.json
 msgid "Cardinality"
-msgstr ""
+msgstr "نوع رابطه"
 
 #. Label of the channel (Select) field in DocType 'Insights Alert'
 #: frontend/src2/query/components/AlertSetupDialog.vue:171
@@ -692,7 +692,7 @@ msgstr "عبارت Cron برای زمان‌بندی اسکریپت. توجه: �
 #. Option for the 'Type' (Select) field in DocType 'Insights Query Transform'
 #: insights/insights/doctype/insights_query_transform/insights_query_transform.json
 msgid "CumulativeSum"
-msgstr ""
+msgstr "مجموع تجمعی"
 
 #. Label of the sync_cursor_column (Data) field in DocType 'Insights Table v3'
 #: insights/insights/doctype/insights_table_v3/insights_table_v3.json
@@ -846,7 +846,7 @@ msgstr "تاریخ و زمان"
 #. Option for the 'Type' (Select) field in DocType 'Insights Table Column'
 #: insights/insights/doctype/insights_table_column/insights_table_column.json
 msgid "Decimal"
-msgstr ""
+msgstr "عدد اعشاری"
 
 #: frontend/src2/dashboard/DashboardFilterEditor.vue:236
 msgid "Default Value"
@@ -1045,17 +1045,17 @@ msgstr "تعداد اجراها"
 #. Option for the 'Status' (Select) field in DocType 'Insights Query'
 #: insights/insights/doctype/insights_query/insights_query.json
 msgid "Execution Failed"
-msgstr ""
+msgstr "اجرا ناموفق بود"
 
 #. Option for the 'Status' (Select) field in DocType 'Insights Query'
 #: insights/insights/doctype/insights_query/insights_query.json
 msgid "Execution Successful"
-msgstr ""
+msgstr "اجرا موفق بود"
 
 #. Label of the execution_time (Float) field in DocType 'Insights Query'
 #: insights/insights/doctype/insights_query/insights_query.json
 msgid "Execution Time (seconds)"
-msgstr ""
+msgstr "زمان اجرا (ثانیه)"
 
 #: frontend/src2/components/AppSidebar.vue:26
 msgid "Expand"
@@ -1188,7 +1188,7 @@ msgstr "پوشهٔ {0} وجود ندارد."
 
 #: insights/insights/doctype/insights_workbook_folder/insights_workbook_folder.py:40
 msgid "Folders can only be nested up to {0} levels deep"
-msgstr ""
+msgstr "پوشه‌ها را حداکثر می‌توان تا عمق {0} سطح تو در تو کرد"
 
 #: frontend/src2/dashboard/DashboardBuilder.vue:151
 msgid "Force Refresh"
@@ -1201,23 +1201,23 @@ msgstr "اجرای اجباری"
 #. Label of the foreign_key (Data) field in DocType 'Insights Table Link'
 #: insights/insights/doctype/insights_table_link/insights_table_link.json
 msgid "Foreign Key"
-msgstr ""
+msgstr "کلید خارجی"
 
 #. Label of the foreign_table (Data) field in DocType 'Insights Table Link'
 #: insights/insights/doctype/insights_table_link/insights_table_link.json
 msgid "Foreign Table"
-msgstr ""
+msgstr "جدول خارجی"
 
 #. Label of the foreign_table_label (Data) field in DocType 'Insights Table
 #. Link'
 #: insights/insights/doctype/insights_table_link/insights_table_link.json
 msgid "Foreign Table Label"
-msgstr ""
+msgstr "برچسب جدول خارجی"
 
 #. Label of the format_option (Code) field in DocType 'Insights Query Column'
 #: insights/insights/doctype/insights_query_column/insights_query_column.json
 msgid "Format Option"
-msgstr ""
+msgstr "گزینهٔ قالب‌بندی"
 
 #: frontend/src2/query/components/NativeQueryEditor.vue:65
 msgid "Format SQL"
@@ -1389,7 +1389,7 @@ msgstr "هشدار Insights"
 #. Name of a DocType
 #: insights/insights/doctype/insights_chart/insights_chart.json
 msgid "Insights Chart"
-msgstr ""
+msgstr "نمودار Insights"
 
 #. Name of a DocType
 #: insights/insights/doctype/insights_chart_v3/insights_chart_v3.json
@@ -1399,7 +1399,7 @@ msgstr "نمودار Insights (نسخه 3)"
 #. Name of a DocType
 #: insights/insights/doctype/insights_dashboard/insights_dashboard.json
 msgid "Insights Dashboard"
-msgstr ""
+msgstr "داشبورد Insights"
 
 #. Name of a DocType
 #: insights/insights/doctype/insights_dashboard_chart_v3/insights_dashboard_chart_v3.json
@@ -1409,7 +1409,7 @@ msgstr "نمودار داشبورد Insights (نسخه 3)"
 #. Name of a DocType
 #: insights/insights/doctype/insights_dashboard_item/insights_dashboard_item.json
 msgid "Insights Dashboard Item"
-msgstr ""
+msgstr "عنصر داشبورد Insights"
 
 #. Name of a DocType
 #: insights/insights/doctype/insights_dashboard_v3/insights_dashboard_v3.json
@@ -1419,7 +1419,7 @@ msgstr "داشبورد Insights (نسخه 3)"
 #. Name of a DocType
 #: insights/insights/doctype/insights_data_source/insights_data_source.json
 msgid "Insights Data Source"
-msgstr ""
+msgstr "منبع دادهٔ Insights"
 
 #. Name of a DocType
 #: insights/insights/doctype/insights_data_source_v3/insights_data_source_v3.json
@@ -1434,27 +1434,27 @@ msgstr "پوشهٔ Insights"
 #. Name of a DocType
 #: insights/insights/doctype/insights_notebook/insights_notebook.json
 msgid "Insights Notebook"
-msgstr ""
+msgstr "دفترچهٔ Insights"
 
 #. Name of a DocType
 #: insights/insights/doctype/insights_notebook_page/insights_notebook_page.json
 msgid "Insights Notebook Page"
-msgstr ""
+msgstr "صفحهٔ دفترچهٔ Insights"
 
 #. Name of a DocType
 #: insights/insights/doctype/insights_query/insights_query.json
 msgid "Insights Query"
-msgstr ""
+msgstr "پرس‌وجوی Insights"
 
 #. Name of a DocType
 #: insights/insights/doctype/insights_query_chart/insights_query_chart.json
 msgid "Insights Query Chart"
-msgstr ""
+msgstr "نمودار پرس‌وجوی Insights"
 
 #. Name of a DocType
 #: insights/insights/doctype/insights_query_column/insights_query_column.json
 msgid "Insights Query Column"
-msgstr ""
+msgstr "ستون پرس‌وجوی Insights"
 
 #. Name of a DocType
 #: insights/insights/doctype/insights_query_execution_log/insights_query_execution_log.json
@@ -1469,17 +1469,17 @@ msgstr "مرجع پرس‌وجوی Insights"
 #. Name of a DocType
 #: insights/insights/doctype/insights_query_result/insights_query_result.json
 msgid "Insights Query Result"
-msgstr ""
+msgstr "نتیجهٔ پرس‌وجوی Insights"
 
 #. Name of a DocType
 #: insights/insights/doctype/insights_query_table/insights_query_table.json
 msgid "Insights Query Table"
-msgstr ""
+msgstr "جدول پرس‌وجوی Insights"
 
 #. Name of a DocType
 #: insights/insights/doctype/insights_query_transform/insights_query_transform.json
 msgid "Insights Query Transform"
-msgstr ""
+msgstr "تبدیل پرس‌وجوی Insights"
 
 #. Name of a DocType
 #: insights/insights/doctype/insights_query_variable/insights_query_variable.json
@@ -1509,17 +1509,17 @@ msgstr "تنظیمات Insights"
 #. Name of a DocType
 #: insights/insights/doctype/insights_table/insights_table.json
 msgid "Insights Table"
-msgstr ""
+msgstr "جدول Insights"
 
 #. Name of a DocType
 #: insights/insights/doctype/insights_table_column/insights_table_column.json
 msgid "Insights Table Column"
-msgstr ""
+msgstr "ستون جدول Insights"
 
 #. Name of a DocType
 #: insights/insights/doctype/insights_table_import/insights_table_import.json
 msgid "Insights Table Import"
-msgstr ""
+msgstr "واردسازی جدول Insights"
 
 #. Name of a DocType
 #: insights/insights/doctype/insights_table_import_job/insights_table_import_job.json
@@ -1534,7 +1534,7 @@ msgstr "گزارش واردسازی جدول در Insights"
 #. Name of a DocType
 #: insights/insights/doctype/insights_table_link/insights_table_link.json
 msgid "Insights Table Link"
-msgstr ""
+msgstr "پیوند جدول Insights"
 
 #. Name of a DocType
 #: insights/insights/doctype/insights_table_link_v3/insights_table_link_v3.json
@@ -1597,12 +1597,12 @@ msgstr "دفترکار Insights"
 #. Name of a DocType
 #: insights/insights/doctype/insights_workbook_folder/insights_workbook_folder.json
 msgid "Insights Workbook Folder"
-msgstr ""
+msgstr "پوشهٔ دفترکار Insights"
 
 #. Option for the 'Type' (Select) field in DocType 'Insights Table Column'
 #: insights/insights/doctype/insights_table_column/insights_table_column.json
 msgid "Integer"
-msgstr ""
+msgstr "عدد صحیح"
 
 #. Label of the integrations_section (Section Break) field in DocType 'Insights
 #. Settings'
@@ -1634,7 +1634,7 @@ msgstr "دعوت شده توسط"
 #. Label of the is_assisted_query (Check) field in DocType 'Insights Query'
 #: insights/insights/doctype/insights_query/insights_query.json
 msgid "Is Assisted Query"
-msgstr ""
+msgstr "پرس‌وجوی کمکی است"
 
 #. Label of the is_builder_query (Check) field in DocType 'Insights Query v3'
 #: insights/insights/doctype/insights_query_v3/insights_query_v3.json
@@ -1654,7 +1654,7 @@ msgstr "گسترش‌یافته است"
 #. Label of the is_expression (Check) field in DocType 'Insights Query Column'
 #: insights/insights/doctype/insights_query_column/insights_query_column.json
 msgid "Is Expression"
-msgstr ""
+msgstr "عبارت است"
 
 #. Label of the is_frappe_db (Check) field in DocType 'Insights Data Source v3'
 #: insights/insights/doctype/insights_data_source_v3/insights_data_source_v3.json
@@ -1682,12 +1682,12 @@ msgstr "عمومی است"
 #. Label of the is_query_based (Check) field in DocType 'Insights Table'
 #: insights/insights/doctype/insights_table/insights_table.json
 msgid "Is Query Based"
-msgstr ""
+msgstr "مبتنی بر پرس‌وجو است"
 
 #. Label of the is_saved_as_table (Check) field in DocType 'Insights Query'
 #: insights/insights/doctype/insights_query/insights_query.json
 msgid "Is Saved as Table"
-msgstr ""
+msgstr "به‌صورت جدول ذخیره شده است"
 
 #. Label of the is_script_query (Check) field in DocType 'Insights Query'
 #. Label of the is_script_query (Check) field in DocType 'Insights Query v3'
@@ -1888,7 +1888,7 @@ msgstr "لاگ‌ها"
 #. Option for the 'Type' (Select) field in DocType 'Insights Table Column'
 #: insights/insights/doctype/insights_table_column/insights_table_column.json
 msgid "Long Int"
-msgstr ""
+msgstr "عدد صحیح بلند"
 
 #. Option for the 'Type' (Select) field in DocType 'Insights Table Column'
 #: insights/insights/doctype/insights_table_column/insights_table_column.json
@@ -1985,12 +1985,12 @@ msgstr "انتقال به پوشه"
 #. Option for the 'Cardinality' (Select) field in DocType 'Insights Table Link'
 #: insights/insights/doctype/insights_table_link/insights_table_link.json
 msgid "N:1"
-msgstr ""
+msgstr "N:1"
 
 #. Option for the 'Cardinality' (Select) field in DocType 'Insights Table Link'
 #: insights/insights/doctype/insights_table_link/insights_table_link.json
 msgid "N:N"
-msgstr ""
+msgstr "N:N"
 
 #. Label of the column (Data) field in DocType 'Insights Query Column'
 #: frontend/src2/components/VariablesDialog.vue:84
@@ -2133,7 +2133,7 @@ msgstr "هیچ کدام"
 #. Label of the notebook (Link) field in DocType 'Insights Notebook Page'
 #: insights/insights/doctype/insights_notebook_page/insights_notebook_page.json
 msgid "Notebook"
-msgstr ""
+msgstr "دفترچه"
 
 #: frontend/src2/dashboard/DashboardList.vue:87
 #: frontend/src2/dashboard/DashboardList.vue:92
@@ -2201,7 +2201,7 @@ msgstr "سازمان"
 #. Table Import'
 #: insights/insights/doctype/insights_table_import/insights_table_import.json
 msgid "Overwrite"
-msgstr ""
+msgstr "بازنویسی"
 
 #: frontend/src2/data_source/DataSourceList.vue:106
 #: frontend/src2/teams/TeamList.vue:34
@@ -2212,7 +2212,7 @@ msgstr "مالک"
 #. Folder'
 #: insights/insights/doctype/insights_workbook_folder/insights_workbook_folder.json
 msgid "Parent Folder"
-msgstr ""
+msgstr "پوشهٔ والد"
 
 #. Label of the parquet_file (Text) field in DocType 'Insights Table Import
 #. Log'
@@ -2243,7 +2243,7 @@ msgstr "انتظار"
 #. Option for the 'Status' (Select) field in DocType 'Insights Query'
 #: insights/insights/doctype/insights_query/insights_query.json
 msgid "Pending Execution"
-msgstr ""
+msgstr "در انتظار اجرا"
 
 #: frontend/src2/settings/Settings.vue:38
 msgid "Permissions"
@@ -2290,7 +2290,7 @@ msgstr "پورت"
 #. Label of the layout (JSON) field in DocType 'Insights Dashboard Item'
 #: insights/insights/doctype/insights_dashboard_item/insights_dashboard_item.json
 msgid "Position & Size"
-msgstr ""
+msgstr "موقعیت و اندازه"
 
 #. Option for the 'Database Type' (Select) field in DocType 'Insights Data
 #. Source'
@@ -2310,7 +2310,7 @@ msgstr "پیش‌نمایش تصویر"
 #. Label of the primary_key (Data) field in DocType 'Insights Table Link'
 #: insights/insights/doctype/insights_table_link/insights_table_link.json
 msgid "Primary Key"
-msgstr ""
+msgstr "کلید اصلی"
 
 #. Label of the sync_primary_key_column (Data) field in DocType 'Insights Table
 #. v3'
@@ -2327,7 +2327,7 @@ msgstr "نمایه"
 #: insights/insights/doctype/insights_chart/insights_chart.json
 #: insights/insights/doctype/insights_dashboard/insights_dashboard.json
 msgid "Public Key"
-msgstr ""
+msgstr "کلید عمومی"
 
 #: frontend/src2/query/components/source_selector/SourceSelectorDialog.vue:89
 #: frontend/src2/query/components/source_selector/WorkbookQueryList.vue:59
@@ -2488,18 +2488,18 @@ msgstr "نتیجه"
 #. Label of the results_row_count (Int) field in DocType 'Insights Query'
 #: insights/insights/doctype/insights_query/insights_query.json
 msgid "Result Row Count"
-msgstr ""
+msgstr "تعداد ردیف‌های نتیجه"
 
 #. Label of the results (Code) field in DocType 'Insights Query Result'
 #: insights/insights/doctype/insights_query_result/insights_query_result.json
 msgid "Results"
-msgstr ""
+msgstr "نتایج"
 
 #. Label of the results_row_count (Int) field in DocType 'Insights Query
 #. Result'
 #: insights/insights/doctype/insights_query_result/insights_query_result.json
 msgid "Results Row Count"
-msgstr ""
+msgstr "تعداد ردیف‌های نتایج"
 
 #: frontend/src2/charts/components/DonutChartConfigForm.vue:60
 #: frontend/src2/charts/components/SankeyChartConfigForm.vue:71
@@ -2533,7 +2533,7 @@ msgstr "اندازهٔ ردیف (KB)"
 #. Label of the rows (Int) field in DocType 'Insights Table Import'
 #: insights/insights/doctype/insights_table_import/insights_table_import.json
 msgid "Rows"
-msgstr ""
+msgstr "ردیف‌ها"
 
 #. Label of the rows_imported (Int) field in DocType 'Insights Table Import
 #. Log'
@@ -2619,7 +2619,7 @@ msgstr "اسکریپت"
 #. Label of the script_log (Text) field in DocType 'Insights Query'
 #: insights/insights/doctype/insights_query/insights_query.json
 msgid "Script Log"
-msgstr ""
+msgstr "گزارش اجرای اسکریپت"
 
 #: frontend/src2/data_store/DataStoreList.vue:92
 #: frontend/src2/query/components/QueryAlertsDialog.vue:102
@@ -2883,7 +2883,7 @@ msgstr "ذخیره‌شده"
 #. Option for the 'Type' (Select) field in DocType 'Insights Table Column'
 #: insights/insights/doctype/insights_table_column/insights_table_column.json
 msgid "String"
-msgstr ""
+msgstr "رشته"
 
 #. Option for the 'Status' (Select) field in DocType 'Insights Table Import'
 #: insights/insights/doctype/insights_table_import/insights_table_import.json
@@ -2977,7 +2977,7 @@ msgstr "جدول وارد شد"
 #: insights/insights/doctype/insights_query_column/insights_query_column.json
 #: insights/insights/doctype/insights_table_import/insights_table_import.json
 msgid "Table Label"
-msgstr ""
+msgstr "برچسب جدول"
 
 #. Label of the table_name (Data) field in DocType 'Insights Query Reference'
 #. Label of the table_name (Data) field in DocType 'Insights Table Import'
@@ -3222,7 +3222,7 @@ msgstr "تعداد یکتای…"
 #. Option for the 'Type' (Select) field in DocType 'Insights Query Transform'
 #: insights/insights/doctype/insights_query_transform/insights_query_transform.json
 msgid "Unpivot"
-msgstr ""
+msgstr "تبدیل ستون‌ها به ردیف"
 
 #: frontend/src2/query/components/AlertSetupDialog.vue:129
 msgid "Update Alert"
