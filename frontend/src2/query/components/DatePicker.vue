@@ -46,6 +46,7 @@ import type { DateRangeValue } from 'frappe-ui'
 import { DateCalendar, DateRangeCalendar } from 'frappe-ui/experimental'
 import session from '../../session'
 import { formatLocaleDate } from '../../helpers/locale_format'
+import { __ } from '../../translation'
 import { formatDatePickerInput, getDatePickerCalendar, parseDatePickerInput } from './date_picker'
 
 const props = defineProps({
