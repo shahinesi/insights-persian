@@ -1,5 +1,10 @@
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import { calendarSpanFilter, jalaliPeriodRange, resolvePersianSpan } from './calendar'
+
+vi.mock('frappe-ui', async () => ({
+	dayjs: (await import('dayjs')).default,
+	call: () => Promise.resolve(),
+}))
 
 describe('Jalali filter periods', () => {
 	it('resolves a Persian month to canonical Gregorian endpoints', () => {
