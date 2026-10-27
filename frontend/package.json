@@ -21,6 +21,7 @@
 		"postinstall": "patch-package --patch-dir node_modules/@framework/ui/patches"
 	},
 	"dependencies": {
+		"@persian-tools/persian-tools": "^4.0.4",
 		"@codemirror/lang-javascript": "^6.0.2",
 		"@codemirror/lang-python": "^6.1.3",
 		"@codemirror/lang-sql": "^6.4.0",
@@ -35,8 +36,9 @@
 		"echarts": "^6.1.0",
 		"es-toolkit": "^1.34.1",
 		"feather-icons": "^4.28.0",
-		"frappe-ui": "github:shahinesi/frappe-ui-persian#e85a5450bab1bf37ab349fdf7b84df0c37a5231f",
+		"frappe-ui": "github:shahinesi/frappe-ui-persian#90431747e6e9ea61034ae70fcb03f3ade71f633d",
 		"html-to-image": "^1.11.13",
+		"jalaali-js": "^2.0.1",
 		"lucide-vue-next": "^0.484.0",
 		"pinia": "^2.0.30",
 		"reka-ui": "^2.9.9",

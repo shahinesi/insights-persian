@@ -36,7 +36,8 @@ describe('last run age', () => {
 		const lastRun = new Date('2026-10-26T10:00:00Z')
 
 		const persian = lastRunText(lastRun, 'fa-IR', '2 hours ago', now)
-		expect(persian).toMatch(/[۰-۹]/)
+		expect(persian).toMatch(/[0-9]/)
+		expect(persian).not.toMatch(/[۰-۹٠-٩]/)
 		expect(persian).toContain('پیش')
 		expect(lastRunText(lastRun, 'en-US', '2 hours ago', now)).toBe('2 hours ago')
 	})

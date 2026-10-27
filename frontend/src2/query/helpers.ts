@@ -327,6 +327,17 @@ function formatDateBy(date: string, granularity: string, formats: Record<string,
 		const fiscalStartThisYear = d.month(fiscalStartMonth).date(fiscalStartDay)
 		const startYear = d.isBefore(fiscalStartThisYear) ? d.year() - 1 : d.year()
 		const endYear = startYear + 1
+		if (isPersian) {
+			const fiscalStart = dayjs(fiscalYearStart).year(startYear)
+			const fiscalEnd = fiscalStart.add(1, 'year').subtract(1, 'day')
+			const years = formatLocaleDateRange(
+				fiscalStart.format('YYYY-MM-DD'),
+				fiscalEnd.format('YYYY-MM-DD'),
+				locale,
+				{ year: 'numeric' },
+			)
+			return `${__('Fiscal Year')} ${years}`
+		}
 
 		return `FY ${startYear}-${String(endYear).slice(-2)}`
 	}

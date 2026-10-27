@@ -11,6 +11,7 @@ function translationFor(message: string) {
 }
 
 describe('share dialog tooltip localization', () => {
+	// @feature shared.share-tooltip-localization
 	it('routes copy tooltip labels through the translation function', () => {
 		expect(chartShare).toContain(':text="__(\'Copy Link\')"')
 		expect(chartShare).toContain(':text="__(\'Copy iFrame\')"')
@@ -18,6 +19,7 @@ describe('share dialog tooltip localization', () => {
 		expect(dashboardShare).toContain(':text="__(\'Copy Embed\')"')
 	})
 
+	// @feature shared.share-tooltip-localization
 	it('provides Persian translations for every share tooltip', () => {
 		expect(translationFor('Copy Link')).toBe('کپی پیوند')
 		expect(translationFor('Copy iFrame')).toBe('کپی کد iframe')

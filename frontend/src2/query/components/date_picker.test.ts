@@ -1,11 +1,23 @@
 import { describe, expect, it } from 'vitest'
-import { formatDatePickerInput, parseDatePickerInput } from './date_picker'
+import {
+	formatDatePickerInput,
+	getDatePickerCalendar,
+	parseDatePickerInput,
+} from './date_picker'
 
 describe('query date picker input', () => {
 	// @feature query.filter-date-on-datetime
+	it('selects a calendar from the Insights locale, independent of document lang', () => {
+		expect(getDatePickerCalendar('fa-IR')).toBe('persian')
+		expect(getDatePickerCalendar('FA')).toBe('persian')
+		expect(getDatePickerCalendar('en-US')).toBe('gregorian')
+	})
+
+	// @feature query.filter-date-on-datetime
 	it('shows Jalali input while keeping a Gregorian ISO model value', () => {
 		const shown = formatDatePickerInput('2026-03-21', 'fa-IR')
-		expect(shown).toContain('۱۴۰۵/۰۱/۰۱')
+		expect(shown).toContain('1405/01/01')
+		expect(shown).not.toMatch(/[۰-۹٠-٩]/)
 		expect(parseDatePickerInput(shown, 'fa-IR')).toBe('2026-03-21')
 	})
 

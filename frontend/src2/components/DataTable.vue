@@ -40,6 +40,7 @@ import {
 import { RESULT_GRID_HOST } from './result_pane/result_grid'
 import DataTableColumn from './DataTableColumn.vue'
 import DataTableFooter from './DataTableFooter.vue'
+import session from '../session'
 
 const props = defineProps<{
 	columns: QueryResultColumn[] | undefined
@@ -379,7 +380,13 @@ function matchedRuleColor(colName: string, val: any, rules: FormattingMode[]): s
 		} else if (format.mode === 'text_rules') {
 			if (applyTextRule(value, format as text_rules)) return format.color
 		} else if (format.mode === 'date_rules') {
-			if (applyDateRule(value, format as date_rules)) return format.color
+			if (
+				applyDateRule(value, format as date_rules, {
+					locale: session.user.locale,
+					weekStartsOn: session.site.week_starts_on,
+				})
+			)
+				return format.color
 		} else if (format.mode === 'rank_rules') {
 			const allColumnValues = valuesOf(colName).map((value) =>
 				normalizeCellValue(colName, value),

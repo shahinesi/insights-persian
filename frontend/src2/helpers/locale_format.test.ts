@@ -10,14 +10,21 @@ import {
 
 describe('locale display formatting', () => {
 	// @feature charts.x-axis
-	it('uses the Jalali calendar and Persian digits for Persian dates', () => {
+	it('uses the Jalali calendar and canonical digits for Persian dates', () => {
 		expect(
 			formatLocaleDate('2025-03-20', 'fa-IR', {
 				year: 'numeric',
 				month: '2-digit',
 				day: '2-digit',
 			}),
-		).toContain('۱۴۰۳/۱۲/۳۰')
+		).toContain('1403/12/30')
+		expect(
+			formatLocaleDate('2025-03-21', 'fa-IR', {
+				year: 'numeric',
+				month: 'short',
+				day: 'numeric',
+			}),
+		).toContain('فروردین')
 	})
 
 	// @feature charts.x-axis
@@ -38,12 +45,12 @@ describe('locale display formatting', () => {
 			formatLocaleDate('2026-03-21', 'fa-IR', {
 				year: 'numeric', month: '2-digit', day: '2-digit',
 			}),
-		).toContain('۱۴۰۵/۰۱/۰۱')
+		).toContain('1405/01/01')
 		expect(
 			formatLocaleDate('2026-03-20T20:30:00Z', 'fa-IR', {
 				year: 'numeric', month: '2-digit', day: '2-digit', timeZone: 'Asia/Tehran',
 			}),
-		).toContain('۱۴۰۵/۰۱/۰۱')
+		).toContain('1405/01/01')
 	})
 
 	// @feature charts.x-axis
@@ -52,13 +59,13 @@ describe('locale display formatting', () => {
 			formatLocaleDateRange('2026-03-01', '2026-03-31', 'fa-IR', {
 				year: 'numeric', month: 'short', day: 'numeric',
 			}),
-		).toContain('۱۴۰۴')
+		).toContain('1404')
 	})
 
 	// @feature query.filter-number-range
 	it('formats numbers in the selected locale', () => {
-		expect(formatLocaleNumber(1250, 'fa-IR')).toBe('۱٬۲۵۰')
-		expect(formatLocaleNumber(0.75, 'fa-IR', { style: 'percent' })).toContain('۷۵')
+		expect(formatLocaleNumber(1250, 'fa-IR')).toBe('1,250')
+		expect(formatLocaleNumber(0.75, 'fa-IR', { style: 'percent' })).toContain('75')
 		expect(formatLocaleNumber(Number.NaN, 'fa-IR')).not.toBe('NaN')
 		expect(formatLocaleNumber(Number.NaN, 'en-US')).toBe('NaN')
 		expect(parseLocaleNumber('۱٬۲۵۰٫۵')).toBe(1250.5)
@@ -70,11 +77,13 @@ describe('locale display formatting', () => {
 		expect(formatLocaleDate('2026-02-30', 'fa-IR')).toBe('')
 	})
 
-	it('formats relative time in Persian digits and preserves English phrasing', () => {
+	// @feature query.filter-date-on-datetime
+	it('formats relative time with canonical digits and preserves English phrasing', () => {
 		const now = new Date('2026-10-26T12:00:00Z')
 		const past = '2026-10-26T10:00:00Z'
 		const persian = formatLocaleRelativeTime(past, 'fa-IR', now)
-		expect(persian).toMatch(/[۰-۹]/)
+		expect(persian).toMatch(/2/)
+		expect(persian).not.toMatch(/[۰-۹٠-٩]/)
 		expect(persian).toContain('پیش')
 		expect(formatLocaleRelativeTime(past, 'en-US', now)).toBe('2 hours ago')
 		expect(formatLocaleRelativeTime('invalid', 'fa-IR', now)).toBe('')

@@ -42,13 +42,13 @@ msgstr "پیکربندی API"
 #. Data Source v3'
 #: insights/insights/doctype/insights_data_source_v3/insights_data_source_v3.json
 msgid "API Key / Bearer Token"
-msgstr ""
+msgstr "کلید API / توکن Bearer"
 
 #. Label of the api_password (Password) field in DocType 'Insights Data Source
 #. v3'
 #: insights/insights/doctype/insights_data_source_v3/insights_data_source_v3.json
 msgid "API Password"
-msgstr ""
+msgstr "گذرواژهٔ API"
 
 #. Label of the api_token (Password) field in DocType 'Insights Data Source v3'
 #: insights/insights/doctype/insights_data_source_v3/insights_data_source_v3.json
@@ -179,12 +179,12 @@ msgstr "همه"
 #. Label of the allow_download (Check) field in DocType 'Insights Settings'
 #: insights/insights/doctype/insights_settings/insights_settings.json
 msgid "Allow Data Download"
-msgstr ""
+msgstr "اجازهٔ دریافت داده"
 
 #. Label of the allow_subquery (Check) field in DocType 'Insights Settings'
 #: insights/insights/doctype/insights_settings/insights_settings.json
 msgid "Allow Subquery"
-msgstr ""
+msgstr "اجازهٔ زیرپرس‌وجو"
 
 #. Label of the allow_imports (Check) field in DocType 'Insights Data Source'
 #: insights/insights/doctype/insights_data_source/insights_data_source.json
@@ -194,7 +194,7 @@ msgstr ""
 #. Label of the allowed_origins (Data) field in DocType 'Insights Settings'
 #: insights/insights/doctype/insights_settings/insights_settings.json
 msgid "Allowed Origins"
-msgstr ""
+msgstr "مبدأهای مجاز"
 
 #: frontend/src2/query/components/FormatRule.vue:161
 msgid "Amber"
@@ -207,11 +207,11 @@ msgstr "اصلاح شده از"
 
 #: frontend/src2/dashboard/DashboardShareDialog.vue:110
 msgid "Anyone in the organization can view"
-msgstr ""
+msgstr "همهٔ اعضای سازمان می‌توانند مشاهده کنند"
 
 #: frontend/src2/dashboard/DashboardShareDialog.vue:106
 msgid "Anyone with the link can view"
-msgstr ""
+msgstr "هر کسی که پیوند را داشته باشد می‌تواند مشاهده کند"
 
 #. Option for the 'Action if table exists' (Select) field in DocType 'Insights
 #. Table Import'
@@ -222,7 +222,7 @@ msgstr ""
 #. Option for the 'Sync Strategy' (Select) field in DocType 'Insights Table v3'
 #: insights/insights/doctype/insights_table_v3/insights_table_v3.json
 msgid "Append Only"
-msgstr ""
+msgstr "فقط الحاق"
 
 #: frontend/src2/query/components/UnionSelectorDialog.vue:116
 msgid "Append Rows"
@@ -244,7 +244,7 @@ msgstr "اعمال فیلترها"
 #. Settings'
 #: insights/insights/doctype/insights_settings/insights_settings.json
 msgid "Apply User Permissions"
-msgstr ""
+msgstr "اعمال مجوزهای کاربر"
 
 #: frontend/src2/query/components/AddOperationPopover.vue:81
 msgid "Apply a custom operation using python script"
@@ -262,18 +262,18 @@ msgstr "آیا مطمئن هستید که می‌خواهید وارد پیشخ�
 #. Data Source v3'
 #: insights/insights/doctype/insights_data_source_v3/insights_data_source_v3.json
 msgid "Authentication Type"
-msgstr ""
+msgstr "نوع احراز هویت"
 
 #. Label of the auto_execute_query (Check) field in DocType 'Insights Settings'
 #: insights/insights/doctype/insights_settings/insights_settings.json
 msgid "Auto Execute Query"
-msgstr ""
+msgstr "اجرای خودکار پرس‌وجو"
 
 #. Description of the 'Vertical Compact Layout' (Check) field in DocType
 #. 'Insights Dashboard v3'
 #: insights/insights/doctype/insights_dashboard_v3/insights_dashboard_v3.json
 msgid "Automatically arrange cards vertically to fill empty spaces"
-msgstr ""
+msgstr "چیدمان خودکار عمودی کارت‌ها برای پرکردن فضای خالی"
 
 #: frontend/src2/charts/components/MeasurePicker.vue:138
 msgid "Average of..."
@@ -288,7 +288,7 @@ msgstr "URL پایه"
 #. Data Source v3'
 #: insights/insights/doctype/insights_data_source_v3/insights_data_source_v3.json
 msgid "Basic Authentication"
-msgstr ""
+msgstr "احراز هویت پایه"
 
 #. Label of the batch_size (Int) field in DocType 'Insights Table Import Log'
 #: insights/insights/doctype/insights_table_import_log/insights_table_import_log.json
@@ -299,7 +299,7 @@ msgstr "اندازه دسته"
 #. v3'
 #: insights/insights/doctype/insights_table_v3/insights_table_v3.json
 msgid "Before Import Script"
-msgstr ""
+msgstr "اسکریپت پیش از واردسازی"
 
 #: frontend/src2/query/components/FormatRule.vue:204
 msgid "Below average"
@@ -309,31 +309,31 @@ msgstr "پایین‌تر از متوسط"
 #. Source v3'
 #: insights/insights/doctype/insights_data_source_v3/insights_data_source_v3.json
 msgid "BigQuery"
-msgstr ""
+msgstr "BigQuery"
 
 #. Label of the bigquery_configuration_section (Section Break) field in DocType
 #. 'Insights Data Source v3'
 #: insights/insights/doctype/insights_data_source_v3/insights_data_source_v3.json
 msgid "BigQuery Configuration"
-msgstr ""
+msgstr "پیکربندی BigQuery"
 
 #. Label of the bigquery_dataset_id (Data) field in DocType 'Insights Data
 #. Source v3'
 #: insights/insights/doctype/insights_data_source_v3/insights_data_source_v3.json
 msgid "BigQuery Dataset ID"
-msgstr ""
+msgstr "شناسهٔ مجموعه‌دادهٔ BigQuery"
 
 #. Label of the bigquery_project_id (Data) field in DocType 'Insights Data
 #. Source v3'
 #: insights/insights/doctype/insights_data_source_v3/insights_data_source_v3.json
 msgid "BigQuery Project ID"
-msgstr ""
+msgstr "شناسهٔ پروژهٔ BigQuery"
 
 #. Label of the bigquery_service_account_key (JSON) field in DocType 'Insights
 #. Data Source v3'
 #: insights/insights/doctype/insights_data_source_v3/insights_data_source_v3.json
 msgid "BigQuery Service Account Key (JSON)"
-msgstr ""
+msgstr "کلید حساب سرویس BigQuery (JSON)"
 
 #: frontend/src2/charts/components/DonutChartConfigForm.vue:58
 msgid "Bottom"
@@ -349,16 +349,16 @@ msgstr "N مقدار پایینی"
 
 #: insights/insights/doctype/insights_table_import_job/insights_table_import_job.js:10
 msgid "Bulk Enqueue"
-msgstr ""
+msgstr "صف‌گذاری گروهی"
 
 #: insights/insights/doctype/insights_table_import_job/insights_table_import_job.js:49
 msgid "Bulk Enqueue Import Job"
-msgstr ""
+msgstr "صف‌گذاری گروهی کار واردسازی"
 
 #: insights/insights/doctype/insights_table_import_job/insights_table_import_job.js:24
 #: insights/insights/doctype/insights_table_import_job/insights_table_import_job.js:34
 msgid "Bulk Enqueue Progress"
-msgstr ""
+msgstr "پیشرفت صف‌گذاری گروهی"
 
 #: frontend/src2/components/ExportDialog.vue:46
 msgid "CSV"
@@ -367,7 +367,7 @@ msgstr "CSV"
 #. Label of the query_result_expiry (Int) field in DocType 'Insights Settings'
 #: insights/insights/doctype/insights_settings/insights_settings.json
 msgid "Cache Query Results For (Minutes)"
-msgstr ""
+msgstr "مدت نگهداری نتایج پرس‌وجو در حافظهٔ نهان (دقیقه)"
 
 #: frontend/src2/workbook/WorkbookShareDialog.vue:29
 #: frontend/src2/workbook/WorkbookShareDialog.vue:128
@@ -394,7 +394,7 @@ msgstr "لغو"
 
 #: insights/api/workbooks.py:426
 msgid "Cannot delete a folder that is not empty. Move its contents out first."
-msgstr ""
+msgstr "پوشهٔ خالی نیست و نمی‌توان آن را حذف کرد. ابتدا محتویات آن را جابه‌جا کنید."
 
 #. Label of the cardinality (Select) field in DocType 'Insights Table Link'
 #: insights/insights/doctype/insights_table_link/insights_table_link.json
@@ -450,11 +450,11 @@ msgstr "انتخاب ستون‌ها"
 #. v3'
 #: insights/insights/doctype/insights_table_v3/insights_table_v3.json
 msgid "Choose how incremental sync writes rows: <b>Append Only</b> adds new rows, while <b>Update or Insert</b> updates matching keys and inserts new rows."
-msgstr ""
+msgstr "نحوهٔ نوشتن ردیف‌ها در همگام‌سازی افزایشی را انتخاب کنید: <b>فقط الحاق</b> ردیف‌های جدید را می‌افزاید؛ <b>به‌روزرسانی یا درج</b> کلیدهای منطبق را به‌روزرسانی می‌کند و ردیف‌های جدید را درج می‌کند."
 
 #: insights/insights/doctype/insights_data_source_v3/ibis_utils.py:96
 msgid "Circular query reference detected while building \"{0}\""
-msgstr ""
+msgstr "هنگام ساخت «{0}»، ارجاع دوری به پرس‌وجو شناسایی شد."
 
 #: frontend/src2/dashboard/DashboardFilterEditor.vue:243
 #: frontend/src2/query/components/FiltersSelector.vue:143
@@ -463,14 +463,14 @@ msgstr "پاک کردن"
 
 #: insights/insights/doctype/insights_table_v3/insights_table_v3.js:13
 msgid "Clear Warehouse Data"
-msgstr ""
+msgstr "پاک‌کردن داده‌های انبار داده"
 
 #. Option for the 'Database Type' (Select) field in DocType 'Insights Data
 #. Source v3'
 #: frontend/src2/data_source/DataSourceList.vue:58
 #: insights/insights/doctype/insights_data_source_v3/insights_data_source_v3.json
 msgid "ClickHouse"
-msgstr ""
+msgstr "ClickHouse"
 
 #: frontend/src2/query/components/source_selector/SourceSelectorDialog.vue:130
 #: insights/insights/doctype/insights_table_v3/insights_table_v3.js:95
@@ -487,7 +487,7 @@ msgstr "رنگ"
 
 #: frontend/src2/query/components/FormattingSelector.vue:60
 msgid "Color Scale"
-msgstr ""
+msgstr "طیف رنگ"
 
 #. Label of the label (Data) field in DocType 'Insights Query Column'
 #. Label of the column (Data) field in DocType 'Insights Table Column'
@@ -514,7 +514,7 @@ msgstr "ستون‌ها"
 #. Settings'
 #: insights/insights/doctype/insights_settings/insights_settings.json
 msgid "Comma seperated URLs to whitelist for embedding charts & dashboards"
-msgstr ""
+msgstr "نشانی‌های URL مجاز برای جاسازی نمودارها و داشبوردها را با کاما از هم جدا کنید."
 
 #: frontend/src2/dashboard/DashboardBuilder.vue:163
 msgid "Compact Layout"
@@ -597,7 +597,7 @@ msgstr "اتصال به پایگاه داده PostgreSQL"
 #: insights/insights/doctype/insights_data_source/insights_data_source.json
 #: insights/insights/doctype/insights_data_source_v3/insights_data_source_v3.json
 msgid "Connection String"
-msgstr ""
+msgstr "رشتهٔ اتصال"
 
 #. Label of the content (Code) field in DocType 'Insights Notebook Page'
 #: frontend/src2/dashboard/DashboardText.vue:45
@@ -676,7 +676,7 @@ msgstr "ایجاد"
 #: frontend/src2/query/components/AlertSetupDialog.vue:163
 #: insights/insights/doctype/insights_alert/insights_alert.json
 msgid "Cron"
-msgstr ""
+msgstr "زمان‌بندی Cron"
 
 #. Label of the cron_format (Data) field in DocType 'Insights Alert'
 #: insights/insights/doctype/insights_alert/insights_alert.json
@@ -687,7 +687,7 @@ msgstr "فرمت Cron"
 #. Import Job'
 #: insights/insights/doctype/insights_table_import_job/insights_table_import_job.json
 msgid "Cron expression to schedule the script. Note: The scheduler checks for jobs every hour."
-msgstr ""
+msgstr "عبارت Cron برای زمان‌بندی اسکریپت. توجه: زمان‌بند هر ساعت کارها را بررسی می‌کند."
 
 #. Option for the 'Type' (Select) field in DocType 'Insights Query Transform'
 #: insights/insights/doctype/insights_query_transform/insights_query_transform.json
@@ -697,18 +697,18 @@ msgstr ""
 #. Label of the sync_cursor_column (Data) field in DocType 'Insights Table v3'
 #: insights/insights/doctype/insights_table_v3/insights_table_v3.json
 msgid "Cursor Column"
-msgstr ""
+msgstr "ستون نشانگر"
 
 #. Label of the custom_condition (Check) field in DocType 'Insights Alert'
 #: insights/insights/doctype/insights_alert/insights_alert.json
 msgid "Custom Condition"
-msgstr ""
+msgstr "شرط سفارشی"
 
 #. Label of the api_custom_headers (JSON) field in DocType 'Insights Data
 #. Source v3'
 #: insights/insights/doctype/insights_data_source_v3/insights_data_source_v3.json
 msgid "Custom Headers"
-msgstr ""
+msgstr "سرآیندهای سفارشی"
 
 #: frontend/src2/query/components/JoinSelectorDialog.vue:316
 msgid "Custom Join Condition"
@@ -722,7 +722,7 @@ msgstr "عملیات سفارشی"
 #. Source v3'
 #: insights/insights/doctype/insights_data_source_v3/insights_data_source_v3.json
 msgid "Custom headers for API requests (non-sensitive data only)"
-msgstr ""
+msgstr "سرآیندهای سفارشی برای درخواست‌های API (فقط داده‌های غیرحساس)"
 
 #. Option for the 'Frequency' (Select) field in DocType 'Insights Alert'
 #: insights/insights/doctype/insights_alert/insights_alert.json
@@ -742,21 +742,21 @@ msgstr "داشبوردها"
 
 #: frontend/src2/dashboard/DashboardList.vue:93
 msgid "Dashboards shared with you will show up here."
-msgstr ""
+msgstr "داشبوردهایی که با شما به‌اشتراک گذاشته شده‌اند، اینجا نمایش داده می‌شوند."
 
 #: frontend/src2/dashboard/DashboardList.vue:83
 msgid "Dashboards you open will show up here."
-msgstr ""
+msgstr "داشبوردهایی که باز می‌کنید، اینجا نمایش داده می‌شوند."
 
 #. Label of the data_backup (JSON) field in DocType 'Insights Workbook'
 #: insights/insights/doctype/insights_workbook/insights_workbook.json
 msgid "Data Backup"
-msgstr ""
+msgstr "پشتیبان‌گیری از داده"
 
 #. Label of the data_query (Link) field in DocType 'Insights Chart v3'
 #: insights/insights/doctype/insights_chart_v3/insights_chart_v3.json
 msgid "Data Query"
-msgstr ""
+msgstr "پرس‌وجوی داده"
 
 #. Label of the data_source (Link) field in DocType 'Insights Query'
 #. Label of the data_source (Data) field in DocType 'Insights Query Execution
@@ -827,7 +827,7 @@ msgstr "نام پایگاه داده"
 #: insights/insights/doctype/insights_data_source/insights_data_source.json
 #: insights/insights/doctype/insights_data_source_v3/insights_data_source_v3.json
 msgid "Database Type"
-msgstr ""
+msgstr "نوع پایگاه داده"
 
 #. Option for the 'Type' (Select) field in DocType 'Insights Table Column'
 #: insights/insights/doctype/insights_table_column/insights_table_column.json
@@ -905,7 +905,7 @@ msgstr "حذف موارد تکراری"
 #: frontend/src2/data_source/DataSourceList.vue:67
 #: insights/insights/doctype/insights_data_source_v3/insights_data_source_v3.json
 msgid "DuckDB"
-msgstr ""
+msgstr "DuckDB"
 
 #: frontend/src2/query/components/FiltersSelector.vue:120
 #: frontend/src2/workbook/WorkbookNavbarActions.vue:60
@@ -923,7 +923,7 @@ msgstr "تکثیر پرس‌وجو"
 #. Label of the time_taken (Int) field in DocType 'Insights Table Import Log'
 #: insights/insights/doctype/insights_table_import_log/insights_table_import_log.json
 msgid "Duration (Seconds)"
-msgstr ""
+msgstr "مدت‌زمان (ثانیه)"
 
 #: frontend/src2/dashboard/DashboardItemActions.vue:14
 msgid "Edit"
@@ -959,7 +959,7 @@ msgstr "خالی است؛ برای افزودن فیلتر روی «افزودن
 
 #: frontend/src2/workbook/WorkbookList.vue:160
 msgid "Empty Folder"
-msgstr ""
+msgstr "پوشهٔ خالی"
 
 #: frontend/src2/query/components/AlertSetupDialog.vue:123
 msgid "Enable Alert"
@@ -968,18 +968,18 @@ msgstr "فعال‌کردن هشدار"
 #. Label of the enable_data_store (Check) field in DocType 'Insights Settings'
 #: insights/insights/doctype/insights_settings/insights_settings.json
 msgid "Enable Data Store"
-msgstr ""
+msgstr "فعال‌سازی مخزن داده"
 
 #. Label of the enable_permissions (Check) field in DocType 'Insights Settings'
 #: insights/insights/doctype/insights_settings/insights_settings.json
 msgid "Enable Permissions"
-msgstr ""
+msgstr "فعال‌سازی مجوزها"
 
 #. Label of the enable_stored_procedure_execution (Check) field in DocType
 #. 'Insights Data Source v3'
 #: insights/insights/doctype/insights_data_source_v3/insights_data_source_v3.json
 msgid "Enable Stored Procedure Execution"
-msgstr ""
+msgstr "فعال‌سازی اجرای رویهٔ ذخیره‌شده"
 
 #. Label of the enabled (Check) field in DocType 'Insights Table Import Job'
 #: frontend/src2/query/components/QueryAlertsDialog.vue:44
@@ -997,7 +997,7 @@ msgstr "پایان یافته در"
 
 #: insights/insights/doctype/insights_table_import_job/insights_table_import_job.js:6
 msgid "Enqueue"
-msgstr ""
+msgstr "قرار دادن در صف"
 
 #: frontend/src2/components/ExportDialog.vue:60
 msgid "Enter filename"
@@ -1105,7 +1105,7 @@ msgstr "ناموفق"
 
 #: insights/insights/doctype/insights_table_v3/insights_table_v3.js:73
 msgid "Failed Syncs"
-msgstr ""
+msgstr "همگام‌سازی‌های ناموفق"
 
 #: frontend/src2/query/components/NativeQueryEditor.vue:55
 msgid "Failed to format SQL"
@@ -1131,12 +1131,12 @@ msgstr "موارد برگزیده"
 #: frontend/src2/query/components/QueryExecutionStatus.vue:18
 #: frontend/src2/query/components/ScriptQueryEditor.vue:128
 msgid "Fetched from cache"
-msgstr ""
+msgstr "از حافظهٔ نهان دریافت شد"
 
 #: frontend/src2/query/components/QueryExecutionStatus.vue:21
 #: frontend/src2/query/components/ScriptQueryEditor.vue:129
 msgid "Fetched in {0}s"
-msgstr ""
+msgstr "در {0} ثانیه دریافت شد"
 
 #: frontend/src2/data_source/ConnectDuckDBDialog.vue:28
 msgid "File URL"
@@ -1170,7 +1170,7 @@ msgstr "فیلترها"
 #. Label of the fiscal_year_start (Date) field in DocType 'Insights Settings'
 #: insights/insights/doctype/insights_settings/insights_settings.json
 msgid "Fiscal Year Start"
-msgstr ""
+msgstr "آغاز سال مالی"
 
 #. Label of the folder (Link) field in DocType 'Insights Workbook'
 #: frontend/src2/components/FolderCard.vue:24
@@ -1180,11 +1180,11 @@ msgstr "پوشه"
 
 #: insights/api/workbooks.py:312
 msgid "Folder and item must belong to the same workbook"
-msgstr ""
+msgstr "پوشه و مورد باید متعلق به یک دفترکار باشند."
 
 #: insights/api/workbooks.py:443 insights/api/workbooks.py:456
 msgid "Folder {0} does not exist"
-msgstr ""
+msgstr "پوشهٔ {0} وجود ندارد."
 
 #: insights/insights/doctype/insights_workbook_folder/insights_workbook_folder.py:40
 msgid "Folders can only be nested up to {0} levels deep"
@@ -1192,7 +1192,7 @@ msgstr ""
 
 #: frontend/src2/dashboard/DashboardBuilder.vue:151
 msgid "Force Refresh"
-msgstr ""
+msgstr "تازه‌سازی اجباری"
 
 #: frontend/src2/query/components/ScriptQueryEditor.vue:103
 msgid "Force Run"
@@ -1225,7 +1225,7 @@ msgstr "قالب‌بندی SQL"
 
 #: insights/config/desktop.py:11
 msgid "Frappe Insights"
-msgstr ""
+msgstr "Frappe Insights"
 
 #. Label of the frequency (Select) field in DocType 'Insights Alert'
 #: frontend/src2/query/components/AlertSetupDialog.vue:150
@@ -1271,7 +1271,7 @@ msgstr "گروه‌بندی ردیف‌ها بر اساس ستون‌ها و خ�
 #. Label of the http_headers (JSON) field in DocType 'Insights Data Source v3'
 #: insights/insights/doctype/insights_data_source_v3/insights_data_source_v3.json
 msgid "HTTP Headers"
-msgstr ""
+msgstr "سرآیندهای HTTP"
 
 #. Label of the hidden (Check) field in DocType 'Insights Table'
 #: insights/insights/doctype/insights_table/insights_table.json
@@ -1280,7 +1280,7 @@ msgstr "پنهان"
 
 #: frontend/src2/query/components/FormattingSelector.vue:59
 msgid "Highlight Cell"
-msgstr ""
+msgstr "برجسته‌کردن سلول"
 
 #: frontend/src2/charts/components/SankeyChartConfigForm.vue:60
 msgid "Horizontal"
@@ -1317,12 +1317,12 @@ msgstr "واردکردن ناموفق بود"
 #. Label of the import_job (Link) field in DocType 'Insights Table Import Log'
 #: insights/insights/doctype/insights_table_import_log/insights_table_import_log.json
 msgid "Import Job"
-msgstr ""
+msgstr "کار واردسازی"
 
 #. Label of the query (Code) field in DocType 'Insights Table Import Log'
 #: insights/insights/doctype/insights_table_import_log/insights_table_import_log.json
 msgid "Import Query"
-msgstr ""
+msgstr "پرس‌وجوی واردسازی"
 
 #: frontend/src2/data_source/UploadCSVFileDialog.vue:96
 #: frontend/src2/data_store/DataStoreList.vue:61
@@ -1333,11 +1333,11 @@ msgstr "واردکردن جدول"
 
 #: insights/insights/doctype/insights_table_v3/insights_table_v3.js:8
 msgid "Import job has been queued"
-msgstr ""
+msgstr "کار واردسازی در صف قرار گرفت."
 
 #: insights/insights/doctype/insights_table_v3/insights_table_v3.js:6
 msgid "Import to Warehouse"
-msgstr ""
+msgstr "واردسازی به انبار داده"
 
 #. Option for the 'Status' (Select) field in DocType 'Insights Table Import
 #. Log'
@@ -1355,7 +1355,7 @@ msgstr "غیرفعال"
 #. Option for the 'Sync Mode' (Select) field in DocType 'Insights Table v3'
 #: insights/insights/doctype/insights_table_v3/insights_table_v3.json
 msgid "Incremental"
-msgstr ""
+msgstr "افزایشی"
 
 #: frontend/src2/charts/components/MapChartConfigForm.vue:55
 msgid "India"
@@ -1379,12 +1379,12 @@ msgstr "هند"
 #: insights/insights/doctype/insights_workbook/insights_workbook.json
 #: insights/insights/doctype/insights_workbook_folder/insights_workbook_folder.json
 msgid "Insights Admin"
-msgstr ""
+msgstr "مدیر Insights"
 
 #. Name of a DocType
 #: insights/insights/doctype/insights_alert/insights_alert.json
 msgid "Insights Alert"
-msgstr ""
+msgstr "هشدار Insights"
 
 #. Name of a DocType
 #: insights/insights/doctype/insights_chart/insights_chart.json
@@ -1394,7 +1394,7 @@ msgstr ""
 #. Name of a DocType
 #: insights/insights/doctype/insights_chart_v3/insights_chart_v3.json
 msgid "Insights Chart v3"
-msgstr ""
+msgstr "نمودار Insights (نسخه 3)"
 
 #. Name of a DocType
 #: insights/insights/doctype/insights_dashboard/insights_dashboard.json
@@ -1404,7 +1404,7 @@ msgstr ""
 #. Name of a DocType
 #: insights/insights/doctype/insights_dashboard_chart_v3/insights_dashboard_chart_v3.json
 msgid "Insights Dashboard Chart v3"
-msgstr ""
+msgstr "نمودار داشبورد Insights (نسخه 3)"
 
 #. Name of a DocType
 #: insights/insights/doctype/insights_dashboard_item/insights_dashboard_item.json
@@ -1414,7 +1414,7 @@ msgstr ""
 #. Name of a DocType
 #: insights/insights/doctype/insights_dashboard_v3/insights_dashboard_v3.json
 msgid "Insights Dashboard v3"
-msgstr ""
+msgstr "داشبورد Insights (نسخه 3)"
 
 #. Name of a DocType
 #: insights/insights/doctype/insights_data_source/insights_data_source.json
@@ -1424,12 +1424,12 @@ msgstr ""
 #. Name of a DocType
 #: insights/insights/doctype/insights_data_source_v3/insights_data_source_v3.json
 msgid "Insights Data Source v3"
-msgstr ""
+msgstr "منبع دادهٔ Insights (نسخه 3)"
 
 #. Name of a DocType
 #: insights/insights/doctype/insights_folder/insights_folder.json
 msgid "Insights Folder"
-msgstr ""
+msgstr "پوشهٔ Insights"
 
 #. Name of a DocType
 #: insights/insights/doctype/insights_notebook/insights_notebook.json
@@ -1459,12 +1459,12 @@ msgstr ""
 #. Name of a DocType
 #: insights/insights/doctype/insights_query_execution_log/insights_query_execution_log.json
 msgid "Insights Query Execution Log"
-msgstr ""
+msgstr "گزارش اجرای پرس‌وجوی Insights"
 
 #. Name of a DocType
 #: insights/insights/doctype/insights_query_reference/insights_query_reference.json
 msgid "Insights Query Reference"
-msgstr ""
+msgstr "مرجع پرس‌وجوی Insights"
 
 #. Name of a DocType
 #: insights/insights/doctype/insights_query_result/insights_query_result.json
@@ -1484,27 +1484,27 @@ msgstr ""
 #. Name of a DocType
 #: insights/insights/doctype/insights_query_variable/insights_query_variable.json
 msgid "Insights Query Variable"
-msgstr ""
+msgstr "متغیر پرس‌وجوی Insights"
 
 #. Name of a DocType
 #: insights/insights/doctype/insights_query_v3/insights_query_v3.json
 msgid "Insights Query v3"
-msgstr ""
+msgstr "پرس‌وجوی Insights (نسخه 3)"
 
 #. Name of a DocType
 #: insights/insights/doctype/insights_resource_permission/insights_resource_permission.json
 msgid "Insights Resource Permission"
-msgstr ""
+msgstr "مجوز منبع Insights"
 
 #. Name of a DocType
 #: insights/insights/doctype/insights_secret_key/insights_secret_key.json
 msgid "Insights Secret Key"
-msgstr ""
+msgstr "کلید محرمانهٔ Insights"
 
 #. Name of a DocType
 #: insights/insights/doctype/insights_settings/insights_settings.json
 msgid "Insights Settings"
-msgstr ""
+msgstr "تنظیمات Insights"
 
 #. Name of a DocType
 #: insights/insights/doctype/insights_table/insights_table.json
@@ -1524,12 +1524,12 @@ msgstr ""
 #. Name of a DocType
 #: insights/insights/doctype/insights_table_import_job/insights_table_import_job.json
 msgid "Insights Table Import Job"
-msgstr ""
+msgstr "کار واردسازی جدول در Insights"
 
 #. Name of a DocType
 #: insights/insights/doctype/insights_table_import_log/insights_table_import_log.json
 msgid "Insights Table Import Log"
-msgstr ""
+msgstr "گزارش واردسازی جدول در Insights"
 
 #. Name of a DocType
 #: insights/insights/doctype/insights_table_link/insights_table_link.json
@@ -1539,22 +1539,22 @@ msgstr ""
 #. Name of a DocType
 #: insights/insights/doctype/insights_table_link_v3/insights_table_link_v3.json
 msgid "Insights Table Link v3"
-msgstr ""
+msgstr "پیوند جدول Insights (نسخه 3)"
 
 #. Name of a DocType
 #: insights/insights/doctype/insights_table_v3/insights_table_v3.json
 msgid "Insights Table v3"
-msgstr ""
+msgstr "جدول Insights (نسخه 3)"
 
 #. Name of a DocType
 #: insights/insights/doctype/insights_team/insights_team.json
 msgid "Insights Team"
-msgstr ""
+msgstr "تیم Insights"
 
 #. Name of a DocType
 #: insights/insights/doctype/insights_team_member/insights_team_member.json
 msgid "Insights Team Member"
-msgstr ""
+msgstr "عضو تیم Insights"
 
 #. Name of a role
 #: insights/insights/doctype/insights_alert/insights_alert.json
@@ -1582,17 +1582,17 @@ msgstr ""
 #: insights/insights/doctype/insights_workbook/insights_workbook.json
 #: insights/insights/doctype/insights_workbook_folder/insights_workbook_folder.json
 msgid "Insights User"
-msgstr ""
+msgstr "کاربر Insights"
 
 #. Name of a DocType
 #: insights/insights/doctype/insights_user_invitation/insights_user_invitation.json
 msgid "Insights User Invitation"
-msgstr ""
+msgstr "دعوت‌نامهٔ کاربر Insights"
 
 #. Name of a DocType
 #: insights/insights/doctype/insights_workbook/insights_workbook.json
 msgid "Insights Workbook"
-msgstr ""
+msgstr "دفترکار Insights"
 
 #. Name of a DocType
 #: insights/insights/doctype/insights_workbook_folder/insights_workbook_folder.json
@@ -1639,17 +1639,17 @@ msgstr ""
 #. Label of the is_builder_query (Check) field in DocType 'Insights Query v3'
 #: insights/insights/doctype/insights_query_v3/insights_query_v3.json
 msgid "Is Builder Query"
-msgstr ""
+msgstr "آیا پرس‌وجوی سازنده است"
 
 #. Label of the is_ducklake (Check) field in DocType 'Insights Data Source v3'
 #: insights/insights/doctype/insights_data_source_v3/insights_data_source_v3.json
 msgid "Is DuckLake"
-msgstr ""
+msgstr "آیا DuckLake است"
 
 #. Label of the is_expanded (Check) field in DocType 'Insights Folder'
 #: insights/insights/doctype/insights_folder/insights_folder.json
 msgid "Is Expanded"
-msgstr ""
+msgstr "گسترش‌یافته است"
 
 #. Label of the is_expression (Check) field in DocType 'Insights Query Column'
 #: insights/insights/doctype/insights_query_column/insights_query_column.json
@@ -1659,14 +1659,14 @@ msgstr ""
 #. Label of the is_frappe_db (Check) field in DocType 'Insights Data Source v3'
 #: insights/insights/doctype/insights_data_source_v3/insights_data_source_v3.json
 msgid "Is Frappe Database"
-msgstr ""
+msgstr "پایگاه دادهٔ Frappe است"
 
 #. Label of the is_native_query (Check) field in DocType 'Insights Query'
 #. Label of the is_native_query (Check) field in DocType 'Insights Query v3'
 #: insights/insights/doctype/insights_query/insights_query.json
 #: insights/insights/doctype/insights_query_v3/insights_query_v3.json
 msgid "Is Native Query"
-msgstr ""
+msgstr "پرس‌وجوی بومی است"
 
 #. Label of the is_public (Check) field in DocType 'Insights Chart'
 #. Label of the is_public (Check) field in DocType 'Insights Chart v3'
@@ -1694,12 +1694,12 @@ msgstr ""
 #: insights/insights/doctype/insights_query/insights_query.json
 #: insights/insights/doctype/insights_query_v3/insights_query_v3.json
 msgid "Is Script Query"
-msgstr ""
+msgstr "پرس‌وجوی اسکریپتی است"
 
 #. Label of the is_site_db (Check) field in DocType 'Insights Data Source v3'
 #: insights/insights/doctype/insights_data_source_v3/insights_data_source_v3.json
 msgid "Is Site Database"
-msgstr ""
+msgstr "پایگاه دادهٔ سایت است"
 
 #. Label of the items (Table) field in DocType 'Insights Dashboard'
 #. Label of the items (JSON) field in DocType 'Insights Dashboard v3'
@@ -1762,7 +1762,7 @@ msgstr "آخرین فعالیت"
 #: insights/insights/doctype/insights_query/insights_query.json
 #: insights/insights/doctype/insights_table_v3/insights_table_v3.js:77
 msgid "Last Executed On"
-msgstr ""
+msgstr "آخرین زمان اجرا"
 
 #. Label of the last_execution (Datetime) field in DocType 'Insights Alert'
 #: frontend/src2/query/components/QueryAlertsDialog.vue:56
@@ -1772,16 +1772,16 @@ msgstr "آخرین اجرا"
 
 #: insights/insights/doctype/insights_table_v3/insights_table_v3.js:66
 msgid "Last Import Duration"
-msgstr ""
+msgstr "مدت آخرین واردسازی"
 
 #: insights/insights/doctype/insights_table_v3/insights_table_v3.js:63
 msgid "Last Import Rows"
-msgstr ""
+msgstr "ردیف‌های آخرین واردسازی"
 
 #. Label of the last_log (Link) field in DocType 'Insights Table Import Job'
 #: insights/insights/doctype/insights_table_import_job/insights_table_import_job.json
 msgid "Last Log"
-msgstr ""
+msgstr "آخرین گزارش"
 
 #. Label of the last_run (Datetime) field in DocType 'Insights Table Import
 #. Job'
@@ -1792,12 +1792,12 @@ msgstr "آخرین اجرا"
 #. Label of the last_status (Data) field in DocType 'Insights Table Import Job'
 #: insights/insights/doctype/insights_table_import_job/insights_table_import_job.json
 msgid "Last Status"
-msgstr ""
+msgstr "آخرین وضعیت"
 
 #. Label of the last_sync_bookmark (Data) field in DocType 'Insights Table v3'
 #: insights/insights/doctype/insights_table_v3/insights_table_v3.json
 msgid "Last Sync Bookmark"
-msgstr ""
+msgstr "نشانک آخرین همگام‌سازی"
 
 #: frontend/src2/data_store/DataStoreList.vue:48
 msgid "Last Synced"
@@ -1813,7 +1813,7 @@ msgstr "آخرین همگام‌سازی در"
 #. Table v3'
 #: insights/insights/doctype/insights_table_v3/insights_table_v3.json
 msgid "Last synced cursor value (set automatically)"
-msgstr ""
+msgstr "مقدار نشانگر آخرین همگام‌سازی (به‌طور خودکار تنظیم می‌شود)"
 
 #: frontend/src2/charts/components/DonutChartConfigForm.vue:59
 #: frontend/src2/charts/components/SankeyChartConfigForm.vue:70
@@ -1829,12 +1829,12 @@ msgstr "ستون چپ"
 #. Label of the left_table (Data) field in DocType 'Insights Table Link v3'
 #: insights/insights/doctype/insights_table_link_v3/insights_table_link_v3.json
 msgid "Left Table"
-msgstr ""
+msgstr "جدول سمت چپ"
 
 #. Label of the tab_break_tvwi (Tab Break) field in DocType 'Insights Settings'
 #: insights/insights/doctype/insights_settings/insights_settings.json
 msgid "Legacy"
-msgstr ""
+msgstr "قدیمی"
 
 #. Label of the limit (Int) field in DocType 'Insights Query'
 #: insights/insights/doctype/insights_query/insights_query.json
@@ -1911,15 +1911,15 @@ msgstr "مدیریت دسترسی به دفترکار"
 #: insights/insights/doctype/insights_data_source/insights_data_source.json
 #: insights/insights/doctype/insights_data_source_v3/insights_data_source_v3.json
 msgid "MariaDB"
-msgstr ""
+msgstr "MariaDB"
 
 #: frontend/src2/dashboard/DashboardList.vue:78
 msgid "Mark a dashboard as favorite to see it here."
-msgstr ""
+msgstr "برای دیدن داشبورد در اینجا، آن را به علاقه‌مندی‌ها اضافه کنید."
 
 #: insights/insights/doctype/insights_table_import_log/insights_table_import_log.js:7
 msgid "Mark as Failed"
-msgstr ""
+msgstr "علامت‌گذاری به‌عنوان ناموفق"
 
 #: frontend/src2/dashboard/DashboardText.vue:54
 msgid "Markdown supported"
@@ -1928,17 +1928,17 @@ msgstr "از Markdown پشتیبانی می‌شود"
 #. Label of the max_execution_time (Int) field in DocType 'Insights Settings'
 #: insights/insights/doctype/insights_settings/insights_settings.json
 msgid "Max Execution Time (Seconds)"
-msgstr ""
+msgstr "حداکثر زمان اجرا (ثانیه)"
 
 #. Label of the max_memory_usage (Int) field in DocType 'Insights Settings'
 #: insights/insights/doctype/insights_settings/insights_settings.json
 msgid "Max Memory Usage"
-msgstr ""
+msgstr "حداکثر مصرف حافظه"
 
 #. Label of the max_records_to_sync (Int) field in DocType 'Insights Settings'
 #: insights/insights/doctype/insights_settings/insights_settings.json
 msgid "Max Records To Sync"
-msgstr ""
+msgstr "حداکثر تعداد رکورد برای همگام‌سازی"
 
 #: frontend/src2/charts/components/MeasurePicker.vue:140
 msgid "Maximum of..."
@@ -1951,7 +1951,7 @@ msgstr "نام معیار"
 #. Label of the memory_limit (Int) field in DocType 'Insights Table Import Log'
 #: insights/insights/doctype/insights_table_import_log/insights_table_import_log.json
 msgid "Memory Limit (MB)"
-msgstr ""
+msgstr "محدودیت حافظه (MB)"
 
 #. Label of the message (Markdown Editor) field in DocType 'Insights Alert'
 #: frontend/src2/query/components/AlertSetupDialog.vue:238
@@ -1980,7 +1980,7 @@ msgstr "ماهانه"
 
 #: frontend/src2/workbook/WorkbookList.vue:250
 msgid "Move to folder"
-msgstr ""
+msgstr "انتقال به پوشه"
 
 #. Option for the 'Cardinality' (Select) field in DocType 'Insights Table Link'
 #: insights/insights/doctype/insights_table_link/insights_table_link.json
@@ -2041,7 +2041,7 @@ msgstr "خیر"
 
 #: frontend/src2/dashboard/DashboardList.vue:77
 msgid "No Favorites"
-msgstr ""
+msgstr "موردی در علاقه‌مندی‌ها نیست"
 
 #: frontend/src2/query/components/source_selector/WorkbookQueryList.vue:90
 msgid "No Queries Found"
@@ -2049,7 +2049,7 @@ msgstr "هیچ پرسمانی یافت نشد"
 
 #: frontend/src2/dashboard/DashboardList.vue:82
 msgid "No Recents"
-msgstr ""
+msgstr "مورد اخیری وجود ندارد"
 
 #: frontend/src2/data_source/DataSourceTableList.vue:40
 #: frontend/src2/query/components/source_selector/DataSourceTableList.vue:58
@@ -2082,11 +2082,11 @@ msgstr "بدون منبع داده."
 
 #: frontend/src2/dashboard/DashboardList.vue:98
 msgid "No folders or dashboards to display."
-msgstr ""
+msgstr "پوشه یا داشبوردی برای نمایش وجود ندارد."
 
 #: frontend/src2/workbook/WorkbookList.vue:162
 msgid "No folders or workbooks here."
-msgstr ""
+msgstr "اینجا پوشه یا دفترکاری وجود ندارد."
 
 #: frontend/src2/data_source/DataSourceTableList.vue:41
 msgid "No tables found for the selected data source."
@@ -2154,11 +2154,11 @@ msgstr "نام قدیمی"
 #. Settings'
 #: insights/insights/doctype/insights_settings/insights_settings.json
 msgid "Onboarding Complete"
-msgstr ""
+msgstr "آموزش آغازین تکمیل شد"
 
 #: insights/api/workbooks.py:367
 msgid "Only an Insights Admin can manage workbook folders"
-msgstr ""
+msgstr "فقط مدیر Insights می‌تواند پوشه‌های دفترکار را مدیریت کند."
 
 #: frontend/src2/dashboard/Dashboard.vue:68
 #: frontend/src2/dashboard/DashboardList.vue:117
@@ -2218,7 +2218,7 @@ msgstr ""
 #. Log'
 #: insights/insights/doctype/insights_table_import_log/insights_table_import_log.json
 msgid "Parquet File"
-msgstr ""
+msgstr "فایل Parquet"
 
 #. Option for the 'Status' (Select) field in DocType 'Insights Table Import'
 #: insights/insights/doctype/insights_table_import/insights_table_import.json
@@ -2257,7 +2257,7 @@ msgstr "مجوزها به‌روزرسانی شدند"
 #. Import Job'
 #: insights/insights/doctype/insights_table_import_job/insights_table_import_job.json
 msgid "Persistent state storage for the script"
-msgstr ""
+msgstr "ذخیره‌سازی پایدار وضعیت اسکریپت"
 
 #: frontend/src2/query/components/source_selector/SourceSelectorDialog.vue:125
 msgid "Pick Starting Data"
@@ -2300,7 +2300,7 @@ msgstr ""
 #: insights/insights/doctype/insights_data_source/insights_data_source.json
 #: insights/insights/doctype/insights_data_source_v3/insights_data_source_v3.json
 msgid "PostgreSQL"
-msgstr ""
+msgstr "PostgreSQL"
 
 #. Label of the preview_image (Data) field in DocType 'Insights Dashboard v3'
 #: insights/insights/doctype/insights_dashboard_v3/insights_dashboard_v3.json
@@ -2316,7 +2316,7 @@ msgstr ""
 #. v3'
 #: insights/insights/doctype/insights_table_v3/insights_table_v3.json
 msgid "Primary Key Column"
-msgstr ""
+msgstr "ستون کلید اصلی"
 
 #: frontend/src2/settings/Settings.vue:13
 msgid "Profile"
@@ -2369,7 +2369,7 @@ msgstr "تبار دادهٔ پرس‌وجو"
 #. Label of the query_result_limit (Int) field in DocType 'Insights Settings'
 #: insights/insights/doctype/insights_settings/insights_settings.json
 msgid "Query Result Limit"
-msgstr ""
+msgstr "محدودیت نتایج پرس‌وجو"
 
 #. Option for the 'Status' (Select) field in DocType 'Insights Table Import'
 #: insights/insights/doctype/insights_table_import/insights_table_import.json
@@ -2383,7 +2383,7 @@ msgstr "اقدامات سریع"
 #. Option for the 'Type' (Select) field in DocType 'Insights Data Source v3'
 #: insights/insights/doctype/insights_data_source_v3/insights_data_source_v3.json
 msgid "REST API"
-msgstr ""
+msgstr "REST API"
 
 #: frontend/src2/query/components/FormatRule.vue:478
 msgid "Ranking Condition"
@@ -2419,11 +2419,11 @@ msgstr "نوع مرجع"
 #. Label of the ref_query (Link) field in DocType 'Insights Query Reference'
 #: insights/insights/doctype/insights_query_reference/insights_query_reference.json
 msgid "Referenced Query"
-msgstr ""
+msgstr "پرس‌وجوی ارجاع‌شده"
 
 #: insights/insights/doctype/insights_table_v3/insights_table_v3.js:84
 msgid "Referencing Queries"
-msgstr ""
+msgstr "پرس‌وجوهای ارجاع‌دهنده"
 
 #: frontend/src2/dashboard/Dashboard.vue:51
 #: frontend/src2/data_source/DataSourceTableList.vue:43
@@ -2478,7 +2478,7 @@ msgstr "منبع"
 #. Permission'
 #: insights/insights/doctype/insights_resource_permission/insights_resource_permission.json
 msgid "Resource Type"
-msgstr ""
+msgstr "نوع منبع"
 
 #. Label of the result_name (Data) field in DocType 'Insights Query'
 #: insights/insights/doctype/insights_query/insights_query.json
@@ -2523,12 +2523,12 @@ msgstr "جدول راست"
 #: insights/insights/doctype/insights_table_import_log/insights_table_import_log.json
 #: insights/insights/doctype/insights_table_v3/insights_table_v3.json
 msgid "Row Limit"
-msgstr ""
+msgstr "محدودیت ردیف"
 
 #. Label of the row_size (Float) field in DocType 'Insights Table Import Log'
 #: insights/insights/doctype/insights_table_import_log/insights_table_import_log.json
 msgid "Row Size (KB)"
-msgstr ""
+msgstr "اندازهٔ ردیف (KB)"
 
 #. Label of the rows (Int) field in DocType 'Insights Table Import'
 #: insights/insights/doctype/insights_table_import/insights_table_import.json
@@ -2539,11 +2539,11 @@ msgstr ""
 #. Log'
 #: insights/insights/doctype/insights_table_import_log/insights_table_import_log.json
 msgid "Rows Imported"
-msgstr ""
+msgstr "ردیف‌های واردشده"
 
 #: frontend/src2/query/components/FormatRule.vue:405
 msgid "Rule Type"
-msgstr ""
+msgstr "نوع قاعده"
 
 #: frontend/src2/query/components/ScriptQueryEditor.vue:94
 #: insights/insights/doctype/insights_query/insights_query.js:7
@@ -2552,7 +2552,7 @@ msgstr "اجرا"
 
 #: insights/insights/doctype/insights_table_import_job/insights_table_import_job.js:37
 msgid "Run {0} of {1}"
-msgstr ""
+msgstr "اجرای {0} از {1}"
 
 #. Label of the sql (Code) field in DocType 'Insights Query'
 #. Label of the sql (Code) field in DocType 'Insights Query Execution Log'
@@ -2568,7 +2568,7 @@ msgstr "SQL"
 #: insights/insights/doctype/insights_data_source/insights_data_source.json
 #: insights/insights/doctype/insights_data_source_v3/insights_data_source_v3.json
 msgid "SQLite"
-msgstr ""
+msgstr "SQLite"
 
 #: frontend/src2/settings/GeneralSettings.vue:23
 msgid "Sample data and workbook have been set up successfully"
@@ -2601,7 +2601,7 @@ msgstr "ذخیرهٔ متغیرها"
 #. Label of the schedule (Data) field in DocType 'Insights Table Import Job'
 #: insights/insights/doctype/insights_table_import_job/insights_table_import_job.json
 msgid "Schedule (Cron)"
-msgstr ""
+msgstr "زمان‌بندی (Cron)"
 
 #. Label of the schema (Data) field in DocType 'Insights Data Source v3'
 #: frontend/src2/data_source/ConnectPostgreSQLDialog.vue:57
@@ -2649,7 +2649,7 @@ msgstr "جست‌وجوی گره‌ها…"
 #. Label of the secrets (Table) field in DocType 'Insights Table Import Job'
 #: insights/insights/doctype/insights_table_import_job/insights_table_import_job.json
 msgid "Secrets"
-msgstr ""
+msgstr "کلیدهای محرمانه"
 
 #: frontend/src2/dashboard/DashboardChartSelectorDialog.vue:64
 msgid "Select Charts"
@@ -2701,7 +2701,7 @@ msgstr "عملگر را انتخاب کنید…"
 
 #: insights/insights/doctype/insights_alert/insights_alert.js:6
 msgid "Send Alert"
-msgstr ""
+msgstr "ارسال هشدار"
 
 #: frontend/src2/settings/UsersSettings.vue:177
 #: frontend/src2/users/UserList.vue:178
@@ -2718,11 +2718,11 @@ msgstr "ارسال هشدار هنگام"
 
 #: insights/insights/doctype/insights_alert/insights_alert.js:7
 msgid "Sending Alert..."
-msgstr ""
+msgstr "در حال ارسال هشدار…"
 
 #: frontend/src2/components/UserDropdown.vue:70
 msgid "Set Insights v2 as default"
-msgstr ""
+msgstr "تنظیم Insights v2 به‌عنوان پیش‌فرض"
 
 #: frontend/src2/query/components/QueryAlertsDialog.vue:77
 msgid "Set up alerts to get notified when a condition is met"
@@ -2767,7 +2767,7 @@ msgstr "اشتراک‌گذاری داشبورد"
 #. Label of the share_link (Data) field in DocType 'Insights Dashboard v3'
 #: insights/insights/doctype/insights_dashboard_v3/insights_dashboard_v3.json
 msgid "Share Link"
-msgstr ""
+msgstr "اشتراک‌گذاری پیوند"
 
 #: frontend/src2/dashboard/DashboardList.vue:30
 #: frontend/src2/workbook/WorkbookList.vue:45
@@ -2776,7 +2776,7 @@ msgstr "به اشتراک گذاشته شده"
 
 #: frontend/src2/charts/components/FunnelChartConfigForm.vue:51
 msgid "Show Percentage"
-msgstr ""
+msgstr "نمایش درصد"
 
 #: frontend/src2/query/components/AddOperationPopover.vue:39
 msgid "Show or hide columns from the table"
@@ -2808,7 +2808,7 @@ msgstr "منبع"
 
 #: frontend/src2/dashboard/DashboardShareDialog.vue:114
 msgid "Specific people can view"
-msgstr ""
+msgstr "افراد مشخص‌شده می‌توانند مشاهده کنند"
 
 #: frontend/src2/query/components/AddOperationPopover.vue:75
 msgid "Spreading column values into separate columns"
@@ -2818,13 +2818,13 @@ msgstr "گسترش مقادیر ستون در ستون‌های جداگانه"
 #. Table v3'
 #: insights/insights/doctype/insights_table_v3/insights_table_v3.json
 msgid "Stable key used to identify the latest version of each logical row during incremental upserts."
-msgstr ""
+msgstr "کلید ثابتی برای شناسایی آخرین نسخهٔ هر ردیف منطقی در به‌روزرسانی یا درج افزایشی."
 
 #. Description of the 'Sync From' (Datetime) field in DocType 'Insights Table
 #. v3'
 #: insights/insights/doctype/insights_table_v3/insights_table_v3.json
 msgid "Start importing rows from this datetime onward (used on first sync only)"
-msgstr ""
+msgstr "واردسازی ردیف‌ها را از این تاریخ‌وساعت به بعد آغاز کنید (فقط در نخستین همگام‌سازی استفاده می‌شود)."
 
 #. Option for the 'Status' (Select) field in DocType 'Insights Table Import'
 #: insights/insights/doctype/insights_table_import/insights_table_import.json
@@ -2839,12 +2839,12 @@ msgstr "شروع شده در"
 
 #: insights/insights/doctype/insights_table_import_job/insights_table_import_job.js:27
 msgid "Starting..."
-msgstr ""
+msgstr "در حال شروع…"
 
 #. Label of the state (Code) field in DocType 'Insights Table Import Job'
 #: insights/insights/doctype/insights_table_import_job/insights_table_import_job.json
 msgid "State (JSON)"
-msgstr ""
+msgstr "وضعیت (JSON)"
 
 #: insights/insights/doctype/insights_table_v3/insights_table_v3.js:32
 msgid "Statistics"
@@ -2852,7 +2852,7 @@ msgstr "آمار"
 
 #: insights/insights/doctype/insights_table_v3/insights_table_v3.js:91
 msgid "Statistics — {0}"
-msgstr ""
+msgstr "آمار — {0}"
 
 #. Label of the status (Select) field in DocType 'Insights Data Source'
 #. Label of the status (Select) field in DocType 'Insights Data Source v3'
@@ -2878,7 +2878,7 @@ msgstr "وضعیت"
 #: insights/insights/doctype/insights_query/insights_query.json
 #: insights/insights/doctype/insights_table_v3/insights_table_v3.json
 msgid "Stored"
-msgstr ""
+msgstr "ذخیره‌شده"
 
 #. Option for the 'Type' (Select) field in DocType 'Insights Table Column'
 #: insights/insights/doctype/insights_table_column/insights_table_column.json
@@ -2907,7 +2907,7 @@ msgstr "سوئیچ به پیشخوان"
 #: frontend/src2/components/UserDropdown.vue:54
 #: frontend/src2/components/UserDropdown.vue:140
 msgid "Switch to Insights v2"
-msgstr ""
+msgstr "رفتن به Insights v2"
 
 #: insights/insights/doctype/insights_table_v3/insights_table_v3.js:58
 msgid "Sync"
@@ -2916,12 +2916,12 @@ msgstr "همگام‌سازی"
 #. Label of the sync_from (Datetime) field in DocType 'Insights Table v3'
 #: insights/insights/doctype/insights_table_v3/insights_table_v3.json
 msgid "Sync From"
-msgstr ""
+msgstr "همگام‌سازی از"
 
 #. Label of the sync_mode (Select) field in DocType 'Insights Table v3'
 #: insights/insights/doctype/insights_table_v3/insights_table_v3.json
 msgid "Sync Mode"
-msgstr ""
+msgstr "حالت همگام‌سازی"
 
 #. Label of the sync_strategy (Select) field in DocType 'Insights Table v3'
 #: insights/insights/doctype/insights_table_v3/insights_table_v3.json
@@ -2996,7 +2996,7 @@ msgstr "نام جدول"
 #. Permission'
 #: insights/insights/doctype/insights_resource_permission/insights_resource_permission.json
 msgid "Table Restrictions"
-msgstr ""
+msgstr "محدودیت‌های جدول"
 
 #. Label of the tables (Table) field in DocType 'Insights Query'
 #: insights/insights/doctype/insights_query/insights_query.json
@@ -3048,7 +3048,7 @@ msgstr "شناسه چت تلگرام"
 #. v3'
 #: insights/insights/doctype/insights_table_v3/insights_table_v3.json
 msgid "Temporal column used to detect rows that changed since the last sync. Use <b>modified</b> for mutable tables and <b>creation</b> for append-only tables."
-msgstr ""
+msgstr "ستون زمانی برای شناسایی ردیف‌هایی که از آخرین همگام‌سازی تغییر کرده‌اند. برای جدول‌های قابل‌تغییر از <b>modified</b> و برای جدول‌های فقط‌الحاقی از <b>creation</b> استفاده کنید."
 
 #. Option for the 'Type' (Select) field in DocType 'Insights Table Column'
 #: insights/insights/doctype/insights_table_column/insights_table_column.json
@@ -3081,11 +3081,11 @@ msgstr "امسال"
 
 #: insights/insights/doctype/insights_dashboard_v3/insights_dashboard_v3.py:93
 msgid "This column is not available as a filter on this dashboard"
-msgstr ""
+msgstr "این ستون به‌عنوان فیلتر در این داشبورد در دسترس نیست."
 
 #: insights/insights/doctype/insights_table_v3/insights_table_v3.js:15
 msgid "This will delete all warehouse data for <b>{0}</b> and reset the sync bookmark. Are you sure?"
-msgstr ""
+msgstr "با این کار همهٔ داده‌های انبار برای <b>{0}</b> حذف و نشانک همگام‌سازی بازنشانی می‌شود. مطمئن هستید؟"
 
 #. Option for the 'Week Starts On' (Select) field in DocType 'Insights
 #. Settings'
@@ -3102,7 +3102,7 @@ msgstr "زمان"
 #. Log'
 #: insights/insights/doctype/insights_query_execution_log/insights_query_execution_log.json
 msgid "Time Taken (Seconds)"
-msgstr ""
+msgstr "مدت اجرا (ثانیه)"
 
 #. Label of the title (Data) field in DocType 'Insights Alert'
 #. Label of the title (Data) field in DocType 'Insights Chart v3'
@@ -3162,11 +3162,11 @@ msgstr "N مقدار بالایی"
 
 #: insights/insights/doctype/insights_table_v3/insights_table_v3.js:70
 msgid "Total Sync Time"
-msgstr ""
+msgstr "مجموع زمان همگام‌سازی"
 
 #: insights/insights/doctype/insights_table_v3/insights_table_v3.js:69
 msgid "Total Syncs"
-msgstr ""
+msgstr "مجموع همگام‌سازی‌ها"
 
 #. Label of the transform_tab (Tab Break) field in DocType 'Insights Query'
 #: insights/insights/doctype/insights_query/insights_query.json
@@ -3217,7 +3217,7 @@ msgstr "خطای اعتبارسنجی غیرمنتظره"
 
 #: frontend/src2/charts/components/MeasurePicker.vue:141
 msgid "Unique Count of..."
-msgstr ""
+msgstr "تعداد یکتای…"
 
 #. Option for the 'Type' (Select) field in DocType 'Insights Query Transform'
 #: insights/insights/doctype/insights_query_transform/insights_query_transform.json
@@ -3259,7 +3259,7 @@ msgstr "برای ایجاد یک منبع داده جدید، یک فایل CSV 
 
 #: insights/insights/doctype/insights_table_v3/insights_table_v3.js:75
 msgid "Usage"
-msgstr ""
+msgstr "میزان استفاده"
 
 #: frontend/src2/query/components/AlertSetupDialog.vue:231
 msgid "Use Custom Condition"
@@ -3269,7 +3269,7 @@ msgstr "استفاده از شرط سفارشی"
 #. v3'
 #: insights/insights/doctype/insights_query_v3/insights_query_v3.json
 msgid "Use Live Connection"
-msgstr ""
+msgstr "استفاده از اتصال زنده"
 
 #. Label of the use_ssl (Check) field in DocType 'Insights Data Source'
 #. Label of the use_ssl (Check) field in DocType 'Insights Data Source v3'
@@ -3282,7 +3282,7 @@ msgstr "استفاده از SSL"
 #: frontend/src2/data_source/ConnectMariaDBDialog.vue:69
 #: frontend/src2/data_source/ConnectPostgreSQLDialog.vue:77
 msgid "Use secure connection (SSL)?"
-msgstr ""
+msgstr "از اتصال امن (SSL) استفاده شود؟"
 
 #. Label of the user (Link) field in DocType 'Insights Team Member'
 #: frontend/src2/settings/UsersSettings.vue:29
@@ -3319,7 +3319,7 @@ msgstr "مقدار"
 
 #: frontend/src2/query/components/FormatRule.vue:224
 msgid "Value Rules"
-msgstr ""
+msgstr "قواعد مقدار"
 
 #. Label of the variable_name (Data) field in DocType 'Insights Query Variable'
 #: insights/insights/doctype/insights_query_variable/insights_query_variable.json
@@ -3330,7 +3330,7 @@ msgstr "نام متغیر"
 #. Variable'
 #: insights/insights/doctype/insights_query_variable/insights_query_variable.json
 msgid "Variable Value"
-msgstr ""
+msgstr "مقدار متغیر"
 
 #. Label of the variables (Table) field in DocType 'Insights Query'
 #. Label of the variables (Table) field in DocType 'Insights Query v3'
@@ -3354,7 +3354,7 @@ msgstr "عمودی"
 #. Dashboard v3'
 #: insights/insights/doctype/insights_dashboard_v3/insights_dashboard_v3.json
 msgid "Vertical Compact Layout"
-msgstr ""
+msgstr "چیدمان فشردهٔ عمودی"
 
 #: frontend/src2/workbook/WorkbookNavbarActions.vue:54
 msgid "View Lineage"
@@ -3367,7 +3367,7 @@ msgstr "مشاهده SQL"
 
 #: insights/insights/doctype/insights_table_v3/insights_table_v3.js:22
 msgid "Warehouse data cleared"
-msgstr ""
+msgstr "داده‌های انبار پاک شد."
 
 #. Option for the 'Week Starts On' (Select) field in DocType 'Insights
 #. Settings'
@@ -3378,7 +3378,7 @@ msgstr "چهارشنبه"
 #. Label of the week_starts_on (Select) field in DocType 'Insights Settings'
 #: insights/insights/doctype/insights_settings/insights_settings.json
 msgid "Week Starts On"
-msgstr ""
+msgstr "شروع هفته از"
 
 #. Option for the 'Frequency' (Select) field in DocType 'Insights Alert'
 #: insights/insights/doctype/insights_alert/insights_alert.json
@@ -3410,7 +3410,7 @@ msgstr "نقشه جهان"
 #. Job'
 #: insights/insights/doctype/insights_table_import_job/insights_table_import_job.json
 msgid "Write Python code to fetch and transform data. Available globals:<br>• client: API client for the selected data source<br>• table: Write data to warehouse. Methods: insert(data, overwrite=False)<br>• state: Persist data between runs. Methods: get(key, default=None), set(key, value), delete(key), clear()<br>• secrets: Access secret keys. Methods: get(key)<br>• log(message): Log execution messages"
-msgstr ""
+msgstr "کد Python را برای دریافت و تبدیل داده بنویسید. متغیرهای سراسری در دسترس:<br>• client: کلاینت API برای منبع دادهٔ انتخاب‌شده<br>• table: نوشتن داده در انبار. متدها: insert(data, overwrite=False)<br>• state: نگهداری وضعیت بین اجراها. متدها: get(key, default=None)، set(key, value)، delete(key)، clear()<br>• secrets: دسترسی به کلیدهای محرمانه. متد: get(key)<br>• log(message): ثبت پیام‌های اجرا"
 
 #: frontend/src2/query/components/UnionSelectorDialog.vue:143
 msgid "Yes"
@@ -3422,22 +3422,22 @@ msgstr "برای قالب‌بندی پیام می‌توانید از Markdown 
 
 #: insights/decorators.py:26
 msgid "You do not have permission to access this resource"
-msgstr ""
+msgstr "مجوز دسترسی به این منبع را ندارید."
 
 #: insights/api/workbooks.py:235 insights/api/workbooks.py:254
 #: insights/api/workbooks.py:267 insights/api/workbooks.py:295
 #: insights/api/workbooks.py:307 insights/api/workbooks.py:321
 #: insights/api/workbooks.py:440
 msgid "You do not have permission to modify this workbook"
-msgstr ""
+msgstr "مجوز تغییر این دفترکار را ندارید."
 
 #: insights/api/workbooks.py:131 insights/api/workbooks.py:187
 msgid "You do not have permission to share this workbook"
-msgstr ""
+msgstr "مجوز اشتراک‌گذاری این دفترکار را ندارید."
 
 #: frontend/src2/dashboard/DashboardList.vue:88
 msgid "You haven't created any dashboards yet."
-msgstr ""
+msgstr "هنوز داشبوردی ایجاد نکرده‌اید."
 
 #: frontend/src2/home/HomeWorkbookList.vue:68
 msgid "Your workbooks will appear here. Create a new workbook to get started."
@@ -3616,7 +3616,7 @@ msgstr "پرسمان"
 #: insights/insights/doctype/insights_chart_v3/insights_chart_v3.json
 #: insights/insights/doctype/insights_query_v3/insights_query_v3.json
 msgid "sort_order"
-msgstr ""
+msgstr "ترتیب مرتب‌سازی"
 
 #: frontend/src2/query/components/FormatRule.vue:176
 msgid "starts with"
@@ -3629,4 +3629,12 @@ msgstr "{0} ستون انتخاب شده است"
 #: frontend/src2/home/Home.vue:20
 msgid "Hello, {0} 👋"
 msgstr "سلام، {0} 👋"
+
+#: frontend/src2/query/helpers.ts
+msgid "Fiscal Year"
+msgstr "سال مالی"
+
+#: insights/insights/doctype/insights_settings/insights_settings.json
+msgid "Fiscal Year Start"
+msgstr "آغاز سال مالی"
 

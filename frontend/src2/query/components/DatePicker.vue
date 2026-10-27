@@ -23,12 +23,14 @@
 		<DateRangeCalendar
 			v-if="range"
 			:model-value="calendarRange"
+			:calendar="calendar"
 			today-label=""
 			@select="selectCalendarRange"
 		/>
 		<DateCalendar
 			v-else
 			:model-value="calendarDate"
+			:calendar="calendar"
 			today-label=""
 			@select="selectCalendarDate"
 		/>
@@ -44,7 +46,7 @@ import type { DateRangeValue } from 'frappe-ui'
 import { DateCalendar, DateRangeCalendar } from 'frappe-ui/experimental'
 import session from '../../session'
 import { formatLocaleDate } from '../../helpers/locale_format'
-import { formatDatePickerInput, parseDatePickerInput } from './date_picker'
+import { formatDatePickerInput, getDatePickerCalendar, parseDatePickerInput } from './date_picker'
 
 const props = defineProps({
 	range: {
@@ -58,6 +60,7 @@ const selectedDates = defineModel<string[]>({
 })
 
 const locale = () => session.user.locale || 'en-US'
+const calendar = computed(() => getDatePickerCalendar(locale()))
 const formatInputDate = (isoDate: string) =>
 	formatDatePickerInput(isoDate, locale())
 

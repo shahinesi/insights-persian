@@ -147,21 +147,21 @@ describe('a negative number', () => {
 	})
 
 	// @feature charts.number-format
-	it('keeps its sign where the locale prints its own digits', () => {
+	it('keeps the sign while Persian display digits remain canonical', () => {
 		const locale = session.user.locale
 		session.user.locale = 'fa'
-		expect(printNumber(-1234, { scale: 1, decimals: 0 })).toBe('-۱٬۲۳۴')
+		expect(printNumber(-1234, { scale: 1, decimals: 0 })).toBe('-1,234')
 		expect(printNumber(-1234567, { scale: 1, shorten: true }).startsWith('-')).toBe(true)
 		expect(printNumber(-0.004, { scale: 1, decimals: 2 }).startsWith('-')).toBe(false)
 		session.user.locale = locale
 	})
 
 	// @feature charts.number-format
-	it('uses Persian percent digits and punctuation while preserving English output', () => {
+	it('uses Persian percent punctuation and canonical digits while preserving English output', () => {
 		const locale = session.user.locale
 		try {
 			session.user.locale = 'fa-IR'
-			expect(numberFormatter(null, measure('rate', 'percent'))(0.42)).toBe('۴۲٪')
+			expect(numberFormatter(null, measure('rate', 'percent'))(0.42)).toBe('42٪')
 			session.user.locale = 'en-US'
 			expect(numberFormatter(null, measure('rate', 'percent'))(0.42)).toBe('42%')
 		} finally {

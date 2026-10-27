@@ -155,8 +155,9 @@ describe('what a host sends', () => {
 })
 
 describe('the numbers a number filter lists', () => {
+	// @feature query.filter-number-range
 	it('formats and parses Persian numeric input without changing canonical numbers', () => {
-		expect(formatNumber(1250)).toBe('۱٬۲۵۰')
+		expect(formatNumber(1250)).toBe('1,250')
 		expect(parseNumber('۱٬۲۵۰٫۵')).toBe(1250.5)
 		expect(parseNumber('١٢٥٠٫٥')).toBe(1250.5)
 	})
@@ -168,11 +169,12 @@ describe('the numbers a number filter lists', () => {
 		expect(numberQuickValues([0, 1])).toEqual([0.25, 0.5, 0.75])
 	})
 
+	// @feature query.filter-number-range
 	it('formats and parses Persian numeric input without changing canonical numbers', () => {
 		const locale = session.user.locale
 		try {
 			session.user.locale = 'fa-IR'
-			expect(formatNumber(1250)).toBe('۱٬۲۵۰')
+			expect(formatNumber(1250)).toBe('1,250')
 			expect(parseNumber('۱٬۲۵۰٫۵')).toBe(1250.5)
 			expect(parseNumber('١٢٥٠٫٥')).toBe(1250.5)
 		} finally {
@@ -180,12 +182,13 @@ describe('the numbers a number filter lists', () => {
 		}
 	})
 
+	// @feature query.filter-date-on-datetime
 	it('prints date filter labels in Jalali while retaining ISO filter values', () => {
 		const locale = session.user.locale
 		try {
 			session.user.locale = 'fa-IR'
-			expect(formatDate('2025-03-20')).toContain('۱۴۰۳')
-			expect(formatDate('2026-03-20', '2026-03-21')).toContain('۱۴۰۵')
+			expect(formatDate('2025-03-20')).toContain('1403')
+			expect(formatDate('2026-03-20', '2026-03-21')).toContain('1405')
 		} finally {
 			session.user.locale = locale
 		}

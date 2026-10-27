@@ -262,6 +262,7 @@ One row per thing a user can do or rely on. Slugs are `<area>.<feature>` in the 
 | dashboard.open-workbook | A reader with access opens the dashboard's workbook. |
 | dashboard.route | A dashboard gets a unique route from its title. A route a user sets stays after a rename, and a cleared route is made again. |
 | dashboard.shipped-read-only | A dashboard an app ships is read-only outside developer mode, even to its owner. |
+| shared.share-tooltip-localization | A user sees translated Persian tooltips on dashboard and chart share controls while English labels remain unchanged. |
 
 ## workbook
 

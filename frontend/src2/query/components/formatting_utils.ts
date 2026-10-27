@@ -1,4 +1,9 @@
 import { Column } from '../../types/query.types'
+import { jalaaliMonthLength, toGregorian, toJalaali } from 'jalaali-js'
+import {
+	getGregorianDateParts,
+	type GregorianDateParts,
+} from '../../helpers/locale_format'
 
 export type ConditionalColor = 'red' | 'amber' | 'green'
 
@@ -133,15 +138,83 @@ export function rulesByColumn(
 }
 
 // helper functions for date comparison
-function isSameDay(date1: Date, date2: Date): boolean {
-	return (
-		date1.getDate() === date2.getDate() &&
-		date1.getMonth() === date2.getMonth() &&
-		date1.getFullYear() === date2.getFullYear()
+type CivilDate = GregorianDateParts
+type CalendarDate = CivilDate & { calendarYear: number; calendarMonth: number }
+
+function isPersianLocale(locale?: string | null): boolean {
+	return (locale || '').toLowerCase().startsWith('fa')
+}
+
+function parseDateValue(value: any): Date | null {
+	if (value === null || value === undefined || value === '') return null
+	if (value instanceof Date) return Number.isNaN(value.getTime()) ? null : value
+	if (typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value)) {
+		const [year, month, day] = value.split('-').map(Number)
+		const date = new Date(Date.UTC(year, month - 1, day))
+		return date.getUTCFullYear() === year &&
+			date.getUTCMonth() === month - 1 &&
+			date.getUTCDate() === day
+			? date
+			: null
+	}
+	const date = new Date(value)
+	return Number.isNaN(date.getTime()) ? null : date
+}
+
+function civilDate(date: Date, persian: boolean): CivilDate {
+	if (!persian) {
+		return { year: date.getFullYear(), month: date.getMonth() + 1, day: date.getDate() }
+	}
+	return getGregorianDateParts(date, 'Asia/Tehran')
+}
+
+function calendarDate(date: Date, persian: boolean): CalendarDate {
+	const civil = civilDate(date, persian)
+	if (!persian) return { ...civil, calendarYear: civil.year, calendarMonth: civil.month }
+	const jalali = toJalaali(civil.year, civil.month, civil.day)
+	return { ...civil, calendarYear: jalali.jy, calendarMonth: jalali.jm }
+}
+
+function shiftedCivilDate(date: CivilDate, days: number): CivilDate {
+	const shifted = new Date(Date.UTC(date.year, date.month - 1, date.day + days))
+	return {
+		year: shifted.getUTCFullYear(),
+		month: shifted.getUTCMonth() + 1,
+		day: shifted.getUTCDate(),
+	}
+}
+
+function previousOrNextPersianMonth(date: CalendarDate, direction: -1 | 1): CalendarDate {
+	const currentLength = jalaaliMonthLength(date.calendarYear, date.calendarMonth)
+	const gregorian = toGregorian(date.calendarYear, date.calendarMonth, direction < 0 ? 1 : currentLength)
+	const targetCivil = shiftedCivilDate(
+		{ year: gregorian.gy, month: gregorian.gm, day: gregorian.gd },
+		direction < 0 ? -1 : 1,
+	)
+	return calendarDate(
+		new Date(Date.UTC(targetCivil.year, targetCivil.month - 1, targetCivil.day)),
+		true,
 	)
 }
 
-function isSameWeek(date1: Date, date2: Date): boolean {
+function isSameWeek(
+	date1: Date,
+	date2: Date,
+	persian = false,
+	weekStartsOn = 'Saturday',
+): boolean {
+	if (persian) {
+		const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+		const firstWeekday = weekdays.indexOf(weekStartsOn)
+		const firstDay = firstWeekday < 0 ? 6 : firstWeekday
+		const weekStart = (date: Date) => {
+			const civil = civilDate(date, true)
+			const day = new Date(Date.UTC(civil.year, civil.month - 1, civil.day))
+			const daysSinceWeekStart = (day.getUTCDay() - firstDay + 7) % 7
+			return Date.UTC(civil.year, civil.month - 1, civil.day - daysSinceWeekStart)
+		}
+		return weekStart(date1) === weekStart(date2)
+	}
 	const week1 = getWeekNumber(date1)
 	const week2 = getWeekNumber(date2)
 	return week1.week === week2.week && week1.year === week2.year
@@ -214,58 +287,69 @@ export function applyTextRule(value: any, rule: text_rules): boolean {
 	}
 }
 
-export function applyDateRule(value: any, rule: date_rules): boolean {
-	const dateVal = new Date(value)
-	if (isNaN(dateVal.getTime())) return false
+export function applyDateRule(
+	value: any,
+	rule: date_rules,
+	context: { locale?: string | null; now?: Date; weekStartsOn?: string } = {},
+): boolean {
+	const dateVal = parseDateValue(value)
+	if (!dateVal) return false
 
-	const today = new Date()
-	const yesterday = new Date(today)
-	yesterday.setDate(today.getDate() - 1)
-	const tomorrow = new Date(today)
-	tomorrow.setDate(today.getDate() + 1)
+	const persian = isPersianLocale(context.locale)
+	const today = context.now || new Date()
+	const todayCivil = civilDate(today, persian)
+	const yesterday = shiftedCivilDate(todayCivil, -1)
+	const tomorrow = shiftedCivilDate(todayCivil, 1)
+	const dateCalendar = calendarDate(dateVal, persian)
+	const todayCalendar = calendarDate(today, persian)
+	const previousMonth = persian
+		? previousOrNextPersianMonth(todayCalendar, -1)
+		: calendarDate(new Date(today.getFullYear(), today.getMonth() - 1, 1), false)
+	const nextMonth = persian
+		? previousOrNextPersianMonth(todayCalendar, 1)
+		: calendarDate(new Date(today.getFullYear(), today.getMonth() + 1, 1), false)
+	const isSameCalendarDay = (target: CivilDate) =>
+		dateCalendar.year === target.year &&
+		dateCalendar.month === target.month &&
+		dateCalendar.day === target.day
+	const isSameCalendarMonth = (target: CalendarDate) =>
+		dateCalendar.calendarYear === target.calendarYear &&
+		dateCalendar.calendarMonth === target.calendarMonth
+	const isSameCalendarYear = (targetYear: number) => dateCalendar.calendarYear === targetYear
 
 	switch (rule.operator) {
 		case 'is_today':
-			return isSameDay(dateVal, today)
+			return isSameCalendarDay(todayCivil)
 		case 'is_yesterday':
-			return isSameDay(dateVal, yesterday)
+			return isSameCalendarDay(yesterday)
 		case 'is_tomorrow':
-			return isSameDay(dateVal, tomorrow)
+			return isSameCalendarDay(tomorrow)
 		case 'is_this_week':
-			return isSameWeek(dateVal, today)
+			return isSameWeek(dateVal, today, persian, context.weekStartsOn)
 		case 'is_last_week':
-			const lastWeek = new Date(today)
-			lastWeek.setDate(today.getDate() - 7)
-			return isSameWeek(dateVal, lastWeek)
+			const lastWeekCivil = shiftedCivilDate(todayCivil, -7)
+			const lastWeek = new Date(
+				Date.UTC(lastWeekCivil.year, lastWeekCivil.month - 1, lastWeekCivil.day),
+			)
+			return isSameWeek(dateVal, lastWeek, persian, context.weekStartsOn)
 		case 'is_next_week':
-			const nextWeek = new Date(today)
-			nextWeek.setDate(today.getDate() + 7)
-			return isSameWeek(dateVal, nextWeek)
+			const nextWeekCivil = shiftedCivilDate(todayCivil, 7)
+			const nextWeek = new Date(
+				Date.UTC(nextWeekCivil.year, nextWeekCivil.month - 1, nextWeekCivil.day),
+			)
+			return isSameWeek(dateVal, nextWeek, persian, context.weekStartsOn)
 		case 'is_this_month':
-			return (
-				dateVal.getMonth() === today.getMonth() &&
-				dateVal.getFullYear() === today.getFullYear()
-			)
+			return isSameCalendarMonth(todayCalendar)
 		case 'is_last_month':
-			const lastMonth = new Date(today)
-			lastMonth.setMonth(today.getMonth() - 1)
-			return (
-				dateVal.getMonth() === lastMonth.getMonth() &&
-				dateVal.getFullYear() === lastMonth.getFullYear()
-			)
+			return isSameCalendarMonth(previousMonth)
 		case 'is_next_month':
-			const nextMonth = new Date(today)
-			nextMonth.setMonth(today.getMonth() + 1)
-			return (
-				dateVal.getMonth() === nextMonth.getMonth() &&
-				dateVal.getFullYear() === nextMonth.getFullYear()
-			)
+			return isSameCalendarMonth(nextMonth)
 		case 'is_this_year':
-			return dateVal.getFullYear() === today.getFullYear()
+			return isSameCalendarYear(todayCalendar.calendarYear)
 		case 'is_last_year':
-			return dateVal.getFullYear() === today.getFullYear() - 1
+			return isSameCalendarYear(todayCalendar.calendarYear - 1)
 		case 'is_next_year':
-			return dateVal.getFullYear() === today.getFullYear() + 1
+			return isSameCalendarYear(todayCalendar.calendarYear + 1)
 		case 'date_between':
 			if (Array.isArray(rule.value) && rule.value.length === 2) {
 				const [start, end] = rule.value.map((date) => new Date(date))

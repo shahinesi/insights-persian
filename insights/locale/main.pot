@@ -3689,3 +3689,11 @@ msgstr ""
 msgid "Hello, {0} 👋"
 msgstr ""
 
+#: frontend/src2/query/helpers.ts
+msgid "Fiscal Year"
+msgstr ""
+
+#: insights/insights/doctype/insights_settings/insights_settings.json
+msgid "Fiscal Year Start"
+msgstr ""
+
