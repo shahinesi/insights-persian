@@ -2,19 +2,35 @@ import { digitsArToFa, digitsFaToEn } from '@persian-tools/persian-tools'
 import { toJalaali } from 'jalaali-js'
 
 const PERSIAN_MONTHS = [
-	'فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور',
-	'مهر', 'آبان', 'آذر', 'دی', 'بهمن', 'اسفند',
+	'فروردین',
+	'اردیبهشت',
+	'خرداد',
+	'تیر',
+	'مرداد',
+	'شهریور',
+	'مهر',
+	'آبان',
+	'آذر',
+	'دی',
+	'بهمن',
+	'اسفند',
 ] as const
 const ENGLISH_PERSIAN_MONTHS = [
-	'Farvardin', 'Ordibehesht', 'Khordad', 'Tir', 'Mordad', 'Shahrivar',
-	'Mehr', 'Aban', 'Azar', 'Dey', 'Bahman', 'Esfand',
+	'Farvardin',
+	'Ordibehesht',
+	'Khordad',
+	'Tir',
+	'Mordad',
+	'Shahrivar',
+	'Mehr',
+	'Aban',
+	'Azar',
+	'Dey',
+	'Bahman',
+	'Esfand',
 ] as const
 
-function monthName(
-	month: number,
-	locale: string,
-	style: 'long' | 'short' = 'long',
-): string {
+function monthName(month: number, locale: string, style: 'long' | 'short' = 'long'): string {
 	const isPersian = locale.toLowerCase().startsWith('fa')
 	const name = isPersian
 		? PERSIAN_MONTHS[month - 1] || ''
@@ -34,18 +50,23 @@ export function formatLocaleDate(
 	if (value === null || value === undefined || value === '') return ''
 	const language = locale || 'en-US'
 	const isPersian = language.toLowerCase().startsWith('fa')
-	const useJalali = options.calendar === 'persian' ||
-		(isPersian && options.calendar === undefined)
-	const hasTime = options.hour !== undefined || options.minute !== undefined || options.second !== undefined
+	const useJalali =
+		options.calendar === 'persian' || (isPersian && options.calendar === undefined)
+	const hasTime =
+		options.hour !== undefined || options.minute !== undefined || options.second !== undefined
+	const displayTimeZone = options.timeZone || (useJalali ? 'Asia/Tehran' : undefined)
 	let date: Date
 	let dateOnly = false
 
 	if (value instanceof Date) {
 		if (Number.isNaN(value.getTime())) return ''
 		dateOnly = !hasTime
-		date = dateOnly
-			? new Date(Date.UTC(value.getFullYear(), value.getMonth(), value.getDate()))
-			: value
+		if (dateOnly) {
+			const civil = displayTimeZone
+				? getGregorianDateParts(value, displayTimeZone)
+				: { year: value.getFullYear(), month: value.getMonth() + 1, day: value.getDate() }
+			date = new Date(Date.UTC(civil.year, civil.month - 1, civil.day))
+		} else date = value
 	} else if (typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value)) {
 		const [year, month, day] = value.split('-').map(Number)
 		date = new Date(Date.UTC(year, month - 1, day))
@@ -53,47 +74,50 @@ export function formatLocaleDate(
 			date.getUTCFullYear() !== year ||
 			date.getUTCMonth() !== month - 1 ||
 			date.getUTCDate() !== day
-		) return ''
+		)
+			return ''
 		dateOnly = true
 	} else {
-		date = new Date(
-			typeof value === 'string' ? value.replace(' ', 'T') : value,
-		)
+		date = new Date(typeof value === 'string' ? value.replace(' ', 'T') : value)
 		if (Number.isNaN(date.getTime())) return ''
 	}
 
 	const formatOptions: Intl.DateTimeFormatOptions = {
 		...options,
 		...(useJalali ? { calendar: 'gregory' } : {}),
+		...(displayTimeZone ? { timeZone: displayTimeZone } : {}),
 		numberingSystem: 'latn',
-		...((dateOnly && !hasTime) ? { timeZone: 'UTC' } : {}),
+		...(dateOnly && !hasTime ? { timeZone: 'UTC' } : {}),
 	}
 	const formatter = new Intl.DateTimeFormat(language, formatOptions)
 	if (!useJalali) return formatter.format(date)
 	const fields = jalaliFields(date, formatOptions.timeZone)
-	return formatter.formatToParts(date).map((part) => {
-		if (part.type === 'year') return String(fields.jy)
-		if (part.type === 'day') {
-			return options.day === '2-digit'
-				? String(fields.jd).padStart(2, '0')
-				: String(fields.jd)
-		}
-		if (part.type === 'month') {
-			if (options.month === 'numeric' || options.month === '2-digit') {
-				return options.month === '2-digit'
-					? String(fields.jm).padStart(2, '0')
-					: String(fields.jm)
+	return formatter
+		.formatToParts(date)
+		.map((part) => {
+			if (part.type === 'year') return String(fields.jy)
+			if (part.type === 'day') {
+				return options.day === '2-digit'
+					? String(fields.jd).padStart(2, '0')
+					: String(fields.jd)
 			}
-			const style: 'long' | 'short' =
-				options.month === 'long' || options.month === 'short'
-					? options.month
-					: options.dateStyle === 'long' || options.dateStyle === 'full'
-						? 'long'
-						: 'short'
-			return monthName(fields.jm, language, style)
-		}
-		return part.value
-	}).join('')
+			if (part.type === 'month') {
+				if (options.month === 'numeric' || options.month === '2-digit') {
+					return options.month === '2-digit'
+						? String(fields.jm).padStart(2, '0')
+						: String(fields.jm)
+				}
+				const style: 'long' | 'short' =
+					options.month === 'long' || options.month === 'short'
+						? options.month
+						: options.dateStyle === 'long' || options.dateStyle === 'full'
+							? 'long'
+							: 'short'
+				return monthName(fields.jm, language, style)
+			}
+			return part.value
+		})
+		.join('')
 }
 
 export type GregorianDateParts = { year: number; month: number; day: number }
@@ -101,7 +125,10 @@ export type GregorianDateParts = { year: number; month: number; day: number }
 /** Read Gregorian civil date parts for the requested timezone. */
 export function getGregorianDateParts(date: Date, timeZone?: string): GregorianDateParts {
 	const parts = new Intl.DateTimeFormat('en-US-u-ca-gregory-nu-latn', {
-		year: 'numeric', month: 'numeric', day: 'numeric', timeZone,
+		year: 'numeric',
+		month: 'numeric',
+		day: 'numeric',
+		timeZone,
 	}).formatToParts(date)
 	const values = Object.fromEntries(parts.map(({ type, value }) => [type, value]))
 	return { year: Number(values.year), month: Number(values.month), day: Number(values.day) }
@@ -136,9 +163,7 @@ export function formatLocaleNumber(
 
 export function directionForLocale(locale: string | null | undefined): 'ltr' | 'rtl' {
 	const language = (locale || 'en').toLowerCase().split(/[-_]/, 1)[0]
-	return ['ar', 'ckb', 'dv', 'fa', 'he', 'ps', 'ur', 'yi'].includes(language)
-		? 'rtl'
-		: 'ltr'
+	return ['ar', 'ckb', 'dv', 'fa', 'he', 'ps', 'ur', 'yi'].includes(language) ? 'rtl' : 'ltr'
 }
 
 export function parseLocaleNumber(value: string): number | undefined {
@@ -179,8 +204,11 @@ export function formatLocaleRelativeTime(
 	const delta = (instant.getTime() - reference.getTime()) / 1000
 	const absolute = Math.abs(delta)
 	const units: Array<[Intl.RelativeTimeFormatUnit, number, number]> = [
-		['second', 1, 45], ['minute', 60, 2700], ['hour', 3600, 79200],
-		['day', 86400, 2246400], ['month', 2592000, 28512000],
+		['second', 1, 45],
+		['minute', 60, 2700],
+		['hour', 3600, 79200],
+		['day', 86400, 2246400],
+		['month', 2592000, 28512000],
 		['year', 31536000, Infinity],
 	]
 	let unit: Intl.RelativeTimeFormatUnit = 'year'
@@ -197,6 +225,8 @@ export function formatLocaleRelativeTime(
 	const relativeLocale = language.toLowerCase().startsWith('fa')
 		? `${language.split('-u-')[0]}-u-nu-latn`
 		: language
-	return new Intl.RelativeTimeFormat(relativeLocale, { numeric: 'auto', style: 'long' })
-		.format(Math.round(amount), unit)
+	return new Intl.RelativeTimeFormat(relativeLocale, { numeric: 'auto', style: 'long' }).format(
+		Math.round(amount),
+		unit,
+	)
 }

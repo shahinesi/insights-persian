@@ -43,12 +43,24 @@ describe('locale display formatting', () => {
 	it('keeps date-only values stable and formats instants in the requested timezone', () => {
 		expect(
 			formatLocaleDate('2026-03-21', 'fa-IR', {
-				year: 'numeric', month: '2-digit', day: '2-digit',
+				year: 'numeric',
+				month: '2-digit',
+				day: '2-digit',
 			}),
 		).toContain('1405/01/01')
 		expect(
 			formatLocaleDate('2026-03-20T20:30:00Z', 'fa-IR', {
-				year: 'numeric', month: '2-digit', day: '2-digit', timeZone: 'Asia/Tehran',
+				year: 'numeric',
+				month: '2-digit',
+				day: '2-digit',
+				timeZone: 'Asia/Tehran',
+			}),
+		).toContain('1405/01/01')
+		expect(
+			formatLocaleDate(new Date('2026-03-20T20:30:00Z'), 'fa-IR', {
+				year: 'numeric',
+				month: '2-digit',
+				day: '2-digit',
 			}),
 		).toContain('1405/01/01')
 	})
@@ -57,7 +69,9 @@ describe('locale display formatting', () => {
 	it('renders Gregorian bucket endpoints as a Jalali span', () => {
 		expect(
 			formatLocaleDateRange('2026-03-01', '2026-03-31', 'fa-IR', {
-				year: 'numeric', month: 'short', day: 'numeric',
+				year: 'numeric',
+				month: 'short',
+				day: 'numeric',
 			}),
 		).toContain('1404')
 	})

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { wheneverChanges } from '../../helpers'
+import { calendarSpanFilter, resolvePersianSpan } from '../../helpers/calendar'
 import session from '../../session'
 import { __ } from '../../translation'
 import dayjs from '../../helpers/dayjs'
@@ -28,13 +29,22 @@ wheneverChanges(currentSection, () => {
 	}
 })
 
-const getValue = (date: Date) =>
+const getValue = (date: Date | string) =>
 	formatLocaleDate(date, session.user.locale, {
 		month: 'short',
 		day: 'numeric',
 	})
 type Day = ReturnType<typeof dayjs>
 const getRange = (start: Day, end: Day) => `${getValue(start.toDate())} - ${getValue(end.toDate())}`
+const getPeriodRange = (unit: 'month' | 'quarter' | 'year', start: Day, end: Day) => {
+	const locale = session.user.locale || 'en-US'
+	const jalaliRange = locale.toLowerCase().startsWith('fa')
+		? resolvePersianSpan(`current ${unit}`)
+		: undefined
+	return jalaliRange
+		? `${getValue(jalaliRange[0])} - ${getValue(jalaliRange[1])}`
+		: getRange(start, end)
+}
 
 const WEEKDAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 function startOfWeek() {
@@ -58,17 +68,21 @@ const predefinedRanges = computed(() => {
 		{
 			label: __('This Month'),
 			value: 'Month',
-			description: getRange(dayjs().startOf('month'), dayjs().endOf('month')),
+			description: getPeriodRange('month', dayjs().startOf('month'), dayjs().endOf('month')),
 		},
 		{
 			label: __('This Quarter'),
 			value: 'Quarter',
-			description: getRange(dayjs().startOf('quarter'), dayjs().endOf('quarter')),
+			description: getPeriodRange(
+				'quarter',
+				dayjs().startOf('quarter'),
+				dayjs().endOf('quarter'),
+			),
 		},
 		{
 			label: __('This Year'),
 			value: 'Year',
-			description: getRange(dayjs().startOf('year'), dayjs().endOf('year')),
+			description: getPeriodRange('year', dayjs().startOf('year'), dayjs().endOf('year')),
 		},
 		{
 			label: __('This FY'),
@@ -90,12 +104,26 @@ const predefinedRanges = computed(() => {
 })
 
 function onPredefinedRangeInput(rangeValue: string) {
-	filter.value = { operator: 'within', value: ['Current', rangeValue] }
+	const span = `current ${rangeValue.toLowerCase()}`
+	const localized = calendarSpanFilter(span, session.user.locale)
+	filter.value =
+		localized.operator === 'between'
+			? localized
+			: { operator: 'within', value: ['Current', rangeValue] }
 }
 
 function isRangeSelected(rangeValue: string) {
 	if (!filter.value || !filter.value.value) return false
 	const value = filter.value.value as string[]
+	const span = `current ${rangeValue.toLowerCase()}`
+	const localized = calendarSpanFilter(span, session.user.locale)
+	if (localized.operator === 'between') {
+		return (
+			filter.value.operator === 'between' &&
+			value[0] === localized.value[0] &&
+			value[1] === localized.value[1]
+		)
+	}
 	return filter.value.operator === 'within' && value[1] === rangeValue
 }
 

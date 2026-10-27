@@ -6,7 +6,13 @@
 import type { Component } from 'vue'
 import { FIELDTYPES, type FilterType } from '../../helpers/constants'
 import dayjs from '../../helpers/dayjs'
-import { endOfPeriod, shiftPeriods, startOfPeriod } from '../../helpers/calendar'
+import {
+	calendarSpanFilter,
+	endOfPeriod,
+	resolvePersianSpan,
+	shiftPeriods,
+	startOfPeriod,
+} from '../../helpers/calendar'
 import {
 	formatLocaleDate,
 	formatLocaleDateRange,
@@ -227,9 +233,7 @@ function roundish(value: number): number {
 export function formatNumber(raw: any): string {
 	const value = Number(raw)
 	const locale = session.site?.country === 'India' ? 'en-IN' : session.user?.locale
-	return Number.isFinite(value)
-		? formatLocaleNumber(value, locale)
-		: String(raw ?? '')
+	return Number.isFinite(value) ? formatLocaleNumber(value, locale) : String(raw ?? '')
 }
 
 export function parseNumber(text: string): number | undefined {
@@ -350,6 +354,10 @@ export function spanOf(form: RelativeForm): string {
  * counts by those.
  */
 export function resolveSpan(span: string, anchor?: string): [string, string] {
+	if (session.user?.locale?.toLowerCase().startsWith('fa')) {
+		const jalaliRange = resolvePersianSpan(span, anchor)
+		if (jalaliRange) return jalaliRange
+	}
 	const today = anchor ? dayjs(anchor) : dayjs()
 
 	const form = parseSpan(span)
@@ -379,6 +387,17 @@ export function resolveSpan(span: string, anchor?: string): [string, string] {
 	const from = form.includeCurrent ? currentStart : nextStart
 	const to = shiftPeriods(nextStart, form.unit, form.count).subtract(1, 'day')
 	return [from.format(DATE_FORMAT), to.format(DATE_FORMAT)]
+}
+
+/** A Persian month/quarter/year filter is sent as Gregorian ISO date bounds. */
+export function filterForSpan(
+	span: string,
+	anchor?: string,
+): {
+	operator: FilterOperator
+	value: FilterValue
+} {
+	return calendarSpanFilter(span, session.user?.locale, anchor)
 }
 
 /** A span in the picker's words: `Today`, `Last 7 days`, `Next 2 weeks`. */

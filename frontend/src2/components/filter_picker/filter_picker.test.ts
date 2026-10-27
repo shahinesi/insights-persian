@@ -3,6 +3,7 @@ import type { QueryResultColumn } from '../../types/query.types'
 import session from '../../session'
 import {
 	SPAN_UNITS,
+	filterForSpan,
 	formatDate,
 	isPreset,
 	numberPairValues,
@@ -92,6 +93,32 @@ describe('the range a relative span covers', () => {
 	// @feature query.filter-relative-date
 	it('hands back a span it cannot read, so a typed day filters itself', () => {
 		expect(resolveSpan('2026-08-10', ANCHOR)).toEqual([ANCHOR, ANCHOR])
+	})
+
+	// @feature query.filter-relative-date
+	it('uses Jalali period bounds for Persian filters and keeps English spans unchanged', () => {
+		const locale = session.user.locale
+		try {
+			session.user.locale = 'fa-IR'
+			expect(resolveSpan('current month', '2026-03-20')).toEqual(['2026-02-20', '2026-03-20'])
+			expect(resolveSpan('last 1 month', '2026-03-20')).toEqual(['2026-01-21', '2026-02-19'])
+			expect(resolveSpan('current quarter', '2026-03-20')).toEqual([
+				'2025-12-22',
+				'2026-03-20',
+			])
+			expect(resolveSpan('current year', '2026-03-20')).toEqual(['2025-03-21', '2026-03-20'])
+			expect(filterForSpan('current month', '2026-03-20')).toEqual({
+				operator: 'between',
+				value: ['2026-02-20', '2026-03-20'],
+			})
+			session.user.locale = 'en-US'
+			expect(filterForSpan('current month', '2026-03-20')).toEqual({
+				operator: 'within',
+				value: { span: 'current month' },
+			})
+		} finally {
+			session.user.locale = locale
+		}
 	})
 })
 

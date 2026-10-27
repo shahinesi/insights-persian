@@ -16,6 +16,7 @@ import {
 	calendarOf,
 	datePresets,
 	defaultOperator,
+	filterForSpan,
 	formatDate,
 	isMulti,
 	kindOf,
@@ -266,8 +267,7 @@ const typed = computed<(Draft & { label: string; note?: string }) | undefined>((
 		if (!span || datePresets().some((p) => p.label.toLowerCase() === text.toLowerCase()))
 			return undefined
 		return {
-			operator: 'within',
-			value: { span },
+			...filterForSpan(span),
 			label: __('Use “{0}”', text),
 			note: spanDates(span),
 		}
@@ -393,11 +393,11 @@ const rows = computed<ListItem[]>(() => {
 			? numberPairValues(range.value).map((pair) => ({
 					key: `pair:${pair[0]}:${pair[1]}`,
 					label: numberPreview(op.value!, pair),
-			  }))
+				}))
 			: numberQuickValues(range.value).map((v) => ({
 					key: `n:${v}`,
 					label: numberPreview(op.value!, v),
-			  }))
+				}))
 	}
 
 	// dates: the input and the highlighted grid already read the draft
@@ -488,7 +488,7 @@ function pick(item: ListItem) {
 			highlight('include')
 			return
 		}
-		return commit({ operator: 'within', value: { span: item.key.slice(5) } })
+		return commit(filterForSpan(item.key.slice(5)))
 	}
 	pickValue(item)
 }
@@ -513,8 +513,7 @@ function pickValue(item: ListItem) {
 	}
 
 	if (item.key === relativeRow().key) return go('relative')
-	if (item.key.startsWith('span:'))
-		return commit({ operator: 'within', value: { span: item.key.slice(5) } })
+	if (item.key.startsWith('span:')) return commit(filterForSpan(item.key.slice(5)))
 }
 
 function commit(rule: Draft | undefined = draft.value) {
