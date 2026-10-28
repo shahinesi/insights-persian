@@ -607,7 +607,7 @@ msgstr "محتوا"
 
 #: frontend/src2/components/UserDropdown.vue:57
 msgid "Continue"
-msgstr "ادامه هید"
+msgstr "ادامه"
 
 #: frontend/src2/query/components/FiltersSelector.vue:113
 msgid "Convert to Expression"
