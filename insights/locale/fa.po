@@ -3638,3 +3638,50 @@ msgstr "سال مالی"
 msgid "Fiscal Year Start"
 msgstr "آغاز سال مالی"
 
+
+
+#: frontend/src2/workbook/WorkbookList.vue:203
+msgid "Create a workbook, or start from a prebuilt one."
+msgstr "یک دفترکار ایجاد کنید یا از نمونهٔ آماده شروع کنید."
+
+#: frontend/src2/workbook/WorkbookSidebarFolders.vue:280
+msgid "Empty"
+msgstr "خالی"
+
+#. Label of the from_template (Data) field in DocType 'Insights Workbook'
+#: insights/insights/doctype/insights_workbook/insights_workbook.json
+msgid "From Template"
+msgstr "از الگو"
+
+#. Label of the imported_checksum (Data) field in DocType 'Insights Workbook'
+#: insights/insights/doctype/insights_workbook/insights_workbook.json
+msgid "Imported Checksum"
+msgstr "چکیدهٔ واردشده"
+
+#. Label of the imported_version (Int) field in DocType 'Insights Workbook'
+#: insights/insights/doctype/insights_workbook/insights_workbook.json
+msgid "Imported Version"
+msgstr "نسخهٔ واردشده"
+
+#. Description of the 'Max Execution Time (Seconds)' (Int) field in DocType
+#. 'Insights Settings'
+#: insights/insights/doctype/insights_settings/insights_settings.json
+msgid "Interactive queries are cancelled after this many seconds. Applies to new connections and to live (non-data-store) queries; background imports are exempt."
+msgstr "پرس‌وجوهای تعاملی پس از این تعداد ثانیه لغو می‌شوند. این محدودیت برای اتصال‌های جدید و پرس‌وجوهای زنده (غیر از انبار داده) اعمال می‌شود؛ واردسازی‌های پس‌زمینه از آن مستثنا هستند."
+
+#: frontend/src2/workbook/WorkbookList.vue:150
+#: frontend/src2/workbook/WorkbookList.vue:210
+msgid "Library"
+msgstr "کتابخانه"
+
+#: frontend/src2/dashboard/DashboardList.vue:85
+msgid "No dashboards to display."
+msgstr "داشبوردی برای نمایش وجود ندارد."
+
+#: insights/insights/doctype/insights_query_v3/insights_query_v3.py:349
+msgid "You do not have access to one of the linked queries"
+msgstr "به یکی از پرس‌وجوهای پیوندشده دسترسی ندارید"
+
+#: insights/insights/doctype/insights_query_v3/insights_query_v3.py:234
+msgid "Your role does not have the export permission for queries. Contact your administrator."
+msgstr "نقش شما مجوز برون‌بری پرس‌وجوها را ندارد. با مدیر سامانه تماس بگیرید."
