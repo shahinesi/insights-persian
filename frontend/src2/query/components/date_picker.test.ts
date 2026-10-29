@@ -9,6 +9,7 @@ describe('query date picker input', () => {
 	// @feature query.filter-date-on-datetime
 	it('selects a calendar from the Insights locale, independent of document lang', () => {
 		expect(getDatePickerCalendar('fa-IR')).toBe('persian')
+		expect(getDatePickerCalendar('fa_IR')).toBe('persian')
 		expect(getDatePickerCalendar('FA')).toBe('persian')
 		expect(getDatePickerCalendar('en-US')).toBe('gregorian')
 	})
@@ -19,6 +20,9 @@ describe('query date picker input', () => {
 		expect(shown).toContain('1405/01/01')
 		expect(shown).not.toMatch(/[۰-۹٠-٩]/)
 		expect(parseDatePickerInput(shown, 'fa-IR')).toBe('2026-03-21')
+		const legacyLocaleShown = formatDatePickerInput('2026-03-21', 'fa_IR')
+		expect(legacyLocaleShown).toContain('1405/01/01')
+		expect(parseDatePickerInput(legacyLocaleShown, 'fa_IR')).toBe('2026-03-21')
 	})
 
 	// @feature query.filter-date-on-datetime

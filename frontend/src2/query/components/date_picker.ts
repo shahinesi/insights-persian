@@ -1,20 +1,21 @@
 import { formatPersianDate, parsePersianDate } from 'frappe-ui/localization'
+import { isPersianLocale, toIntlLocale } from '../../helpers/locale'
 
 export function getDatePickerCalendar(locale: string): 'persian' | 'gregorian' {
-	return /^fa(?:-|$)/i.test(locale) ? 'persian' : 'gregorian'
+	return isPersianLocale(locale) ? 'persian' : 'gregorian'
 }
 
 export function formatDatePickerInput(isoDate: string, locale: string): string {
-	if (!isoDate || !/^fa(?:-|$)/i.test(locale)) return isoDate
-	return formatPersianDate(isoDate, locale)
+	if (!isoDate || !isPersianLocale(locale)) return isoDate
+	return formatPersianDate(isoDate, toIntlLocale(locale))
 }
 
 export function parseDatePickerInput(value: string, locale: string): string | null {
 	const input = value.trim()
 	if (!input) return null
 
-	if (/^fa(?:-|$)/i.test(locale)) {
-		const persianDate = parsePersianDate(input, 'YYYY/MM/DD', locale)
+	if (isPersianLocale(locale)) {
+		const persianDate = parsePersianDate(input, 'YYYY/MM/DD', toIntlLocale(locale))
 		if (persianDate) return persianDate
 	}
 
@@ -32,7 +33,7 @@ export function parseDatePickerInput(value: string, locale: string): string | nu
 		return null
 	}
 
-	if (/^fa(?:-|$)/i.test(locale)) return null
+	if (isPersianLocale(locale)) return null
 	const parsed = new Date(input)
 	if (Number.isNaN(parsed.getTime())) return null
 	return [

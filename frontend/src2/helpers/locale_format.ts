@@ -1,5 +1,6 @@
 import { digitsArToFa, digitsFaToEn } from '@persian-tools/persian-tools'
 import { toJalaali } from 'jalaali-js'
+import { isPersianLocale, toIntlLocale } from './locale'
 
 const PERSIAN_MONTHS = [
 	'فروردین',
@@ -31,7 +32,7 @@ const ENGLISH_PERSIAN_MONTHS = [
 ] as const
 
 function monthName(month: number, locale: string, style: 'long' | 'short' = 'long'): string {
-	const isPersian = locale.toLowerCase().startsWith('fa')
+	const isPersian = isPersianLocale(locale)
 	const name = isPersian
 		? PERSIAN_MONTHS[month - 1] || ''
 		: ENGLISH_PERSIAN_MONTHS[month - 1] || ''
@@ -48,8 +49,8 @@ export function formatLocaleDate(
 	options: Intl.DateTimeFormatOptions = {},
 ): string {
 	if (value === null || value === undefined || value === '') return ''
-	const language = locale || 'en-US'
-	const isPersian = language.toLowerCase().startsWith('fa')
+	const language = toIntlLocale(locale)
+	const isPersian = isPersianLocale(language)
 	const useJalali =
 		options.calendar === 'persian' || (isPersian && options.calendar === undefined)
 	const hasTime =
@@ -155,7 +156,7 @@ export function formatLocaleNumber(
 	locale: string | null | undefined,
 	options: Intl.NumberFormatOptions = {},
 ): string {
-	return new Intl.NumberFormat(locale || 'en-US', {
+	return new Intl.NumberFormat(toIntlLocale(locale), {
 		...options,
 		numberingSystem: 'latn',
 	}).format(value)
@@ -184,7 +185,7 @@ export function formatLocaleTime(
 	if (!match) return value
 	const [, hour, minute, second = '0'] = match
 	const date = new Date(2000, 0, 1, Number(hour), Number(minute), Number(second))
-	const language = locale || 'en-US'
+	const language = toIntlLocale(locale)
 	return new Intl.DateTimeFormat(language, {
 		...options,
 		numberingSystem: 'latn',
@@ -221,8 +222,8 @@ export function formatLocaleRelativeTime(
 		}
 	}
 	const amount = delta / unitSeconds
-	const language = locale || 'en-US'
-	const relativeLocale = language.toLowerCase().startsWith('fa')
+	const language = toIntlLocale(locale)
+	const relativeLocale = isPersianLocale(language)
 		? `${language.split('-u-')[0]}-u-nu-latn`
 		: language
 	return new Intl.RelativeTimeFormat(relativeLocale, { numeric: 'auto', style: 'long' }).format(

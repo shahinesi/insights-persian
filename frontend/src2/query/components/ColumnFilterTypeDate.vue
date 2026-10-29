@@ -5,6 +5,7 @@ import session from '../../session'
 import { __ } from '../../translation'
 import dayjs from '../../helpers/dayjs'
 import { formatLocaleDate } from '../../helpers/locale_format'
+import { isPersianLocale } from '../../helpers/locale'
 import { ChevronDown, ChevronRight } from 'lucide-vue-next'
 import { computed, ref } from 'vue'
 import { FilterOperator, FilterValue, QueryResultColumn } from '../../types/query.types'
@@ -38,7 +39,7 @@ type Day = ReturnType<typeof dayjs>
 const getRange = (start: Day, end: Day) => `${getValue(start.toDate())} - ${getValue(end.toDate())}`
 const getPeriodRange = (unit: 'month' | 'quarter' | 'year', start: Day, end: Day) => {
 	const locale = session.user.locale || 'en-US'
-	const jalaliRange = locale.toLowerCase().startsWith('fa')
+	const jalaliRange = isPersianLocale(locale)
 		? resolvePersianSpan(`current ${unit}`)
 		: undefined
 	return jalaliRange

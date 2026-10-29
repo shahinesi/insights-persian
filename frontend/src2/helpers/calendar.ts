@@ -16,6 +16,7 @@ import session from '../session'
 import { jalaaliMonthLength, toGregorian, toJalaali } from 'jalaali-js'
 import { getGregorianDateParts, type GregorianDateParts } from './locale_format'
 import { parseSpan, type SpanUnit } from './span_grammar'
+import { isPersianLocale } from './locale'
 
 /** What the server falls back to, in `get_fiscal_year_start_date`. */
 const FISCAL_YEAR_START = '1995-04-01'
@@ -157,7 +158,7 @@ export function calendarSpanFilter(
 ):
 	| { operator: 'between'; value: [string, string] }
 	| { operator: 'within'; value: { span: string } } {
-	if (locale?.toLowerCase().startsWith('fa')) {
+	if (isPersianLocale(locale)) {
 		const range = resolvePersianSpan(span, anchor)
 		if (range) return { operator: 'between', value: range }
 	}

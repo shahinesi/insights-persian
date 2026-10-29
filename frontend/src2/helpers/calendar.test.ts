@@ -34,6 +34,10 @@ describe('Jalali filter periods', () => {
 			operator: 'between',
 			value: ['2026-02-20', '2026-03-20'],
 		})
+		expect(calendarSpanFilter('current month', 'fa_IR', '2026-03-20')).toEqual({
+			operator: 'between',
+			value: ['2026-02-20', '2026-03-20'],
+		})
 		expect(calendarSpanFilter('current month', 'en-US', '2026-03-20')).toEqual({
 			operator: 'within',
 			value: { span: 'current month' },

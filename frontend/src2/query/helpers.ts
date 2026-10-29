@@ -22,6 +22,7 @@ import { FIELDTYPES, getDefaultGranularity, GranularityType } from '../helpers/c
 import dayjs from '../helpers/dayjs'
 import { endOfPeriod, startOfPeriod } from '../helpers/calendar'
 import { formatLocaleDate, formatLocaleDateRange, formatLocaleTime } from '../helpers/locale_format'
+import { isPersianLocale } from '../helpers/locale'
 import type { SpanUnit } from '../helpers/span_grammar'
 import useSettings from '../settings/settings'
 import {
@@ -279,7 +280,7 @@ export function getAxisDate(date: string, granularity: string) {
 function formatDateBy(date: string, granularity: string, formats: Record<string, string>) {
 	if (!date) return ''
 	const locale = session.user.locale || 'en-US'
-	const isPersian = locale.toLowerCase().startsWith('fa')
+	const isPersian = isPersianLocale(locale)
 
 	const isTimeOnlyValue = /^\d{1,2}:\d{2}(:\d{2}(\.\d+)?)?$/.test(date)
 	if (isTimeOnlyValue) {

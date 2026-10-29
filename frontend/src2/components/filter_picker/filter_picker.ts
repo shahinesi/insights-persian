@@ -20,6 +20,7 @@ import {
 	parseLocaleNumber,
 } from '../../helpers/locale_format'
 import session from '../../session'
+import { isPersianLocale } from '../../helpers/locale'
 import {
 	buildSpan,
 	parseSpan,
@@ -354,7 +355,7 @@ export function spanOf(form: RelativeForm): string {
  * counts by those.
  */
 export function resolveSpan(span: string, anchor?: string): [string, string] {
-	if (session.user?.locale?.toLowerCase().startsWith('fa')) {
+	if (isPersianLocale(session.user?.locale)) {
 		const jalaliRange = resolvePersianSpan(span, anchor)
 		if (jalaliRange) return jalaliRange
 	}
@@ -482,7 +483,7 @@ export function spanFromText(text: string): string | undefined {
 export function formatDate(from: string, to?: string): string {
 	const start = dayjs(from)
 	if (!start.isValid()) return from ?? ''
-	if (session.user?.locale?.toLowerCase().startsWith('fa')) {
+	if (isPersianLocale(session.user?.locale)) {
 		const options: Intl.DateTimeFormatOptions = {
 			day: 'numeric',
 			month: 'short',

@@ -4,6 +4,7 @@ import {
 	getGregorianDateParts,
 	type GregorianDateParts,
 } from '../../helpers/locale_format'
+import { isPersianLocale } from '../../helpers/locale'
 
 export type ConditionalColor = 'red' | 'amber' | 'green'
 
@@ -140,10 +141,6 @@ export function rulesByColumn(
 // helper functions for date comparison
 type CivilDate = GregorianDateParts
 type CalendarDate = CivilDate & { calendarYear: number; calendarMonth: number }
-
-function isPersianLocale(locale?: string | null): boolean {
-	return (locale || '').toLowerCase().startsWith('fa')
-}
 
 function parseDateValue(value: any): Date | null {
 	if (value === null || value === undefined || value === '') return null

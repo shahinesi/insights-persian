@@ -7,8 +7,20 @@ import {
 	parseLocaleNumber,
 	directionForLocale,
 } from './locale_format'
+import { isPersianLocale, toIntlLocale } from './locale'
 
 describe('locale display formatting', () => {
+	it('recognizes Persian locales with hyphen or legacy underscore separators', () => {
+		for (const locale of ['fa', 'fa-IR', 'fa_IR', 'FA-ir', 'FA_IR']) {
+			expect(isPersianLocale(locale)).toBe(true)
+		}
+		for (const locale of ['', 'en-US', 'ar', 'ar_IR']) {
+			expect(isPersianLocale(locale)).toBe(false)
+		}
+		expect(toIntlLocale('fa_IR')).toBe('fa-IR')
+		expect(formatLocaleDate('2025-03-20', 'fa_IR', { year: 'numeric' })).toContain('1403')
+		expect(formatLocaleNumber(1250, 'fa_IR')).toBe('1,250')
+	})
 	// @feature charts.x-axis
 	it('uses the Jalali calendar and canonical digits for Persian dates', () => {
 		expect(

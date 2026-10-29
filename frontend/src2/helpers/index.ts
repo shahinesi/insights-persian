@@ -23,6 +23,7 @@ import {
 } from '../types/query.types'
 import { FIELDTYPES } from './constants'
 import { formatLocaleNumber } from './locale_format'
+import { isPersianLocale } from './locale'
 
 export function getUniqueId(length = 8) {
 	return (+new Date() * Math.random()).toString(36).substring(0, length)
@@ -235,7 +236,7 @@ export function getFormatUnits(format?: DataFormat, code?: string | null): Forma
 		return {
 			scale: 100,
 			prefix: '',
-			suffix: session.user?.locale?.toLowerCase().startsWith('fa') ? '٪' : '%',
+			suffix: isPersianLocale(session.user?.locale) ? '٪' : '%',
 		}
 	}
 	if (format !== 'currency') return NO_UNITS

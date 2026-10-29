@@ -4,6 +4,7 @@ import { computed } from 'vue'
 import DatePicker from './DatePicker.vue'
 import session from '../../session'
 import { formatLocaleDate } from '../../helpers/locale_format'
+import { isPersianLocale } from '../../helpers/locale'
 
 const props = defineProps({
 	placeholder: {
@@ -46,7 +47,7 @@ const formatDate = (dates: string | string[] | Date | Date[]) => {
 			day: 'numeric',
 			...(year(date) === currentYear ? {} : { year: 'numeric' }),
 		})
-	const separator = locale.toLowerCase().startsWith('fa') ? ' – ' : ' - '
+	const separator = isPersianLocale(locale) ? ' – ' : ' - '
 	return end ? `${format(start)}${separator}${format(end)}` : format(start)
 }
 
