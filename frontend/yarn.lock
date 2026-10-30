@@ -2760,9 +2760,9 @@ fraction.js@^5.3.4:
   resolved "https://registry.yarnpkg.com/fraction.js/-/fraction.js-5.3.4.tgz#8c0fcc6a9908262df4ed197427bdeef563e0699a"
   integrity sha512-1X1NTtiJphryn/uLQz3whtY6jK3fTqoE3ohKs0tT+Ujr1W59oopxmoEh7Lu5p6vBaPbgoM0bzveAW4Qi5RyWDQ==
 
-"frappe-ui@github:shahinesi/frappe-ui-persian#351b9caad7910bea309b2cf15f5b32ccd74ef266":
+"frappe-ui@github:shahinesi/frappe-ui-persian#34ac871021036df581b902b0b89a17b2a5059a7d":
   version "1.0.0"
-  resolved "https://codeload.github.com/shahinesi/frappe-ui-persian/tar.gz/351b9caad7910bea309b2cf15f5b32ccd74ef266"
+  resolved "https://codeload.github.com/shahinesi/frappe-ui-persian/tar.gz/34ac871021036df581b902b0b89a17b2a5059a7d"
   dependencies:
     "@codemirror/autocomplete" "^6.0.0"
     "@codemirror/commands" "^6.0.0"
