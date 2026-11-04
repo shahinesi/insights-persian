@@ -14,7 +14,7 @@
 		"typecheck": "vue-tsc --noEmit -p tsconfig.json",
 		"typecheck:baseline": "node tools/typecheck-baseline.mjs",
 		"test": "vitest run",
-		"test:localization": "node --experimental-strip-types --test scripts/localization.test.mjs",
+		"test:localization": "vitest run src2/helpers/locale_format.test.ts",
 		"build": "vite build -l warn --base=/assets/insights/frontend/ && yarn copy-html-entry",
 		"build:islands": "node build-islands.mjs --production",
 		"copy-html-entry": "node tools/copy-html-entry.mjs",
