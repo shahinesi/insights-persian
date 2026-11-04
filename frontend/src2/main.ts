@@ -64,5 +64,5 @@ app.config.errorHandler = (err, vm, info) => {
 registerGlobalComponents(app)
 registerControllers(app)
 
-app.mount('#app')
 app.use(translationPlugin)
+app.mount('#app')
