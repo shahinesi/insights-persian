@@ -86,7 +86,9 @@ const drillable = computed(() => props.drillable !== false && !props.card.missin
 			<!-- The state every other chart type is given by the chrome around its
 			     plot. A card is its own chrome, so it says it here, in the words
 			     the chrome says it in. -->
-			<template v-if="props.empty && !card.missing" #empty>
+			<!-- NumberCard's generic fallback is English, so every empty reading
+			     supplies the app-locale message regardless of why its value is null. -->
+			<template #empty>
 				<p class="text-p-base text-ink-gray-5">{{ __('No data') }}</p>
 			</template>
 
