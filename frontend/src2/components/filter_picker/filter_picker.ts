@@ -13,10 +13,8 @@ import {
 	shiftPeriods,
 	startOfPeriod,
 } from '../../helpers/calendar'
+import { formatLocaleDate, formatLocaleDateRange, formatLocaleNumber } from 'frappe-ui/localization'
 import {
-	formatLocaleDate,
-	formatLocaleDateRange,
-	formatLocaleNumber,
 	parseLocaleNumber,
 } from '../../helpers/locale_format'
 import session from '../../session'
@@ -234,7 +232,7 @@ function roundish(value: number): number {
 export function formatNumber(raw: any): string {
 	const value = Number(raw)
 	const locale = session.site?.country === 'India' ? 'en-IN' : session.user?.locale
-	return Number.isFinite(value) ? formatLocaleNumber(value, locale) : String(raw ?? '')
+	return Number.isFinite(value) ? formatLocaleNumber(value, {}, locale) : String(raw ?? '')
 }
 
 export function parseNumber(text: string): number | undefined {
@@ -489,8 +487,8 @@ export function formatDate(from: string, to?: string): string {
 			month: 'short',
 			year: 'numeric',
 		}
-		if (!to || to === from) return formatLocaleDate(from, session.user.locale, options)
-		return formatLocaleDateRange(from, to, session.user.locale, options) || `${from} – ${to}`
+		if (!to || to === from) return formatLocaleDate(from, options, session.user.locale)
+		return formatLocaleDateRange(from, to, options, session.user.locale) || `${from} – ${to}`
 	}
 	if (!to || to === from) return start.format('D MMM YYYY')
 

@@ -21,7 +21,8 @@ import { copy } from '../helpers'
 import { FIELDTYPES, getDefaultGranularity, GranularityType } from '../helpers/constants'
 import dayjs from '../helpers/dayjs'
 import { endOfPeriod, startOfPeriod } from '../helpers/calendar'
-import { formatLocaleDate, formatLocaleDateRange, formatLocaleTime } from '../helpers/locale_format'
+import { formatLocaleDate, formatLocaleDateRange } from 'frappe-ui/localization'
+import { formatLocaleTime } from '../helpers/locale_format'
 import { isPersianLocale } from '../helpers/locale'
 import type { SpanUnit } from '../helpers/span_grammar'
 import useSettings from '../settings/settings'
@@ -314,8 +315,13 @@ function formatDateBy(date: string, granularity: string, formats: Record<string,
 		return formatLocaleDateRange(
 			start.format('YYYY-MM-DD'),
 			end.format('YYYY-MM-DD'),
+			{
+				year: 'numeric',
+				month: axis ? 'short' : 'long',
+				day: 'numeric',
+				...(isPersian ? { timeZone: 'Asia/Tehran' } : {}),
+			},
 			locale,
-			{ year: 'numeric', month: axis ? 'short' : 'long', day: 'numeric' },
 		)
 	}
 
@@ -334,8 +340,8 @@ function formatDateBy(date: string, granularity: string, formats: Record<string,
 			const years = formatLocaleDateRange(
 				fiscalStart.format('YYYY-MM-DD'),
 				fiscalEnd.format('YYYY-MM-DD'),
+				{ year: 'numeric', ...(isPersian ? { timeZone: 'Asia/Tehran' } : {}) },
 				locale,
-				{ year: 'numeric' },
 			)
 			return `${__('Fiscal Year')} ${years}`
 		}
@@ -362,7 +368,11 @@ function formatDateBy(date: string, granularity: string, formats: Record<string,
 			},
 			day: { month: axis ? 'short' : 'long', day: 'numeric', year: 'numeric' },
 		}
-		return formatLocaleDate(date, locale, options[granularity])
+		return formatLocaleDate(
+			date,
+			{ ...options[granularity], timeZone: 'Asia/Tehran' },
+			locale,
+		)
 	}
 	return dayjs(date).format(formats[granularity])
 }

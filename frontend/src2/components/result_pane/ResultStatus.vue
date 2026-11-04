@@ -4,7 +4,7 @@ import { RefreshCw } from 'lucide-vue-next'
 import { computed, ref } from 'vue'
 import type { PaginationState } from '../../composables/usePagination'
 import { __ } from '../../translation'
-import { formatLocaleNumber } from '../../helpers/locale_format'
+import { formatLocaleNumber } from 'frappe-ui/localization'
 import session from '../../session'
 import { knownRowCount, rangeAroundCount, rowCountText } from './status'
 
@@ -99,6 +99,7 @@ async function fetchCount() {
 							String(props.paging.to.value),
 							formatLocaleNumber(
 								settledCount,
+								{},
 								session.site?.country === 'India' ? 'en-IN' : session.user?.locale,
 							),
 						)

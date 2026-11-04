@@ -1,7 +1,8 @@
 import { __ } from '../../translation'
 import type { PaginationState } from '../../composables/usePagination'
 import type { QueryResult } from '../../types/query.types'
-import { formatLocaleNumber, formatLocaleRelativeTime } from '../../helpers/locale_format'
+import { formatLocaleNumber } from 'frappe-ui/localization'
+import { formatLocaleRelativeTime } from '../../helpers/locale_format'
 import session from '../../session'
 
 /** Keep the existing English wording and localize execution ages for other users. */
@@ -48,7 +49,7 @@ export function knownRowCount(options: {
 export function rowCountText(count: number): string {
 	if (count === 1) return __('Showing 1 row')
 	const locale = session.site?.country === 'India' ? 'en-IN' : session.user?.locale
-	return __('Showing {0} rows', formatLocaleNumber(count, locale))
+	return __('Showing {0} rows', formatLocaleNumber(count, {}, locale))
 }
 
 /**

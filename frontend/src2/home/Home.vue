@@ -1,17 +1,24 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import { formatLocaleDate } from 'frappe-ui/localization'
 import session from '../session'
-import { formatLocaleDate } from '../helpers/locale_format'
+import { isPersianLocale } from '../helpers/locale'
 import HomeQuickActions from './HomeQuickActions.vue'
 import HomeWorkbookList from './HomeWorkbookList.vue'
 
-const today = computed(() =>
-	formatLocaleDate(new Date(), session.user.locale, {
-		weekday: 'long',
-		day: 'numeric',
-		month: 'long',
-	}),
-)
+const today = computed(() => {
+	const locale = session.user.locale || 'en-US'
+	return formatLocaleDate(
+		new Date(),
+		{
+			weekday: 'long',
+			day: 'numeric',
+			month: 'long',
+			...(isPersianLocale(locale) ? { timeZone: 'Asia/Tehran' } : {}),
+		},
+		locale,
+	)
+})
 </script>
 
 <template>

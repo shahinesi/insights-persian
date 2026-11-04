@@ -4,7 +4,7 @@ import { calendarSpanFilter, resolvePersianSpan } from '../../helpers/calendar'
 import session from '../../session'
 import { __ } from '../../translation'
 import dayjs from '../../helpers/dayjs'
-import { formatLocaleDate } from '../../helpers/locale_format'
+import { formatLocaleDate } from 'frappe-ui/localization'
 import { isPersianLocale } from '../../helpers/locale'
 import { ChevronDown, ChevronRight } from 'lucide-vue-next'
 import { computed, ref } from 'vue'
@@ -30,11 +30,18 @@ wheneverChanges(currentSection, () => {
 	}
 })
 
-const getValue = (date: Date | string) =>
-	formatLocaleDate(date, session.user.locale, {
-		month: 'short',
-		day: 'numeric',
-	})
+const getValue = (date: Date | string) => {
+	const locale = session.user.locale || 'en-US'
+	return formatLocaleDate(
+		date,
+		{
+			month: 'short',
+			day: 'numeric',
+			...(isPersianLocale(locale) ? { timeZone: 'Asia/Tehran' } : {}),
+		},
+		locale,
+	)
+}
 type Day = ReturnType<typeof dayjs>
 const getRange = (start: Day, end: Day) => `${getValue(start.toDate())} - ${getValue(end.toDate())}`
 const getPeriodRange = (unit: 'month' | 'quarter' | 'year', start: Day, end: Day) => {

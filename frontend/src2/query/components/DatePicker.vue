@@ -44,8 +44,9 @@
 import { computed, ref } from 'vue'
 import type { DateRangeValue } from 'frappe-ui'
 import { DateCalendar, DateRangeCalendar } from 'frappe-ui/experimental'
+import { formatLocaleDate } from 'frappe-ui/localization'
 import session from '../../session'
-import { formatLocaleDate } from '../../helpers/locale_format'
+import { isPersianLocale } from '../../helpers/locale'
 import { __ } from '../../translation'
 import { formatDatePickerInput, getDatePickerCalendar, parseDatePickerInput } from './date_picker'
 
@@ -128,17 +129,22 @@ const description = computed(() => {
 	const fromDate = parseDatePickerInput(fromDateTxt.value, locale())
 	const toDate = parseDatePickerInput(toDateTxt.value, locale())
 	const format = (date: string, includeYear: boolean) =>
-		formatLocaleDate(date, locale(), {
-			day: 'numeric',
-			month: 'short',
-			year: includeYear ? 'numeric' : undefined,
-		})
+		formatLocaleDate(
+			date,
+			{
+				day: 'numeric',
+				month: 'short',
+				year: includeYear ? 'numeric' : undefined,
+				...(isPersianLocale(locale()) ? { timeZone: 'Asia/Tehran' } : {}),
+			},
+			locale(),
+		)
 
 	const fromYear = fromDate
-		? formatLocaleDate(fromDate, locale(), { year: 'numeric' })
+		? formatLocaleDate(fromDate, { year: 'numeric' }, locale())
 		: ''
 	const toYear = toDate
-		? formatLocaleDate(toDate, locale(), { year: 'numeric' })
+		? formatLocaleDate(toDate, { year: 'numeric' }, locale())
 		: ''
 	const includeYear = fromYear !== toYear
 

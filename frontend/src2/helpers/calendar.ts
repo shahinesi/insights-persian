@@ -14,7 +14,10 @@ import type { Dayjs } from 'dayjs'
 import dayjs from './dayjs'
 import session from '../session'
 import { jalaaliMonthLength, toGregorian, toJalaali } from 'jalaali-js'
-import { getGregorianDateParts, type GregorianDateParts } from './locale_format'
+import {
+	getGregorianDateParts,
+	type GregorianDateParts,
+} from 'frappe-ui/localization'
 import { parseSpan, type SpanUnit } from './span_grammar'
 import { isPersianLocale } from './locale'
 

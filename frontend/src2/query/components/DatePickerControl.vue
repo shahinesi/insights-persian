@@ -3,7 +3,7 @@ import { Calendar } from 'lucide-vue-next'
 import { computed } from 'vue'
 import DatePicker from './DatePicker.vue'
 import session from '../../session'
-import { formatLocaleDate } from '../../helpers/locale_format'
+import { formatLocaleDate } from 'frappe-ui/localization'
 import { isPersianLocale } from '../../helpers/locale'
 
 const props = defineProps({
@@ -38,15 +38,21 @@ const formatDate = (dates: string | string[] | Date | Date[]) => {
 	const [start, end] = _dates
 	if (!start) return ''
 	const locale = session.user.locale || 'en-US'
+	const timeZone = isPersianLocale(locale) ? 'Asia/Tehran' : undefined
 	const year = (date: string | Date) =>
-		formatLocaleDate(date, locale, { year: 'numeric' })
+		formatLocaleDate(date, { year: 'numeric', timeZone }, locale)
 	const currentYear = year(new Date())
 	const format = (date: string | Date) =>
-		formatLocaleDate(date, locale, {
-			month: 'short',
-			day: 'numeric',
-			...(year(date) === currentYear ? {} : { year: 'numeric' }),
-		})
+		formatLocaleDate(
+			date,
+			{
+				month: 'short',
+				day: 'numeric',
+				timeZone,
+				...(year(date) === currentYear ? {} : { year: 'numeric' }),
+			},
+			locale,
+		)
 	const separator = isPersianLocale(locale) ? ' – ' : ' - '
 	return end ? `${format(start)}${separator}${format(end)}` : format(start)
 }

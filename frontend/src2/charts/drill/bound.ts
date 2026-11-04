@@ -1,5 +1,5 @@
 import { __ } from '../../translation'
-import { formatLocaleNumber } from '../../helpers/locale_format'
+import { formatLocaleNumber } from 'frappe-ui/localization'
 import session from '../../session'
 
 /**
@@ -22,8 +22,8 @@ export function levelBound(level: {
 	if (!level.total || level.total <= level.shown) return ''
 
 	const locale = session.site?.country === 'India' ? 'en-IN' : session.user?.locale
-	const shown = formatLocaleNumber(level.shown, locale)
-	const total = formatLocaleNumber(level.total, locale)
+	const shown = formatLocaleNumber(level.shown, {}, locale)
+	const total = formatLocaleNumber(level.total, {}, locale)
 	return level.ordered
 		? __('latest {0} of {1} periods', shown, total)
 		: __('top {0} of {1} groups', shown, total)

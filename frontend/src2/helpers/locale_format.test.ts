@@ -1,12 +1,6 @@
 import { describe, expect, it } from 'vitest'
-import {
-	formatLocaleDate,
-	formatLocaleDateRange,
-	formatLocaleNumber,
-	formatLocaleRelativeTime,
-	parseLocaleNumber,
-	directionForLocale,
-} from './locale_format'
+import { formatLocaleDate, formatLocaleDateRange, formatLocaleNumber } from 'frappe-ui/localization'
+import { formatLocaleRelativeTime, parseLocaleNumber, directionForLocale } from './locale_format'
 import { isPersianLocale, toIntlLocale } from './locale'
 
 describe('locale display formatting', () => {
@@ -18,89 +12,90 @@ describe('locale display formatting', () => {
 			expect(isPersianLocale(locale)).toBe(false)
 		}
 		expect(toIntlLocale('fa_IR')).toBe('fa-IR')
-		expect(formatLocaleDate('2025-03-20', 'fa_IR', { year: 'numeric' })).toContain('1403')
-		expect(formatLocaleNumber(1250, 'fa_IR')).toBe('1,250')
+		expect(formatLocaleDate('2025-03-20', { year: 'numeric' }, 'fa_IR')).toContain('1403')
+		expect(formatLocaleNumber(1250, {}, 'fa_IR')).toBe('1,250')
 	})
 	// @feature charts.x-axis
 	it('uses the Jalali calendar and canonical digits for Persian dates', () => {
 		expect(
-			formatLocaleDate('2025-03-20', 'fa-IR', {
+			formatLocaleDate('2025-03-20', {
 				year: 'numeric',
 				month: '2-digit',
 				day: '2-digit',
-			}),
+			}, 'fa-IR'),
 		).toContain('1403/12/30')
 		expect(
-			formatLocaleDate('2025-03-21', 'fa-IR', {
+			formatLocaleDate('2025-03-21', {
 				year: 'numeric',
 				month: 'short',
 				day: 'numeric',
-			}),
+			}, 'fa-IR'),
 		).toContain('فروردین')
 	})
 
 	// @feature charts.x-axis
 	it('preserves Gregorian dates and Latin digits in English', () => {
 		expect(
-			formatLocaleDate('2025-03-20', 'en-US', {
+			formatLocaleDate('2025-03-20', {
 				year: 'numeric',
 				month: 'short',
 				day: 'numeric',
-			}),
+			}, 'en-US'),
 		).toBe('Mar 20, 2025')
-		expect(formatLocaleNumber(1250, 'en-US')).toBe('1,250')
+		expect(formatLocaleNumber(1250, {}, 'en-US')).toBe('1,250')
 	})
 
 	// @feature query.filter-date-on-datetime
 	it('keeps date-only values stable and formats instants in the requested timezone', () => {
 		expect(
-			formatLocaleDate('2026-03-21', 'fa-IR', {
+			formatLocaleDate('2026-03-21', {
 				year: 'numeric',
 				month: '2-digit',
 				day: '2-digit',
-			}),
+			}, 'fa-IR'),
 		).toContain('1405/01/01')
 		expect(
-			formatLocaleDate('2026-03-20T20:30:00Z', 'fa-IR', {
+			formatLocaleDate('2026-03-20T20:30:00Z', {
 				year: 'numeric',
 				month: '2-digit',
 				day: '2-digit',
 				timeZone: 'Asia/Tehran',
-			}),
+			}, 'fa-IR'),
 		).toContain('1405/01/01')
 		expect(
-			formatLocaleDate(new Date('2026-03-20T20:30:00Z'), 'fa-IR', {
+			formatLocaleDate(new Date('2026-03-20T20:30:00Z'), {
 				year: 'numeric',
 				month: '2-digit',
 				day: '2-digit',
-			}),
+				timeZone: 'Asia/Tehran',
+			}, 'fa-IR'),
 		).toContain('1405/01/01')
 	})
 
 	// @feature charts.x-axis
 	it('renders Gregorian bucket endpoints as a Jalali span', () => {
 		expect(
-			formatLocaleDateRange('2026-03-01', '2026-03-31', 'fa-IR', {
+			formatLocaleDateRange('2026-03-01', '2026-03-31', {
 				year: 'numeric',
 				month: 'short',
 				day: 'numeric',
-			}),
+			}, 'fa-IR'),
 		).toContain('1404')
 	})
 
 	// @feature query.filter-number-range
 	it('formats numbers in the selected locale', () => {
-		expect(formatLocaleNumber(1250, 'fa-IR')).toBe('1,250')
-		expect(formatLocaleNumber(0.75, 'fa-IR', { style: 'percent' })).toContain('75')
-		expect(formatLocaleNumber(Number.NaN, 'fa-IR')).not.toBe('NaN')
-		expect(formatLocaleNumber(Number.NaN, 'en-US')).toBe('NaN')
+		expect(formatLocaleNumber(1250, {}, 'fa-IR')).toBe('1,250')
+		expect(formatLocaleNumber(0.75, { style: 'percent' }, 'fa-IR')).toContain('75')
+		expect(formatLocaleNumber(Number.NaN, {}, 'fa-IR')).toBe('')
+		expect(formatLocaleNumber(Number.NaN, {}, 'en-US')).toBe('')
 		expect(parseLocaleNumber('۱٬۲۵۰٫۵')).toBe(1250.5)
 		expect(parseLocaleNumber('١٢٥٠٫٥')).toBe(1250.5)
 	})
 
 	// @feature query.filter-date-on-datetime
 	it('returns no display value for impossible dates', () => {
-		expect(formatLocaleDate('2026-02-30', 'fa-IR')).toBe('')
+		expect(formatLocaleDate('2026-02-30', {}, 'fa-IR')).toBe('')
 	})
 
 	// @feature query.filter-date-on-datetime

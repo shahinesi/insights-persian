@@ -1,9 +1,6 @@
 import { Column } from '../../types/query.types'
 import { jalaaliMonthLength, toGregorian, toJalaali } from 'jalaali-js'
-import {
-	getGregorianDateParts,
-	type GregorianDateParts,
-} from '../../helpers/locale_format'
+import { getGregorianDateParts, type GregorianDateParts } from 'frappe-ui/localization'
 import { isPersianLocale } from '../../helpers/locale'
 
 export type ConditionalColor = 'red' | 'amber' | 'green'

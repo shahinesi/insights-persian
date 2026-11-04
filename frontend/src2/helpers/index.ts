@@ -22,7 +22,7 @@ import {
 	QueryResultColumn,
 } from '../types/query.types'
 import { FIELDTYPES } from './constants'
-import { formatLocaleNumber } from './locale_format'
+import { formatLocaleNumber } from 'frappe-ui/localization'
 import { isPersianLocale } from './locale'
 
 export function getUniqueId(length = 8) {
@@ -214,10 +214,14 @@ export function formatNumber(number: number, precision?: number): string {
 	if (isNaN(number)) return String(number)
 	precision = precision ?? guessPrecision(number)
 	const locale = session.site?.country == 'India' ? 'en-IN' : session.user?.locale
-	return formatLocaleNumber(number, locale, {
-		minimumFractionDigits: precision,
-		maximumFractionDigits: precision,
-	})
+	return formatLocaleNumber(
+		number,
+		{
+			minimumFractionDigits: precision,
+			maximumFractionDigits: precision,
+		},
+		locale,
+	)
 }
 
 export type FormatUnits = {
@@ -260,10 +264,14 @@ export function guessPrecision(number: number) {
 
 export function getShortNumber(number: number, precision = 0) {
 	const locale = session.site?.country == 'India' ? 'en-IN' : session.user?.locale
-	let formatted = formatLocaleNumber(number, locale, {
-		notation: 'compact',
-		maximumFractionDigits: precision,
-	})
+	let formatted = formatLocaleNumber(
+		number,
+		{
+			notation: 'compact',
+			maximumFractionDigits: precision,
+		},
+		locale,
+	)
 
 	if (locale == 'en-IN') {
 		formatted = formatted.replace('T', 'K')
