@@ -1,14 +1,13 @@
 import { createResource } from 'frappe-ui'
-import type { App } from 'vue'
+import { shallowRef, type App } from 'vue'
+
+const translatedMessages = shallowRef<Record<string, string>>({})
 
 function getTranslatedMessage(message: string): string {
 	// Module-scope option lists call this while they are being defined, so it
 	// runs wherever a module is loaded — including a test runner with no window.
 	if (typeof window === 'undefined') return message
-	const translatedMessages = (('translatedMessages' in window
-		? window['translatedMessages']
-		: null) ?? {}) as Record<string, string>
-	return translatedMessages[message] || message
+	return translatedMessages.value[message] || message
 }
 
 function translate(message: string): string
@@ -54,7 +53,9 @@ function fetchTranslations() {
 		cache: 'translations',
 		auto: true,
 		transform(data: Record<string, string>) {
-			;(window as any).translatedMessages = data
+			const messages = data || {}
+			translatedMessages.value = messages
+			;(window as any).translatedMessages = messages
 		},
 	})
 }
@@ -75,6 +76,7 @@ export function translationPlugin(app: App<Element>) {
 	installTranslate(app)
 	const windowObj = window as any
 	windowObj.__ = translate
+	translatedMessages.value = windowObj.translatedMessages || {}
 	if (!windowObj.translatedMessages) {
 		fetchTranslations()
 	}
