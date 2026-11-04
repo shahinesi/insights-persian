@@ -2105,6 +2105,14 @@ msgstr ""
 msgid "No data sources."
 msgstr ""
 
+#: frontend/src2/charts/components/ChartBody.vue:378 frontend/src2/charts/components/NumberReading.vue:90
+msgid "No data"
+msgstr ""
+
+#: frontend/src2/components/DataTable.vue:760
+msgid "No data to display."
+msgstr ""
+
 #: frontend/src2/data_source/DataSourceTableList.vue:41
 msgid "No tables found for the selected data source."
 msgstr ""

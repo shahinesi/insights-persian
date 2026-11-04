@@ -2080,6 +2080,14 @@ msgstr "منبع داده‌ای برای نمایش وجود ندارد."
 msgid "No data sources."
 msgstr "بدون منبع داده."
 
+#: frontend/src2/charts/components/ChartBody.vue:378 frontend/src2/charts/components/NumberReading.vue:90
+msgid "No data"
+msgstr "داده‌ای موجود نیست"
+
+#: frontend/src2/components/DataTable.vue:760
+msgid "No data to display."
+msgstr "داده‌ای برای نمایش وجود ندارد."
+
 #: frontend/src2/dashboard/DashboardList.vue:98
 msgid "No folders or dashboards to display."
 msgstr "پوشه یا داشبوردی برای نمایش وجود ندارد."

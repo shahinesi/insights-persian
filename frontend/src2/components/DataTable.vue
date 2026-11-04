@@ -757,7 +757,7 @@ function toggleNewColumn() {
 	<div v-else class="flex h-full w-full items-center justify-center">
 		<div class="flex flex-col items-center gap-2">
 			<Table2Icon class="h-16 w-16 text-ink-gray-2" stroke-width="1.5" />
-			<p class="text-center text-ink-gray-4">No data to display.</p>
+			<p class="text-center text-ink-gray-4">{{ __('No data to display.') }}</p>
 		</div>
 	</div>
 
