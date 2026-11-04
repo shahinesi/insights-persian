@@ -1,6 +1,6 @@
 import { digitsArToFa, digitsFaToEn } from '@persian-tools/persian-tools'
 import { toJalaali } from 'jalaali-js'
-import { isPersianLocale, toIntlLocale } from './locale'
+import { isPersianLocale, toIntlLocale } from './locale.ts'
 
 const PERSIAN_MONTHS = [
 	'فروردین',
