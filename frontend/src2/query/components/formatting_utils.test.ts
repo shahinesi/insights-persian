@@ -67,7 +67,9 @@ describe('routing a rule to its columns', () => {
 })
 
 describe('date rules in the selected calendar', () => {
-	afterEach(() => vi.useRealTimers())
+	afterEach(() => {
+		vi.useRealTimers()
+	})
 
 	const dateRule = (operator: DateOperator) =>
 		({
