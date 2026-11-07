@@ -34,6 +34,23 @@ describe('Insights translation plugin', () => {
 		expect(app.config.globalProperties.__('Hello {0}', 'دوست')).toBe('سلام دوست')
 	})
 
+	it('loads the Insights locale catalog when the host message table is partial', () => {
+		const windowStub = { translatedMessages: { Saved: 'ذخیره شد' } }
+		Object.defineProperty(globalThis, 'window', {
+			configurable: true,
+			value: windowStub,
+			writable: true,
+		})
+		const app = createApp({})
+
+		app.use(translationPlugin)
+
+		expect(createResource).toHaveBeenCalledTimes(1)
+		const options = vi.mocked(createResource).mock.calls[0][0] as any
+		options.transform({ Saved: 'ذخیره شد', Filter: 'فیلتر' })
+		expect(app.config.globalProperties.__('Filter')).toBe('فیلتر')
+	})
+
 	it('rerenders labels when the asynchronous translation resource arrives', () => {
 		const windowStub: Record<string, any> = {}
 		Object.defineProperty(globalThis, 'window', {

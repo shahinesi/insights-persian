@@ -77,9 +77,10 @@ export function translationPlugin(app: App<Element>) {
 	const windowObj = window as any
 	windowObj.__ = translate
 	translatedMessages.value = windowObj.translatedMessages || {}
-	if (!windowObj.translatedMessages) {
-		fetchTranslations()
-	}
+	// Desk may prepopulate a global message table before the Insights bundle
+	// starts. That table can be partial, so still load Insights' full locale
+	// catalog instead of treating any truthy object as complete.
+	fetchTranslations()
 }
 
 declare module '@vue/runtime-core' {
