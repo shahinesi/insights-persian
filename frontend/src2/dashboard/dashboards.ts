@@ -1,9 +1,10 @@
-import { useTimeAgo } from '@vueuse/core'
 import { call, toast } from 'frappe-ui'
 import { reactive, ref } from 'vue'
 import { showErrorToast } from '../helpers'
+import { useLocaleRelativeTime } from '../helpers/useLocaleRelativeTime'
 import type { FilterCondition, WireFilters } from '@framework/ui/Filter'
 import type { AccessSource } from '../components/access'
+import session from '../session'
 import { __ } from '../translation'
 
 export type DashboardListItem = {
@@ -30,8 +31,8 @@ const loading = ref(false)
 const filters = ref<FilterCondition[]>([])
 const mapTimeAgo = (dashboard: any) => ({
 	...dashboard,
-	created_from_now: useTimeAgo(dashboard.creation),
-	modified_from_now: useTimeAgo(dashboard.modified),
+	created_from_now: useLocaleRelativeTime(dashboard.creation, () => session.user.locale),
+	modified_from_now: useLocaleRelativeTime(dashboard.modified, () => session.user.locale),
 })
 
 async function fetchDashboards(limit: number, sources: AccessSource[], filters: WireFilters) {

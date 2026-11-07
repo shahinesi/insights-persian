@@ -1,8 +1,9 @@
-import { useTimeAgo } from '@vueuse/core'
 import { call } from 'frappe-ui'
 import { reactive, ref } from 'vue'
 import { getUniqueId, showErrorToast } from '../helpers'
+import { useLocaleRelativeTime } from '../helpers/useLocaleRelativeTime'
 import useDocumentResource from '../helpers/resource'
+import session from '../session'
 
 export type InsightsAlert = {
 	doctype: 'Insights Alert'
@@ -40,8 +41,8 @@ async function loadAlerts(query: string) {
 	alerts.value = await call('insights.api.alerts.get_alerts', { query })
 	alerts.value = alerts.value.map((alert: any) => ({
 		...alert,
-		created_from_now: useTimeAgo(alert.creation),
-		modified_from_now: useTimeAgo(alert.modified),
+		created_from_now: useLocaleRelativeTime(alert.creation, () => session.user.locale),
+		modified_from_now: useLocaleRelativeTime(alert.modified, () => session.user.locale),
 	}))
 	loading.value = false
 	return alerts.value

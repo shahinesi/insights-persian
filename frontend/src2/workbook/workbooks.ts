@@ -1,12 +1,13 @@
-import { useTimeAgo } from '@vueuse/core'
 import { call, toast } from 'frappe-ui'
 import { reactive, ref } from 'vue'
 import { confirmDialog } from '../helpers/confirm_dialog'
+import { useLocaleRelativeTime } from '../helpers/useLocaleRelativeTime'
 import router from '../router'
 import { __ } from '../translation'
 import type { FilterCondition, WireFilters } from '@framework/ui/Filter'
 import type { AccessSource } from '../components/access'
 import { WorkbookListItem } from '../types/workbook.types'
+import session from '../session'
 
 const workbooks = ref<WorkbookListItem[]>([])
 
@@ -28,9 +29,11 @@ async function getWorkbooks(
 	})
 	workbooks.value = result.map((workbook: any) => ({
 		...workbook,
-		created_from_now: useTimeAgo(workbook.creation),
-		modified_from_now: useTimeAgo(workbook.modified),
-		last_opened_from_now: workbook.last_opened ? useTimeAgo(workbook.last_opened) : '',
+		created_from_now: useLocaleRelativeTime(workbook.creation, () => session.user.locale),
+		modified_from_now: useLocaleRelativeTime(workbook.modified, () => session.user.locale),
+		last_opened_from_now: workbook.last_opened
+			? useLocaleRelativeTime(workbook.last_opened, () => session.user.locale)
+			: '',
 	}))
 	loading.value = false
 	return workbooks.value
