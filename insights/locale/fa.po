@@ -863,6 +863,10 @@ msgstr "حذف"
 msgid "Demo Data Ready"
 msgstr "داده‌های آزمایشی آماده است"
 
+#: frontend/src2/settings/GeneralSettings.vue:31
+msgid "Demo Data"
+msgstr "داده‌های آزمایشی"
+
 #: frontend/src2/query/components/AlertSetupDialog.vue:123
 msgid "Disable Alert"
 msgstr "غیرفعال کردن هشدار"
@@ -1025,6 +1029,10 @@ msgstr "متن خود را اینجا وارد کنید…"
 #: insights/insights/doctype/insights_table_import_log/insights_table_import_log.json
 msgid "Error"
 msgstr "خطا"
+
+#: frontend/src2/components/DemoDataBanner.vue:50
+msgid "Explore with sample data and a pre-built workbook"
+msgstr "با داده‌های نمونه و یک کتاب کار آماده، قابلیت‌های Insights را بررسی کنید"
 
 #: frontend/src2/components/ExportDialog.vue:47
 msgid "Excel"
@@ -3693,3 +3701,31 @@ msgstr "به یکی از پرس‌وجوهای پیوندشده دسترسی ن�
 #: insights/insights/doctype/insights_query_v3/insights_query_v3.py:234
 msgid "Your role does not have the export permission for queries. Contact your administrator."
 msgstr "نقش شما مجوز برون‌بری پرس‌وجوها را ندارد. با مدیر سامانه تماس بگیرید."
+
+#: frontend/src2/settings/GeneralSettings.vue:33
+msgid "Logo"
+msgstr "نشان"
+
+#: frontend/src2/settings/GeneralSettings.vue:34
+msgid "Appears in the top left corner of the application and in the browser tab next to the page title. Recommended size: 32x32px in PNG format."
+msgstr "در گوشهٔ بالای سمت چپ برنامه و کنار عنوان صفحه در زبانهٔ مرورگر نمایش داده می‌شود. اندازهٔ پیشنهادی: 32×32 پیکسل با قالب PNG."
+
+#: frontend/src2/settings/GeneralSettings.vue:43
+msgid "Set the start of the fiscal year for the organization. This will be used to calculate quarterly and yearly data."
+msgstr "شروع سال مالی سازمان را تعیین می‌کند و برای محاسبهٔ داده‌های فصلی و سالانه استفاده می‌شود."
+
+#: frontend/src2/settings/GeneralSettings.vue:47
+msgid "Select Date"
+msgstr "انتخاب تاریخ"
+
+#: frontend/src2/settings/GeneralSettings.vue:56
+msgid "Set the start of the week for the organization. This will be used to calculate weekly data."
+msgstr "روز آغاز هفتهٔ سازمان را تعیین می‌کند و برای محاسبهٔ داده‌های هفتگی به کار می‌رود."
+
+#: frontend/src2/settings/GeneralSettings.vue:78
+msgid "Set up sample data and a pre-built workbook to explore Insights features."
+msgstr "داده‌های نمونه و یک کتاب کار آماده را راه‌اندازی کنید تا قابلیت‌های Insights را بررسی کنید."
+
+#: frontend/src2/settings/GeneralSettings.vue:89
+msgid "Update"
+msgstr "به‌روزرسانی"
