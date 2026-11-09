@@ -77,6 +77,8 @@ describe('a document the server refuses', () => {
 		expect(chart.doc.visibility).toBe('Private')
 		expect(chart.doc.title).toBe('Sales — Q4 rework')
 		expect(chart.isdirty).toBe(true)
+		chart.autoSave = false
+		await settled()
 	})
 
 	// @feature workbook.save
@@ -91,6 +93,8 @@ describe('a document the server refuses', () => {
 		// still dirty, so the next autosave sends it again
 		expect(chart.doc.title).toBe('Sales — Q4 rework')
 		expect(chart.isdirty).toBe(true)
+		chart.autoSave = false
+		await settled()
 	})
 
 	// @feature alerts.condition

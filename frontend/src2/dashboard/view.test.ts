@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { afterAll, beforeEach, describe, expect, it, vi } from 'vitest'
 
 const calls = vi.hoisted(() => [] as { method: string; args: any }[])
 const answer = vi.hoisted(() => ({ dashboard: {} as any, refuseSave: false }))
@@ -59,6 +59,7 @@ vi.stubGlobal('localStorage', {
 	setItem: () => {},
 	removeItem: () => {},
 })
+afterAll(() => vi.unstubAllGlobals())
 
 import useChart from '../charts/chart'
 import useDashboard from './dashboard'
