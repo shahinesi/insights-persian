@@ -3705,3 +3705,26 @@ msgstr ""
 msgid "Fiscal Year Start"
 msgstr ""
 
+#: frontend/src2/dashboard/DashboardList.vue:189
+msgid "No dashboards found"
+msgstr ""
+
+#: frontend/src2/dashboard/DashboardList.vue:192
+msgid "No dashboards"
+msgstr ""
+
+#: frontend/src2/dashboard/DashboardList.vue:195
+msgid "Dashboards you create or are shared with you show up here."
+msgstr ""
+
+#: frontend/src2/dashboard/DashboardList.vue:194
+msgid "Try a different filter."
+msgstr ""
+
+#: frontend/src2/workbook/WorkbookSidebar.vue:30
+msgid "No queries"
+msgstr ""
+
+#: frontend/src2/workbook/WorkbookSidebar.vue:58
+msgid "No charts"
+msgstr ""

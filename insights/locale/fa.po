@@ -3694,6 +3694,30 @@ msgstr "کتابخانه"
 msgid "No dashboards to display."
 msgstr "داشبوردی برای نمایش وجود ندارد."
 
+#: frontend/src2/dashboard/DashboardList.vue:192
+msgid "No dashboards"
+msgstr "داشبوردی وجود ندارد"
+
+#: frontend/src2/dashboard/DashboardList.vue:189
+msgid "No dashboards found"
+msgstr "داشبوردی پیدا نشد"
+
+#: frontend/src2/dashboard/DashboardList.vue:195
+msgid "Dashboards you create or are shared with you show up here."
+msgstr "داشبوردهایی که ایجاد می‌کنید یا با شما به‌اشتراک گذاشته می‌شوند، اینجا نمایش داده می‌شوند."
+
+#: frontend/src2/dashboard/DashboardList.vue:194
+msgid "Try a different filter."
+msgstr "فیلتر دیگری را امتحان کنید."
+
+#: frontend/src2/workbook/WorkbookSidebar.vue:30
+msgid "No queries"
+msgstr "پرس‌وجویی وجود ندارد"
+
+#: frontend/src2/workbook/WorkbookSidebar.vue:58
+msgid "No charts"
+msgstr "نموداری وجود ندارد"
+
 #: insights/insights/doctype/insights_query_v3/insights_query_v3.py:349
 msgid "You do not have access to one of the linked queries"
 msgstr "به یکی از پرس‌وجوهای پیوندشده دسترسی ندارید"
