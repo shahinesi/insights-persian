@@ -36,8 +36,10 @@ export function translatedTable<T>(build: () => T): () => T {
 	let messages: unknown
 	let table: T | undefined
 	return () => {
-		const current =
-			typeof window === 'undefined' ? undefined : (window as any).translatedMessages
+		// Read the ref so Vue tracks this lookup when it happens inside a
+		// computed value or render. This lets tables built before the catalog
+		// arrives rebuild when translationPlugin replaces the message table.
+		const current = typeof window === 'undefined' ? undefined : translatedMessages.value
 		if (table === undefined || messages !== current) {
 			messages = current
 			table = build()

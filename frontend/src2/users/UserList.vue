@@ -141,7 +141,7 @@ function sendInvitation() {
 	showInviteUserDialog.value = false
 }
 
-document.title = 'Users | Insights'
+document.title = `${__('Users')} | Insights`
 </script>
 
 <template>

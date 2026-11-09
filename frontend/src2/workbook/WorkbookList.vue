@@ -105,7 +105,7 @@ whenever(cmdV, () => {
 })
 
 watchEffect(() => {
-	document.title = 'Workbooks | Insights'
+	document.title = `${__('Workbooks')} | Insights`
 })
 </script>
 

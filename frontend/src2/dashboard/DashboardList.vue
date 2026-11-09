@@ -118,7 +118,7 @@ const toggleFavorite = (dashboard: DashboardListItem) => {
 }
 
 watchEffect(() => {
-	document.title = 'Dashboards | Insights'
+	document.title = `${__('Dashboards')} | Insights`
 })
 </script>
 

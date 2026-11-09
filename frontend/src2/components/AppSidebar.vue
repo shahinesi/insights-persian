@@ -63,7 +63,7 @@ import DemoDataBanner from './DemoDataBanner.vue'
 import SecurityUpdateCard from './SecurityUpdateCard.vue'
 import UserDropdown from './UserDropdown.vue'
 import { TrialBanner } from '@framework/ui/components/TrialBanner/index.ts'
-import { __ } from '../translation'
+import { __, translatedTable } from '../translation'
 
 const isSidebarCollapsed = useStorage('insights:sidebarCollapsed', false)
 const showSettingsDialog = ref(false)
@@ -71,7 +71,7 @@ const showSettingsDialog = ref(false)
 const settings = useSettings()
 const is_fc_site = window.is_fc_site
 
-const links = ref([
+const links = computed(translatedTable(() => [
 	{
 		label: __('Dashboards'),
 		icon: LayoutGrid,
@@ -98,5 +98,5 @@ const links = ref([
 		icon: SettingsIcon,
 		onClick: () => (showSettingsDialog.value = true),
 	},
-])
+]))
 </script>
