@@ -9,7 +9,7 @@
 		</div>
 
 		<template>
-			<component v-for="dialog in dialogs" :is="dialog" :key="dialog.id" />
+			<component v-for="(dialog, index) in dialogs" :is="dialog" :key="dialog.key ?? index" />
 		</template>
 
 		<ToastProvider />

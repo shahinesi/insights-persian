@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { call, FileUploader, toast } from 'frappe-ui'
+import { call, FileUploader, toast, type UploadedFile } from 'frappe-ui'
 import { __ } from '../translation'
 import { FileUp } from 'lucide-vue-next'
 import { computed, reactive, ref } from 'vue'
@@ -12,22 +12,22 @@ const show = defineModel()
 const fileUploaded = ref(false)
 const csvData = reactive({
 	loading: false,
-	file: null as File | null,
+	file: null as UploadedFile | null,
 	tablename: '',
 	columns: [] as QueryResultColumn[],
 	rows: [] as QueryResultRow[],
 	totalRowCount: 0,
 })
 
-function uploadFile(file: File) {
+function uploadFile(file: UploadedFile) {
 	fileUploaded.value = true
 	csvData.loading = true
 	csvData.file = file
 	return call('insights.api.get_file_data', {
-		filename: file.name,
+		filename: file.file_name,
 	})
 		.then((data: any) => {
-			csvData.tablename = data.tablename || file.name.split('.')[0] || 'imported_table'
+			csvData.tablename = data.tablename || file.file_name.split('.')[0] || 'imported_table'
 			csvData.columns = data.columns
 			csvData.rows = data.rows
 			csvData.totalRowCount = data.total_rows
@@ -54,7 +54,7 @@ function importCSVData() {
 
 	importing.value = true
 	return call('insights.api.import_csv_data', {
-		filename: csvData.file.name,
+		filename: csvData.file.file_name,
 		tablename: csvData.tablename,
 	})
 		.then(() => {

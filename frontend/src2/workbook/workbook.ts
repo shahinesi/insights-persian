@@ -195,7 +195,16 @@ function makeWorkbook(name: string) {
 
 	async function getSharePermissions(): Promise<UpdateSharePermissionsArgs> {
 		const method = 'insights.api.workbooks.get_share_permissions'
-		return call(method, { workbook_name: workbook.name }).then((permissions: any) => {
+		return call<{
+			user_permissions: Array<{
+				user: string
+				full_name?: string
+				user_image?: string
+				read: boolean
+				write: boolean
+			}>
+			organization_access?: 'view' | 'edit'
+		}>(method, { workbook_name: workbook.name }).then((permissions) => {
 			return {
 				user_permissions: permissions.user_permissions.map((p: any) => {
 					return {
@@ -237,8 +246,8 @@ function makeWorkbook(name: string) {
 			),
 			onSuccess: () => {
 				workbook
-					.call('duplicate')
-					.then((name: any) => {
+					.call<string>('duplicate')
+					.then((name) => {
 						toast.success(__('Workbook duplicated successfully'))
 						window.location.href = router.resolve({
 							name: 'Workbook',
@@ -255,7 +264,7 @@ function makeWorkbook(name: string) {
 			title: __('Import Query'),
 			message: __('Are you sure you want to import this query?'),
 			onSuccess: () => {
-				workbook.call('import_query', { query }).then((name) => {
+				workbook.call<string>('import_query', { query }).then((name) => {
 					workbook.load().then(() => {
 						toast.success(__('Query imported successfully'))
 						setActiveTab('query', name)
@@ -270,7 +279,7 @@ function makeWorkbook(name: string) {
 			title: __('Import Chart'),
 			message: __('Are you sure you want to import this chart?'),
 			onSuccess: () => {
-				workbook.call('import_chart', { chart }).then((name) => {
+				workbook.call<string>('import_chart', { chart }).then((name) => {
 					workbook.load().then(() => {
 						toast.success(__('Chart imported successfully'))
 						setActiveTab('chart', name)

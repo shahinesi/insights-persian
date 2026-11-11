@@ -37,7 +37,11 @@ const mapTimeAgo = (dashboard: any) => ({
 
 async function fetchDashboards(limit: number, sources: AccessSource[], filters: WireFilters) {
 	loading.value = true
-	const result = await call('insights.api.dashboards.get_dashboards', { limit, sources, filters })
+	const result = await call<DashboardListItem[]>('insights.api.dashboards.get_dashboards', {
+		limit,
+		sources,
+		filters,
+	})
 	dashboards.value = result.map(mapTimeAgo)
 	loading.value = false
 }
@@ -46,7 +50,7 @@ const updatingPreviewImage = ref<Record<string, boolean>>({})
 async function updatePreviewImage(dashboard_name: string) {
 	updatingPreviewImage.value[dashboard_name] = true
 	toast.info(__('Updating preview image...'))
-	return call('insights.api.dashboards.update_dashboard_preview', { dashboard_name })
+	return call<string>('insights.api.dashboards.update_dashboard_preview', { dashboard_name })
 		.then((file_url: string) => {
 			toast.success(__('Preview image updated successfully'))
 			const dashboard = dashboards.value.find((d) => d.name === dashboard_name)

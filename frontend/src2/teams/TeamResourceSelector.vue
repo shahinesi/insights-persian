@@ -9,7 +9,8 @@ import { DataSourceListItem } from '../data_source/data_source.types'
 import useTableStore, { DataSourceTable } from '../data_source/tables'
 import { toOptions, wheneverChanges } from '../helpers'
 import ExpressionEditor from '../query/components/ExpressionEditor.vue'
-import { TeamPermission } from './teams'
+import type { ColumnOption } from '../types/query.types'
+import type { TeamPermission } from './teams'
 
 const teamPermissions = defineModel<TeamPermission[]>({
 	required: true,
@@ -43,7 +44,7 @@ if (teamPermissions.value.length) {
 		.map((p) => p.resource_name)
 
 	if (permittedTableNames.length) {
-		call('insights.api.data_sources.get_data_sources_of_tables', {
+		call<Record<string, string[]>>('insights.api.data_sources.get_data_sources_of_tables', {
 			table_names: permittedTableNames,
 		}).then((tablesBySource: Record<string, string[]>) => {
 			selectedTables.value = tablesBySource

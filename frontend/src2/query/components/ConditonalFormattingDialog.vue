@@ -11,7 +11,7 @@ const props = defineProps<{
 }>()
 
 const emit = defineEmits({ select: (args: FormatGroupArgs) => true })
-const showDialog = defineModel()
+const showDialog = defineModel<boolean>()
 
 function onSelectFormat(updatedFormatGroup: FormatGroupArgs) {
 	emit('select', updatedFormatGroup)

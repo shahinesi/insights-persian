@@ -269,9 +269,9 @@ function onColorScaleChange(newColor: string) {
 	}
 }
 
-function onScaleScopeChange(newScope: 'global' | 'local') {
+function onScaleScopeChange(newScope: string) {
 	if (props.formatMode === 'color_scale' && format.value.mode === 'color_scale') {
-		format.value.scaleScope = newScope
+		if (newScope === 'global' || newScope === 'local') format.value.scaleScope = newScope
 	}
 }
 

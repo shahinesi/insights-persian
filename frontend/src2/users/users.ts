@@ -18,7 +18,7 @@ const users = ref<User[]>([])
 const loading = ref(false)
 async function getUsers(search_term = '') {
 	loading.value = true
-	return call('insights.api.user.get_users', { search_term }).then((res: User[]) => {
+	return call<User[]>('insights.api.user.get_users', { search_term }).then((res) => {
 		users.value = res
 		loading.value = false
 		return users.value

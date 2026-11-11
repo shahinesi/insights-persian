@@ -2,7 +2,7 @@ import { watchDebounced } from '@vueuse/core'
 import { computed, ComputedRef, reactive, Ref, ref, watch } from 'vue'
 import useTableStore from '../../data_source/tables'
 import { wheneverChanges } from '../../helpers'
-import { ColumnOption, JoinArgs } from '../../types/query.types'
+import type { ColumnOption, DropdownOption, JoinArgs } from '../../types/query.types'
 import useQuery from '../query'
 
 export function handleOldProps(join: JoinArgs) {

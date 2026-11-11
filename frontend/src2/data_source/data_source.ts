@@ -27,9 +27,10 @@ function getSource(name: string) {
 const testing = ref(false)
 function testConnection(data_source: DataSource) {
 	testing.value = true
-	return call('insights.api.data_sources.test_connection', { data_source })
+	return call<boolean>('insights.api.data_sources.test_connection', { data_source })
 		.catch((error: Error) => {
 			showErrorToast(error, false)
+			return false
 		})
 		.finally(() => {
 			testing.value = false

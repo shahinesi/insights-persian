@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { MarkerType, Panel, Position, VueFlow, useVueFlow } from '@vue-flow/core'
+import { MarkerType, Panel, Position, VueFlow, useVueFlow, type NodeMouseEvent } from '@vue-flow/core'
 import '@vue-flow/core/dist/style.css'
 import '@vue-flow/core/dist/theme-default.css'
 import { FormControl } from 'frappe-ui'
@@ -34,7 +34,7 @@ const allNodes = ref<RawNode[]>([])
 const allEdges = ref<RawEdge[]>([])
 
 onMounted(async () => {
-	const result = await workbook.call('get_lineage_graph')
+	const result = await workbook.call<{ nodes: RawNode[]; edges: RawEdge[] }>('get_lineage_graph')
 	allNodes.value = result.nodes
 	allEdges.value = result.edges
 	loading.value = false
@@ -125,8 +125,8 @@ const vfEdges = computed(() =>
 )
 
 // ── Navigation ────────────────────────────────────────────────────────────────
-function onNodeClick(_evt: MouseEvent, node: any) {
-	const data: RawNode = node.data
+function onNodeClick(event: NodeMouseEvent) {
+	const data = event.node.data as RawNode
 	if (data.node_type === 'query' && data.name) {
 		show.value = false
 		router.push({

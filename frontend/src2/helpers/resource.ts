@@ -75,7 +75,7 @@ export default function useDocumentResource<T extends Document>(
 
 		isSaving.value = true
 		const sentDoc = copy(removeMetaFields(doc.value))
-		const newDoc = await call(methods.insert, {
+		const newDoc = await call<T>(methods.insert, {
 			doc: {
 				doctype,
 				...sentDoc,
@@ -121,7 +121,7 @@ export default function useDocumentResource<T extends Document>(
 		isSaving.value = true
 		const sentDoc = copy(removeMetaFields(doc.value))
 		try {
-			const newDoc = await call(methods.update, {
+			const newDoc = await call<T>(methods.update, {
 				doctype,
 				name: docname.value,
 				fieldname: sentDoc,
@@ -153,7 +153,7 @@ export default function useDocumentResource<T extends Document>(
 
 		isLoading.value = true
 
-		const _doc = await call(methods.get, {
+		const _doc = await call<T>(methods.get, {
 			doctype,
 			name: docname.value,
 		})
@@ -170,9 +170,13 @@ export default function useDocumentResource<T extends Document>(
 
 	// `showError: false` leaves the failure to a caller that knows whether it
 	// still matters, like a request the reader has already moved on from
-	async function callMethod(method: string, args: any = {}, { showError = true } = {}) {
+	async function callMethod<TResponse = unknown>(
+		method: string,
+		args: any = {},
+		{ showError = true } = {},
+	): Promise<TResponse> {
 		isLoading.value = true
-		const request = call(methods.call, {
+		const request = call<{ message: unknown }>(methods.call, {
 			method,
 			docs: {
 				...(doc.value || {}),
@@ -180,8 +184,10 @@ export default function useDocumentResource<T extends Document>(
 			},
 			args,
 		}).finally(() => (isLoading.value = false))
-		const response = await (showError ? request.catch(showErrorToast) : request)
-		return response.message
+		const response = (await (showError ? request.catch(showErrorToast) : request)) as {
+			message: unknown
+		}
+		return response.message as TResponse
 	}
 
 	async function deleteDoc() {

@@ -7,7 +7,7 @@ import ChartView from './ChartView.vue'
 // Every View renders its card with this component: the dashboard page, the
 // public link. An action missing here is missing from all of them.
 
-function card(chart_type: string, slots: Record<string, () => any> = {}) {
+function card(chart_type: string, slots: Record<string, (props?: any) => any> = {}) {
 	const read = makeChartRead({
 		doc: { name: 'chart-1', title: 'Revenue', chart_type, config: {} as any },
 		fetchData: () => Promise.resolve({ columns: [], rows: [] }),

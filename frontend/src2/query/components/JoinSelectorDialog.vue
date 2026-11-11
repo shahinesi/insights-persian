@@ -41,7 +41,7 @@ const join = reactive<JoinArgs>(
 				select_columns: [],
 		  },
 )
-const selectedTable = computed({
+const selectedTable = computed<string | undefined>({
 	get() {
 		if (join.table.type === 'table' && join.table.table_name) {
 			return `${join.table.data_source}.${join.table.table_name}`
@@ -50,7 +50,8 @@ const selectedTable = computed({
 			return join.table.query_name
 		}
 	},
-	set(value: string) {
+	set(value: unknown) {
+		if (typeof value !== 'string') return
 		const option = [...queryTableOptions.value, ...tableOptions.options].find(
 			(o) => o.value === value,
 		)
@@ -286,7 +287,8 @@ function reset() {
 										:options="query.result.columnOptions"
 										:modelValue="join.join_condition.left_column.column_name"
 										@update:modelValue="
-											join.join_condition.left_column.column_name = $event
+												join.join_condition.left_column.column_name =
+													typeof $event === 'string' ? $event : ''
 										"
 									/>
 								</div>
@@ -308,7 +310,8 @@ function reset() {
 										]"
 										:modelValue="join.join_condition.right_column.column_name"
 										@update:modelValue="
-											join.join_condition.right_column.column_name = $event
+												join.join_condition.right_column.column_name =
+													typeof $event === 'string' ? $event : ''
 										"
 									/>
 								</div>

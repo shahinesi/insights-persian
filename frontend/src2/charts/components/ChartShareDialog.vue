@@ -31,8 +31,10 @@ const iFrameLink = computed(() => {
 const publishedByDashboard = ref<string | null>(null)
 chart.doc.name &&
 	chart
-		.call('published_reach')
-		.then((reach: { published_by_dashboard: string | null; on_public_dashboard: boolean }) => {
+		.call<{ published_by_dashboard: string | null; on_public_dashboard: boolean }>(
+			'published_reach',
+		)
+		.then((reach) => {
 			publishedByDashboard.value = reach?.published_by_dashboard || null
 			onPublicDashboard.value = Boolean(reach?.on_public_dashboard)
 		})

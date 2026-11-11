@@ -60,7 +60,7 @@
 					onClick() {
 						loginToFC()
 
-						showLoginToFCDialog.value = false
+						showLoginToFCDialog = false
 					},
 				},
 			]"

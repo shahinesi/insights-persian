@@ -20,7 +20,7 @@ const workbook = inject(workbookKey)
 				v-for="(query, idx) in workbook.doc.queries"
 				:key="idx"
 				class="flex h-10 items-center border-y-2 border-r border-transparent border-r-gray-200 px-3 text-base transition-all"
-				:class="workbook.isActiveTab('query', idx) ? 'border-b-gray-800' : ''"
+				:class="workbook.isActiveTab('query', query.name) ? 'border-b-gray-800' : ''"
 				@click="router.push(`/workbook/${workbook.name}/query/${idx}`)"
 			>
 				<Table2 class="h-3.5 w-3.5 text-ink-gray-5" stroke-width="1.5" />
@@ -34,7 +34,7 @@ const workbook = inject(workbookKey)
 				v-for="(chart, idx) in workbook.doc.charts"
 				:key="idx"
 				class="flex h-10 items-center border-y-2 border-r border-transparent border-r-gray-200 px-3 text-base transition-all"
-				:class="workbook.isActiveTab('chart', idx) ? 'border-b-gray-800' : ''"
+				:class="workbook.isActiveTab('chart', chart.name) ? 'border-b-gray-800' : ''"
 				@click="router.push(`/workbook/${workbook.name}/chart/${idx}`)"
 			>
 				<ChartIcon :chart-type="chart.chart_type" />
@@ -48,7 +48,7 @@ const workbook = inject(workbookKey)
 				v-for="(dashboard, idx) in workbook.doc.dashboards"
 				:key="idx"
 				class="flex h-10 items-center border-y-2 border-r border-transparent border-r-gray-200 px-3 text-base transition-all"
-				:class="workbook.isActiveTab('dashboard', idx) ? 'border-b-gray-800' : ''"
+				:class="workbook.isActiveTab('dashboard', dashboard.name) ? 'border-b-gray-800' : ''"
 				@click="router.push(`/workbook/${workbook.name}/dashboard/${idx}`)"
 			>
 				<LayoutPanelTop class="h-3.5 w-3.5 text-ink-gray-5" stroke-width="1.5" />

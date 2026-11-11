@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed, inject, ref, watch } from 'vue'
 import { __ } from '../../translation'
-import { MapChartConfig } from '../../types/chart.types'
-import { DimensionOption, ColumnOption, QueryResult } from '../../types/query.types'
+import type { MapChartConfig } from '../../types/chart.types'
+import type { DimensionOption, ColumnOption, QueryResult } from '../../types/query.types'
 import InlineFormControlLabel from '../../components/InlineFormControlLabel.vue'
 import DimensionPicker from './DimensionPicker.vue'
 import MeasurePicker from './MeasurePicker.vue'
@@ -82,14 +82,19 @@ async function checkUnresolvedRegions() {
 	if (!canCheckRegions.value) {
 		return
 	}
+	const chartName = props.chartName
+	if (!chartName) return
 
 	loadingUnresolved.value = true
 	try {
-		const response = await call('insights.api.maps.find_unresolved_regions', {
+		const response = await call<{ unresolved_count: number }>(
+			'insights.api.maps.find_unresolved_regions',
+			{
 			map_type: config.value.map_type,
 			user_regions: userRegions.value,
-			chart_name: props.chartName,
-		})
+			chart_name: chartName,
+			},
+		)
 		unresolvedCount.value = response.unresolved_count
 	} catch (error) {
 		console.error('Failed to check unresolved regions:', error)
@@ -165,14 +170,14 @@ watch(
 
 		<NumberFormatSection
 			:config="config"
-			:sole-measure-name="config.value_column?.measure_name"
+			:sole-measure-name="config.value_column?.measure_name ?? ''"
 		/>
 
 		<RegionMappingDialog
 			v-if="chartName"
 			v-model="showRegionMappingDialog"
-			:chart-name="chartName"
-			:map-type="config.map_type"
+			:chart-name="chartName ?? ''"
+			:map-type="config.map_type ?? 'world'"
 			:user-regions="userRegions"
 			@mappingsSaved="handleMappingsSaved"
 		/>

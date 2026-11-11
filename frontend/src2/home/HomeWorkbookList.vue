@@ -46,7 +46,7 @@ watch(searchQuery, (query) => {
 		<div class="mt-3 flex-1 overflow-hidden p-1">
 			<!-- list of recent records -->
 			<ul
-				v-if="workbooks.list.data?.length > 0"
+				v-if="(workbooks.list.data?.length ?? 0) > 0"
 				class="relative flex flex-1 flex-col overflow-y-auto"
 			>
 				<li class="border-b"></li>

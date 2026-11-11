@@ -59,7 +59,9 @@ vi.stubGlobal('localStorage', {
 	setItem: () => {},
 	removeItem: () => {},
 })
-afterAll(() => vi.unstubAllGlobals())
+afterAll(() => {
+	vi.unstubAllGlobals()
+})
 
 import useChart from '../charts/chart'
 import useDashboard from './dashboard'

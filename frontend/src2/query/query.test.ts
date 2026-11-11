@@ -103,8 +103,12 @@ describe('the page of rows a reader is reading', () => {
 // writing an operation that is no longer there.
 
 describe('an author stepping back through the pipeline', () => {
-	beforeEach(() => vi.useFakeTimers())
-	afterEach(() => vi.useRealTimers())
+	beforeEach(() => {
+		vi.useFakeTimers()
+	})
+	afterEach(() => {
+		vi.useRealTimers()
+	})
 
 	// @feature query.undo-redo
 	it('undoes the last pipeline edit and redoes it, but not while an operation is open', async () => {

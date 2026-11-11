@@ -17,7 +17,7 @@ const tables = ref<Record<string, DataSourceTable[]>>({})
 const loading = ref(false)
 export async function getTables(data_source?: string, search_term?: string, limit: number = 100) {
 	loading.value = true
-	const _tables = await call('insights.api.data_sources.get_data_source_tables', {
+	const _tables = await call<DataSourceTable[]>('insights.api.data_sources.get_data_source_tables', {
 		data_source,
 		search_term,
 		limit,
@@ -51,7 +51,7 @@ async function fetchTable(
 	table_name: string,
 ): Promise<DataSourceTablePreview | undefined> {
 	fetchingTable.value = true
-	return call('insights.api.data_sources.get_data_source_table', {
+	return call<DataSourceTablePreview>('insights.api.data_sources.get_data_source_table', {
 		data_source,
 		table_name,
 	})
@@ -65,10 +65,13 @@ async function fetchTable(
 }
 
 async function getTableColumns(data_source: string, table_name: string) {
-	return call('insights.api.data_sources.get_data_source_table_columns', {
-		data_source,
-		table_name,
-	}).then((columns: any[]) => {
+	return call<Array<{ column: string; type: QueryResultColumn['type'] }>>(
+		'insights.api.data_sources.get_data_source_table_columns',
+		{
+			data_source,
+			table_name,
+		},
+	).then((columns) => {
 		return columns.map((c) => ({
 			name: c.column,
 			type: c.type,
@@ -88,7 +91,7 @@ export async function getRowCount(
 	data_source: string,
 	table_name: string,
 ): Promise<number | undefined> {
-	return call('insights.api.data_sources.get_data_source_table_row_count', {
+	return call<number>('insights.api.data_sources.get_data_source_table_row_count', {
 		data_source,
 		table_name,
 	}).catch((e: Error) => {
@@ -125,7 +128,7 @@ async function getTableLinks(
 	left_table: string,
 	right_table: string,
 ): Promise<TableLink[]> {
-	return call('insights.api.data_sources.get_table_links', {
+	return call<TableLink[]>('insights.api.data_sources.get_table_links', {
 		data_source,
 		left_table,
 		right_table,

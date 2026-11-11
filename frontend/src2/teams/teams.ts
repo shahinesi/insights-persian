@@ -28,7 +28,7 @@ const teams = ref<Team[]>([])
 const loading = ref(false)
 async function getTeams(search_term = '') {
 	loading.value = true
-	return call('insights.api.user.get_teams', { search_term }).then((res: Team[]) => {
+	return call<Team[]>('insights.api.user.get_teams', { search_term }).then((res) => {
 		teams.value = res.map((t: any) => {
 			return {
 				...t,

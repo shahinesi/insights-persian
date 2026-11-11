@@ -137,7 +137,7 @@ function readingOf(
 	index: number,
 	comparisonRows?: Record<string, number | null>,
 	series?: QueryResultRow[],
-): NumberCardEntry {
+): Omit<NumberCardEntry, 'height'> {
 	const column = measure.measure_name
 	const readings = rows.map((row) => toNumber(row[column]))
 	const latest = readings[readings.length - 1] ?? null
@@ -152,7 +152,7 @@ function readingOf(
 	const options = config.number_column_options?.[index] || {}
 	const negativeIsBetter = options.negative_is_better
 
-	const card: NumberCardEntry = {
+	const card: Omit<NumberCardEntry, 'height'> = {
 		column,
 		title: column,
 		value: scale(latest),

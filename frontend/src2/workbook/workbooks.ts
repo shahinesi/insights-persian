@@ -21,7 +21,7 @@ async function getWorkbooks(
 	filters: WireFilters = [],
 ) {
 	loading.value = true
-	const result = await call('insights.api.workbooks.get_workbooks', {
+	const result = await call<WorkbookListItem[]>('insights.api.workbooks.get_workbooks', {
 		search_term,
 		limit,
 		sources,
@@ -44,7 +44,7 @@ function importWorkbook(workbook: any) {
 		title: __('Import Workbook'),
 		message: __('Are you sure you want to import this workbook?'),
 		onSuccess: () => {
-			call('insights.api.workbooks.import_workbook', { workbook }).then(
+			call<{ workbook: string }>('insights.api.workbooks.import_workbook', { workbook }).then(
 				(imported: { workbook: string }) => {
 					getWorkbooks().then(() => {
 						toast.success(__('Workbook imported successfully'))

@@ -55,8 +55,8 @@ function submit() {
 	marking.value = true
 	error.value = ''
 	workbook
-		.call('mark_as_standard', { name: name.value, module: selected.value })
-		.then((name: string) => (marked.value = name))
+		.call<string>('mark_as_standard', { name: name.value, module: selected.value })
+		.then((name) => (marked.value = name))
 		.catch((e: any) => (error.value = getErrorMessage(e)))
 		.finally(() => (marking.value = false))
 }

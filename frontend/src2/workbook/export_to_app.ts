@@ -20,7 +20,7 @@ export function canExportToApp(workbook: { is_standard?: boolean | number }) {
 }
 
 export function getExportModules(): Promise<ExportModule[]> {
-	return call('insights.api.workbooks.get_export_modules')
+	return call<ExportModule[]>('insights.api.workbooks.get_export_modules')
 }
 
 /** The names `mark_as_standard` accepts, which is what `cleanup_page_name` produces. */

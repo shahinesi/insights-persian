@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { SplitBy } from '../../types/chart.types'
-import { DimensionOption } from '../../types/query.types'
+import type { SplitBy } from '../../types/chart.types'
+import type { Dimension, DimensionOption } from '../../types/query.types'
 import CollapsibleSection from './CollapsibleSection.vue'
 import NumberInput from '../../components/NumberInput.vue'
 import InlineFormControlLabel from '../../components/InlineFormControlLabel.vue'
@@ -11,9 +11,19 @@ const props = defineProps<{
 	dimensions: DimensionOption[]
 }>()
 
-const split_by = defineModel<SplitBy>({
+const splitByModel = defineModel<SplitBy | undefined>({
 	required: true,
-	default: () => ({}),
+})
+
+const emptyDimension = (): Dimension => ({
+	column_name: '',
+	data_type: 'String',
+	dimension_name: '',
+})
+
+const split_by = computed<SplitBy>({
+	get: () => splitByModel.value ?? { dimension: emptyDimension() },
+	set: (value) => (splitByModel.value = value),
 })
 
 // Nothing is seeded here. Writing the config on mount is one autosave and two
@@ -21,14 +31,19 @@ const split_by = defineModel<SplitBy>({
 // back to is the count the input shows as its placeholder.
 
 // TODO: debug why v-model="split_by.dimension" doesn't work
-const dimension = computed({
-	get: () => split_by.value.dimension,
+const dimension = computed<Dimension>({
+	get: () => split_by.value.dimension ?? emptyDimension(),
 	set: (value) => {
 		split_by.value = {
 			...split_by.value,
-			dimension: value || ({} as DimensionOption),
+			dimension: value,
 		}
 	},
+})
+
+const maxSplitValues = computed({
+	get: () => split_by.value.max_split_values,
+	set: (value) => (split_by.value = { ...split_by.value, max_split_values: value }),
 })
 </script>
 
@@ -39,8 +54,8 @@ const dimension = computed({
 				:label="__('Split by')"
 				:options="props.dimensions"
 				:modelValue="dimension"
-				@update:modelValue="dimension = $event || {}"
-				@remove="dimension = {}"
+				@update:modelValue="dimension = $event"
+				@remove="dimension = emptyDimension()"
 			/>
 
 			<InlineFormControlLabel
@@ -50,8 +65,8 @@ const dimension = computed({
 			>
 				<NumberInput
 					placeholder="10"
-					:modelValue="split_by.max_split_values"
-					@update:modelValue="split_by.max_split_values = $event"
+					:modelValue="maxSplitValues"
+					@update:modelValue="maxSplitValues = $event"
 				/>
 			</InlineFormControlLabel>
 		</div>

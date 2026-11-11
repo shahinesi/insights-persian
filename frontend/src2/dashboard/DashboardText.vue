@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import DOMPurify from 'dompurify'
+import type { Extensions } from '@tiptap/core'
 import { Dialog } from 'frappe-ui'
 import { computed, defineAsyncComponent, inject, ref, shallowRef, unref, watch } from 'vue'
 import { WorkbookDashboardText } from '../types/workbook.types'
@@ -27,7 +28,7 @@ const EditorContent = defineAsyncComponent(() =>
 )
 // `RichTextKit` is a value, not a component, so `defineAsyncComponent` cannot
 // load it
-const extensions = shallowRef<unknown[]>()
+const extensions = shallowRef<Extensions>()
 watch(
 	editing,
 	(open) => {

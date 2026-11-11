@@ -3,7 +3,7 @@ import { computed, ref, watch } from 'vue'
 import { __ } from '../../translation'
 import { call } from 'frappe-ui'
 import { Dialog, Button, Combobox, LoadingIndicator, TextInput } from 'frappe-ui'
-import { MappingData, Region } from '../../types/chart.types'
+import type { MappingData, Region } from '../../types/chart.types'
 import { Trash2Icon } from 'lucide-vue-next'
 const props = defineProps<{
 	modelValue: boolean
@@ -31,18 +31,28 @@ watch(
 	{ immediate: true },
 )
 
+type FindUnresolvedRegionsResponse = {
+	total_regions: number
+	resolved_count: number
+	unresolved_count: number
+	resolved: Array<Region & { method: string }>
+	unresolved: Region[]
+}
+
+type AvailableRegionsResponse = { regions: string[] }
+
 async function loadData() {
 	if (!props.userRegions?.length) return
 
 	loading.value = true
 	try {
 		const [mappingResponse, regionsResponse] = await Promise.all([
-			call('insights.api.maps.find_unresolved_regions', {
+			call<FindUnresolvedRegionsResponse>('insights.api.maps.find_unresolved_regions', {
 				map_type: props.mapType,
 				user_regions: props.userRegions,
 				chart_name: props.chartName,
 			}),
-			call('insights.api.maps.get_available_regions', {
+			call<AvailableRegionsResponse>('insights.api.maps.get_available_regions', {
 				map_type: props.mapType,
 			}),
 		])
@@ -298,7 +308,7 @@ function getOptions(region: Region) {
 									</div>
 
 									<Button
-										variant="icon"
+						variant="ghost"
 										@click="removeMapping(mapping.user_region)"
 										class="text-ink-red-6"
 										:icon="Trash2Icon"

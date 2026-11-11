@@ -88,7 +88,9 @@ function openNewWorkbook() {
 	creatingWorkbook.value = true
 	useWorkbook(newWorkbookName())
 		.insert()
-		.then((doc) => router.push(`/workbook/${doc.name}`))
+		.then((doc) => {
+			if (doc) router.push(`/workbook/${doc.name}`)
+		})
 		.finally(() => (creatingWorkbook.value = false))
 }
 

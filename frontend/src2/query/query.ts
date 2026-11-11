@@ -300,7 +300,7 @@ export function makeQuery(name: string) {
 		fetchingCount.value = true
 		return (
 			scheduleQueryExecution(() =>
-				query.call('get_count', {
+				query.call<number>('get_count', {
 					active_operation_idx: activeOperationIdx.value,
 					adhoc_filters: adhocFilters.value,
 				}),
@@ -324,7 +324,7 @@ export function makeQuery(name: string) {
 		if (!args.raw_sql.trim()) return args.raw_sql || ''
 
 		try {
-			const formattedSQL = await query.call('format', { raw_sql: args.raw_sql.trim() })
+			const formattedSQL = await query.call<string>('format', { raw_sql: args.raw_sql.trim() })
 			const sqlOp = getSQLOperation()
 			if (sqlOp) {
 				sqlOp.raw_sql = formattedSQL
@@ -606,7 +606,7 @@ export function makeQuery(name: string) {
 
 	const { downloading, exportResults, cancelDownload } = useResultExport(
 		(format) =>
-			call('insights.api.run_doc_method', {
+			call<{ message?: string }>('insights.api.run_doc_method', {
 				method: 'download_results',
 				docs: {
 					...(query.doc || {}),
@@ -635,7 +635,7 @@ export function makeQuery(name: string) {
 			_activeOperationIdx = activeEditIndex.value - 1
 		}
 
-		return query.call('get_distinct_column_values', {
+		return query.call<string[]>('get_distinct_column_values', {
 			active_operation_idx: _activeOperationIdx,
 			adhoc_filters,
 			column_name: column,
@@ -668,7 +668,7 @@ export function makeQuery(name: string) {
 		}
 
 		return query
-			.call('get_columns_for_selection', {
+			.call<QueryResultColumn[]>('get_columns_for_selection', {
 				active_operation_idx: _activeOperationIdx,
 			})
 			.then((columns: QueryResultColumn[]) => {
@@ -774,7 +774,7 @@ export function makeQuery(name: string) {
 	async function refreshStoredTables() {
 		importingTables.value = true
 		try {
-			const response = await query.call('refresh_stored_tables')
+			const response = await query.call<{ message?: string }>('refresh_stored_tables')
 			toast.success(__('Import Started'), {
 				description: response?.message || __('Importing tables to data store'),
 			})
