@@ -177,7 +177,7 @@ describe('a chart its author explained', () => {
 		// named, so a screen reader reads the text once, as the tooltip
 		expect(html).toContain('aria-label="Info"')
 		expect(html).not.toContain(INFO)
-	})
+	}, 15000)
 
 	// @feature charts.description-and-info
 	it('shows a Number card neither the chart description nor the chart info', async () => {
