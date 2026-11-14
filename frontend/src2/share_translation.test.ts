@@ -69,3 +69,9 @@ describe('demo and general settings localization', () => {
 		}
 	})
 })
+
+describe('shared Persian action labels', () => {
+	it('uses concise action wording for Create', () => {
+		expect(translationFor('Create')).toBe('ایجاد')
+	})
+})

@@ -641,7 +641,7 @@ msgstr "تعداد..."
 
 #: frontend/src2/teams/CreateTeamDialog.vue:18
 msgid "Create"
-msgstr "ایجاد کردن"
+msgstr "ایجاد"
 
 #: frontend/src2/query/components/AlertSetupDialog.vue:129
 msgid "Create Alert"
